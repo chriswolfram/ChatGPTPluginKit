@@ -1,0 +1,873 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     35437,        865]
+NotebookOptionsPosition[     30269,        776]
+NotebookOutlinePosition[     30677,        792]
+CellTagsIndexPosition[     30634,        789]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["Quit"], "Input",
+ CellChangeTimes->{{3.889282828692603*^9, 3.889282829035529*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"059c12f8-1a16-476f-b56d-32c57f4abf87"],
+
+Cell[CellGroupData[{
+
+Cell["Init", "Section",
+ CellChangeTimes->{{3.889281090118886*^9, 
+  3.889281090618236*^9}},ExpressionUUID->"aad9dce9-e691-4b05-8533-\
+e9653e2d262a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PacletDirectoryLoad", "[", 
+   RowBox[{"ParentDirectory", "@", 
+    RowBox[{"NotebookDirectory", "[", "]"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.8892803498235817`*^9, 3.8892803649273453`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"6b1052ca-74c3-426a-b8c9-05dec37b63df"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<ChristopherWolfram`ChatGPTPlugins`\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.889280365872239*^9, 3.889280371639391*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"2233ccc2-44a4-44e6-b9fd-3c8b8d06161e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Experiments", "Section",
+ CellChangeTimes->{{3.8892930572058773`*^9, 
+  3.8892930583291483`*^9}},ExpressionUUID->"edf86aba-f374-4bcc-a0d1-\
+e898af2daba9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plugin", "=", 
+  RowBox[{"ChatGPTPlugin", "[", 
+   RowBox[{
+    RowBox[{"<|", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<Name\>\"", "->", "\"\<City Population Finder\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<Prompt\>\"", "->", "\"\<\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<Description\>\"", "->", 
+       "\"\<Get the populations of cities.\>\""}]}], "\[IndentingNewLine]", 
+     "|>"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"ChatGPTPluginEndpoint", "[", 
+     RowBox[{"\"\<getCityPopulation\>\"", ",", 
+      RowBox[{"\"\<city\>\"", "->", "\"\<City\>\""}], ",", 
+      RowBox[{
+       RowBox[{"#city", "[", "\"\<Population\>\"", "]"}], "&"}]}], "]"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.88929306223446*^9, 3.8892931198203793`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"0c59eb39-a577-4848-abd4-737af5356c15"],
+
+Cell[BoxData[
+ RowBox[{"ChatGPTPlugin", "[", 
+  RowBox[{
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"Name\"\>", "\[Rule]", "\<\"City Population Finder\"\>"}], 
+     ",", 
+     RowBox[{"\<\"Description\"\>", 
+      "\[Rule]", "\<\"Get the populations of cities.\"\>"}], ",", 
+     RowBox[{"\<\"Prompt\"\>", "\[Rule]", "\<\"\"\>"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"ChatGPTPluginEndpoint", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\<\"getCityPopulation\"\>", ",", 
+        RowBox[{"Missing", "[", "\<\"NotSpecified\"\>", "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"city\"\>", "\[Rule]", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          RowBox[{"\<\"Interpreter\"\>", "\[Rule]", "\<\"City\"\>"}], ",", 
+          RowBox[{"\<\"Help\"\>", "\[Rule]", 
+           RowBox[{"Missing", "[", "\<\"NotSpecified\"\>", "]"}]}], ",", 
+          RowBox[{"\<\"Required\"\>", "\[Rule]", "True"}]}], 
+         "\[RightAssociation]"}]}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"#city", "[", "\<\"Population\"\>", "]"}], "&"}], ",", 
+      RowBox[{"{", "}"}]}], "]"}], "}"}], ",", 
+   RowBox[{"{", "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{{3.8892931210152607`*^9, 3.8892931344222717`*^9}, 
+   3.889293176187166*^9, {3.889293308019804*^9, 3.889293324331731*^9}, 
+   3.8892934962070436`*^9, 3.889293630724399*^9, 3.889294262850802*^9, 
+   3.88929463917138*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"c50936ae-f4fc-44a7-87df-a39e2458c954"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plugin", "[", "\"\<ManifestJSON\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.88929350186864*^9, 3.8892935051873293`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"bdd03519-1c1d-47e5-9bcd-dbc9cb136307"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"schema_version\"\>", "\[Rule]", "\<\"v1\"\>"}], ",", 
+   RowBox[{"\<\"name_for_human\"\>", 
+    "\[Rule]", "\<\"City Population Finder\"\>"}], ",", 
+   RowBox[{"\<\"name_for_model\"\>", 
+    "\[Rule]", "\<\"City Population Finder\"\>"}], ",", 
+   RowBox[{"\<\"description_for_human\"\>", 
+    "\[Rule]", "\<\"Get the populations of cities.\"\>"}], ",", 
+   RowBox[{"\<\"description_for_model\"\>", "\[Rule]", "\<\"\"\>"}], ",", 
+   RowBox[{"\<\"auth\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"none\"\>"}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"api\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"openapi\"\>"}], ",", 
+      RowBox[{"\<\"url\"\>", 
+       "\[Rule]", "\<\"http://localhost:18000/.well-known/openapi.json\"\>"}],
+       ",", 
+      RowBox[{"\<\"is_user_authenticated\"\>", "\[Rule]", "False"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"logo_url\"\>", 
+    "\[Rule]", \
+"\<\"https://www.wolframcdn.com/images/icons/Wolfram.png\"\>"}], ",", 
+   RowBox[{"\<\"contact_email\"\>", 
+    "\[Rule]", "\<\"support@example.com\"\>"}], ",", 
+   RowBox[{"\<\"legal_info_url\"\>", 
+    "\[Rule]", "\<\"http://www.example.com/legal\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.88929350556574*^9, 3.8892936319391727`*^9, 
+  3.889294264176084*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"f25376f4-f79a-401b-b67d-80a1d69b2de3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plugin", "[", "\"\<OpenAPIJSON\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.889293506556007*^9, 3.889293512659382*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"7d4cbfb7-c3a2-485c-b6a8-e595a400ef0d"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"openapi\"\>", "\[Rule]", "\<\"3.0.1\"\>"}], ",", 
+   RowBox[{"\<\"info\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"City Population Finder\"\>"}], 
+      ",", 
+      RowBox[{"\<\"description\"\>", 
+       "\[Rule]", "\<\"Get the populations of cities.\"\>"}], ",", 
+      RowBox[{"\<\"version\"\>", "\[Rule]", "\<\"v1\"\>"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"servers\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{"\<\"url\"\>", "\[Rule]", "\<\"http://localhost:18000\"\>"}], 
+      "\[RightAssociation]"}], "}"}]}], ",", 
+   RowBox[{"\<\"paths\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"/getCityPopulation\"\>", "\[Rule]", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{"\<\"get\"\>", "\[Rule]", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          
+          RowBox[{"\<\"operationId\"\>", 
+           "\[Rule]", "\<\"getCityPopulation\"\>"}], ",", 
+          RowBox[{"\<\"responses\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{"\<\"200\"\>", "\[Rule]", 
+             RowBox[{"\[LeftAssociation]", 
+              RowBox[{"\<\"description\"\>", "\[Rule]", "\<\"OK\"\>"}], 
+              "\[RightAssociation]"}]}], "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"parameters\"\>", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"\[LeftAssociation]", 
+             RowBox[{
+              RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"city\"\>"}], ",", 
+              RowBox[{"\<\"in\"\>", "\[Rule]", "\<\"query\"\>"}], ",", 
+              RowBox[{"\<\"description\"\>", "\[Rule]", 
+               RowBox[{"Missing", "[", "\<\"NotSpecified\"\>", "]"}]}], ",", 
+              RowBox[{"\<\"required\"\>", "\[Rule]", "True"}], ",", 
+              RowBox[{"\<\"schema\"\>", "\[Rule]", 
+               RowBox[{"\[LeftAssociation]", 
+                RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"string\"\>"}], 
+                "\[RightAssociation]"}]}]}], "\[RightAssociation]"}], 
+            "}"}]}]}], "\[RightAssociation]"}]}], "\[RightAssociation]"}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.889293513080081*^9, 3.889293633515737*^9, 
+  3.889294264903563*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"7711e0d2-e78e-4493-a08a-db080fd7bc03"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plugin", "[", "\"\<URLDispatcher\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.889294266730813*^9, 3.88929427128165*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"a2c8e100-d05a-494e-8d4b-d6ebbf932505"],
+
+Cell[BoxData[
+ RowBox[{"URLDispatcher", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\<\"/.well-known/ai-plugin.json\"\>", "\[Rule]", 
+     RowBox[{"HTTPResponse", "[", 
+      RowBox[{
+       RowBox[{"ExportForm", "[", 
+        RowBox[{
+         RowBox[{"\[LeftAssociation]", 
+          RowBox[{
+           RowBox[{"\<\"schema_version\"\>", "\[Rule]", "\<\"v1\"\>"}], ",", 
+           
+           RowBox[{"\<\"name_for_human\"\>", 
+            "\[Rule]", "\<\"City Population Finder\"\>"}], ",", 
+           
+           RowBox[{"\<\"name_for_model\"\>", 
+            "\[Rule]", "\<\"City Population Finder\"\>"}], ",", 
+           
+           RowBox[{"\<\"description_for_human\"\>", 
+            "\[Rule]", "\<\"Get the populations of cities.\"\>"}], ",", 
+           RowBox[{"\<\"description_for_model\"\>", "\[Rule]", "\<\"\"\>"}], 
+           ",", 
+           RowBox[{"\<\"auth\"\>", "\[Rule]", 
+            RowBox[{"\[LeftAssociation]", 
+             RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"none\"\>"}], 
+             "\[RightAssociation]"}]}], ",", 
+           RowBox[{"\<\"api\"\>", "\[Rule]", 
+            RowBox[{"\[LeftAssociation]", 
+             RowBox[{
+              RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"openapi\"\>"}], ",", 
+              
+              RowBox[{"\<\"url\"\>", 
+               "\[Rule]", \
+"\<\"http://localhost:18000/.well-known/openapi.json\"\>"}], ",", 
+              RowBox[{"\<\"is_user_authenticated\"\>", "\[Rule]", "False"}]}],
+              "\[RightAssociation]"}]}], ",", 
+           
+           RowBox[{"\<\"logo_url\"\>", 
+            "\[Rule]", \
+"\<\"https://www.wolframcdn.com/images/icons/Wolfram.png\"\>"}], ",", 
+           
+           RowBox[{"\<\"contact_email\"\>", 
+            "\[Rule]", "\<\"support@example.com\"\>"}], ",", 
+           
+           RowBox[{"\<\"legal_info_url\"\>", 
+            "\[Rule]", "\<\"http://www.example.com/legal\"\>"}]}], 
+          "\[RightAssociation]"}], ",", "\<\"JSON\"\>"}], "]"}], ",", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{"\<\"Headers\"\>", "\[Rule]", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"Access-Control-Allow-Origin\"\>", 
+           "\[Rule]", "\<\"*\"\>"}], "}"}]}], "\[RightAssociation]"}]}], 
+      "]"}]}], ",", 
+    RowBox[{"\<\"/.well-known/openapi.json\"\>", "\[Rule]", 
+     RowBox[{"HTTPResponse", "[", 
+      RowBox[{
+       RowBox[{"ExportForm", "[", 
+        RowBox[{
+         RowBox[{"\[LeftAssociation]", 
+          RowBox[{
+           RowBox[{"\<\"openapi\"\>", "\[Rule]", "\<\"3.0.1\"\>"}], ",", 
+           RowBox[{"\<\"info\"\>", "\[Rule]", 
+            RowBox[{"\[LeftAssociation]", 
+             RowBox[{
+              
+              RowBox[{"\<\"title\"\>", 
+               "\[Rule]", "\<\"City Population Finder\"\>"}], ",", 
+              
+              RowBox[{"\<\"description\"\>", 
+               "\[Rule]", "\<\"Get the populations of cities.\"\>"}], ",", 
+              RowBox[{"\<\"version\"\>", "\[Rule]", "\<\"v1\"\>"}]}], 
+             "\[RightAssociation]"}]}], ",", 
+           RowBox[{"\<\"servers\"\>", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"\[LeftAssociation]", 
+              
+              RowBox[{"\<\"url\"\>", 
+               "\[Rule]", "\<\"http://localhost:18000\"\>"}], 
+              "\[RightAssociation]"}], "}"}]}], ",", 
+           RowBox[{"\<\"paths\"\>", "\[Rule]", 
+            RowBox[{"\[LeftAssociation]", 
+             RowBox[{"\<\"/getCityPopulation\"\>", "\[Rule]", 
+              RowBox[{"\[LeftAssociation]", 
+               RowBox[{"\<\"get\"\>", "\[Rule]", 
+                RowBox[{"\[LeftAssociation]", 
+                 RowBox[{
+                  
+                  RowBox[{"\<\"operationId\"\>", 
+                   "\[Rule]", "\<\"getCityPopulation\"\>"}], ",", 
+                  RowBox[{"\<\"responses\"\>", "\[Rule]", 
+                   RowBox[{"\[LeftAssociation]", 
+                    RowBox[{"\<\"200\"\>", "\[Rule]", 
+                    RowBox[{"\[LeftAssociation]", 
+                    RowBox[{"\<\"description\"\>", "\[Rule]", "\<\"OK\"\>"}], 
+                    "\[RightAssociation]"}]}], "\[RightAssociation]"}]}], ",", 
+                  RowBox[{"\<\"parameters\"\>", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"\[LeftAssociation]", 
+                    RowBox[{
+                    RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"city\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"in\"\>", "\[Rule]", "\<\"query\"\>"}], ",", 
+                    RowBox[{"\<\"description\"\>", "\[Rule]", 
+                    RowBox[{"Missing", "[", "\<\"NotSpecified\"\>", "]"}]}], 
+                    ",", 
+                    RowBox[{"\<\"required\"\>", "\[Rule]", "True"}], ",", 
+                    RowBox[{"\<\"schema\"\>", "\[Rule]", 
+                    RowBox[{"\[LeftAssociation]", 
+                    RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"string\"\>"}], 
+                    "\[RightAssociation]"}]}]}], "\[RightAssociation]"}], 
+                    "}"}]}]}], "\[RightAssociation]"}]}], 
+               "\[RightAssociation]"}]}], "\[RightAssociation]"}]}]}], 
+          "\[RightAssociation]"}], ",", "\<\"JSON\"\>"}], "]"}], ",", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{"\<\"Headers\"\>", "\[Rule]", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"Access-Control-Allow-Origin\"\>", 
+           "\[Rule]", "\<\"*\"\>"}], "}"}]}], "\[RightAssociation]"}]}], 
+      "]"}]}], ",", 
+    RowBox[{"\<\"/getCityPopulation\"\>", "\[Rule]", 
+     RowBox[{"HTTPResponse", "[", 
+      RowBox[{
+       RowBox[{"APIFunction", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\<\"city\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{
+             RowBox[{"\<\"Interpreter\"\>", "\[Rule]", "\<\"City\"\>"}], ",", 
+             
+             RowBox[{"\<\"Help\"\>", "\[Rule]", 
+              RowBox[{"Missing", "[", "\<\"NotSpecified\"\>", "]"}]}], ",", 
+             RowBox[{"\<\"Required\"\>", "\[Rule]", "True"}]}], 
+            "\[RightAssociation]"}]}], "}"}], ",", 
+         RowBox[{
+          RowBox[{"#city", "[", "\<\"Population\"\>", "]"}], "&"}]}], "]"}], 
+       ",", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{"\<\"Headers\"\>", "\[Rule]", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"Access-Control-Allow-Origin\"\>", 
+           "\[Rule]", "\<\"*\"\>"}], "}"}]}], "\[RightAssociation]"}]}], 
+      "]"}]}]}], "}"}], "]"}]], "Output",
+ CellChangeTimes->{{3.88929427264475*^9, 3.889294279106234*^9}},
+ CellLabel->"Out[9]=",ExpressionUUID->"36117e70-10fa-4f91-92ec-8b8bc2386023"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"getCityPop", "[", "city_", "]"}], ":=", 
+  RowBox[{"city", "[", "\"\<Population\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.889294393007921*^9, 3.889294399734693*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"a19f78a1-26ef-405a-ba2d-27eee179cdf5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"plugin", "=", 
+   RowBox[{"ChatGPTPlugin", "[", 
+    RowBox[{
+     RowBox[{"<|", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"\"\<Name\>\"", "->", "\"\<CityPopulationFinder\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"\"\<Prompt\>\"", "->", "\"\<\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Description\>\"", "->", 
+        "\"\<Get the populations of cities.\>\""}]}], "\[IndentingNewLine]", 
+      "|>"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ChatGPTPluginEndpoint", "[", 
+      RowBox[{"\"\<getCityPopulation\>\"", ",", 
+       RowBox[{"\"\<city\>\"", "->", "\"\<City\>\""}], ",", 
+       RowBox[{
+        RowBox[{"getCityPop", "[", "#city", "]"}], "&"}]}], "]"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.88929306223446*^9, 3.8892931198203793`*^9}, {
+  3.889294403919681*^9, 3.889294409192584*^9}, {3.889294690358427*^9, 
+  3.8892946916191587`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"44697608-514f-43d3-a56e-b55c851740da"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"str", "=", 
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"dispatcher", "=", 
+       RowBox[{"plugin", "[", "\"\<URLDispatcher\>\"", "]"}]}], "}"}], ",", 
+     RowBox[{"With", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"d", "=", 
+         RowBox[{
+         "Language`ExtendedFullDefinition", "[", "dispatcher", "]"}]}], "}"}],
+        ",", 
+       RowBox[{"ToString", "[", 
+        RowBox[{
+         RowBox[{"Unevaluated", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Language`ExtendedFullDefinition", "[", "]"}], "=", "d"}],
+            ";", "dispatcher"}], "]"}], ",", "InputForm"}], "]"}]}], "]"}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8892943507571173`*^9, 3.8892943738944693`*^9}, 
+   3.88929464868163*^9},
+ CellLabel->"In[12]:=",ExpressionUUID->"b956dace-2965-4aa0-a1d7-fd7d81d35eb4"],
+
+Cell[BoxData[
+ RowBox[{"CopyToClipboard", "@", 
+  RowBox[{"Export", "[", 
+   RowBox[{
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"CreateDirectory", "[", "]"}], ",", "\"\<dispatcher.wl\>\""}], 
+      "}"}], "]"}], ",", "str", ",", "\"\<Text\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8892944258484793`*^9, 3.889294426112471*^9}, {
+  3.889294478666348*^9, 3.88929448180224*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"d941c046-dd33-4f8f-b56a-6ea57f60d931"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plugin", "[", "\"\<OpenAPIJSON\>\"", "]"}]], "Input",
+ CellLabel->"In[17]:=",ExpressionUUID->"68b0d9fd-8332-4846-a959-064167f89dd9"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"openapi\"\>", "\[Rule]", "\<\"3.0.1\"\>"}], ",", 
+   RowBox[{"\<\"info\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"City Population Finder\"\>"}], 
+      ",", 
+      RowBox[{"\<\"description\"\>", 
+       "\[Rule]", "\<\"Get the populations of cities.\"\>"}], ",", 
+      RowBox[{"\<\"version\"\>", "\[Rule]", "\<\"v1\"\>"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"servers\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{"\<\"url\"\>", "\[Rule]", "\<\"http://localhost:18000\"\>"}], 
+      "\[RightAssociation]"}], "}"}]}], ",", 
+   RowBox[{"\<\"paths\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"/getCityPopulation\"\>", "\[Rule]", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{"\<\"get\"\>", "\[Rule]", 
+        RowBox[{"\[LeftAssociation]", 
+         RowBox[{
+          
+          RowBox[{"\<\"operationId\"\>", 
+           "\[Rule]", "\<\"getCityPopulation\"\>"}], ",", 
+          RowBox[{"\<\"responses\"\>", "\[Rule]", 
+           RowBox[{"\[LeftAssociation]", 
+            RowBox[{"\<\"200\"\>", "\[Rule]", 
+             RowBox[{"\[LeftAssociation]", 
+              RowBox[{"\<\"description\"\>", "\[Rule]", "\<\"OK\"\>"}], 
+              "\[RightAssociation]"}]}], "\[RightAssociation]"}]}], ",", 
+          RowBox[{"\<\"parameters\"\>", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"\[LeftAssociation]", 
+             RowBox[{
+              RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"city\"\>"}], ",", 
+              RowBox[{"\<\"in\"\>", "\[Rule]", "\<\"query\"\>"}], ",", 
+              RowBox[{"\<\"description\"\>", "\[Rule]", 
+               RowBox[{"Missing", "[", "\<\"NotSpecified\"\>", "]"}]}], ",", 
+              RowBox[{"\<\"required\"\>", "\[Rule]", "True"}], ",", 
+              RowBox[{"\<\"schema\"\>", "\[Rule]", 
+               RowBox[{"\[LeftAssociation]", 
+                RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"string\"\>"}], 
+                "\[RightAssociation]"}]}]}], "\[RightAssociation]"}], 
+            "}"}]}]}], "\[RightAssociation]"}]}], "\[RightAssociation]"}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.8892945517270327`*^9},
+ CellLabel->"Out[17]=",ExpressionUUID->"3ee38523-6e50-4d3c-8460-df34dd743595"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Design", "Section",
+ CellChangeTimes->{{3.889281218659739*^9, 
+  3.8892812194631557`*^9}},ExpressionUUID->"425ac166-e866-4625-aa17-\
+e4cdd7c9cd85"],
+
+Cell[BoxData[
+ RowBox[{"ChatGPTPlugin", "[", 
+  RowBox[{
+   RowBox[{"<|", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"\"\<Name\>\"", "->", "name"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"\"\<Prompt\>\"", "->", "..."}], ",", "\[IndentingNewLine]", 
+     RowBox[{"\"\<Description\>\"", "->", "..."}]}], "\[IndentingNewLine]", 
+    "|>"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"<|", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"\"\<operationID\>\"", "->", "\[IndentingNewLine]", 
+      RowBox[{"APIFunction", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<city\>\"", "->", 
+           RowBox[{"<|", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"\"\<Interpreter\>\"", "->", "\"\<City\>\""}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"\"\<Help\>\"", "->", "\"\<the city\>\""}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"\"\<Required\>\"", "->", "True"}]}], 
+            "\[IndentingNewLine]", "|>"}]}], ",", "..."}], "}"}], ",", 
+        "\[IndentingNewLine]", "func"}], "\[IndentingNewLine]", "]"}]}], ",", 
+     "\[IndentingNewLine]", "..."}], "\[IndentingNewLine]", "|>"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.8892812206644*^9, 3.8892813252120733`*^9}, {
+  3.8892813659735947`*^9, 3.889281399062364*^9}, {3.889281607288817*^9, 
+  3.8892816132222767`*^9}, {3.8892816659607573`*^9, 3.889281721442729*^9}, {
+  3.8892817532120523`*^9, 3.889281754571748*^9}, {3.889282495945813*^9, 
+  3.889282497351521*^9}, {3.889283213867293*^9, 3.889283230339848*^9}, {
+  3.8892835938497753`*^9, 
+  3.889283596601417*^9}},ExpressionUUID->"b2e7232d-db07-459c-9a7a-\
+70f52bce782b"],
+
+Cell[BoxData[
+ RowBox[{"ChatGPTPlugin", "[", 
+  RowBox[{
+   RowBox[{"<|", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"\"\<Name\>\"", "->", "name"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"\"\<Description\>\"", "->", "..."}], ",", "\[IndentingNewLine]", 
+     RowBox[{"\"\<Prompt\>\"", "->", "..."}]}], "\[IndentingNewLine]", "|>"}],
+    ",", "\[IndentingNewLine]", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"ChatGPTPluginEndpoint", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\"\<operationID\>\"", ",", "\"\<prompt\>\""}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<city\>\"", "->", 
+         RowBox[{"<|", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"\"\<Interpreter\>\"", "->", "\"\<City\>\""}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"\"\<Help\>\"", "->", "\"\<the city\>\""}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"\"\<Required\>\"", "->", "True"}]}], 
+          "\[IndentingNewLine]", "|>"}]}], ",", "..."}], "}"}], ",", 
+      "\[IndentingNewLine]", "func"}], "\[IndentingNewLine]", "]"}], 
+    "\[IndentingNewLine]", "}"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.889285078658325*^9, 3.8892851089071198`*^9}, {
+  3.8892911406851873`*^9, 
+  3.8892911431565723`*^9}},ExpressionUUID->"45a97e86-8c1f-46b0-9438-\
+5904e8b6e107"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Notes", "Section",
+ CellChangeTimes->{{3.889281095530472*^9, 
+  3.889281095866506*^9}},ExpressionUUID->"45c7d2a3-3f31-41c3-aa64-\
+b6e0e7ca164a"],
+
+Cell[CellGroupData[{
+
+Cell["Items to include in ChatGPTPlugin", "Item",
+ CellChangeTimes->{{3.889281097646915*^9, 
+  3.88928111598512*^9}},ExpressionUUID->"a3f0f5a3-a023-4c95-b413-\
+941c5a3ac0c2"],
+
+Cell[CellGroupData[{
+
+Cell["Manifest items", "Subitem",
+ CellChangeTimes->{{3.889281097646915*^9, 
+  3.8892811191294537`*^9}},ExpressionUUID->"9c27bd91-2f79-4cc2-b40c-\
+40d5ec4bb150"],
+
+Cell["DiscriptionModel / Prompt", "Subsubitem",
+ CellChangeTimes->{{3.889281097646915*^9, 3.8892811297136927`*^9}, {
+  3.889292962877898*^9, 
+  3.889292966813599*^9}},ExpressionUUID->"0a2e5018-8f3c-4a8d-9ab0-\
+38ca3bf07576"],
+
+Cell["DiscriptionHuman", "Subsubitem",
+ CellChangeTimes->{{3.889281097646915*^9, 
+  3.889281144666462*^9}},ExpressionUUID->"6a66671d-0b17-4dd0-b239-\
+454fb96ee97c"],
+
+Cell["Name", "Subsubitem",
+ CellChangeTimes->{{3.889281097646915*^9, 
+  3.889281151250432*^9}},ExpressionUUID->"ca6a38cd-e230-4fd3-886d-\
+a06c07e6f0b5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OpenAPI items", "Subitem",
+ CellChangeTimes->{{3.889281097646915*^9, 
+  3.88928115909019*^9}},ExpressionUUID->"ef6fc18d-62f6-4337-8bb6-\
+bddc90c78656"],
+
+Cell["Description (short) [Optional]", "Subsubitem",
+ CellChangeTimes->{{3.889281097646915*^9, 3.88928117455404*^9}, 
+   3.889284716619697*^9},ExpressionUUID->"3088916b-fce6-48ea-9d69-\
+9a91fe19e7d4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["For each endpoint", "Subitem",
+ CellChangeTimes->{{3.889281097646915*^9, 
+  3.889281187250901*^9}},ExpressionUUID->"abc54f8b-96f1-4770-b5dd-\
+a13af85e4c6d"],
+
+Cell["OperationID", "Subsubitem",
+ CellChangeTimes->{{3.889281097646915*^9, 3.889281201196306*^9}, {
+  3.889282810249861*^9, 
+  3.88928281025109*^9}},ExpressionUUID->"59a2e855-de58-4e35-9fb1-\
+7307972c491a"],
+
+Cell["Description", "Subsubitem",
+ CellChangeTimes->{{3.889281097646915*^9, 3.889281201196306*^9}, {
+  3.8892828108795853`*^9, 
+  3.889282815338876*^9}},ExpressionUUID->"14514e48-316e-48a4-b6aa-\
+fdf726b826ba"],
+
+Cell["Argument names", "Subsubitem",
+ CellChangeTimes->{{3.889281097646915*^9, 
+  3.8892812053800077`*^9}},ExpressionUUID->"d938135c-1cbe-4648-b3e2-\
+3b052d467495"],
+
+Cell["Argument descriptions", "Subsubitem",
+ CellChangeTimes->{{3.889281097646915*^9, 
+  3.889281209467781*^9}},ExpressionUUID->"600873ce-7f1b-4a4e-bb44-\
+61f0363e8ce9"],
+
+Cell["Argument types?", "Subsubitem",
+ CellChangeTimes->{{3.889281097646915*^9, 
+  3.889281211598879*^9}},ExpressionUUID->"677d95f2-8e67-4a18-a2b3-\
+462b208bbe72"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Scratch space", "Section",
+ CellChangeTimes->{{3.889281092398918*^9, 
+  3.8892810940583677`*^9}},ExpressionUUID->"029fc2b3-7cdc-4874-9797-\
+da2f207ceb9c"],
+
+Cell[BoxData[
+ RowBox[{"ChatGPTPluginURLDispatcher", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.8892803754961653`*^9, 3.889280377296084*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"f8d87437-2960-4a42-bf49-f690bc32a350"],
+
+Cell[BoxData[
+ RowBox[{"CopyToClipboard", "@", 
+  RowBox[{"Export", "[", 
+   RowBox[{
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"CreateDirectory", "[", "]"}], ",", "\"\<dispatcher.wl\>\""}], 
+      "}"}], "]"}], ",", 
+    RowBox[{"ChatGPTPluginURLDispatcher", "[", "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.889282697207573*^9, 3.8892827335840273`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"504e89d4-25dc-4b5e-9c1b-f5be216705d5"],
+
+Cell[BoxData[
+ RowBox[{"str", "=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"d", "=", 
+      RowBox[{"Language`ExtendedFullDefinition", "[", 
+       RowBox[{"ChatGPTPluginURLDispatcher", "[", "]"}], "]"}]}], "}"}], ",", 
+    
+    RowBox[{"ToString", "[", 
+     RowBox[{
+      RowBox[{"Unevaluated", "[", 
+       RowBox[{
+        RowBox[{"Language`ExtendedFullDefinition", "[", "]"}], "=", "d"}], 
+       "]"}], ",", "InputForm"}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.889280706760372*^9, 3.889280718892277*^9}, {
+  3.889280788936596*^9, 3.8892808420655746`*^9}, {3.8892808746846533`*^9, 
+  3.8892808767706633`*^9}, {3.889280946047052*^9, 3.889280950549428*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"8a368a59-0624-4211-bbe2-ff760382b54d"],
+
+Cell[BoxData["Quit"], "Input",
+ CellChangeTimes->{{3.889280965294716*^9, 3.889280965605522*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"15c7b681-4990-4d0f-a429-c67d38053ff2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"2", "+", "2"}]], "Input",
+ CellChangeTimes->{{3.889280887307725*^9, 3.889280887682559*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"ec647f8d-1224-4624-9e85-081e14facf4c"],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{
+  3.889280901445489*^9, {3.889280987124611*^9, 3.8892809966465054`*^9}},
+ CellLabel->"Out[2]=",ExpressionUUID->"1545629e-a600-4f7c-a11d-bc567218bf9c"]
+}, Open  ]],
+
+Cell["\<\
+// Plugin for getting the population of cities.
+namespace TestPlugin {
+
+type getCityPopulation = (_: {
+city: any,
+}) => any;
+
+} // namespace TestPlugin\
+\>", "Program",
+ CellChangeTimes->{
+  3.889283043281952*^9, {3.889283098798004*^9, 
+   3.889283102461914*^9}},ExpressionUUID->"995924eb-90f7-4576-a708-\
+2cf02a92809c"],
+
+Cell["\<\
+// Plugin for getting the population of cities.
+namespace TestPlugin {
+
+// Get the population of a city
+type getCityPopulation = (_: {
+// the city name
+city: string,
+}) => any;
+
+} // namespace TestPlugin\
+\>", "Program",
+ CellChangeTimes->{{3.889283088198391*^9, 
+  3.889283095670072*^9}},ExpressionUUID->"079f0429-d45a-41e1-8763-\
+be8ec114a86d"],
+
+Cell[BoxData["IncludeDefinitions"], "Input",
+ CellChangeTimes->{{3.889292977807619*^9, 
+  3.8892929793750267`*^9}},ExpressionUUID->"29cc4136-c6ae-4447-b172-\
+57948d6f2e92"]
+}, Open  ]]
+},
+WindowSize->{834.75, 828.75},
+WindowMargins->{{Automatic, 145.875}, {68.25, Automatic}},
+FrontEndVersion->"13.2 for Linux x86 (64-bit) (November 18, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"880a9917-0f2a-4dde-af81-48676776e2ac"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 175, 2, 29, "Input",ExpressionUUID->"059c12f8-1a16-476f-b56d-32c57f4abf87"],
+Cell[CellGroupData[{
+Cell[758, 26, 149, 3, 67, "Section",ExpressionUUID->"aad9dce9-e691-4b05-8533-e9653e2d262a"],
+Cell[910, 31, 317, 6, 29, "Input",ExpressionUUID->"6b1052ca-74c3-426a-b8c9-05dec37b63df"],
+Cell[1230, 39, 246, 4, 29, "Input",ExpressionUUID->"2233ccc2-44a4-44e6-b9fd-3c8b8d06161e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1513, 48, 160, 3, 67, "Section",ExpressionUUID->"edf86aba-f374-4bcc-a0d1-e898af2daba9"],
+Cell[CellGroupData[{
+Cell[1698, 55, 938, 21, 158, "Input",ExpressionUUID->"0c59eb39-a577-4848-abd4-737af5356c15"],
+Cell[2639, 78, 1532, 34, 128, "Output",ExpressionUUID->"c50936ae-f4fc-44a7-87df-a39e2458c954"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4208, 117, 223, 3, 29, "Input",ExpressionUUID->"bdd03519-1c1d-47e5-9bcd-dbc9cb136307"],
+Cell[4434, 122, 1574, 34, 168, "Output",ExpressionUUID->"f25376f4-f79a-401b-b67d-80a1d69b2de3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6045, 161, 221, 3, 29, "Input",ExpressionUUID->"7d4cbfb7-c3a2-485c-b6a8-e595a400ef0d"],
+Cell[6269, 166, 2483, 51, 156, "Output",ExpressionUUID->"7711e0d2-e78e-4493-a08a-db080fd7bc03"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8789, 222, 222, 3, 29, "Input",ExpressionUUID->"a2c8e100-d05a-494e-8d4b-d6ebbf932505"],
+Cell[9014, 227, 6658, 148, 445, "Output",ExpressionUUID->"36117e70-10fa-4f91-92ec-8b8bc2386023"]
+}, Open  ]],
+Cell[15687, 378, 283, 5, 29, "Input",ExpressionUUID->"a19f78a1-26ef-405a-ba2d-27eee179cdf5"],
+Cell[15973, 385, 1065, 24, 158, "Input",ExpressionUUID->"44697608-514f-43d3-a56e-b55c851740da"],
+Cell[17041, 411, 904, 25, 92, "Input",ExpressionUUID->"b956dace-2965-4aa0-a1d7-fd7d81d35eb4"],
+Cell[17948, 438, 501, 11, 29, "Input",ExpressionUUID->"d941c046-dd33-4f8f-b56a-6ea57f60d931"],
+Cell[CellGroupData[{
+Cell[18474, 453, 156, 2, 29, "Input",ExpressionUUID->"68b0d9fd-8332-4846-a959-064167f89dd9"],
+Cell[18633, 457, 2439, 50, 156, "Output",ExpressionUUID->"3ee38523-6e50-4d3c-8460-df34dd743595"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21121, 513, 153, 3, 67, "Section",ExpressionUUID->"425ac166-e866-4625-aa17-e4cdd7c9cd85"],
+Cell[21277, 518, 1715, 35, 370, "Input",ExpressionUUID->"b2e7232d-db07-459c-9a7a-70f52bce782b"],
+Cell[22995, 555, 1429, 31, 376, "Input",ExpressionUUID->"45a97e86-8c1f-46b0-9438-5904e8b6e107"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[24461, 591, 150, 3, 53, "Section",ExpressionUUID->"45c7d2a3-3f31-41c3-aa64-b6e0e7ca164a"],
+Cell[CellGroupData[{
+Cell[24636, 598, 174, 3, 32, "Item",ExpressionUUID->"a3f0f5a3-a023-4c95-b413-941c5a3ac0c2"],
+Cell[CellGroupData[{
+Cell[24835, 605, 161, 3, 27, "Subitem",ExpressionUUID->"9c27bd91-2f79-4cc2-b40c-40d5ec4bb150"],
+Cell[24999, 610, 224, 4, 25, "Subsubitem",ExpressionUUID->"0a2e5018-8f3c-4a8d-9ab0-38ca3bf07576"],
+Cell[25226, 616, 164, 3, 25, "Subsubitem",ExpressionUUID->"6a66671d-0b17-4dd0-b239-454fb96ee97c"],
+Cell[25393, 621, 152, 3, 25, "Subsubitem",ExpressionUUID->"ca6a38cd-e230-4fd3-886d-a06c07e6f0b5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25582, 629, 157, 3, 27, "Subitem",ExpressionUUID->"ef6fc18d-62f6-4337-8bb6-bddc90c78656"],
+Cell[25742, 634, 200, 3, 25, "Subsubitem",ExpressionUUID->"3088916b-fce6-48ea-9d69-9a91fe19e7d4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25979, 642, 162, 3, 27, "Subitem",ExpressionUUID->"abc54f8b-96f1-4770-b5dd-a13af85e4c6d"],
+Cell[26144, 647, 207, 4, 25, "Subsubitem",ExpressionUUID->"59a2e855-de58-4e35-9fb1-7307972c491a"],
+Cell[26354, 653, 210, 4, 25, "Subsubitem",ExpressionUUID->"14514e48-316e-48a4-b6aa-fdf726b826ba"],
+Cell[26567, 659, 164, 3, 25, "Subsubitem",ExpressionUUID->"d938135c-1cbe-4648-b3e2-3b052d467495"],
+Cell[26734, 664, 169, 3, 25, "Subsubitem",ExpressionUUID->"600873ce-7f1b-4a4e-bb44-61f0363e8ce9"],
+Cell[26906, 669, 163, 3, 25, "Subsubitem",ExpressionUUID->"677d95f2-8e67-4a18-a2b3-462b208bbe72"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27130, 679, 160, 3, 67, "Section",ExpressionUUID->"029fc2b3-7cdc-4874-9797-da2f207ceb9c"],
+Cell[27293, 684, 220, 3, 29, "Input",ExpressionUUID->"f8d87437-2960-4a42-bf49-f690bc32a350"],
+Cell[27516, 689, 479, 11, 51, "Input",ExpressionUUID->"504e89d4-25dc-4b5e-9c1b-f5be216705d5"],
+Cell[27998, 702, 779, 18, 51, "Input",ExpressionUUID->"8a368a59-0624-4211-bbe2-ff760382b54d"],
+Cell[28780, 722, 174, 2, 29, "Input",ExpressionUUID->"15c7b681-4990-4d0f-a429-c67d38053ff2"],
+Cell[CellGroupData[{
+Cell[28979, 728, 193, 3, 29, "Input",ExpressionUUID->"ec647f8d-1224-4624-9e85-081e14facf4c"],
+Cell[29175, 733, 199, 3, 33, "Output",ExpressionUUID->"1545629e-a600-4f7c-a11d-bc567218bf9c"]
+}, Open  ]],
+Cell[29389, 739, 330, 13, 168, "Program",ExpressionUUID->"995924eb-90f7-4576-a708-2cf02a92809c"],
+Cell[29722, 754, 356, 14, 202, "Program",ExpressionUUID->"079f0429-d45a-41e1-8763-be8ec114a86d"],
+Cell[30081, 770, 172, 3, 29, "Input",ExpressionUUID->"29cc4136-c6ae-4447-b172-57948d6f2e92"]
+}, Open  ]]
+}
+]
+*)
+
