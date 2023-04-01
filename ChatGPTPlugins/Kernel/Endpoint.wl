@@ -20,11 +20,11 @@ ChatGPTPluginEndpoint[args___] /; !argumentsChatGPTPluginEndpointQ[args] := crea
 argumentsChatGPTPluginEndpointQ[
 	{opID_?StringQ, prompt: _?StringQ | _Missing},
 	paramsList: {
-		_String -> KeyValuePattern[{
+		(_String -> KeyValuePattern[{
 				"Interpreter" -> _,
 				"Help" -> _,
 				"Required" -> _
-			}]
+			}])...
 	},
 	f_,
 	{OptionsPattern[]}
@@ -106,7 +106,7 @@ endpoint_ChatGPTPluginEndpoint["APIFunction"] := endpointAPIFunction[endpoint]
 endpointAPIJSON[endpoint_ChatGPTPluginEndpoint] :=
 	<|
 		"/"<>endpoint["OperationID"] -> <|
-			"get" -> <|
+			"post" -> <|
 				"operationId" -> endpoint["OperationID"],
 				If[StringQ@endpoint["Prompt"], "summary" -> endpoint["Prompt"], Nothing],
 				"responses" -> <|"200" -> <|"description" -> "OK"|>|>,
@@ -128,7 +128,12 @@ endpointParamAPIJSON[name_ -> KeyValuePattern[{"Help" -> prompt_, "Required" -> 
 (* APIFunction *)
 
 endpointAPIFunction[endpoint_ChatGPTPluginEndpoint] :=
-	APIFunction[endpoint["Parameters"], endpoint["Function"]]
+	APIFunction[removeHelp@endpoint["Parameters"], endpoint["Function"]]
+
+
+(* TODO: Temporary workaround for bug #434606 *)
+removeHelp[params_] :=
+	MapAt[KeyDrop["Help"], params, {All,2}]
 
 
 End[];
