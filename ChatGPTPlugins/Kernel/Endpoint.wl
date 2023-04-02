@@ -127,8 +127,10 @@ endpointParamAPIJSON[name_ -> KeyValuePattern[{"Help" -> prompt_, "Required" -> 
 
 (* APIFunction *)
 
+(* Because of CORS, ChatGPT makes an OPTIONS request before its POST request. This must return the right headers, but
+it shouldn't run the function body. *)
 endpointAPIFunction[endpoint_ChatGPTPluginEndpoint] :=
-	APIFunction[removeHelp@endpoint["Parameters"], endpoint["Function"]]
+	APIFunction[removeHelp@endpoint["Parameters"], If[HTTPRequestData["Method"] === "OPTIONS", "", endpoint["Function"][#]]&]
 
 
 (* TODO: Temporary workaround for bug #434606 *)

@@ -88,14 +88,17 @@ HoldPattern[ChatGPTPlugin][metadata_, endpoints_, opts_]["Options"] := opts
 plugin_ChatGPTPlugin["Name"] := Lookup[plugin["Metadata"], "Name"]
 plugin_ChatGPTPlugin["Description"] := Lookup[plugin["Metadata"], "Description"]
 plugin_ChatGPTPlugin["Prompt"] := Lookup[plugin["Metadata"], "Prompt"]
-plugin_ChatGPTPlugin["OpenAPIJSON"] := pluginAPIJSON[plugin]
-plugin_ChatGPTPlugin["ManifestJSON"] := pluginManifestJSON[plugin]
-plugin_ChatGPTPlugin["URLDispatcher"] := pluginURLDispatcher[plugin]
+plugin_ChatGPTPlugin["OpenAPIJSON", port_] := pluginAPIJSON[plugin, port]
+plugin_ChatGPTPlugin["OpenAPIJSON"] := plugin["OpenAPIJSON", $ChatGPTPluginPort]
+plugin_ChatGPTPlugin["ManifestJSON", port_] := pluginManifestJSON[plugin, port]
+plugin_ChatGPTPlugin["ManifestJSON"] := plugin["ManifestJSON", $ChatGPTPluginPort]
+plugin_ChatGPTPlugin["URLDispatcher", port_] := pluginURLDispatcher[plugin, port]
+plugin_ChatGPTPlugin["URLDispatcher"] := plugin["URLDispatcher", $ChatGPTPluginPort]
 
 
 (* OpenAPI *)
 
-pluginAPIJSON[plugin_ChatGPTPlugin] :=
+pluginAPIJSON[plugin_ChatGPTPlugin, port_] :=
 	<|
 		"openapi" -> "3.0.1",
 		"info" -> <|
@@ -103,14 +106,14 @@ pluginAPIJSON[plugin_ChatGPTPlugin] :=
 			"description" -> plugin["Description"],
 			"version" -> "v1"
 		|>,
-		"servers" -> {<|"url" -> "http://localhost:18000"|>},
+		"servers" -> {<|"url" -> "http://localhost:"<>ToString[port]|>},
 		"paths" -> Join@@(#["OpenAPIJSON"]&)/@plugin["Endpoints"]
 	|>
 
 
 (* Manifest *)
 
-pluginManifestJSON[plugin_ChatGPTPlugin] :=
+pluginManifestJSON[plugin_ChatGPTPlugin, port_] :=
 	<|
 		"schema_version" -> "v1",
 		"name_for_human" -> plugin["Name"],
@@ -120,7 +123,7 @@ pluginManifestJSON[plugin_ChatGPTPlugin] :=
 		"auth" -> <|"type" -> "none"|>,
 		"api" -> <|
 			"type" -> "openapi",
-			"url" -> "http://localhost:18000/.well-known/openapi.json",
+			"url" -> StringTemplate["http://localhost:``/.well-known/openapi.json"][port],
 			"is_user_authenticated" -> False
 		|>,
 		"logo_url" -> "https://www.wolframcdn.com/images/icons/Wolfram.png",
@@ -131,10 +134,10 @@ pluginManifestJSON[plugin_ChatGPTPlugin] :=
 
 (* URLDispatched *)
 
-pluginURLDispatcher[plugin_ChatGPTPlugin] :=
+pluginURLDispatcher[plugin_ChatGPTPlugin, port_] :=
 	URLDispatcher[{
-		"/.well-known/ai-plugin.json" -> addCORS@ExportForm[plugin["ManifestJSON"], "JSON"],
-		"/.well-known/openapi.json" -> addCORS@ExportForm[plugin["OpenAPIJSON"], "JSON"],
+		"/.well-known/ai-plugin.json" -> addCORS@ExportForm[plugin["ManifestJSON", port], "JSON"],
+		"/.well-known/openapi.json" -> addCORS@ExportForm[plugin["OpenAPIJSON", port], "JSON"],
 		Splice["/"<>#["OperationID"] -> addCORS@#["APIFunction"]& /@ plugin["Endpoints"]]
 	}]
 
@@ -142,8 +145,8 @@ addCORS[expr_] :=
 	HTTPResponse[expr,
 		<|"Headers" -> {
 				"Access-Control-Allow-Origin" -> "*",
-				"Access-Control-allow-Method" -> "*",
-				"Access-Control-allow-Headers" -> "*"
+				"Access-Control-Allow-Method" -> "*",
+				"Access-Control-Allow-Headers" -> "Accept, *"
 			}
 		|>
 	]

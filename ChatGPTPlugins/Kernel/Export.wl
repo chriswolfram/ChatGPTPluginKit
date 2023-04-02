@@ -5,18 +5,18 @@ Begin["`Private`"];
 Needs["ChristopherWolfram`ChatGPTPlugins`"]
 
 
-Options[ExportChatGPTPlugin] = {IncludeDefinitions -> True};
+Options[ChatGPTPluginExport] = {IncludeDefinitions -> True};
 
-ExportChatGPTPlugin[args___] :=
+ChatGPTPluginExport[args___] :=
 	Enclose[
-		iExportChatGPTPlugin@@Confirm[ArgumentsOptions[ExportChatGPTPlugin[args], 1]],
+		iExportChatGPTPlugin@@Confirm[ArgumentsOptions[ChatGPTPluginExport[args], 1]],
 		"InheritedFailure"
 	]
 
-iExportChatGPTPlugin[{plugin_ChatGPTPlugin}, opts_] :=
-	pluginString[plugin, TrueQ@OptionValue[ExportChatGPTPlugin, opts, IncludeDefinitions]]
+iChatGPTPluginExport[{plugin_ChatGPTPlugin}, opts_] :=
+	pluginString[plugin, TrueQ@OptionValue[ChatGPTPluginExport, opts, IncludeDefinitions]]
 
-iExportChatGPTPlugin[{plugin_}, opts_] :=
+iChatGPTPluginExport[{plugin_}, opts_] :=
 	Failure["InvalidPlugin", <|
 		"MessageTemplate" -> "Expected a ChatGPTPlugin object but found `1` instead.",
 		"MessageParamters" -> {plugin},
