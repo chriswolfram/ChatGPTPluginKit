@@ -10,17 +10,17 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    210604,       4453]
-NotebookOptionsPosition[    201519,       4301]
-NotebookOutlinePosition[    201913,       4317]
-CellTagsIndexPosition[    201870,       4314]
+NotebookDataLength[    242817,       5099]
+NotebookOptionsPosition[    233272,       4939]
+NotebookOutlinePosition[    233666,       4955]
+CellTagsIndexPosition[    233623,       4952]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData["Quit"], "Input",
  CellChangeTimes->{{3.889282828692603*^9, 3.889282829035529*^9}},
- CellLabel->"In[24]:=",ExpressionUUID->"059c12f8-1a16-476f-b56d-32c57f4abf87"],
+ CellLabel->"In[20]:=",ExpressionUUID->"059c12f8-1a16-476f-b56d-32c57f4abf87"],
 
 Cell[CellGroupData[{
 
@@ -78,34 +78,201 @@ Cell[BoxData[
  CellLabel->"In[3]:=",ExpressionUUID->"0c59eb39-a577-4848-abd4-737af5356c15"],
 
 Cell[BoxData[
- RowBox[{"ChatGPTPlugin", "[", 
+ InterpretationBox[
   RowBox[{
-   RowBox[{"\[LeftAssociation]", 
-    RowBox[{
-     RowBox[{"\<\"Name\"\>", "\[Rule]", "\<\"CityPopulationFinder\"\>"}], ",", 
-     RowBox[{"\<\"Description\"\>", 
-      "\[Rule]", "\<\"Get the populations of cities.\"\>"}], ",", 
-     RowBox[{"\<\"Prompt\"\>", "\[Rule]", "\<\"\"\>"}]}], 
-    "\[RightAssociation]"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"ChatGPTPluginEndpoint", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"\<\"getCityPopulation\"\>", ",", 
-        RowBox[{"Missing", "[", "\<\"NotSpecified\"\>", "]"}]}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"\<\"city\"\>", "\[Rule]", 
-        RowBox[{"\[LeftAssociation]", 
-         RowBox[{
-          RowBox[{"\<\"Interpreter\"\>", "\[Rule]", "\<\"City\"\>"}], ",", 
-          RowBox[{"\<\"Help\"\>", "\[Rule]", 
-           RowBox[{"Missing", "[", "\<\"NotSpecified\"\>", "]"}]}], ",", 
-          RowBox[{"\<\"Required\"\>", "\[Rule]", "True"}]}], 
-         "\[RightAssociation]"}]}], "}"}], ",", 
-      RowBox[{
-       RowBox[{"#city", "[", "\<\"Population\"\>", "]"}], "&"}], ",", 
-      RowBox[{"{", "}"}]}], "]"}], "}"}], ",", 
-   RowBox[{"{", "}"}]}], "]"}]], "Output",
+   TagBox["ChatGPTPlugin",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"], 
+               ImageSizeCache -> {11., {0., 11.}}], Appearance -> None, 
+              BaseStyle -> {}, ButtonFunction :> (Typeset`open$$ = True), 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"CityPopulationFinder\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"description: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"Get the populations of cities.\"", "SummaryItem"]}]}}, 
+             AutoDelete -> False, 
+             BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True -> 
+        GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"], 
+               ImageSizeCache -> {11., {0., 11.}}], Appearance -> None, 
+              BaseStyle -> {}, ButtonFunction :> (Typeset`open$$ = False), 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"CityPopulationFinder\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"description: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"Get the populations of cities.\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"endpoints: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  TagBox[
+                   GridBox[{{
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["ChatGPTPluginEndpoint", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{
+                    Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"]], 
+                    ButtonFunction :> (Typeset`open$$ = True), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"getCityPopulation\"", "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"]], 
+                    ButtonFunction :> (Typeset`open$$ = False), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"getCityPopulation\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"prompt: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"Missing", "[", "\"NotSpecified\"", "]"}], 
+                    "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    
+                    ChristopherWolfram`ChatGPTPlugins`ChatGPTPluginEndpoint[{
+                    "getCityPopulation", 
+                    Missing["NotSpecified"]}, {
+                    "city" -> <|
+                    "Interpreter" -> "City", "Help" -> 
+                    Missing["NotSpecified"], "Required" -> True|>}, Slot[
+                    "city"]["Population"]& , {}], Editable -> False, 
+                    SelectWithContents -> True, Selectable -> False]}}, 
+                    DefaultBaseStyle -> "Column", 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                   "Column"], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"prompt: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"\"", "SummaryItem"]}]}}, AutoDelete -> False, 
+             BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  ChristopherWolfram`ChatGPTPlugins`ChatGPTPlugin[<|
+   "Name" -> "CityPopulationFinder", "Description" -> 
+    "Get the populations of cities.", "Prompt" -> ""|>, {
+    ChristopherWolfram`ChatGPTPlugins`ChatGPTPluginEndpoint[{
+     "getCityPopulation", 
+      Missing["NotSpecified"]}, {
+     "city" -> <|
+       "Interpreter" -> "City", "Help" -> Missing["NotSpecified"], "Required" -> 
+        True|>}, Slot["city"]["Population"]& , {}]}, {}],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
  CellChangeTimes->{{3.8892931210152607`*^9, 3.8892931344222717`*^9}, 
    3.889293176187166*^9, {3.889293308019804*^9, 3.889293324331731*^9}, 
    3.8892934962070436`*^9, 3.889293630724399*^9, 3.889294262850802*^9, 
@@ -115,9 +282,48 @@ Cell[BoxData[
    3.8893674362193527`*^9, 3.889367541977138*^9, 3.889367790987207*^9, 
    3.889367824188384*^9, 3.889404514953473*^9, 3.889408393169545*^9, 
    3.889409262872018*^9, 3.8894093350223494`*^9, 3.88940990538839*^9, 
-   3.889410653484123*^9, 3.889411140922471*^9, 3.889411476946924*^9},
- CellLabel->"Out[3]=",ExpressionUUID->"441c67ac-0773-4425-bdd2-afaa73b3b377"]
+   3.889410653484123*^9, 3.889411140922471*^9, 3.889411476946924*^9, 
+   3.889450147200796*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"8f2386fa-8511-41a3-a4e3-22c51432690f"]
 }, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ChatGPTPluginEndpoint", "[", 
+  RowBox[{"\"\<getCityPopulation\>\"", ",", 
+   RowBox[{"\"\<city\>\"", "->", "\"\<City\>\""}], ",", 
+   RowBox[{
+    RowBox[{"#city", "[", "\"\<Population\>\"", "]"}], "&"}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[18]:=",ExpressionUUID->"55dc1cc5-f80c-47f9-bbf0-a012cebfcf90"],
+
+Cell[BoxData[
+ RowBox[{"ChatGPTPluginEndpoint", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"getCityPopulation\"\>", ",", 
+     RowBox[{"Missing", "[", "\<\"NotSpecified\"\>", "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"city\"\>", "\[Rule]", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"\<\"Interpreter\"\>", "\[Rule]", "\<\"City\"\>"}], ",", 
+       RowBox[{"\<\"Help\"\>", "\[Rule]", 
+        RowBox[{"Missing", "[", "\<\"NotSpecified\"\>", "]"}]}], ",", 
+       RowBox[{"\<\"Required\"\>", "\[Rule]", "True"}]}], 
+      "\[RightAssociation]"}]}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"#city", "[", "\<\"Population\"\>", "]"}], "&"}], ",", 
+   RowBox[{"{", "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.889449871094137*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"66975b40-4f3b-49af-9168-17670185b3a6"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"?", "BoxForm`*"}]], "Input",
+ CellChangeTimes->{{3.889450011384652*^9, 3.8894500147276287`*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"7a356e5f-976f-425d-a723-1d67cf096714"],
 
 Cell[BoxData[
  RowBox[{
@@ -1277,81 +1483,513 @@ Cell[BoxData[
  CellLabel->"Out[39]=",ExpressionUUID->"929c449a-4b11-46e2-9ba9-474384c30c0b"]
 }, Open  ]],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"todos", "=", 
    RowBox[{"<|", 
     RowBox[{"\"\<Christopher\>\"", "->", 
      RowBox[{"{", "\"\<Buy food\>\"", "}"}]}], "|>"}]}], ";"}], "\n", 
- RowBox[{
-  RowBox[{"plugin", "=", 
-   RowBox[{"ChatGPTPlugin", "[", 
-    RowBox[{
-     RowBox[{"<|", "\[IndentingNewLine]", 
+ RowBox[{"plugin", "=", 
+  RowBox[{"ChatGPTPlugin", "[", 
+   RowBox[{
+    RowBox[{"<|", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<Name\>\"", "->", "\"\<TODOList\>\""}], ",", 
+      "\[IndentingNewLine]", 
       RowBox[{
-       RowBox[{"\"\<Name\>\"", "->", "\"\<TODOList\>\""}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{
-       "\"\<Prompt\>\"", "->", 
-        "\"\<Plugin for managing a TODO list, you can add, remove and view \
+      "\"\<Prompt\>\"", "->", 
+       "\"\<Plugin for managing a TODO list, you can add, remove and view \
 your TODOs.\>\""}], ",", "\[IndentingNewLine]", 
-       RowBox[{
-       "\"\<Description\>\"", "->", 
-        "\"\<Plugin for managing a TODO list, you can add, remove and view \
-your TODOs.\>\""}]}], "\[IndentingNewLine]", "|>"}], ",", 
-     "\[IndentingNewLine]", 
-     RowBox[{"{", "\[IndentingNewLine]", 
       RowBox[{
-       RowBox[{"ChatGPTPluginEndpoint", "[", 
-        RowBox[{"\"\<getTodos\>\"", ",", "\"\<username\>\"", ",", 
-         RowBox[{
-          RowBox[{"Lookup", "[", 
-           RowBox[{"todos", ",", "#username", ",", 
-            RowBox[{"{", "}"}]}], "]"}], "&"}]}], "]"}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"ChatGPTPluginEndpoint", "[", 
-        RowBox[{"\"\<addTodo\>\"", ",", 
-         RowBox[{"{", 
-          RowBox[{"\"\<username\>\"", ",", "\"\<todo\>\""}], "}"}], ",", 
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"If", "[", 
-             RowBox[{
-              RowBox[{"!", 
-               RowBox[{"KeyExistsQ", "[", 
-                RowBox[{"todos", ",", "#username"}], "]"}]}], ",", 
-              RowBox[{"AssociateTo", "[", 
-               RowBox[{"todos", ",", 
-                RowBox[{"#username", "->", 
-                 RowBox[{"{", "}"}]}]}], "]"}]}], "]"}], ";", 
-            RowBox[{"AppendTo", "[", 
-             RowBox[{
-              RowBox[{"todos", "[", "#username", "]"}], ",", "#todo"}], 
-             "]"}]}], ")"}], "&"}]}], "]"}], ",", "\[IndentingNewLine]", 
-       RowBox[{"ChatGPTPluginEndpoint", "[", 
-        RowBox[{"\"\<deleteTodo\>\"", ",", 
-         RowBox[{"{", 
-          RowBox[{"\"\<username\>\"", ",", 
-           RowBox[{"\"\<todo_idx\>\"", "->", "\"\<Integer\>\""}]}], "}"}], 
-         ",", 
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"todos", "[", "#username", "]"}], "=", 
-            RowBox[{"Delete", "[", 
-             RowBox[{
-              RowBox[{"todos", "[", "#username", "]"}], ",", 
-              "#\"todo_idx\""}], "]"}]}], ")"}], "&"}]}], "]"}]}], 
-      "\[IndentingNewLine]", "}"}]}], "\[IndentingNewLine]", "]"}]}], 
-  ";"}]}], "Input",
+      "\"\<Description\>\"", "->", 
+       "\"\<Plugin for managing a TODO list, you can add, remove and view \
+your TODOs.\>\""}]}], "\[IndentingNewLine]", "|>"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"ChatGPTPluginEndpoint", "[", 
+       RowBox[{"\"\<getTodos\>\"", ",", "\"\<username\>\"", ",", 
+        RowBox[{
+         RowBox[{"Lookup", "[", 
+          RowBox[{"todos", ",", "#username", ",", 
+           RowBox[{"{", "}"}]}], "]"}], "&"}]}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ChatGPTPluginEndpoint", "[", 
+       RowBox[{"\"\<addTodo\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<username\>\"", ",", "\"\<todo\>\""}], "}"}], ",", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"!", 
+              RowBox[{"KeyExistsQ", "[", 
+               RowBox[{"todos", ",", "#username"}], "]"}]}], ",", 
+             RowBox[{"AssociateTo", "[", 
+              RowBox[{"todos", ",", 
+               RowBox[{"#username", "->", 
+                RowBox[{"{", "}"}]}]}], "]"}]}], "]"}], ";", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{
+             RowBox[{"todos", "[", "#username", "]"}], ",", "#todo"}], 
+            "]"}]}], ")"}], "&"}]}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"ChatGPTPluginEndpoint", "[", 
+       RowBox[{"\"\<deleteTodo\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<username\>\"", ",", 
+          RowBox[{"\"\<todo_idx\>\"", "->", "\"\<Integer\>\""}]}], "}"}], ",", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"todos", "[", "#username", "]"}], "=", 
+           RowBox[{"Delete", "[", 
+            RowBox[{
+             RowBox[{"todos", "[", "#username", "]"}], ",", "#\"todo_idx\""}],
+             "]"}]}], ")"}], "&"}]}], "]"}]}], "\[IndentingNewLine]", "}"}]}],
+    "\[IndentingNewLine]", "]"}]}]}], "Input",
  CellChangeTimes->{{3.8892965279564943`*^9, 3.889296531899847*^9}, {
-  3.8892967426239843`*^9, 3.8892967723501663`*^9}, {3.8892968593944063`*^9, 
-  3.889296921140484*^9}, {3.889321382514422*^9, 3.889321408323019*^9}, {
-  3.889321477310009*^9, 3.8893214804463463`*^9}, {3.889321896319826*^9, 
-  3.889321910054644*^9}, {3.889325811363647*^9, 3.8893258117232656`*^9}, {
-  3.88941170940053*^9, 3.889411712451518*^9}},
- CellLabel->"In[13]:=",ExpressionUUID->"2f914193-d7e8-4dbc-9cca-29b986785c8d"],
+   3.8892967426239843`*^9, 3.8892967723501663`*^9}, {3.8892968593944063`*^9, 
+   3.889296921140484*^9}, {3.889321382514422*^9, 3.889321408323019*^9}, {
+   3.889321477310009*^9, 3.8893214804463463`*^9}, {3.889321896319826*^9, 
+   3.889321910054644*^9}, {3.889325811363647*^9, 3.8893258117232656`*^9}, {
+   3.88941170940053*^9, 3.889411712451518*^9}, 3.889450158192483*^9},
+ CellLabel->"In[6]:=",ExpressionUUID->"2f914193-d7e8-4dbc-9cca-29b986785c8d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["ChatGPTPlugin",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"], 
+               ImageSizeCache -> {11., {0., 11.}}], Appearance -> None, 
+              BaseStyle -> {}, ButtonFunction :> (Typeset`open$$ = True), 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"TODOList\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"description: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"Plugin for managing a TODO list, you can add, remove and \
+view your TODOs.\"", "SummaryItem"]}]}}, AutoDelete -> False, 
+             BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True -> 
+        GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"], 
+               ImageSizeCache -> {11., {0., 11.}}], Appearance -> None, 
+              BaseStyle -> {}, ButtonFunction :> (Typeset`open$$ = False), 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"TODOList\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"description: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"Plugin for managing a TODO list, you can add, remove and \
+view your TODOs.\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"endpoints: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  TagBox[
+                   GridBox[{{
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["ChatGPTPluginEndpoint", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{
+                    Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"], 
+                    ImageSizeCache -> {9., {0., 9.}}], Appearance -> None, 
+                    BaseStyle -> {}, 
+                    ButtonFunction :> (Typeset`open$$ = True), Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"getTodos\"", "SummaryItem"]}]}}, AutoDelete -> 
+                    False, BaseStyle -> {
+                    ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, 
+                    AutoDelete -> False, BaselinePosition -> {1, 1}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"], 
+                    ImageSizeCache -> {9., {0., 9.}}], Appearance -> None, 
+                    BaseStyle -> {}, 
+                    ButtonFunction :> (Typeset`open$$ = False), Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"getTodos\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"prompt: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"Missing", "[", "\"NotSpecified\"", "]"}], 
+                    "SummaryItem"]}]}}, AutoDelete -> False, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, 
+                    AutoDelete -> False, BaselinePosition -> {1, 1}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    
+                    ChristopherWolfram`ChatGPTPlugins`ChatGPTPluginEndpoint[{
+                    "getTodos", 
+                    Missing["NotSpecified"]}, {
+                    "username" -> <|
+                    "Interpreter" -> "String", "Help" -> 
+                    Missing["NotSpecified"], "Required" -> True|>}, 
+                    Lookup[$CellContext`todos, 
+                    Slot["username"], {}]& , {}], Editable -> False, 
+                    SelectWithContents -> True, Selectable -> False]}, {
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["ChatGPTPluginEndpoint", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{
+                    Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"], 
+                    ImageSizeCache -> {9., {0., 9.}}], Appearance -> None, 
+                    BaseStyle -> {}, 
+                    ButtonFunction :> (Typeset`open$$ = True), Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"addTodo\"", "SummaryItem"]}]}}, AutoDelete -> 
+                    False, BaseStyle -> {
+                    ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, 
+                    AutoDelete -> False, BaselinePosition -> {1, 1}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"], 
+                    ImageSizeCache -> {9., {0., 9.}}], Appearance -> None, 
+                    BaseStyle -> {}, 
+                    ButtonFunction :> (Typeset`open$$ = False), Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"addTodo\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"prompt: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"Missing", "[", "\"NotSpecified\"", "]"}], 
+                    "SummaryItem"]}]}}, AutoDelete -> False, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, 
+                    AutoDelete -> False, BaselinePosition -> {1, 1}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    
+                    ChristopherWolfram`ChatGPTPlugins`ChatGPTPluginEndpoint[{
+                    "addTodo", 
+                    Missing["NotSpecified"]}, {
+                    "username" -> <|
+                    "Interpreter" -> "String", "Help" -> 
+                    Missing["NotSpecified"], "Required" -> True|>, 
+                    "todo" -> <|
+                    "Interpreter" -> "String", "Help" -> 
+                    Missing["NotSpecified"], "Required" -> True|>}, (If[
+                    Not[
+                    KeyExistsQ[$CellContext`todos, 
+                    Slot["username"]]], 
+                    AssociateTo[$CellContext`todos, Slot["username"] -> {}]]; 
+                    AppendTo[
+                    $CellContext`todos[
+                    Slot["username"]], 
+                    Slot["todo"]])& , {}], Editable -> False, 
+                    SelectWithContents -> True, Selectable -> False]}, {
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["ChatGPTPluginEndpoint", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{
+                    Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"], 
+                    ImageSizeCache -> {9., {0., 9.}}], Appearance -> None, 
+                    BaseStyle -> {}, 
+                    ButtonFunction :> (Typeset`open$$ = True), Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"deleteTodo\"", "SummaryItem"]}]}}, AutoDelete -> 
+                    False, BaseStyle -> {
+                    ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, 
+                    AutoDelete -> False, BaselinePosition -> {1, 1}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"], 
+                    ImageSizeCache -> {9., {0., 9.}}], Appearance -> None, 
+                    BaseStyle -> {}, 
+                    ButtonFunction :> (Typeset`open$$ = False), Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"deleteTodo\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"prompt: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"Missing", "[", "\"NotSpecified\"", "]"}], 
+                    "SummaryItem"]}]}}, AutoDelete -> False, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, 
+                    AutoDelete -> False, BaselinePosition -> {1, 1}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    
+                    ChristopherWolfram`ChatGPTPlugins`ChatGPTPluginEndpoint[{
+                    "deleteTodo", 
+                    Missing["NotSpecified"]}, {
+                    "username" -> <|
+                    "Interpreter" -> "String", "Help" -> 
+                    Missing["NotSpecified"], "Required" -> True|>, 
+                    "todo_idx" -> <|
+                    "Interpreter" -> "Integer", "Help" -> 
+                    Missing["NotSpecified"], "Required" -> 
+                    True|>}, ($CellContext`todos[
+                    Slot["username"]] = Delete[
+                    $CellContext`todos[
+                    Slot["username"]], 
+                    Slot["todo_idx"]])& , {}], Editable -> False, 
+                    SelectWithContents -> True, Selectable -> False]}}, 
+                    DefaultBaseStyle -> "Column", 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                   "Column"], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"prompt: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"Plugin for managing a TODO list, you can add, remove and \
+view your TODOs.\"", "SummaryItem"]}]}}, AutoDelete -> False, 
+             BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  ChristopherWolfram`ChatGPTPlugins`ChatGPTPlugin[<|
+   "Name" -> "TODOList", "Description" -> 
+    "Plugin for managing a TODO list, you can add, remove and view your \
+TODOs.", "Prompt" -> 
+    "Plugin for managing a TODO list, you can add, remove and view your \
+TODOs."|>, {
+    ChristopherWolfram`ChatGPTPlugins`ChatGPTPluginEndpoint[{"getTodos", 
+      Missing["NotSpecified"]}, {
+     "username" -> <|
+       "Interpreter" -> "String", "Help" -> Missing["NotSpecified"], 
+        "Required" -> True|>}, Lookup[$CellContext`todos, 
+      Slot["username"], {}]& , {}], 
+    ChristopherWolfram`ChatGPTPlugins`ChatGPTPluginEndpoint[{"addTodo", 
+      Missing["NotSpecified"]}, {
+     "username" -> <|
+       "Interpreter" -> "String", "Help" -> Missing["NotSpecified"], 
+        "Required" -> True|>, 
+      "todo" -> <|
+       "Interpreter" -> "String", "Help" -> Missing["NotSpecified"], 
+        "Required" -> True|>}, (If[
+       Not[
+        KeyExistsQ[$CellContext`todos, 
+         Slot["username"]]], 
+       AssociateTo[$CellContext`todos, Slot["username"] -> {}]]; AppendTo[
+       $CellContext`todos[
+        Slot["username"]], 
+       Slot["todo"]])& , {}], 
+    ChristopherWolfram`ChatGPTPlugins`ChatGPTPluginEndpoint[{"deleteTodo", 
+      Missing["NotSpecified"]}, {
+     "username" -> <|
+       "Interpreter" -> "String", "Help" -> Missing["NotSpecified"], 
+        "Required" -> True|>, 
+      "todo_idx" -> <|
+       "Interpreter" -> "Integer", "Help" -> Missing["NotSpecified"], 
+        "Required" -> True|>}, ($CellContext`todos[
+       Slot["username"]] = Delete[
+       $CellContext`todos[
+        Slot["username"]], 
+       Slot["todo_idx"]])& , {}]}, {}],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.889450158587822*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"da2440ed-2a1e-4d99-9a6a-f795d004ef80"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -4023,7 +4661,7 @@ Cell[BoxData[
 
 Cell[BoxData[
  DynamicBox[ToBoxes[$CellContext`todos, StandardForm],
-  ImageSizeCache->{432.45703125, {6.9609375, 13.}}]], "Output",
+  ImageSizeCache->{651., {2.912, 9.411999999999999}}]], "Output",
  CellChangeTimes->{
   3.8893258228688793`*^9, {3.889327294451091*^9, 3.8893272985944967`*^9}},
  CellLabel->"Out[16]=",ExpressionUUID->"e23e319d-5879-466c-ac62-d604c5ebf0e8"]
@@ -4326,134 +4964,142 @@ Cell[CellGroupData[{
 Cell[1513, 48, 160, 3, 67, "Section",ExpressionUUID->"edf86aba-f374-4bcc-a0d1-e898af2daba9"],
 Cell[CellGroupData[{
 Cell[1698, 55, 987, 22, 157, "Input",ExpressionUUID->"0c59eb39-a577-4848-abd4-737af5356c15"],
-Cell[2688, 79, 1996, 39, 119, "Output",ExpressionUUID->"441c67ac-0773-4425-bdd2-afaa73b3b377"]
-}, Open  ]],
-Cell[4699, 121, 285, 6, 30, "Input",ExpressionUUID->"51cea9a6-d0b6-4d5e-aa14-0f8a69a90610"],
-Cell[4987, 129, 990, 21, 94, "Input",ExpressionUUID->"41b9e250-a988-4696-9928-085813ad4469"],
-Cell[CellGroupData[{
-Cell[6002, 154, 239, 4, 30, "Input",ExpressionUUID->"1160a2d7-bb91-4ac0-86c8-5963bfbd5a33"],
-Cell[6244, 160, 680, 11, 2373, "Output",ExpressionUUID->"efa09137-bfe7-4bf8-aab6-4aa399fab8eb"]
+Cell[2688, 79, 10579, 207, 61, "Output",ExpressionUUID->"8f2386fa-8511-41a3-a4e3-22c51432690f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6961, 176, 1257, 23, 52, "Input",ExpressionUUID->"bdd03519-1c1d-47e5-9bcd-dbc9cb136307"],
-Cell[8221, 201, 40058, 773, 61, "Output",ExpressionUUID->"54821597-5b1c-435a-a7fd-3588484894f7"]
+Cell[13304, 291, 330, 7, 30, "Input",ExpressionUUID->"55dc1cc5-f80c-47f9-bbf0-a012cebfcf90"],
+Cell[13637, 300, 847, 19, 77, "Output",ExpressionUUID->"66975b40-4f3b-49af-9168-17670185b3a6"]
 }, Open  ]],
-Cell[48294, 977, 268, 4, 30, "Input",ExpressionUUID->"912eca98-8b35-43ab-88de-973e0600b0ec"],
+Cell[14499, 322, 199, 3, 30, "Input",ExpressionUUID->"7a356e5f-976f-425d-a723-1d67cf096714"],
+Cell[14701, 327, 285, 6, 30, "Input",ExpressionUUID->"51cea9a6-d0b6-4d5e-aa14-0f8a69a90610"],
+Cell[14989, 335, 990, 21, 94, "Input",ExpressionUUID->"41b9e250-a988-4696-9928-085813ad4469"],
 Cell[CellGroupData[{
-Cell[48587, 985, 271, 4, 30, "Input",ExpressionUUID->"7d4cbfb7-c3a2-485c-b6a8-e595a400ef0d"],
-Cell[48861, 991, 2400, 50, 119, "Output",ExpressionUUID->"584a0787-e398-4391-9c2b-35f2c4337e3e"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[51298, 1046, 272, 4, 30, "Input",ExpressionUUID->"a2c8e100-d05a-494e-8d4b-d6ebbf932505"],
-Cell[51573, 1052, 8544, 195, 539, "Output",ExpressionUUID->"8fd0fc0c-6880-4e15-b0d1-f87f356b968d"]
-}, Open  ]],
-Cell[60132, 1250, 283, 5, 30, "Input",ExpressionUUID->"a19f78a1-26ef-405a-ba2d-27eee179cdf5"],
-Cell[CellGroupData[{
-Cell[60440, 1259, 410, 9, 30, "Input",ExpressionUUID->"ab34ceff-d72f-454d-8dfa-b809a0b5d9c0"],
-Cell[60853, 1270, 323, 6, 34, "Output",ExpressionUUID->"929c449a-4b11-46e2-9ba9-474384c30c0b"]
-}, Open  ]],
-Cell[61191, 1279, 3153, 74, 367, "Input",ExpressionUUID->"2f914193-d7e8-4dbc-9cca-29b986785c8d"],
-Cell[CellGroupData[{
-Cell[64369, 1357, 281, 6, 30, "Input",ExpressionUUID->"1e777a0e-4c2b-4d8b-b0cc-d2ee37f1b2a8"],
-Cell[64653, 1365, 39277, 761, 61, "Output",ExpressionUUID->"e4c74448-10e2-4d9e-9620-2f59ec1b452b"]
-}, Open  ]],
-Cell[103945, 2129, 175, 2, 30, "Input",ExpressionUUID->"bb8ae36e-d48c-43cb-83cb-bdb29b2821fe"],
-Cell[CellGroupData[{
-Cell[104145, 2135, 330, 7, 30, "Input",ExpressionUUID->"1c2f25fc-be6b-4d23-b1a6-0a0a46a3dab7"],
-Cell[104478, 2144, 234, 4, 34, "Output",ExpressionUUID->"4303e663-b0b1-4dcd-91b2-f0bbd59bc376"]
+Cell[16004, 360, 239, 4, 30, "Input",ExpressionUUID->"1160a2d7-bb91-4ac0-86c8-5963bfbd5a33"],
+Cell[16246, 366, 680, 11, 2373, "Output",ExpressionUUID->"efa09137-bfe7-4bf8-aab6-4aa399fab8eb"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[104749, 2153, 270, 5, 30, "Input",ExpressionUUID->"fb2ea7e6-a627-4391-82b3-4f66132c996c"],
-Cell[105022, 2160, 210, 3, 34, "Output",ExpressionUUID->"b3b26550-2f87-48a0-a202-ee08244e2c5c"]
+Cell[16963, 382, 1257, 23, 52, "Input",ExpressionUUID->"bdd03519-1c1d-47e5-9bcd-dbc9cb136307"],
+Cell[18223, 407, 40058, 773, 61, "Output",ExpressionUUID->"54821597-5b1c-435a-a7fd-3588484894f7"]
 }, Open  ]],
-Cell[105247, 2166, 4188, 97, 409, "Input",ExpressionUUID->"b458e4d2-9298-49f8-919b-efa8fefba5d2"],
+Cell[58296, 1183, 268, 4, 30, "Input",ExpressionUUID->"912eca98-8b35-43ab-88de-973e0600b0ec"],
 Cell[CellGroupData[{
-Cell[109460, 2267, 1114, 30, 94, "Input",ExpressionUUID->"0c82a753-972d-4df7-b9ce-147d0eef2291"],
-Cell[110577, 2299, 381, 8, 34, "Output",ExpressionUUID->"ca05f9d8-1624-4465-b53f-68aa803f7f17"]
+Cell[58589, 1191, 271, 4, 30, "Input",ExpressionUUID->"7d4cbfb7-c3a2-485c-b6a8-e595a400ef0d"],
+Cell[58863, 1197, 2400, 50, 119, "Output",ExpressionUUID->"584a0787-e398-4391-9c2b-35f2c4337e3e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[110995, 2312, 207, 3, 30, "Input",ExpressionUUID->"02cdf9b8-21c2-4f6c-8ba4-73307d0f3a27"],
-Cell[111205, 2317, 469, 9, 34, "Output",ExpressionUUID->"5cc561a1-0611-4e69-93c6-9aae70fb83fa"]
+Cell[61300, 1252, 272, 4, 30, "Input",ExpressionUUID->"a2c8e100-d05a-494e-8d4b-d6ebbf932505"],
+Cell[61575, 1258, 8544, 195, 539, "Output",ExpressionUUID->"8fd0fc0c-6880-4e15-b0d1-f87f356b968d"]
 }, Open  ]],
-Cell[111689, 2329, 580, 13, 52, "Input",ExpressionUUID->"d941c046-dd33-4f8f-b56a-6ea57f60d931"],
+Cell[70134, 1456, 283, 5, 30, "Input",ExpressionUUID->"a19f78a1-26ef-405a-ba2d-27eee179cdf5"],
 Cell[CellGroupData[{
-Cell[112294, 2346, 156, 2, 30, "Input",ExpressionUUID->"68b0d9fd-8332-4846-a959-064167f89dd9"],
-Cell[112453, 2350, 2439, 50, 140, "Output",ExpressionUUID->"3ee38523-6e50-4d3c-8460-df34dd743595"]
+Cell[70442, 1465, 410, 9, 30, "Input",ExpressionUUID->"ab34ceff-d72f-454d-8dfa-b809a0b5d9c0"],
+Cell[70855, 1476, 323, 6, 34, "Output",ExpressionUUID->"929c449a-4b11-46e2-9ba9-474384c30c0b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71215, 1487, 3089, 71, 367, "Input",ExpressionUUID->"2f914193-d7e8-4dbc-9cca-29b986785c8d"],
+Cell[74307, 1560, 21776, 430, 61, "Output",ExpressionUUID->"da2440ed-2a1e-4d99-9a6a-f795d004ef80"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[96120, 1995, 281, 6, 30, "Input",ExpressionUUID->"1e777a0e-4c2b-4d8b-b0cc-d2ee37f1b2a8"],
+Cell[96404, 2003, 39277, 761, 61, "Output",ExpressionUUID->"e4c74448-10e2-4d9e-9620-2f59ec1b452b"]
+}, Open  ]],
+Cell[135696, 2767, 175, 2, 30, "Input",ExpressionUUID->"bb8ae36e-d48c-43cb-83cb-bdb29b2821fe"],
+Cell[CellGroupData[{
+Cell[135896, 2773, 330, 7, 30, "Input",ExpressionUUID->"1c2f25fc-be6b-4d23-b1a6-0a0a46a3dab7"],
+Cell[136229, 2782, 234, 4, 34, "Output",ExpressionUUID->"4303e663-b0b1-4dcd-91b2-f0bbd59bc376"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[136500, 2791, 270, 5, 30, "Input",ExpressionUUID->"fb2ea7e6-a627-4391-82b3-4f66132c996c"],
+Cell[136773, 2798, 210, 3, 34, "Output",ExpressionUUID->"b3b26550-2f87-48a0-a202-ee08244e2c5c"]
+}, Open  ]],
+Cell[136998, 2804, 4188, 97, 409, "Input",ExpressionUUID->"b458e4d2-9298-49f8-919b-efa8fefba5d2"],
+Cell[CellGroupData[{
+Cell[141211, 2905, 1114, 30, 94, "Input",ExpressionUUID->"0c82a753-972d-4df7-b9ce-147d0eef2291"],
+Cell[142328, 2937, 381, 8, 34, "Output",ExpressionUUID->"ca05f9d8-1624-4465-b53f-68aa803f7f17"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[142746, 2950, 207, 3, 30, "Input",ExpressionUUID->"02cdf9b8-21c2-4f6c-8ba4-73307d0f3a27"],
+Cell[142956, 2955, 469, 9, 34, "Output",ExpressionUUID->"5cc561a1-0611-4e69-93c6-9aae70fb83fa"]
+}, Open  ]],
+Cell[143440, 2967, 580, 13, 52, "Input",ExpressionUUID->"d941c046-dd33-4f8f-b56a-6ea57f60d931"],
+Cell[CellGroupData[{
+Cell[144045, 2984, 156, 2, 30, "Input",ExpressionUUID->"68b0d9fd-8332-4846-a959-064167f89dd9"],
+Cell[144204, 2988, 2439, 50, 140, "Output",ExpressionUUID->"3ee38523-6e50-4d3c-8460-df34dd743595"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[114941, 2406, 164, 3, 67, "Section",ExpressionUUID->"e8bfb3f7-2b81-42d6-9038-d2afa34311e5"],
-Cell[115108, 2411, 928, 22, 136, "Input",ExpressionUUID->"2c34a19c-31a7-4f7f-bd0a-d81f240e2547"],
+Cell[146692, 3044, 164, 3, 67, "Section",ExpressionUUID->"e8bfb3f7-2b81-42d6-9038-d2afa34311e5"],
+Cell[146859, 3049, 928, 22, 136, "Input",ExpressionUUID->"2c34a19c-31a7-4f7f-bd0a-d81f240e2547"],
 Cell[CellGroupData[{
-Cell[116061, 2437, 608, 14, 73, "Input",ExpressionUUID->"464c61f4-2a6d-42a8-8c40-3adeb5e391c5"],
-Cell[116672, 2453, 4228, 94, 61, "Output",ExpressionUUID->"26fc806d-c6a3-4930-824f-391d50ab8332"]
+Cell[147812, 3075, 608, 14, 73, "Input",ExpressionUUID->"464c61f4-2a6d-42a8-8c40-3adeb5e391c5"],
+Cell[148423, 3091, 4228, 94, 61, "Output",ExpressionUUID->"26fc806d-c6a3-4930-824f-391d50ab8332"]
 }, Open  ]],
-Cell[120915, 2550, 2130, 50, 199, "Input",ExpressionUUID->"b5d97fd2-218d-4733-94d5-6f0c5cc58004"],
+Cell[152666, 3188, 2130, 50, 199, "Input",ExpressionUUID->"b5d97fd2-218d-4733-94d5-6f0c5cc58004"],
 Cell[CellGroupData[{
-Cell[123070, 2604, 299, 5, 30, "Input",ExpressionUUID->"2166fe6a-1894-4b80-b727-a0adceffe49e"],
-Cell[123372, 2611, 39873, 772, 61, "Output",ExpressionUUID->"d07abeb8-c278-4dbf-a9a2-b51ad5f3ad83"],
+Cell[154821, 3242, 299, 5, 30, "Input",ExpressionUUID->"2166fe6a-1894-4b80-b727-a0adceffe49e"],
+Cell[155123, 3249, 39873, 772, 61, "Output",ExpressionUUID->"d07abeb8-c278-4dbf-a9a2-b51ad5f3ad83"],
 Cell[CellGroupData[{
-Cell[163270, 3387, 5309, 118, 54, "Echo",ExpressionUUID->"d5c0f732-b637-483e-a84f-d95d79ec7765"],
-Cell[168582, 3507, 5225, 115, 54, "Echo",ExpressionUUID->"6b25a5b7-b4c4-48f7-b114-031e19f5ccc0"],
-Cell[173810, 3624, 5401, 119, 54, "Echo",ExpressionUUID->"55a577e9-cf25-4325-9cc9-7e2d894d69b1"]
+Cell[195021, 4025, 5309, 118, 54, "Echo",ExpressionUUID->"d5c0f732-b637-483e-a84f-d95d79ec7765"],
+Cell[200333, 4145, 5225, 115, 54, "Echo",ExpressionUUID->"6b25a5b7-b4c4-48f7-b114-031e19f5ccc0"],
+Cell[205561, 4262, 5401, 119, 54, "Echo",ExpressionUUID->"55a577e9-cf25-4325-9cc9-7e2d894d69b1"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[179260, 3749, 5856, 125, 123, "Input",ExpressionUUID->"5df98ce3-1552-44f6-85f7-ba3cf93a29a2"],
-Cell[185119, 3876, 341, 4, 287, "Output",ExpressionUUID->"672436cb-157a-47af-8a73-a7c8e29bb72f"]
+Cell[211011, 4387, 5856, 125, 123, "Input",ExpressionUUID->"5df98ce3-1552-44f6-85f7-ba3cf93a29a2"],
+Cell[216870, 4514, 341, 4, 287, "Output",ExpressionUUID->"672436cb-157a-47af-8a73-a7c8e29bb72f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[185497, 3885, 5697, 120, 123, "Input",ExpressionUUID->"74b24dc6-f116-43d8-842e-d5951b7a9453"],
-Cell[191197, 4007, 416, 6, 329, "Output",ExpressionUUID->"545012df-52a8-4f03-91e3-14d340badf79"]
+Cell[217248, 4523, 5697, 120, 123, "Input",ExpressionUUID->"74b24dc6-f116-43d8-842e-d5951b7a9453"],
+Cell[222948, 4645, 416, 6, 329, "Output",ExpressionUUID->"545012df-52a8-4f03-91e3-14d340badf79"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[191650, 4018, 209, 3, 29, "Input",ExpressionUUID->"f7f570d6-d2b5-4d59-aaf9-45aad98d7dd3"],
-Cell[191862, 4023, 306, 5, 38, "Output",ExpressionUUID->"e23e319d-5879-466c-ac62-d604c5ebf0e8"]
+Cell[223401, 4656, 209, 3, 30, "Input",ExpressionUUID->"f7f570d6-d2b5-4d59-aaf9-45aad98d7dd3"],
+Cell[223613, 4661, 308, 5, 34, "Output",ExpressionUUID->"e23e319d-5879-466c-ac62-d604c5ebf0e8"]
 }, Open  ]],
-Cell[192183, 4031, 151, 2, 29, "Input",ExpressionUUID->"1a7641b2-1c95-413c-bd0c-7ef79cccfd85"]
+Cell[223936, 4669, 151, 2, 30, "Input",ExpressionUUID->"1a7641b2-1c95-413c-bd0c-7ef79cccfd85"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[192371, 4038, 153, 3, 67, "Section",ExpressionUUID->"425ac166-e866-4625-aa17-e4cdd7c9cd85"],
-Cell[192527, 4043, 1715, 35, 370, "Input",ExpressionUUID->"b2e7232d-db07-459c-9a7a-70f52bce782b"],
-Cell[194245, 4080, 1429, 31, 376, "Input",ExpressionUUID->"45a97e86-8c1f-46b0-9438-5904e8b6e107"]
+Cell[224124, 4676, 153, 3, 67, "Section",ExpressionUUID->"425ac166-e866-4625-aa17-e4cdd7c9cd85"],
+Cell[224280, 4681, 1715, 35, 370, "Input",ExpressionUUID->"b2e7232d-db07-459c-9a7a-70f52bce782b"],
+Cell[225998, 4718, 1429, 31, 376, "Input",ExpressionUUID->"45a97e86-8c1f-46b0-9438-5904e8b6e107"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[195711, 4116, 150, 3, 53, "Section",ExpressionUUID->"45c7d2a3-3f31-41c3-aa64-b6e0e7ca164a"],
+Cell[227464, 4754, 150, 3, 53, "Section",ExpressionUUID->"45c7d2a3-3f31-41c3-aa64-b6e0e7ca164a"],
 Cell[CellGroupData[{
-Cell[195886, 4123, 174, 3, 32, "Item",ExpressionUUID->"a3f0f5a3-a023-4c95-b413-941c5a3ac0c2"],
+Cell[227639, 4761, 174, 3, 32, "Item",ExpressionUUID->"a3f0f5a3-a023-4c95-b413-941c5a3ac0c2"],
 Cell[CellGroupData[{
-Cell[196085, 4130, 161, 3, 27, "Subitem",ExpressionUUID->"9c27bd91-2f79-4cc2-b40c-40d5ec4bb150"],
-Cell[196249, 4135, 224, 4, 25, "Subsubitem",ExpressionUUID->"0a2e5018-8f3c-4a8d-9ab0-38ca3bf07576"],
-Cell[196476, 4141, 164, 3, 25, "Subsubitem",ExpressionUUID->"6a66671d-0b17-4dd0-b239-454fb96ee97c"],
-Cell[196643, 4146, 152, 3, 25, "Subsubitem",ExpressionUUID->"ca6a38cd-e230-4fd3-886d-a06c07e6f0b5"]
+Cell[227838, 4768, 161, 3, 27, "Subitem",ExpressionUUID->"9c27bd91-2f79-4cc2-b40c-40d5ec4bb150"],
+Cell[228002, 4773, 224, 4, 25, "Subsubitem",ExpressionUUID->"0a2e5018-8f3c-4a8d-9ab0-38ca3bf07576"],
+Cell[228229, 4779, 164, 3, 25, "Subsubitem",ExpressionUUID->"6a66671d-0b17-4dd0-b239-454fb96ee97c"],
+Cell[228396, 4784, 152, 3, 25, "Subsubitem",ExpressionUUID->"ca6a38cd-e230-4fd3-886d-a06c07e6f0b5"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[196832, 4154, 157, 3, 27, "Subitem",ExpressionUUID->"ef6fc18d-62f6-4337-8bb6-bddc90c78656"],
-Cell[196992, 4159, 200, 3, 25, "Subsubitem",ExpressionUUID->"3088916b-fce6-48ea-9d69-9a91fe19e7d4"]
+Cell[228585, 4792, 157, 3, 27, "Subitem",ExpressionUUID->"ef6fc18d-62f6-4337-8bb6-bddc90c78656"],
+Cell[228745, 4797, 200, 3, 25, "Subsubitem",ExpressionUUID->"3088916b-fce6-48ea-9d69-9a91fe19e7d4"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[197229, 4167, 162, 3, 27, "Subitem",ExpressionUUID->"abc54f8b-96f1-4770-b5dd-a13af85e4c6d"],
-Cell[197394, 4172, 207, 4, 25, "Subsubitem",ExpressionUUID->"59a2e855-de58-4e35-9fb1-7307972c491a"],
-Cell[197604, 4178, 210, 4, 25, "Subsubitem",ExpressionUUID->"14514e48-316e-48a4-b6aa-fdf726b826ba"],
-Cell[197817, 4184, 164, 3, 25, "Subsubitem",ExpressionUUID->"d938135c-1cbe-4648-b3e2-3b052d467495"],
-Cell[197984, 4189, 169, 3, 25, "Subsubitem",ExpressionUUID->"600873ce-7f1b-4a4e-bb44-61f0363e8ce9"],
-Cell[198156, 4194, 163, 3, 25, "Subsubitem",ExpressionUUID->"677d95f2-8e67-4a18-a2b3-462b208bbe72"]
+Cell[228982, 4805, 162, 3, 27, "Subitem",ExpressionUUID->"abc54f8b-96f1-4770-b5dd-a13af85e4c6d"],
+Cell[229147, 4810, 207, 4, 25, "Subsubitem",ExpressionUUID->"59a2e855-de58-4e35-9fb1-7307972c491a"],
+Cell[229357, 4816, 210, 4, 25, "Subsubitem",ExpressionUUID->"14514e48-316e-48a4-b6aa-fdf726b826ba"],
+Cell[229570, 4822, 164, 3, 25, "Subsubitem",ExpressionUUID->"d938135c-1cbe-4648-b3e2-3b052d467495"],
+Cell[229737, 4827, 169, 3, 25, "Subsubitem",ExpressionUUID->"600873ce-7f1b-4a4e-bb44-61f0363e8ce9"],
+Cell[229909, 4832, 163, 3, 25, "Subsubitem",ExpressionUUID->"677d95f2-8e67-4a18-a2b3-462b208bbe72"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[198380, 4204, 160, 3, 67, "Section",ExpressionUUID->"029fc2b3-7cdc-4874-9797-da2f207ceb9c"],
-Cell[198543, 4209, 220, 3, 29, "Input",ExpressionUUID->"f8d87437-2960-4a42-bf49-f690bc32a350"],
-Cell[198766, 4214, 479, 11, 51, "Input",ExpressionUUID->"504e89d4-25dc-4b5e-9c1b-f5be216705d5"],
-Cell[199248, 4227, 779, 18, 51, "Input",ExpressionUUID->"8a368a59-0624-4211-bbe2-ff760382b54d"],
-Cell[200030, 4247, 174, 2, 29, "Input",ExpressionUUID->"15c7b681-4990-4d0f-a429-c67d38053ff2"],
+Cell[230133, 4842, 160, 3, 67, "Section",ExpressionUUID->"029fc2b3-7cdc-4874-9797-da2f207ceb9c"],
+Cell[230296, 4847, 220, 3, 30, "Input",ExpressionUUID->"f8d87437-2960-4a42-bf49-f690bc32a350"],
+Cell[230519, 4852, 479, 11, 52, "Input",ExpressionUUID->"504e89d4-25dc-4b5e-9c1b-f5be216705d5"],
+Cell[231001, 4865, 779, 18, 52, "Input",ExpressionUUID->"8a368a59-0624-4211-bbe2-ff760382b54d"],
+Cell[231783, 4885, 174, 2, 30, "Input",ExpressionUUID->"15c7b681-4990-4d0f-a429-c67d38053ff2"],
 Cell[CellGroupData[{
-Cell[200229, 4253, 193, 3, 29, "Input",ExpressionUUID->"ec647f8d-1224-4624-9e85-081e14facf4c"],
-Cell[200425, 4258, 199, 3, 33, "Output",ExpressionUUID->"1545629e-a600-4f7c-a11d-bc567218bf9c"]
+Cell[231982, 4891, 193, 3, 30, "Input",ExpressionUUID->"ec647f8d-1224-4624-9e85-081e14facf4c"],
+Cell[232178, 4896, 199, 3, 34, "Output",ExpressionUUID->"1545629e-a600-4f7c-a11d-bc567218bf9c"]
 }, Open  ]],
-Cell[200639, 4264, 330, 13, 168, "Program",ExpressionUUID->"995924eb-90f7-4576-a708-2cf02a92809c"],
-Cell[200972, 4279, 356, 14, 202, "Program",ExpressionUUID->"079f0429-d45a-41e1-8763-be8ec114a86d"],
-Cell[201331, 4295, 172, 3, 29, "Input",ExpressionUUID->"29cc4136-c6ae-4447-b172-57948d6f2e92"]
+Cell[232392, 4902, 330, 13, 169, "Program",ExpressionUUID->"995924eb-90f7-4576-a708-2cf02a92809c"],
+Cell[232725, 4917, 356, 14, 203, "Program",ExpressionUUID->"079f0429-d45a-41e1-8763-be8ec114a86d"],
+Cell[233084, 4933, 172, 3, 29, "Input",ExpressionUUID->"29cc4136-c6ae-4447-b172-57948d6f2e92"]
 }, Open  ]]
 }
 ]

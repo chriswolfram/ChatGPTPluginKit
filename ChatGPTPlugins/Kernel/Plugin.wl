@@ -132,7 +132,7 @@ pluginManifestJSON[plugin_ChatGPTPlugin, port_] :=
 	|>
 
 
-(* URLDispatched *)
+(* URLDispatcher *)
 
 pluginURLDispatcher[plugin_ChatGPTPlugin, port_] :=
 	URLDispatcher[{
@@ -149,6 +149,25 @@ addCORS[expr_] :=
 				"Access-Control-Allow-Headers" -> "Accept, *"
 			}
 		|>
+	]
+
+
+(* Summary box *)
+
+ChatGPTPlugin /: MakeBoxes[plugin_ChatGPTPlugin, form:StandardForm]:=
+	BoxForm`ArrangeSummaryBox[
+		ChatGPTPlugin,
+		plugin,
+		None,
+		{
+			BoxForm`SummaryItem@{"name: ", plugin["Name"]},
+			BoxForm`SummaryItem@{"description: ", plugin["Description"]}
+		},
+		{
+			BoxForm`SummaryItem@{"endpoints: ", Column@plugin["Endpoints"]},
+			BoxForm`SummaryItem@{"prompt: ", plugin["Prompt"]}
+		},
+		form
 	]
 
 

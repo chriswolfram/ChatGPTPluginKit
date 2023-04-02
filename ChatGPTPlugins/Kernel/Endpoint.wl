@@ -138,5 +138,22 @@ removeHelp[params_] :=
 	MapAt[KeyDrop["Help"], params, {All,2}]
 
 
+(* Summary box *)
+
+ChatGPTPluginEndpoint /: MakeBoxes[endpoint_ChatGPTPluginEndpoint, form:StandardForm]:=
+	BoxForm`ArrangeSummaryBox[
+		ChatGPTPluginEndpoint,
+		endpoint,
+		None,
+		{
+			BoxForm`SummaryItem@{"name: ", endpoint["OperationID"]}
+		},
+		{
+			BoxForm`SummaryItem@{"prompt: ", endpoint["Prompt"]}
+		},
+		form
+	]
+
+
 End[];
 EndPackage[];
