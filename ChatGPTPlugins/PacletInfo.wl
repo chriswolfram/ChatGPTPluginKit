@@ -1,17 +1,25 @@
+(* ::Package:: *)
+
 PacletObject[
   <|
     "Name" -> "ChristopherWolfram/ChatGPTPlugins",
-    "Description" -> "One-line description of the paclet",
+    "Description" -> "Deploy local plugins for ChatGPT",
     "Creator" -> "Christopher Wolfram",
+    "License" -> "MIT",
+    "PublisherID" -> "ChristopherWolfram",
     "Version" -> "1.0.0",
     "WolframVersion" -> "13.2+",
-    "PublisherID" -> "ChristopherWolfram",
-    "License" -> "MIT",
     "Extensions" -> {
       {
         "Kernel",
         "Root" -> "Kernel",
-        "Context" -> {"ChristopherWolfram`ChatGPTPlugins`"}
+        "Context" -> {"ChristopherWolfram`ChatGPTPlugins`"},
+        "Symbols" -> {
+          "ChristopherWolfram`ChatGPTPlugins`$ChatGPTPluginPort",
+          "ChristopherWolfram`ChatGPTPlugins`ChatGPTPlugin",
+          "ChristopherWolfram`ChatGPTPlugins`ChatGPTPluginDeploy",
+          "ChristopherWolfram`ChatGPTPlugins`ChatGPTPluginEndpoint"
+        }
       },
       {
         "Documentation",
