@@ -106,7 +106,7 @@ endpoint_ChatGPTPluginEndpoint["APIFunction"] := endpointAPIFunction[endpoint]
 endpointAPIJSON[endpoint_ChatGPTPluginEndpoint] :=
 	<|
 		"/"<>endpoint["OperationID"] -> <|
-			"post" -> <|
+			"get" -> <|
 				"operationId" -> endpoint["OperationID"],
 				If[StringQ@endpoint["Prompt"], "summary" -> endpoint["Prompt"], Nothing],
 				"responses" -> <|"200" -> <|"description" -> "OK"|>|>,
