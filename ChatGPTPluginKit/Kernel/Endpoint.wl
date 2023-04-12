@@ -18,15 +18,18 @@ ChatGPTPluginEndpoint[args___] /; !argumentsChatGPTPluginEndpointQ[args] := crea
 
 
 argumentsChatGPTPluginEndpointQ[
-	{opID_?StringQ, prompt: _?StringQ | _Missing},
-	paramsList: {
-		(_String -> KeyValuePattern[{
-				"Interpreter" -> _,
-				"Help" -> _,
-				"Required" -> _
-			}])...
-	},
-	f_,
+	KeyValuePattern[{
+		"OperationID" -> _?StringQ,
+		"Prompt" -> _?StringQ | _Missing,
+		"Parameters" -> {
+			(_String -> KeyValuePattern[{
+					"Interpreter" -> _,
+					"Help" -> _,
+					"Required" -> _
+				}])...
+		},
+		"Function" -> _
+	}]?AssociationQ,
 	{OptionsPattern[]}
 ] :=
 	True
@@ -36,24 +39,29 @@ argumentsChatGPTPluginEndpointQ[___] := False
 
 createChatGPTPluginEndpoint[args___] :=
 	Enclose[
-		icreateChatGPTPluginEndpoint@@Confirm[ArgumentsOptions[ChatGPTPluginEndpoint[args], 3]],
+		icreateChatGPTPluginEndpoint@@Confirm[ArgumentsOptions[ChatGPTPluginEndpoint[args], {2,3}]],
 		"InheritedFailure"
 	]
 
 icreateChatGPTPluginEndpoint[{opSpec_, params_, f_}, opts_] :=
 	Enclose[
 		ChatGPTPluginEndpoint[
-			Confirm@normalizeOpSpec[opSpec],
-			Confirm@normalizeParamsList[params],
-			f,
+			Join[
+				Confirm@normalizeOpSpec[opSpec],
+				<|
+					"Parameters" -> Confirm@normalizeParamsList[params],
+					"Function" -> f
+				|>,
+				f
+			],
 			opts
 		],
 		"InheritedFailure"
 	]
 
 
-normalizeOpSpec[opID_?StringQ] := {opID, Missing["NotSpecified"]}
-normalizeOpSpec[op: {opID_?StringQ, prompt: _?StringQ | _Missing}] := op
+normalizeOpSpec[opID_?StringQ] := <|"OperationID" -> opID, "Prompt" -> Missing["NotSpecified"]|>
+normalizeOpSpec[{opID_?StringQ, prompt: _?StringQ | _Missing}] := <|"OperationID" -> opID, "Prompt" -> prompt|>
 normalizeOpSpec[spec_] :=
 	Failure["InvalidOperationSpecification", <|
 		"MessageTemplate" -> "Expected an operation name, or a list containing an operation name and a prompt, but found `1` instead.",
@@ -87,16 +95,31 @@ normalizeParamProps[props_?AssociationQ] :=
 	}, Last]
 
 
+(* Association constructor *)
+
+icreateChatGPTPluginEndpoint[{opName_, body_}, opts_] :=
+	Enclose[
+		ChatGPTPluginEndpoint[
+			{opName},
+			normalizeParamsList[params],
+			f,
+			opts
+		],
+		"InheritedFailure"
+	]
+
+
 
 (* Accessors *)
 
-HoldPattern[ChatGPTPluginEndpoint][op_, params_, f_, opts_]["Operation"] := op
-HoldPattern[ChatGPTPluginEndpoint][op_, params_, f_, opts_]["Parameters"] := params
-HoldPattern[ChatGPTPluginEndpoint][op_, params_, f_, opts_]["Function"] := f
-HoldPattern[ChatGPTPluginEndpoint][op_, params_, f_, opts_]["Options"] := opts
+HoldPattern[ChatGPTPluginEndpoint][data_, opts_]["Data"] := data
+HoldPattern[ChatGPTPluginEndpoint][data_, opts_]["Options"] := opts
 
-endpoint_ChatGPTPluginEndpoint["OperationID"] := endpoint["Operation"][[1]]
-endpoint_ChatGPTPluginEndpoint["Prompt"] := endpoint["Operation"][[2]]
+endpoint_ChatGPTPluginEndpoint["OperationID"] := endpoint["data"]["OperationID"]
+endpoint_ChatGPTPluginEndpoint["Prompt"] := endpoint["data"]["Prompt"]
+endpoint_ChatGPTPluginEndpoint["Parameters"] := endpoint["data"]["Parameters"]
+endpoint_ChatGPTPluginEndpoint["Function"] := endpoint["data"]["Function"]
+
 endpoint_ChatGPTPluginEndpoint["OpenAPIJSON"] := endpointAPIJSON[endpoint]
 endpoint_ChatGPTPluginEndpoint["APIFunction"] := endpointAPIFunction[endpoint]
 
