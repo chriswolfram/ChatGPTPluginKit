@@ -10,24 +10,27 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     11644,        306]
-NotebookOptionsPosition[      7632,        219]
-NotebookOutlinePosition[      8568,        245]
-CellTagsIndexPosition[      8525,        242]
+NotebookDataLength[     11735,        307]
+NotebookOptionsPosition[      7728,        220]
+NotebookOutlinePosition[      8658,        246]
+CellTagsIndexPosition[      8615,        243]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["ChatGPT Plugins", "GuideTitle",
+Cell["ChatGPTPluginKit", "GuideTitle",
+ CellChangeTimes->{{3.890321725626473*^9, 3.890321727902869*^9}},
  CellID->1898039737,ExpressionUUID->"b66b836d-8bd3-429b-ad1a-e0a878751cb0"],
 
 Cell["\<\
 ChatGPT provides a plugin mechanism allowing the AI model to call external \
-services. These functions make it possible to deploy a local ChatGPT plugin.\
+services. These functions make it possible to create and deploy a local \
+ChatGPT plugin.\
 \>", "GuideAbstract",
- CellChangeTimes->{{3.889473466555068*^9, 3.889473508106431*^9}},
+ CellChangeTimes->{{3.889473466555068*^9, 3.889473508106431*^9}, {
+  3.890321736711212*^9, 3.890321738747204*^9}},
  CellID->1631767221,ExpressionUUID->"e67747be-03bf-4bb8-84ab-1e393d7f257f"]
 }, Open  ]],
 
@@ -40,7 +43,7 @@ Cell[TextData[{
  Cell[BoxData[
   ButtonBox["ChatGPTPlugin",
    BaseStyle->"Link",
-   ButtonData->"paclet:ChristopherWolfram/ChatGPTPlugins/ref/ChatGPTPlugin"]],
+   ButtonData->"paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPlugin"]],
    "InlineGuideFunction",
   TaggingRules->{"PageType" -> "Function"},
   CellTags->"c40ac8e4-27e1-4161-a8df-4d4f38357a23",ExpressionUUID->
@@ -57,7 +60,7 @@ Cell[TextData[{
   ButtonBox["ChatGPTPluginEndpoint",
    BaseStyle->"Link",
    ButtonData->
-    "paclet:ChristopherWolfram/ChatGPTPlugins/ref/ChatGPTPluginEndpoint"]], 
+    "paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPluginEndpoint"]], 
   "InlineGuideFunction",
   TaggingRules->{"PageType" -> "Function"},
   CellTags->"c5c6736a-1ff4-4e4e-8fcf-2d9846cbae62",ExpressionUUID->
@@ -73,7 +76,7 @@ Cell[TextData[{
   ButtonBox["ChatGPTPluginDeploy",
    BaseStyle->"Link",
    ButtonData->
-    "paclet:ChristopherWolfram/ChatGPTPlugins/ref/ChatGPTPluginDeploy"]], 
+    "paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPluginDeploy"]], 
   "InlineGuideFunction",
   TaggingRules->{"PageType" -> "Function"},
   CellTags->"c90df6b6-99e7-4eba-ae75-f768f67078e7",ExpressionUUID->
@@ -86,28 +89,26 @@ Cell[TextData[{
 Cell[CellGroupData[{
 
 Cell["\t", "GuideDelimiter",
- CellID->386569021,ExpressionUUID->"c25985dc-5553-4b36-b0a1-4c2944f46289"],
+ CellID->1013889632,ExpressionUUID->"29abd819-1bbe-4ac9-bec0-999427dd8134"],
 
 Cell[TextData[{
  Cell[BoxData[
   ButtonBox["$ChatGPTPluginPort",
    BaseStyle->"Link",
-   ButtonData->
-    "paclet:ChristopherWolfram/ChatGPTPlugins/ref/$ChatGPTPluginPort"]], 
-  "InlineGuideFunction",
-  TaggingRules->{"PageType" -> "Function"},ExpressionUUID->
-  "a596eae4-efe2-4eda-8dd9-1964d27a9fab"],
+   ButtonData->"paclet:Wolfram/ChatGPTPluginKit/ref/$ChatGPTPluginPort"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "b41fa053-9335-4c02-851f-0ad1e216a3ab"],
  Cell[BoxData[
   RowBox[{
   Cell[TextData[StyleBox[
    " \[FilledVerySmallSquare] ", "InlineSeparator"]],ExpressionUUID->
-    "a964110b-9f50-446b-b217-f84a0ffafdac"], 
+    "b1fde370-1818-46a9-9156-446d4faa368a"], 
    DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
     "8d263370-70e1-4edf-9814-2cdfe8000c26", 
-     "2ab0553f-d924-4381-8bc2-b0c4cfcc58f8"], $CellContext`cellobj$$ = 
+     "240fe19c-ed47-4c25-b7a9-b445ab3da67d"], $CellContext`cellobj$$ = 
     CellObject[
-    "b68c0fd4-797a-4dcd-b1c1-c2e375792056", 
-     "b89065d5-424a-4d0f-8ffb-c560ae654cb7"]}, 
+    "1bafe79f-b594-4410-b98b-7ef1a0a81599", 
+     "4b25337e-6f00-4741-8001-1d6453a9029f"]}, 
     TemplateBox[{
       GraphicsBox[{{
          Thickness[0.06], 
@@ -130,10 +131,11 @@ Cell[TextData[{
     Initialization:>($CellContext`nbobj$$ = 
       EvaluationNotebook[]; $CellContext`cellobj$$ = EvaluationCell[])]}]], 
   "InlineListingAddButton",ExpressionUUID->
-  "b68c0fd4-797a-4dcd-b1c1-c2e375792056"]
+  "1bafe79f-b594-4410-b98b-7ef1a0a81599"]
 }], "InlineGuideFunctionListing",
- CellChangeTimes->{{3.889474784754342*^9, 3.889474787846629*^9}},
- CellID->927503772,ExpressionUUID->"433e37d3-9ae0-4f90-aea6-0ef2d29f2414"]
+ CellChangeTimes->{{3.890321870623818*^9, 3.890321870623849*^9}, {
+  3.8903219647656193`*^9, 3.890321971664442*^9}},
+ CellID->852661928,ExpressionUUID->"c027d326-bad4-46f6-b19b-897dc5821552"]
 }, Open  ]]
 }, Open  ]],
 
@@ -193,19 +195,18 @@ Cell["Guide", "Categorization",
  CellLabel->"Entity Type",
  CellID->948502599,ExpressionUUID->"cdb4bca9-fe73-4b92-86b1-31ea03392e84"],
 
-Cell["ChristopherWolfram/ChatGPTPlugins", "Categorization",
+Cell["Wolfram/ChatGPTPluginKit", "Categorization",
  CellLabel->"Paclet Name",
  CellID->712069712,ExpressionUUID->"797a2868-0a59-488c-854a-098fa8baae8e"],
 
-Cell["ChristopherWolfram`ChatGPTPlugins`", "Categorization",
+Cell["Wolfram`ChatGPTPluginKit`", "Categorization",
  CellLabel->"Context",
  CellID->1976768500,ExpressionUUID->"bbcf70ed-246b-40a2-8cc6-137f335b83d8"],
 
-Cell["ChristopherWolfram/ChatGPTPlugins/guide/ChatGPTPlugins", \
-"Categorization",
+Cell["Wolfram/ChatGPTPluginKit/guide/ChatGPTPluginKit", "Categorization",
  CellLabel->"URI",
  CellID->1976160410,ExpressionUUID->"047db68a-a92e-4dc8-8978-d017e3d3003b"]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -218,7 +219,7 @@ Cell["XXXX", "Keywords",
 }, Open  ]]
 },
 WindowSize->{700, 770},
-WindowMargins->{{399, Automatic}, {Automatic, 54}},
+WindowMargins->{{398, Automatic}, {Automatic, 54}},
 TaggingRules->{
  "DocuToolsSettingsInternal" -> {
    "$PacletVersion" -> "0.10.2323", "$ApplicationName" -> "Mathematica", 
@@ -227,8 +228,8 @@ TaggingRules->{
     "/Users/christopher/cvs/Mathematica/Documentation/English/", 
     "$UseNewPageDialog" -> ""}, 
   "WelcomeScreenSettings" -> {"FEStarting" -> False}, "Paclet" -> 
-  "ChristopherWolfram/ChatGPTPlugins"},
-FrontEndVersion->"13.3 for Mac OS X x86 (64-bit) (March 21, 2023)",
+  "Wolfram/ChatGPTPluginKit"},
+FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (November 18, 2022)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStylesExt.nb", 
   CharacterEncoding -> "UTF-8"],
 ExpressionUUID->"8d263370-70e1-4edf-9814-2cdfe8000c26"
@@ -245,66 +246,66 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 113, 1, 88, "GuideTitle",ExpressionUUID->"b66b836d-8bd3-429b-ad1a-e0a878751cb0",
+Cell[580, 22, 180, 2, 88, "GuideTitle",ExpressionUUID->"b66b836d-8bd3-429b-ad1a-e0a878751cb0",
  CellID->1898039737],
-Cell[696, 25, 328, 5, 47, "GuideAbstract",ExpressionUUID->"e67747be-03bf-4bb8-84ab-1e393d7f257f",
+Cell[763, 26, 390, 7, 47, "GuideAbstract",ExpressionUUID->"e67747be-03bf-4bb8-84ab-1e393d7f257f",
  CellID->1631767221]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1061, 35, 109, 1, 72, "GuideFunctionsSection",ExpressionUUID->"05384643-2e5c-4b5d-a791-e67d5ede8bfe",
+Cell[1190, 38, 109, 1, 72, "GuideFunctionsSection",ExpressionUUID->"05384643-2e5c-4b5d-a791-e67d5ede8bfe",
  CellID->1745511157],
-Cell[1173, 38, 644, 14, 27, "GuideText",ExpressionUUID->"864a183e-2feb-493b-a253-ff7cc485b8ad",
+Cell[1302, 41, 644, 14, 27, "GuideText",ExpressionUUID->"864a183e-2feb-493b-a253-ff7cc485b8ad",
  CellID->31914032],
-Cell[1820, 54, 630, 14, 27, "GuideText",ExpressionUUID->"43fbf19f-410d-4bd1-ba8f-06e899fc0910",
+Cell[1949, 57, 630, 14, 27, "GuideText",ExpressionUUID->"43fbf19f-410d-4bd1-ba8f-06e899fc0910",
  CellID->1655707721],
-Cell[2453, 70, 581, 13, 27, "GuideText",ExpressionUUID->"c6d6e456-d90c-4c46-bac3-819791d70f59",
+Cell[2582, 73, 581, 13, 27, "GuideText",ExpressionUUID->"c6d6e456-d90c-4c46-bac3-819791d70f59",
  CellID->1873694747],
 Cell[CellGroupData[{
-Cell[3059, 87, 103, 1, 27, "GuideDelimiter",ExpressionUUID->"c25985dc-5553-4b36-b0a1-4c2944f46289",
- CellID->386569021],
-Cell[3165, 90, 1817, 45, 27, "InlineGuideFunctionListing",ExpressionUUID->"433e37d3-9ae0-4f90-aea6-0ef2d29f2414",
- CellID->927503772]
+Cell[3188, 90, 104, 1, 27, "GuideDelimiter",ExpressionUUID->"29abd819-1bbe-4ac9-bec0-999427dd8134",
+ CellID->1013889632],
+Cell[3295, 93, 1810, 44, 27, "InlineGuideFunctionListing",ExpressionUUID->"c027d326-bad4-46f6-b19b-897dc5821552",
+ CellID->852661928]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5031, 141, 119, 1, 74, "GuideTutorialsSection",ExpressionUUID->"44cd7134-10c4-4e9c-bc2e-fbba6c0427bb",
+Cell[5154, 143, 119, 1, 74, "GuideTutorialsSection",ExpressionUUID->"44cd7134-10c4-4e9c-bc2e-fbba6c0427bb",
  CellID->2119586078],
-Cell[5153, 144, 105, 1, 24, "GuideTutorial",ExpressionUUID->"c5acee5d-38df-4b8f-9812-7f4324025f79",
+Cell[5276, 146, 105, 1, 24, "GuideTutorial",ExpressionUUID->"c5acee5d-38df-4b8f-9812-7f4324025f79",
  CellID->1424476510],
-Cell[5261, 147, 105, 1, 24, "GuideTutorial",ExpressionUUID->"d6536eaf-7596-49e8-9e58-92dfa4bd044b",
+Cell[5384, 149, 105, 1, 24, "GuideTutorial",ExpressionUUID->"d6536eaf-7596-49e8-9e58-92dfa4bd044b",
  CellID->1029006814]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5403, 153, 190, 2, 74, "GuideMoreAboutSection",ExpressionUUID->"2290eda2-f76a-4ee5-bb4b-cf374578e3ab",
+Cell[5526, 155, 190, 2, 74, "GuideMoreAboutSection",ExpressionUUID->"2290eda2-f76a-4ee5-bb4b-cf374578e3ab",
  CellID->831713607],
-Cell[5596, 157, 105, 1, 24, "GuideMoreAbout",ExpressionUUID->"4904f3b8-087d-45b7-bc4f-4c804451f98f",
+Cell[5719, 159, 105, 1, 24, "GuideMoreAbout",ExpressionUUID->"4904f3b8-087d-45b7-bc4f-4c804451f98f",
  CellID->639534526],
-Cell[5704, 160, 105, 1, 24, "GuideMoreAbout",ExpressionUUID->"f0d83f08-1c0d-4428-8d29-ee8ac8159954",
+Cell[5827, 162, 105, 1, 24, "GuideMoreAbout",ExpressionUUID->"f0d83f08-1c0d-4428-8d29-ee8ac8159954",
  CellID->501125247]
 }, Open  ]],
-Cell[5824, 164, 125, 1, 74, "GuideRelatedLinksSection",ExpressionUUID->"c8c52101-4142-473a-9386-c1849211e6a4",
+Cell[5947, 166, 125, 1, 74, "GuideRelatedLinksSection",ExpressionUUID->"c8c52101-4142-473a-9386-c1849211e6a4",
  CellID->2128646442],
 Cell[CellGroupData[{
-Cell[5974, 169, 111, 1, 72, "MetadataSection",ExpressionUUID->"5284a271-0deb-4895-b295-e46589fa474d",
+Cell[6097, 171, 111, 1, 72, "MetadataSection",ExpressionUUID->"5284a271-0deb-4895-b295-e46589fa474d",
  CellID->1230675321],
-Cell[6088, 172, 477, 12, 26, "History",ExpressionUUID->"fa213b1c-6886-4377-bb98-f01767dca08f",
+Cell[6211, 174, 477, 12, 26, "History",ExpressionUUID->"fa213b1c-6886-4377-bb98-f01767dca08f",
  CellID->1545115790],
 Cell[CellGroupData[{
-Cell[6590, 188, 123, 1, 21, "CategorizationSection",ExpressionUUID->"b7c1f2a9-e4dd-4ee2-a1db-2dee2c41c3b9",
+Cell[6713, 190, 123, 1, 21, "CategorizationSection",ExpressionUUID->"b7c1f2a9-e4dd-4ee2-a1db-2dee2c41c3b9",
  CellID->1388823006],
-Cell[6716, 191, 133, 2, 70, "Categorization",ExpressionUUID->"cdb4bca9-fe73-4b92-86b1-31ea03392e84",
+Cell[6839, 193, 133, 2, 35, "Categorization",ExpressionUUID->"cdb4bca9-fe73-4b92-86b1-31ea03392e84",
  CellID->948502599],
-Cell[6852, 195, 161, 2, 70, "Categorization",ExpressionUUID->"797a2868-0a59-488c-854a-098fa8baae8e",
+Cell[6975, 197, 152, 2, 35, "Categorization",ExpressionUUID->"797a2868-0a59-488c-854a-098fa8baae8e",
  CellID->712069712],
-Cell[7016, 199, 159, 2, 70, "Categorization",ExpressionUUID->"bbcf70ed-246b-40a2-8cc6-137f335b83d8",
+Cell[7130, 201, 150, 2, 35, "Categorization",ExpressionUUID->"bbcf70ed-246b-40a2-8cc6-137f335b83d8",
  CellID->1976768500],
-Cell[7178, 203, 177, 3, 70, "Categorization",ExpressionUUID->"047db68a-a92e-4dc8-8978-d017e3d3003b",
+Cell[7283, 205, 168, 2, 35, "Categorization",ExpressionUUID->"047db68a-a92e-4dc8-8978-d017e3d3003b",
  CellID->1976160410]
-}, Closed]],
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[7392, 211, 110, 1, 21, "KeywordsSection",ExpressionUUID->"8d600f9f-45db-4fe9-a485-69f6d4c9de13",
+Cell[7488, 212, 110, 1, 31, "KeywordsSection",ExpressionUUID->"8d600f9f-45db-4fe9-a485-69f6d4c9de13",
  CellID->345926368],
-Cell[7505, 214, 99, 1, 70, "Keywords",ExpressionUUID->"6c092148-21e9-4d2e-aac1-9eec0f442654",
+Cell[7601, 215, 99, 1, 70, "Keywords",ExpressionUUID->"6c092148-21e9-4d2e-aac1-9eec0f442654",
  CellID->746234547]
 }, Closed]]
 }, Open  ]]

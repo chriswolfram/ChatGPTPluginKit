@@ -3,17 +3,17 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 13.3' *)
+(* CreatedBy='Mathematica 13.2' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     74244,       1627]
-NotebookOptionsPosition[     66570,       1466]
-NotebookOutlinePosition[     67742,       1499]
-CellTagsIndexPosition[     67662,       1494]
+NotebookDataLength[     73523,       1611]
+NotebookOptionsPosition[     65855,       1450]
+NotebookOutlinePosition[     67021,       1483]
+CellTagsIndexPosition[     66941,       1478]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -99,8 +99,7 @@ Cell[TextData[{
  Cell[BoxData[
   ButtonBox["ChatGPTPluginEndpoint",
    BaseStyle->"Link",
-   ButtonData->
-    "paclet:ChristopherWolfram/ChatGPTPlugins/ref/ChatGPTPluginEndpoint"]], 
+   ButtonData->"paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPluginEndpoint"]], 
   "InlineFormula",ExpressionUUID->"6182b7c7-2a15-4d2a-beb8-bc37bf3ab539"],
  " objects."
 }], "Notes",
@@ -129,8 +128,7 @@ Cell[TextData[{
  Cell[BoxData[
   ButtonBox["ChatGPTPluginDeploy",
    BaseStyle->"Link",
-   ButtonData->
-    "paclet:ChristopherWolfram/ChatGPTPlugins/ref/ChatGPTPluginDeploy"]], 
+   ButtonData->"paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPluginDeploy"]], 
   "InlineSeeAlsoFunction",
   TaggingRules->{"PageType" -> "Function"},ExpressionUUID->
   "ea2e6b8e-57fa-4626-99c5-c1886678c7a4"],
@@ -138,8 +136,7 @@ Cell[TextData[{
  Cell[BoxData[
   ButtonBox["ChatGPTPluginEndpoint",
    BaseStyle->"Link",
-   ButtonData->
-    "paclet:ChristopherWolfram/ChatGPTPlugins/ref/ChatGPTPluginEndpoint"]], 
+   ButtonData->"paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPluginEndpoint"]], 
   "InlineSeeAlsoFunction",
   TaggingRules->{"PageType" -> "Function"},ExpressionUUID->
   "ab2aa79d-0ad5-40ad-a991-008289871951"],
@@ -150,10 +147,10 @@ Cell[TextData[{
     "90c1c032-eb97-4bb3-889e-8f7b59467ad9"], 
    DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
     "d52b66ce-af3b-453e-b4f9-c7b3d7d02b72", 
-     "9f544fe8-38f8-4714-bcfb-3f1b014bf857"], $CellContext`cellobj$$ = 
+     "7cdbd34a-53fb-4aa5-8434-c1ca7f9bc17d"], $CellContext`cellobj$$ = 
     CellObject[
     "7caccf6f-98b7-40f0-84e5-0ea889fb23b1", 
-     "f45274dc-6513-411f-a513-65d653e88694"]}, 
+     "b594dd37-562e-4197-ad97-6390ca0f53e6"]}, 
     TemplateBox[{
       GraphicsBox[{{
          Thickness[0.06], 
@@ -251,8 +248,9 @@ Needs[\[Ellipsis]].", "MoreInfoText"], BaseStyle -> "IFrameBox"]],
  CellID->1182667726,ExpressionUUID->"092a9791-4f0a-47f1-bf05-c70b885f7fbd"],
 
 Cell[BoxData[
- RowBox[{"Needs", "[", "\"\<ChristopherWolfram`ChatGPTPlugins`\>\"", 
+ RowBox[{"Needs", "[", "\"\<Wolfram`ChatGPTPluginKit`\>\"", 
   "]"}]], "ExampleInitialization",
+ CellChangeTimes->{{3.890323888969576*^9, 3.890323891645577*^9}},
  CellID->2135317897,ExpressionUUID->"e475ee33-baf0-4eb3-88ed-831eb8835b1c"]
 }, Open  ]],
 
@@ -297,7 +295,7 @@ Cell[BoxData[
        RowBox[{"#city", "[", "\"\<Population\>\"", "]"}], "&"}]}], "]"}]}], 
    "\[IndentingNewLine]", "]"}]}]], "Input",
  CellChangeTimes->{{3.8894730240943127`*^9, 3.889473030319086*^9}},
- CellLabel->"In[3]:=",
+ CellLabel->"In[2]:=",
  CellID->428262334,ExpressionUUID->"d1ac4692-934e-4955-bdca-859df5fca75b"],
 
 Cell[BoxData[
@@ -447,7 +445,7 @@ Cell[BoxData[
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
                     
-                    ChristopherWolfram`ChatGPTPlugins`ChatGPTPluginEndpoint[{
+                    Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[{
                     "getCityPopulation", 
                     Missing["NotSpecified"]}, {
                     "city" -> <|
@@ -480,11 +478,10 @@ Cell[BoxData[
        Dynamic[Typeset`open$$], ImageSize -> Automatic]},
      "SummaryPanel"],
     DynamicModuleValues:>{}], "]"}],
-  ChristopherWolfram`ChatGPTPlugins`ChatGPTPlugin[<|
+  Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
    "Name" -> "CityPopulationFinder", "Description" -> 
     "Get the populations of cities.", "Prompt" -> ""|>, {
-    ChristopherWolfram`ChatGPTPlugins`ChatGPTPluginEndpoint[{
-     "getCityPopulation", 
+    Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[{"getCityPopulation", 
       Missing["NotSpecified"]}, {
      "city" -> <|
        "Interpreter" -> "City", "Help" -> Missing["NotSpecified"], "Required" -> 
@@ -492,9 +489,10 @@ Cell[BoxData[
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellChangeTimes->{{3.889473027310793*^9, 3.8894730306369877`*^9}},
- CellLabel->"Out[3]=",
- CellID->2105370773,ExpressionUUID->"dc70c88f-7a93-4de0-934d-2ef321b77784"]
+ CellChangeTimes->{{3.889473027310793*^9, 3.8894730306369877`*^9}, 
+   3.890324358348649*^9},
+ CellLabel->"Out[2]=",
+ CellID->1213392519,ExpressionUUID->"58305a5c-df76-498b-a9df-85e8aad1f614"]
 }, Open  ]],
 
 Cell["Deploy it to a local web server:", "ExampleText",
@@ -508,7 +506,7 @@ Cell[BoxData[
  RowBox[{"server", "=", 
   RowBox[{"ChatGPTPluginDeploy", "[", "plugin", "]"}]}]], "Input",
  CellChangeTimes->{{3.8894730366694183`*^9, 3.889473040448915*^9}},
- CellLabel->"In[4]:=",
+ CellLabel->"In[3]:=",
  CellID->288831357,ExpressionUUID->"d9e08b35-e949-4eb3-905e-0e9de2380e53"],
 
 Cell[BoxData[
@@ -523,11 +521,10 @@ Cell[BoxData[
             PaneBox[
              ButtonBox[
               DynamicBox[
-               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"], 
-               ImageSizeCache -> {10., {0., 10.}}], Appearance -> None, 
-              BaseStyle -> {}, ButtonFunction :> (Typeset`open$$ = True), 
-              Evaluator -> Automatic, Method -> "Preemptive"], 
-             Alignment -> {Center, Center}, ImageSize -> 
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
              Dynamic[{
                Automatic, 
                 3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
@@ -705,12 +702,14 @@ Cell[BoxData[
                 PlotRange -> {{20, 80}, {0, 70}}], 
                Scaled[{0.4815646584533839, 0.480603401001521}], Center, {
                15.479525531281004`, 15.479525531281007`}, {{1., 0.}, {0., 
-               1.}}]}, AspectRatio -> Automatic, 
-             ImagePadding -> {{0., 0.}, {0., 0.}}, ImageSize -> {Automatic, 
-               Dynamic[
-               3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                 Magnification])]}, PlotRange -> {{0., 24.}, {0., 24.}}, 
-             PlotRangePadding -> Automatic], 
+               1.}}]}, {ImageSize -> {Automatic, 
+                Dynamic[
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                  Magnification])]}, AspectRatio -> Automatic, 
+              ImagePadding -> {{0., 0.}, {0., 0.}}, 
+              ImageSize -> {64.43359375, 68.}, 
+              PlotRange -> {{0., 24.}, {0., 24.}}, PlotRangePadding -> 
+              Automatic}], 
             GridBox[{{
                RowBox[{
                  TagBox["\"Endpoint: \"", "SummaryItemAnnotation"], 
@@ -728,7 +727,7 @@ Cell[BoxData[
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3608812427358119335], {
+                    3610640620446505079], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -736,32 +735,29 @@ Cell[BoxData[
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`a, 
                     Blank[]] :> Missing["NotAvailable"]}], 
                     Missing["NotAvailable"]], StandardForm], 
-                   ImageSizeCache -> {6., {0., 6.923437500000001}}, 
                    TrackedSymbols :> {
                     ZeroMQLink`PackageScope`$SocketListeners}], 
-                  "SummaryItem"]}]}}, AutoDelete -> False, 
-             BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+                  "SummaryItem"]}]}}, 
              GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
-             GridBoxItemSize -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {
-              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
-          False, BaselinePosition -> {1, 1}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
           GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
           GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True -> 
-        GridBox[{{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
             PaneBox[
              ButtonBox[
               DynamicBox[
-               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"], 
-               ImageSizeCache -> {10., {0., 10.}}], Appearance -> None, 
-              BaseStyle -> {}, ButtonFunction :> (Typeset`open$$ = False), 
-              Evaluator -> Automatic, Method -> "Preemptive"], 
-             Alignment -> {Center, Center}, ImageSize -> 
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
              Dynamic[{
                Automatic, 
                 3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
@@ -939,12 +935,14 @@ Cell[BoxData[
                 PlotRange -> {{20, 80}, {0, 70}}], 
                Scaled[{0.4815646584533839, 0.480603401001521}], Center, {
                15.479525531281004`, 15.479525531281007`}, {{1., 0.}, {0., 
-               1.}}]}, AspectRatio -> Automatic, 
-             ImagePadding -> {{0., 0.}, {0., 0.}}, ImageSize -> {Automatic, 
-               Dynamic[
-               3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                 Magnification])]}, PlotRange -> {{0., 24.}, {0., 24.}}, 
-             PlotRangePadding -> Automatic], 
+               1.}}]}, {ImageSize -> {Automatic, 
+                Dynamic[
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                  Magnification])]}, AspectRatio -> Automatic, 
+              ImagePadding -> {{0., 0.}, {0., 0.}}, 
+              ImageSize -> {64.43359375, 68.}, 
+              PlotRange -> {{0., 24.}, {0., 24.}}, PlotRangePadding -> 
+              Automatic}], 
             GridBox[{{
                RowBox[{
                  TagBox["\"Endpoint: \"", "SummaryItemAnnotation"], 
@@ -962,7 +960,7 @@ Cell[BoxData[
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3608812427358119335], {
+                    3610640620446505079], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -970,8 +968,6 @@ Cell[BoxData[
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`a, 
                     Blank[]] :> Missing["NotAvailable"]}], 
                     Missing["NotAvailable"]], StandardForm], 
-                   ImageSizeCache -> {
-                    6., {0.15937499999999982`, 6.923437500000001}}, 
                    TrackedSymbols :> {
                     ZeroMQLink`PackageScope`$SocketListeners}], 
                   "SummaryItem"]}]}, {
@@ -981,20 +977,8 @@ Cell[BoxData[
                  TagBox[
                   TagBox[
                    RowBox[{
-                    RowBox[{"Module", "[", 
-                    RowBox[{
-                    RowBox[{"{", 
-                    RowBox[{
-                    RowBox[{"\[LeftSkeleton]", "58", "\[RightSkeleton]"}], 
-                    ",", 
-                    RowBox[{"\[LeftSkeleton]", "61", "\[RightSkeleton]"}], 
-                    ",", 
-                    RowBox[{"\[LeftSkeleton]", "53", "\[RightSkeleton]"}], 
-                    ",", 
-                    RowBox[{"\[LeftSkeleton]", "54", "\[RightSkeleton]"}]}], 
-                    "}"}], ",", 
-                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
-                    "]"}], "&"}], Short], "SummaryItem"]}]}, {
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    "&"}], Short], "SummaryItem"]}]}, {
                RowBox[{
                  TagBox[
                  "\"HandlerFunctionsKeys: \"", "SummaryItemAnnotation"], 
@@ -1115,7 +1099,7 @@ Cell[BoxData[
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-cc89f5cf-cd33-4fab-93b0-91e532033bdd\"", 
+                    "\"TCPSERVER-678fe701-ed98-4d34-bc82-b76a9b81ad62\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}}, 
                     GridBoxAlignment -> {
                     "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
@@ -1222,7 +1206,7 @@ Cell[BoxData[
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-cc89f5cf-cd33-4fab-93b0-91e532033bdd\"", 
+                    "\"TCPSERVER-678fe701-ed98-4d34-bc82-b76a9b81ad62\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}, {
                     
                     RowBox[{
@@ -1249,32 +1233,32 @@ Cell[BoxData[
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
                    SocketObject[
-                   "TCPSERVER-cc89f5cf-cd33-4fab-93b0-91e532033bdd"], 
-                   Editable -> False, SelectWithContents -> True, Selectable -> 
-                   False], "SummaryItem"]}]}}, AutoDelete -> False, 
-             BaseStyle -> {
-              ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+                   "TCPSERVER-678fe701-ed98-4d34-bc82-b76a9b81ad62"], 
+                   Selectable -> False, Editable -> False, SelectWithContents -> 
+                   True], "SummaryItem"]}]}}, 
              GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
-             GridBoxItemSize -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {
-              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
-          False, BaselinePosition -> {1, 1}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
           GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
           GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
        Dynamic[Typeset`open$$], ImageSize -> Automatic]},
      "SummaryPanel"],
     DynamicModuleValues:>{}], "]"}],
-  SocketListener[3608812427358119335],
+  SocketListener[3610640620446505079],
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellChangeTimes->{3.889473040788374*^9},
- CellLabel->"Out[4]=",
- CellID->2033644589,ExpressionUUID->"62e78066-9e43-4802-adc8-0000aa517b71"]
+ CellChangeTimes->{3.889473040788374*^9, 3.890324359878705*^9},
+ CellLabel->"Out[3]=",
+ CellID->1650544262,ExpressionUUID->"32766a7e-4677-43ab-9bca-4ab41f85cf39"]
 }, Open  ]],
 
 Cell["Stop the web server:", "ExampleText",
@@ -1284,7 +1268,7 @@ Cell["Stop the web server:", "ExampleText",
 Cell[BoxData[
  RowBox[{"DeleteObject", "[", "server", "]"}]], "Input",
  CellChangeTimes->{{3.889473081013341*^9, 3.889473083050357*^9}},
- CellLabel->"In[8]:=",
+ CellLabel->"In[4]:=",
  CellID->1952056595,ExpressionUUID->"3ae9fa06-be04-4db8-8c28-00d0e72654f5"]
 }, Open  ]],
 
@@ -1419,18 +1403,18 @@ Cell["Symbol", "Categorization",
  CellLabel->"Entity Type",
  CellID->1874608797,ExpressionUUID->"836e6b75-500d-4f27-a909-19cf0843511b"],
 
-Cell["ChristopherWolfram/ChatGPTPlugins", "Categorization",
+Cell["Wolfram/ChatGPTPluginKit", "Categorization",
  CellLabel->"Paclet Name",
  CellID->817466042,ExpressionUUID->"166977d3-b367-4972-963b-31c2d9ff8176"],
 
-Cell["ChristopherWolfram`ChatGPTPlugins`", "Categorization",
+Cell["Wolfram`ChatGPTPluginKit`", "Categorization",
  CellLabel->"Context",
  CellID->1698878035,ExpressionUUID->"cb2d61e2-1b99-4e47-a812-1afb3dce8c9b"],
 
-Cell["ChristopherWolfram/ChatGPTPlugins/ref/ChatGPTPlugin", "Categorization",
+Cell["Wolfram/ChatGPTPluginKit/ref/ChatGPTPlugin", "Categorization",
  CellLabel->"URI",
  CellID->100563733,ExpressionUUID->"259c8d8f-823e-4636-ae68-71fb318f43ca"]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1465,7 +1449,7 @@ Cell[BoxData[""], "Template",
 }, Open  ]]
 },
 WindowSize->{700, 770},
-WindowMargins->{{Automatic, 254}, {23, Automatic}},
+WindowMargins->{{263, Automatic}, {Automatic, 83}},
 TaggingRules->{
  "DocuToolsSettingsInternal" -> {
    "$PacletVersion" -> "0.10.2323", "$ApplicationName" -> "Mathematica", 
@@ -1474,8 +1458,8 @@ TaggingRules->{
     "/Users/christopher/cvs/Mathematica/Documentation/English/", 
     "$UseNewPageDialog" -> ""}, 
   "WelcomeScreenSettings" -> {"FEStarting" -> False}, "Paclet" -> 
-  "ChristopherWolfram/ChatGPTPlugins"},
-FrontEndVersion->"13.3 for Mac OS X x86 (64-bit) (March 21, 2023)",
+  "Wolfram/ChatGPTPluginKit"},
+FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (November 18, 2022)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
   CharacterEncoding -> "UTF-8"],
 ExpressionUUID->"d52b66ce-af3b-453e-b4f9-c7b3d7d02b72"
@@ -1486,14 +1470,14 @@ ExpressionUUID->"d52b66ce-af3b-453e-b4f9-c7b3d7d02b72"
 (*CellTagsOutline
 CellTagsIndex->{
  "ExtendedExamples"->{
-  Cell[60735, 1292, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"2b0a73e6-e7e1-4f1f-886a-7b783ec1c368",
+  Cell[60047, 1276, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"2b0a73e6-e7e1-4f1f-886a-7b783ec1c368",
    CellTags->"ExtendedExamples",
    CellID->330491882]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 67467, 1487}
+ {"ExtendedExamples", 66746, 1471}
  }
 *)
 (*NotebookFileOutline
@@ -1501,7 +1485,7 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 110, 1, 74, "ObjectName",ExpressionUUID->"af4293b2-0c4a-4da2-8a3c-795156d71e9a",
  CellID->722873431],
-Cell[693, 25, 1130, 27, 123, "Usage",ExpressionUUID->"12a193bc-e708-41a8-8f3e-7765e8826b51",
+Cell[693, 25, 1130, 27, 125, "Usage",ExpressionUUID->"12a193bc-e708-41a8-8f3e-7765e8826b51",
  CellID->1018763738],
 Cell[1826, 54, 394, 8, 27, "Notes",ExpressionUUID->"eadb8e92-9089-4b33-9c2a-a0c9a80445ea",
  CellID->475027035],
@@ -1509,127 +1493,129 @@ Cell[2223, 64, 325, 8, 27, "Notes",ExpressionUUID->"e33195e4-4d8b-40ef-93b1-e799
  CellID->2094681816],
 Cell[2551, 74, 862, 15, 61, "2ColumnTableMod",ExpressionUUID->"7e7358b2-f09f-4efd-9bfa-3f34f18cbf47",
  CellID->1447720471],
-Cell[3416, 91, 610, 16, 29, "Notes",ExpressionUUID->"7dec71f9-5f8b-4b1a-8d44-15a135effb64",
+Cell[3416, 91, 596, 15, 29, "Notes",ExpressionUUID->"7dec71f9-5f8b-4b1a-8d44-15a135effb64",
  CellID->1510575087]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4063, 112, 459, 13, 40, "SeeAlsoSection",ExpressionUUID->"535e72e4-7dc0-4d07-9cae-c48b80739671",
+Cell[4049, 111, 459, 13, 34, "SeeAlsoSection",ExpressionUUID->"535e72e4-7dc0-4d07-9cae-c48b80739671",
  CellID->1582661346],
-Cell[4525, 127, 2160, 54, 23, "SeeAlso",ExpressionUUID->"e1c6eb6c-efbf-42b2-aa7d-953ad1cf4ac1",
+Cell[4511, 126, 2132, 52, 23, "SeeAlso",ExpressionUUID->"e1c6eb6c-efbf-42b2-aa7d-953ad1cf4ac1",
  CellID->1056790480]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6722, 186, 436, 12, 41, "TechNotesSection",ExpressionUUID->"3e2d0df8-1b35-4c2a-b838-31b662d28d4d",
+Cell[6680, 183, 436, 12, 47, "TechNotesSection",ExpressionUUID->"3e2d0df8-1b35-4c2a-b838-31b662d28d4d",
  CellID->1787836670],
-Cell[7161, 200, 100, 1, 19, "Tutorials",ExpressionUUID->"15b6049d-8312-4e31-bc0e-6ab1637f8913",
+Cell[7119, 197, 100, 1, 19, "Tutorials",ExpressionUUID->"15b6049d-8312-4e31-bc0e-6ab1637f8913",
  CellID->579723866]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7298, 206, 117, 1, 40, "MoreAboutSection",ExpressionUUID->"388e79f8-c671-411f-990a-3333bcc43f37",
+Cell[7256, 203, 117, 1, 34, "MoreAboutSection",ExpressionUUID->"388e79f8-c671-411f-990a-3333bcc43f37",
  CellID->285709423],
-Cell[7418, 209, 100, 1, 19, "MoreAbout",ExpressionUUID->"29fc81e0-f0e8-4ad8-aab9-4a7a4bbc3551",
+Cell[7376, 206, 100, 1, 19, "MoreAbout",ExpressionUUID->"29fc81e0-f0e8-4ad8-aab9-4a7a4bbc3551",
  CellID->144837669]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7555, 215, 473, 13, 40, "RelatedLinksSection",ExpressionUUID->"de188d9b-d6ff-4965-96f2-b7dce232597d",
+Cell[7513, 212, 473, 13, 34, "RelatedLinksSection",ExpressionUUID->"de188d9b-d6ff-4965-96f2-b7dce232597d",
  CellID->1187730832],
-Cell[8031, 230, 104, 1, 19, "RelatedLinks",ExpressionUUID->"f0a4aedc-1e86-474d-bef9-86cbdfb4dc03",
+Cell[7989, 227, 104, 1, 19, "RelatedLinks",ExpressionUUID->"f0a4aedc-1e86-474d-bef9-86cbdfb4dc03",
  CellID->1331594559]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8172, 236, 531, 14, 70, "ExamplesInitializationSection",ExpressionUUID->"092a9791-4f0a-47f1-bf05-c70b885f7fbd",
+Cell[8130, 233, 531, 14, 70, "ExamplesInitializationSection",ExpressionUUID->"092a9791-4f0a-47f1-bf05-c70b885f7fbd",
  CellID->1182667726],
-Cell[8706, 252, 194, 3, 47, "ExampleInitialization",ExpressionUUID->"e475ee33-baf0-4eb3-88ed-831eb8835b1c",
+Cell[8664, 249, 251, 4, 47, "ExampleInitialization",ExpressionUUID->"e475ee33-baf0-4eb3-88ed-831eb8835b1c",
  CellID->2135317897]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8937, 260, 443, 12, 73, "PrimaryExamplesSection",ExpressionUUID->"2c308301-29e3-465a-99a7-5df2a765a359",
+Cell[8952, 258, 443, 12, 73, "PrimaryExamplesSection",ExpressionUUID->"2c308301-29e3-465a-99a7-5df2a765a359",
  CellID->1688669862],
-Cell[9383, 274, 188, 2, 24, "ExampleText",ExpressionUUID->"82f36a2c-5794-41e3-8ac6-e35939435eaa",
+Cell[9398, 272, 188, 2, 24, "ExampleText",ExpressionUUID->"82f36a2c-5794-41e3-8ac6-e35939435eaa",
  CellID->374440937],
 Cell[CellGroupData[{
-Cell[9596, 280, 869, 20, 142, "Input",ExpressionUUID->"d1ac4692-934e-4955-bdca-859df5fca75b",
+Cell[9611, 278, 869, 20, 142, "Input",ExpressionUUID->"d1ac4692-934e-4955-bdca-859df5fca75b",
  CellID->428262334],
-Cell[10468, 302, 9798, 194, 53, "Output",ExpressionUUID->"dc70c88f-7a93-4de0-934d-2ef321b77784",
- CellID->2105370773]
+Cell[10483, 300, 9791, 194, 53, "Output",ExpressionUUID->"58305a5c-df76-498b-a9df-85e8aad1f614",
+ CellID->1213392519]
 }, Open  ]],
-Cell[20281, 499, 250, 3, 24, "ExampleText",ExpressionUUID->"c4ba3a55-3ba9-4677-abcc-4c30679d17c3",
+Cell[20289, 497, 250, 3, 24, "ExampleText",ExpressionUUID->"c4ba3a55-3ba9-4677-abcc-4c30679d17c3",
  CellID->1506863819],
 Cell[CellGroupData[{
-Cell[20556, 506, 271, 5, 27, "Input",ExpressionUUID->"d9e08b35-e949-4eb3-905e-0e9de2380e53",
+Cell[20564, 504, 271, 5, 27, "Input",ExpressionUUID->"d9e08b35-e949-4eb3-905e-0e9de2380e53",
  CellID->288831357],
-Cell[20830, 513, 39430, 763, 53, "Output",ExpressionUUID->"62e78066-9e43-4802-adc8-0000aa517b71",
- CellID->2033644589]
+Cell[20838, 511, 38734, 749, 53, "Output",ExpressionUUID->"32766a7e-4677-43ab-9bca-4ab41f85cf39",
+ CellID->1650544262]
 }, Open  ]],
-Cell[60275, 1279, 185, 2, 24, "ExampleText",ExpressionUUID->"3f6e8677-f006-44eb-8d2d-45e9f048d044",
+Cell[59587, 1263, 185, 2, 24, "ExampleText",ExpressionUUID->"3f6e8677-f006-44eb-8d2d-45e9f048d044",
  CellID->1129729877],
-Cell[60463, 1283, 235, 4, 27, "Input",ExpressionUUID->"3ae9fa06-be04-4db8-8c28-00d0e72654f5",
+Cell[59775, 1267, 235, 4, 27, "Input",ExpressionUUID->"3ae9fa06-be04-4db8-8c28-00d0e72654f5",
  CellID->1952056595]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[60735, 1292, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"2b0a73e6-e7e1-4f1f-886a-7b783ec1c368",
+Cell[60047, 1276, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"2b0a73e6-e7e1-4f1f-886a-7b783ec1c368",
  CellTags->"ExtendedExamples",
  CellID->330491882],
-Cell[61225, 1307, 242, 5, 35, "ExampleSection",ExpressionUUID->"a6596816-4e65-49f9-a567-0f3bec281820",
+Cell[60537, 1291, 242, 5, 35, "ExampleSection",ExpressionUUID->"a6596816-4e65-49f9-a567-0f3bec281820",
  CellID->1184349632],
-Cell[61470, 1314, 264, 5, 23, "ExampleSection",ExpressionUUID->"6a1d3ae0-f9df-49c8-8eb5-8e63d93f8206",
+Cell[60782, 1298, 264, 5, 23, "ExampleSection",ExpressionUUID->"6a1d3ae0-f9df-49c8-8eb5-8e63d93f8206",
  CellID->338340981],
 Cell[CellGroupData[{
-Cell[61759, 1323, 244, 5, 23, "ExampleSection",ExpressionUUID->"57b2e7f2-0377-44f4-a107-c50d03d7aecb",
+Cell[61071, 1307, 244, 5, 23, "ExampleSection",ExpressionUUID->"57b2e7f2-0377-44f4-a107-c50d03d7aecb",
  CellID->2107654058],
-Cell[62006, 1330, 246, 5, 26, "ExampleSubsection",ExpressionUUID->"b21c48e0-861a-4a16-b48f-e83de99f2d3e",
+Cell[61318, 1314, 246, 5, 26, "ExampleSubsection",ExpressionUUID->"b21c48e0-861a-4a16-b48f-e83de99f2d3e",
  CellID->598995541],
-Cell[62255, 1337, 247, 5, 22, "ExampleSubsection",ExpressionUUID->"78365e5e-b142-42ac-8ab3-b7f9d317a088",
+Cell[61567, 1321, 247, 5, 22, "ExampleSubsection",ExpressionUUID->"78365e5e-b142-42ac-8ab3-b7f9d317a088",
  CellID->2062204098]
 }, Open  ]],
-Cell[62517, 1345, 249, 5, 35, "ExampleSection",ExpressionUUID->"e8cf9d28-000d-4fec-8c81-76985e860942",
+Cell[61829, 1329, 249, 5, 35, "ExampleSection",ExpressionUUID->"e8cf9d28-000d-4fec-8c81-76985e860942",
  CellID->1225696153],
-Cell[62769, 1352, 259, 5, 23, "ExampleSection",ExpressionUUID->"8583e43f-6be9-4ab0-8b9e-e959e9765539",
+Cell[62081, 1336, 259, 5, 23, "ExampleSection",ExpressionUUID->"8583e43f-6be9-4ab0-8b9e-e959e9765539",
  CellID->1612101447],
-Cell[63031, 1359, 252, 5, 23, "ExampleSection",ExpressionUUID->"311331d0-7c72-4605-8af1-d84b0606c320",
+Cell[62343, 1343, 252, 5, 23, "ExampleSection",ExpressionUUID->"311331d0-7c72-4605-8af1-d84b0606c320",
  CellID->1935329177],
-Cell[63286, 1366, 257, 5, 23, "ExampleSection",ExpressionUUID->"ab6ced70-f21c-47d7-aaea-83269102dfde",
+Cell[62598, 1350, 257, 5, 23, "ExampleSection",ExpressionUUID->"ab6ced70-f21c-47d7-aaea-83269102dfde",
  CellID->1290160377],
-Cell[63546, 1373, 249, 5, 23, "ExampleSection",ExpressionUUID->"d7223d91-1a90-48c3-8d29-1e1e76302730",
+Cell[62858, 1357, 249, 5, 23, "ExampleSection",ExpressionUUID->"d7223d91-1a90-48c3-8d29-1e1e76302730",
  CellID->583072480]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[63832, 1383, 110, 1, 72, "MetadataSection",ExpressionUUID->"1d61fc84-a785-4b81-878b-477625ae5c85",
+Cell[63144, 1367, 110, 1, 72, "MetadataSection",ExpressionUUID->"1d61fc84-a785-4b81-878b-477625ae5c85",
  CellID->731290099],
-Cell[63945, 1386, 476, 12, 26, "History",ExpressionUUID->"b8124440-ee48-4f64-9109-c91a31cc646c",
+Cell[63257, 1370, 476, 12, 26, "History",ExpressionUUID->"b8124440-ee48-4f64-9109-c91a31cc646c",
  CellID->743782112],
 Cell[CellGroupData[{
-Cell[64446, 1402, 484, 13, 21, "CategorizationSection",ExpressionUUID->"b3085543-b2b6-45a7-8f15-fc64b3661cd0",
+Cell[63758, 1386, 484, 13, 21, "CategorizationSection",ExpressionUUID->"b3085543-b2b6-45a7-8f15-fc64b3661cd0",
  CellID->243647197],
-Cell[64933, 1417, 135, 2, 70, "Categorization",ExpressionUUID->"836e6b75-500d-4f27-a909-19cf0843511b",
+Cell[64245, 1401, 135, 2, 35, "Categorization",ExpressionUUID->"836e6b75-500d-4f27-a909-19cf0843511b",
  CellID->1874608797],
-Cell[65071, 1421, 161, 2, 70, "Categorization",ExpressionUUID->"166977d3-b367-4972-963b-31c2d9ff8176",
+Cell[64383, 1405, 152, 2, 35, "Categorization",ExpressionUUID->"166977d3-b367-4972-963b-31c2d9ff8176",
  CellID->817466042],
-Cell[65235, 1425, 159, 2, 70, "Categorization",ExpressionUUID->"cb2d61e2-1b99-4e47-a812-1afb3dce8c9b",
+Cell[64538, 1409, 150, 2, 35, "Categorization",ExpressionUUID->"cb2d61e2-1b99-4e47-a812-1afb3dce8c9b",
  CellID->1698878035],
-Cell[65397, 1429, 171, 2, 70, "Categorization",ExpressionUUID->"259c8d8f-823e-4636-ae68-71fb318f43ca",
+Cell[64691, 1413, 162, 2, 35, "Categorization",ExpressionUUID->"259c8d8f-823e-4636-ae68-71fb318f43ca",
  CellID->100563733]
-}, Closed]],
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[65605, 1436, 110, 1, 21, "KeywordsSection",ExpressionUUID->"f74de9bc-1fed-4015-b4d5-bfa06e925d1c",
+Cell[64890, 1420, 110, 1, 31, "KeywordsSection",ExpressionUUID->"f74de9bc-1fed-4015-b4d5-bfa06e925d1c",
  CellID->105030342],
-Cell[65718, 1439, 98, 1, 70, "Keywords",ExpressionUUID->"7eb7329a-533e-4cc0-8f72-5a6250db14d5",
+Cell[65003, 1423, 98, 1, 70, "Keywords",ExpressionUUID->"7eb7329a-533e-4cc0-8f72-5a6250db14d5",
  CellID->13400160]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[65853, 1445, 120, 1, 21, "TemplatesSection",ExpressionUUID->"632e439c-d6ba-4c33-8c37-af5143b4c4b7",
+Cell[65138, 1429, 120, 1, 21, "TemplatesSection",ExpressionUUID->"632e439c-d6ba-4c33-8c37-af5143b4c4b7",
  CellID->1878189832],
-Cell[65976, 1448, 148, 2, 70, "Template",ExpressionUUID->"252f24a9-d441-40dd-b411-8ae4d3a18ed9",
+Cell[65261, 1432, 148, 2, 70, "Template",ExpressionUUID->"252f24a9-d441-40dd-b411-8ae4d3a18ed9",
  CellID->874379171],
-Cell[66127, 1452, 137, 2, 70, "Template",ExpressionUUID->"31ea399e-96ac-4d33-b265-bb6a97a51767",
+Cell[65412, 1436, 137, 2, 70, "Template",ExpressionUUID->"31ea399e-96ac-4d33-b265-bb6a97a51767",
  CellID->460130576],
-Cell[66267, 1456, 135, 2, 70, "Template",ExpressionUUID->"32e4ef4d-1512-4b74-8a53-caaa5eab4e31",
+Cell[65552, 1440, 135, 2, 70, "Template",ExpressionUUID->"32e4ef4d-1512-4b74-8a53-caaa5eab4e31",
  CellID->325977985],
-Cell[66405, 1460, 137, 2, 70, "Template",ExpressionUUID->"c7c44a29-819b-4dc6-aa94-3eaaf6abbc62",
+Cell[65690, 1444, 137, 2, 70, "Template",ExpressionUUID->"c7c44a29-819b-4dc6-aa94-3eaaf6abbc62",
  CellID->481210398]
 }, Closed]]
 }, Open  ]]
 }
 ]
 *)
+
+(* End of internal cache information *)
 

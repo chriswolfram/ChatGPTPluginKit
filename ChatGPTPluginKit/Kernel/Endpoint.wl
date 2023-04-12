@@ -1,8 +1,8 @@
-BeginPackage["ChristopherWolfram`ChatGPTPlugins`Endpoint`"];
+BeginPackage["Wolfram`ChatGPTPluginKit`Endpoint`"];
 
 Begin["`Private`"];
 
-Needs["ChristopherWolfram`ChatGPTPlugins`"]
+Needs["Wolfram`ChatGPTPluginKit`"]
 
 
 (****************************************************************)

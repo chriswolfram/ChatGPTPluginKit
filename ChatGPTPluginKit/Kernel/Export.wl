@@ -1,8 +1,8 @@
-BeginPackage["ChristopherWolfram`ChatGPTPlugins`Export`"];
+BeginPackage["Wolfram`ChatGPTPluginKit`Export`"];
 
 Begin["`Private`"];
 
-Needs["ChristopherWolfram`ChatGPTPlugins`"]
+Needs["Wolfram`ChatGPTPluginKit`"]
 
 
 Options[ChatGPTPluginExport] = {IncludeDefinitions -> True};
