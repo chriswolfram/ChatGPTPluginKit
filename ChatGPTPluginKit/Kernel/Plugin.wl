@@ -21,9 +21,9 @@ argumentsChatGPTPluginQ[
 	KeyValuePattern[{
 		"Name" -> _,
 		"Description" -> _,
-		"Prompt" -> _ 
+		"Prompt" -> _,
+		"Endpoints" -> {__ChatGPTPluginEndpoint}
 	}],
-	{__ChatGPTPluginEndpoint},
 	{OptionsPattern[]}
 ] := True
 
@@ -32,15 +32,17 @@ argumentsChatGPTPluginQ[___] := False
 
 createChatGPTPlugin[args___] :=
 	Enclose[
-		icreateChatGPTPlugin@@Confirm[ArgumentsOptions[ChatGPTPlugin[args], 2]],
+		icreateChatGPTPlugin@@Confirm[ArgumentsOptions[ChatGPTPlugin[args], {1,2}]],
 		"InheritedFailure"
 	]
 
 icreateChatGPTPlugin[{metadata_, endpoints_}, opts_] :=
 	Enclose[
 		ChatGPTPlugin[
-			Confirm@normalizeMetadata[metadata],
-			Confirm@normalizeEndpoints[endpoints],
+			Join[
+				Confirm@normalizeMetadata[metadata],
+				<|"Endpoints" -> Confirm@normalizeEndpoints[endpoints]|>
+			],
 			opts
 		],
 		"InheritedFailure"
@@ -57,7 +59,7 @@ normalizeMetadata[metadata: KeyValuePattern[{}]] :=
 			"Description" -> "",
 			"Prompt" -> ""
 		|>,
-		metadata
+		KeyTake[metadata, {"Name", "Description", "Prompt"}]
 	}, Last]
 
 normalizeMetadata[expr_] :=
@@ -70,24 +72,49 @@ normalizeMetadata[expr_] :=
 
 normalizeEndpoints[endpoint_ChatGPTPluginEndpoint] := {endpoint}
 normalizeEndpoints[endpoints: {__ChatGPTPluginEndpoint}] := endpoints
+normalizeEndpoints[name_ -> data_] := normalizeEndpoints[ChatGPTPluginEndpoint[name, data]]
+normalizeEndpoints[endpoints: KeyValuePattern[{}] /; Length[endpoints] > 0] := normalizeEndpoints[KeyValueMap[ChatGPTPluginEndpoint, Association@endpoints]]
 normalizeEndpoints[expr_] :=
 	Failure["InvalidEndpointsSpecification", <|
-		"MessageTemplate" -> "Expected a single ChatGPTPluginEndpoint or a list with at least one ChatGPTPluginEndpoint, but found `1` instead.",
+		"MessageTemplate" -> "Expected a single ChatGPTPluginEndpoint, a list with at least one ChatGPTPluginEndpoint, or an association specifying ChatGPTEndpoints, but found `1` instead.",
 		"MessageParameters" -> {expr},
 		"Endpointspecification" -> expr
+	|>]
+
+
+(* Association constructors *)
+
+icreateChatGPTPlugin[{assoc:KeyValuePattern[{}]}, opts_] :=
+	Enclose[
+		ChatGPTPlugin[
+			Join[
+				Confirm@normalizeMetadata[assoc],
+				<|"Endpoints" -> Confirm@normalizeEndpoints[Lookup[assoc, "Endpoints", {}]]|>
+			],
+			opts
+		],
+		"InheritedFailure"
+	]
+
+
+icreateChatGPTPlugin[{spec_}, opts_] :=
+	Failure["InvalidPluginSpecification", <|
+		"MessageTemplate" -> "Unexpected expression `1` encountered representing a ChatGPT plugin.",
+		"MessageParameters" -> {spec},
+		"Endpointspecification" -> spec
 	|>]
 
 
 
 (* Accessors *)
 
-HoldPattern[ChatGPTPlugin][metadata_, endpoints_, opts_]["Metadata"] := metadata
-HoldPattern[ChatGPTPlugin][metadata_, endpoints_, opts_]["Endpoints"] := endpoints
-HoldPattern[ChatGPTPlugin][metadata_, endpoints_, opts_]["Options"] := opts
+HoldPattern[ChatGPTPlugin][data_, opts_]["Data"] := data
+HoldPattern[ChatGPTPlugin][data_, opts_]["Options"] := opts
 
-plugin_ChatGPTPlugin["Name"] := Lookup[plugin["Metadata"], "Name"]
-plugin_ChatGPTPlugin["Description"] := Lookup[plugin["Metadata"], "Description"]
-plugin_ChatGPTPlugin["Prompt"] := Lookup[plugin["Metadata"], "Prompt"]
+plugin_ChatGPTPlugin["Name"] := Lookup[plugin["Data"], "Name"]
+plugin_ChatGPTPlugin["Description"] := Lookup[plugin["Data"], "Description"]
+plugin_ChatGPTPlugin["Prompt"] := Lookup[plugin["Data"], "Prompt"]
+plugin_ChatGPTPlugin["Endpoints"] := Lookup[plugin["Data"], "Endpoints"]
 plugin_ChatGPTPlugin["OpenAPIJSON", port_] := pluginAPIJSON[plugin, port]
 plugin_ChatGPTPlugin["OpenAPIJSON"] := plugin["OpenAPIJSON", $ChatGPTPluginPort]
 plugin_ChatGPTPlugin["ManifestJSON", port_] := pluginManifestJSON[plugin, port]

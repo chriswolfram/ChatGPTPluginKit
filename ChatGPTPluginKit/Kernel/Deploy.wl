@@ -38,16 +38,13 @@ iChatGPTPluginDeploy[{plugin_ChatGPTPlugin, port_}, opts_] :=
 		]&
 	]
 
+iChatGPTPluginDeploy[{spec_, port_}, opts_] :=
+	Enclose[
+		iChatGPTPluginDeploy[{Confirm@ChatGPTPlugin[spec], port}, opts],
+		"InheritedFailure"
+	]
 
-iChatGPTPluginDeploy[{plugin_, loc_}, opts_] :=
-	Failure["InvalidPlugin", <|
-		"MessageTemplate" -> "Expected a ChatGPTPlugin object but found `1` instead.",
-		"MessageParamters" -> {plugin},
-		"PluginSpecification" -> plugin
-	|>]
-	
-
-iChatGPTPluginDeploy[{plugin_ChatGPTPlugin}, opts_] :=
+iChatGPTPluginDeploy[{plugin_}, opts_] :=
 	iChatGPTPluginDeploy[{plugin, $ChatGPTPluginPort}, opts]
 
 

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     73523,       1611]
-NotebookOptionsPosition[     65855,       1450]
-NotebookOutlinePosition[     67021,       1483]
-CellTagsIndexPosition[     66941,       1478]
+NotebookDataLength[     89029,       1947]
+NotebookOptionsPosition[     80575,       1770]
+NotebookOutlinePosition[     81737,       1803]
+CellTagsIndexPosition[     81657,       1798]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -47,9 +47,41 @@ Cell[TextData[{
        StyleBox["2", "TR"]], ",", 
       StyleBox["\[Ellipsis]", "TR"]}], "}"}]}], "]"}]], "InlineFormula",
   ExpressionUUID->"2e926ae5-43ff-434c-a6c6-455019116750"],
- "\[LineSeparator]represents a plugin with multiple endpoints."
+ "\[LineSeparator]represents a plugin with multiple endpoints.\n",
+ Cell["   ", "ModInfo",ExpressionUUID->"21e23ed8-2d57-48b1-b745-10afd311424d"],
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    RowBox[{"ChatGPTPlugin", "[", 
+     RowBox[{
+      StyleBox["assoc", "TI"], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{
+        "\"\<\!\(\*SubscriptBox[StyleBox[\"name\", \"TI\"], StyleBox[\"1\", \
+\"TR\"]]\)\>\"", "\[Rule]", 
+         SubscriptBox[
+          StyleBox["endpointSpec", "TI"], 
+          StyleBox["1", "TR"]]}], ",", 
+        RowBox[{
+        "\"\<\!\(\*SubscriptBox[StyleBox[\"name\", \"TI\"], StyleBox[\"2\", \
+\"TR\"]]\)\>\"", "\[Rule]", 
+         SubscriptBox[
+          StyleBox["endpointSpec", "TI"], 
+          StyleBox["2", "TR"]]}]}]}]}]}], "|>"}], "]"}]], "InlineFormula",
+  ExpressionUUID->"1786acc3-fecb-425c-a38f-d280db2336be"],
+ "\[LineSeparator]represents a plugin with an association of endpoints.\n",
+ Cell["   ", "ModInfo",ExpressionUUID->"e808c7bf-4ec2-46f7-a264-60c51c2418db"],
+ Cell[BoxData[
+  RowBox[{"ChatGPTPlugin", "[", 
+   StyleBox["assoc", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
+  "24725cb5-cc0f-49ce-b60b-da5e799a7b05"],
+ "\[LineSeparator]represents a plugin with an association containing endpoint \
+information."
 }], "Usage",
- CellChangeTimes->{{3.8894725284300337`*^9, 3.889472656670525*^9}},
+ CellChangeTimes->{{3.8894725284300337`*^9, 3.889472656670525*^9}, {
+  3.890399291381839*^9, 3.8903993142366333`*^9}, {3.890399402987155*^9, 
+  3.89039948230485*^9}},
  CellID->1018763738,ExpressionUUID->"12a193bc-e708-41a8-8f3e-7765e8826b51"],
 
 Cell[TextData[{
@@ -104,7 +136,49 @@ Cell[TextData[{
  " objects."
 }], "Notes",
  CellChangeTimes->{{3.889472934883615*^9, 3.889472962080657*^9}},
- CellID->1510575087,ExpressionUUID->"7dec71f9-5f8b-4b1a-8d44-15a135effb64"]
+ CellID->1510575087,ExpressionUUID->"7dec71f9-5f8b-4b1a-8d44-15a135effb64"],
+
+Cell[TextData[{
+ "If the endpoints are given as an association, ",
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["ChatGPTPluginEndpoint",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPluginEndpoint"], 
+   "[", 
+   RowBox[{
+   "\"\<\!\(\*SubscriptBox[StyleBox[\"name\", \"TI\"], StyleBox[\"i\", \
+\"TI\"]]\)\>\"", ",", 
+    SubscriptBox[
+     StyleBox["endpointSpec", "TI"], 
+     StyleBox["i", "TI"]]}], "]"}]], "InlineFormula",ExpressionUUID->
+  "dd8a625b-980a-4315-b726-be9767fd29a5"],
+ " is used to convert them to ",
+ Cell[BoxData[
+  ButtonBox["ChatGPTPluginEndpoint",
+   BaseStyle->"Link",
+   ButtonData->"paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPluginEndpoint"]], 
+  "InlineFormula",ExpressionUUID->"9fdc5029-4b5e-4563-acf2-93ac469c519c"],
+ " objects."
+}], "Notes",
+ CellChangeTimes->{{3.89039954064985*^9, 3.890399585082942*^9}, {
+  3.890399648797999*^9, 3.8903996697236853`*^9}},
+ CellID->148526490,ExpressionUUID->"f70fe9e1-cf4f-4c5b-9f33-4d2078ae8597"],
+
+Cell[TextData[{
+ "In the single argument form, ",
+ Cell[BoxData[
+  StyleBox["assoc", "TI"]], "InlineFormula",ExpressionUUID->
+  "a1101303-2429-4e30-9dcb-f6e4db329ff1"],
+ " must contain the key ",
+ Cell[BoxData[
+ "\"\<Endpoints\>\""], "InlineFormula",ExpressionUUID->
+  "190dcf1a-57fb-4cc9-aa12-fd0d023f272d"],
+ " associated with a value of the form supported by the second argument."
+}], "Notes",
+ CellChangeTimes->{{3.890399317242186*^9, 3.890399359396554*^9}, {
+  3.890399497478211*^9, 3.890399523878579*^9}},
+ CellID->504065141,ExpressionUUID->"bdbab817-eefd-45c3-a8ca-9272349cc403"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -147,10 +221,10 @@ Cell[TextData[{
     "90c1c032-eb97-4bb3-889e-8f7b59467ad9"], 
    DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
     "d52b66ce-af3b-453e-b4f9-c7b3d7d02b72", 
-     "7cdbd34a-53fb-4aa5-8434-c1ca7f9bc17d"], $CellContext`cellobj$$ = 
+     "e67ed17b-603e-4b72-8d47-4753fbb95b87"], $CellContext`cellobj$$ = 
     CellObject[
     "7caccf6f-98b7-40f0-84e5-0ea889fb23b1", 
-     "b594dd37-562e-4197-ad97-6390ca0f53e6"]}, 
+     "3f3ebaf1-b313-4b0f-8c94-10f4e5df7a3d"]}, 
     TemplateBox[{
       GraphicsBox[{{
          Thickness[0.06], 
@@ -272,31 +346,34 @@ Cell[BoxData[
 
 Cell["Create a ChatGPT plugin:", "ExampleText",
  CellChangeTimes->{{3.889473009228105*^9, 3.889473020802627*^9}},
- CellID->374440937,ExpressionUUID->"82f36a2c-5794-41e3-8ac6-e35939435eaa"],
+ CellID->1353473655,ExpressionUUID->"ab6e110b-af4a-44f4-98cb-d54fc1d6551d"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"plugin", "=", 
   RowBox[{"ChatGPTPlugin", "[", 
-   RowBox[{
-    RowBox[{"<|", "\[IndentingNewLine]", 
+   RowBox[{"<|", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"\"\<Name\>\"", "->", "\"\<CityPopulationFinder\>\""}], ",", 
+     "\[IndentingNewLine]", 
      RowBox[{
-      RowBox[{"\"\<Name\>\"", "->", "\"\<CityPopulationFinder\>\""}], ",", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-      "\"\<Description\>\"", "->", 
-       "\"\<Get the populations of cities.\>\""}]}], "\[IndentingNewLine]", 
-     "|>"}], ",", "\[IndentingNewLine]", 
-    RowBox[{"ChatGPTPluginEndpoint", "[", 
-     RowBox[{"\"\<getCityPopulation\>\"", ",", 
-      RowBox[{"\"\<city\>\"", "->", "\"\<City\>\""}], ",", 
-      RowBox[{
-       RowBox[{"#city", "[", "\"\<Population\>\"", "]"}], "&"}]}], "]"}]}], 
+     "\"\<Description\>\"", "->", "\"\<Get the populations of cities.\>\""}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{"\"\<Endpoints\>\"", "->", 
+      RowBox[{"<|", 
+       RowBox[{"\"\<getCityPopulation\>\"", "->", 
+        RowBox[{"APIFunction", "[", 
+         RowBox[{
+          RowBox[{"\"\<city\>\"", "->", "\"\<City\>\""}], ",", 
+          RowBox[{
+           RowBox[{"#city", "[", "\"\<Population\>\"", "]"}], "&"}]}], 
+         "]"}]}], "|>"}]}]}], "\[IndentingNewLine]", "|>"}], 
    "\[IndentingNewLine]", "]"}]}]], "Input",
- CellChangeTimes->{{3.8894730240943127`*^9, 3.889473030319086*^9}},
- CellLabel->"In[2]:=",
- CellID->428262334,ExpressionUUID->"d1ac4692-934e-4955-bdca-859df5fca75b"],
+ CellChangeTimes->{{3.8894730240943127`*^9, 3.889473030319086*^9}, {
+   3.890399596184895*^9, 3.890399612801609*^9}, 3.890399677550045*^9},
+ CellLabel->"In[1]:=",
+ CellID->1684930561,ExpressionUUID->"09d200e4-3687-43d5-bbff-0c4e6b70706e"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -445,13 +522,15 @@ Cell[BoxData[
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
                     
-                    Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[{
-                    "getCityPopulation", 
-                    Missing["NotSpecified"]}, {
+                    Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
+                    "OperationID" -> "getCityPopulation", "Prompt" -> 
+                    Missing["NotSpecified"], 
+                    "Parameters" -> {
                     "city" -> <|
                     "Interpreter" -> "City", "Help" -> 
-                    Missing["NotSpecified"], "Required" -> True|>}, Slot[
-                    "city"]["Population"]& , {}], Selectable -> False, 
+                    Missing["NotSpecified"], "Required" -> True|>}, 
+                    "Function" -> (Slot["city"]["Population"]& ), 
+                    "APIFunctionOptions" -> {}|>, {}], Selectable -> False, 
                     Editable -> False, SelectWithContents -> True]}}, 
                     GridBoxAlignment -> {"Columns" -> {{Left}}}, 
                     DefaultBaseStyle -> "Column", 
@@ -480,25 +559,29 @@ Cell[BoxData[
     DynamicModuleValues:>{}], "]"}],
   Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
    "Name" -> "CityPopulationFinder", "Description" -> 
-    "Get the populations of cities.", "Prompt" -> ""|>, {
-    Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[{"getCityPopulation", 
-      Missing["NotSpecified"]}, {
-     "city" -> <|
-       "Interpreter" -> "City", "Help" -> Missing["NotSpecified"], "Required" -> 
-        True|>}, Slot["city"]["Population"]& , {}]}, {}],
+    "Get the populations of cities.", "Prompt" -> "", "Endpoints" -> {
+      Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
+       "OperationID" -> "getCityPopulation", "Prompt" -> 
+        Missing["NotSpecified"], 
+        "Parameters" -> {
+         "city" -> <|
+           "Interpreter" -> "City", "Help" -> Missing["NotSpecified"], 
+            "Required" -> True|>}, 
+        "Function" -> (Slot["city"]["Population"]& ), 
+        "APIFunctionOptions" -> {}|>, {}]}|>, {}],
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
  CellChangeTimes->{{3.889473027310793*^9, 3.8894730306369877`*^9}, 
-   3.890324358348649*^9},
- CellLabel->"Out[2]=",
- CellID->1213392519,ExpressionUUID->"58305a5c-df76-498b-a9df-85e8aad1f614"]
+   3.890324358348649*^9, 3.890399613272441*^9},
+ CellLabel->"Out[1]=",
+ CellID->479805445,ExpressionUUID->"ac95fa3c-cc21-4abe-9673-cca76bb3860f"]
 }, Open  ]],
 
 Cell["Deploy it to a local web server:", "ExampleText",
  CellChangeTimes->{{3.8894730321254272`*^9, 3.8894730348172617`*^9}, {
   3.889473077023293*^9, 3.889473079403915*^9}},
- CellID->1506863819,ExpressionUUID->"c4ba3a55-3ba9-4677-abcc-4c30679d17c3"],
+ CellID->1908569385,ExpressionUUID->"166cffe6-403c-4bb4-a351-d559e8542a5d"],
 
 Cell[CellGroupData[{
 
@@ -507,7 +590,7 @@ Cell[BoxData[
   RowBox[{"ChatGPTPluginDeploy", "[", "plugin", "]"}]}]], "Input",
  CellChangeTimes->{{3.8894730366694183`*^9, 3.889473040448915*^9}},
  CellLabel->"In[3]:=",
- CellID->288831357,ExpressionUUID->"d9e08b35-e949-4eb3-905e-0e9de2380e53"],
+ CellID->362418456,ExpressionUUID->"960f15e4-6980-4a54-9a91-01f080c7b3dd"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -1258,18 +1341,255 @@ Cell[BoxData[
   Selectable->False]], "Output",
  CellChangeTimes->{3.889473040788374*^9, 3.890324359878705*^9},
  CellLabel->"Out[3]=",
- CellID->1650544262,ExpressionUUID->"32766a7e-4677-43ab-9bca-4ab41f85cf39"]
+ CellID->903367100,ExpressionUUID->"47f00ae4-c2cc-4eb7-bd3c-849763bc024d"]
 }, Open  ]],
 
 Cell["Stop the web server:", "ExampleText",
  CellChangeTimes->{{3.889473069685279*^9, 3.889473074177333*^9}},
- CellID->1129729877,ExpressionUUID->"3f6e8677-f006-44eb-8d2d-45e9f048d044"],
+ CellID->181465410,ExpressionUUID->"85b2aa00-107d-4fbf-9506-009104b042ee"],
 
 Cell[BoxData[
  RowBox[{"DeleteObject", "[", "server", "]"}]], "Input",
  CellChangeTimes->{{3.889473081013341*^9, 3.889473083050357*^9}},
  CellLabel->"In[4]:=",
- CellID->1952056595,ExpressionUUID->"3ae9fa06-be04-4db8-8c28-00d0e72654f5"]
+ CellID->462367130,ExpressionUUID->"e910d36e-d74a-4011-8f61-722c80f328b7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "a252dfcf-3543-4cef-b97e-f5d7b6120bbb"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->774247027,ExpressionUUID->"64d98765-f079-432f-ac6a-78f3fc37c3e9"],
+
+Cell["Create a plugin with an explicit endpoint object::", "ExampleText",
+ CellChangeTimes->{{3.889473009228105*^9, 3.889473020802627*^9}, {
+  3.8903996934075327`*^9, 3.890399702059231*^9}},
+ CellID->374440937,ExpressionUUID->"82f36a2c-5794-41e3-8ac6-e35939435eaa"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plugin", "=", 
+  RowBox[{"ChatGPTPlugin", "[", 
+   RowBox[{
+    RowBox[{"<|", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<Name\>\"", "->", "\"\<CityPopulationFinder\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<Description\>\"", "->", "\"\<Get the populations of cities.\>\""}],
+       ",", "\[IndentingNewLine]", "\"\<Endpoints\>\""}], 
+     "\[IndentingNewLine]", "|>"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"ChatGPTPluginEndpoint", "[", 
+     RowBox[{"\"\<getCityPopulation\>\"", ",", 
+      RowBox[{"\"\<city\>\"", "->", "\"\<City\>\""}], ",", 
+      RowBox[{
+       RowBox[{"#city", "[", "\"\<Population\>\"", "]"}], "&"}]}], "]"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.8894730240943127`*^9, 3.889473030319086*^9}, {
+  3.890399596184895*^9, 3.890399612801609*^9}},
+ CellLabel->"In[2]:=",
+ CellID->428262334,ExpressionUUID->"d1ac4692-934e-4955-bdca-859df5fca75b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["ChatGPTPlugin",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"CityPopulationFinder\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"description: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"Get the populations of cities.\"", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"CityPopulationFinder\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"description: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"Get the populations of cities.\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"endpoints: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  TagBox[
+                   GridBox[{{
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["ChatGPTPluginEndpoint", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{
+                    Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"]], 
+                    ButtonFunction :> (Typeset`open$$ = True), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"getCityPopulation\"", "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"]], 
+                    ButtonFunction :> (Typeset`open$$ = False), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"getCityPopulation\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"prompt: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"Missing", "[", "\"NotSpecified\"", "]"}], 
+                    "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    
+                    Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[{
+                    "getCityPopulation", 
+                    Missing["NotSpecified"]}, {
+                    "city" -> <|
+                    "Interpreter" -> "City", "Help" -> 
+                    Missing["NotSpecified"], "Required" -> True|>}, Slot[
+                    "city"]["Population"]& , {}], Selectable -> False, 
+                    Editable -> False, SelectWithContents -> True]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    DefaultBaseStyle -> "Column", 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                   "Column"], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"prompt: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"\"", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
+   "Name" -> "CityPopulationFinder", "Description" -> 
+    "Get the populations of cities.", "Prompt" -> ""|>, {
+    Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[{"getCityPopulation", 
+      Missing["NotSpecified"]}, {
+     "city" -> <|
+       "Interpreter" -> "City", "Help" -> Missing["NotSpecified"], "Required" -> 
+        True|>}, Slot["city"]["Population"]& , {}]}, {}],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.889473027310793*^9, 3.8894730306369877`*^9}, 
+   3.890324358348649*^9},
+ CellLabel->"Out[2]=",
+ CellID->1213392519,ExpressionUUID->"58305a5c-df76-498b-a9df-85e8aad1f614"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1459,7 +1779,7 @@ TaggingRules->{
     "$UseNewPageDialog" -> ""}, 
   "WelcomeScreenSettings" -> {"FEStarting" -> False}, "Paclet" -> 
   "Wolfram/ChatGPTPluginKit"},
-FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (November 18, 2022)",
+FrontEndVersion->"13.3 for Mac OS X x86 (64-bit) (April 8, 2023)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
   CharacterEncoding -> "UTF-8"],
 ExpressionUUID->"d52b66ce-af3b-453e-b4f9-c7b3d7d02b72"
@@ -1470,14 +1790,14 @@ ExpressionUUID->"d52b66ce-af3b-453e-b4f9-c7b3d7d02b72"
 (*CellTagsOutline
 CellTagsIndex->{
  "ExtendedExamples"->{
-  Cell[60047, 1276, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"2b0a73e6-e7e1-4f1f-886a-7b783ec1c368",
+  Cell[74767, 1596, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"2b0a73e6-e7e1-4f1f-886a-7b783ec1c368",
    CellTags->"ExtendedExamples",
    CellID->330491882]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 66746, 1471}
+ {"ExtendedExamples", 81462, 1791}
  }
 *)
 (*NotebookFileOutline
@@ -1485,137 +1805,151 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 110, 1, 74, "ObjectName",ExpressionUUID->"af4293b2-0c4a-4da2-8a3c-795156d71e9a",
  CellID->722873431],
-Cell[693, 25, 1130, 27, 125, "Usage",ExpressionUUID->"12a193bc-e708-41a8-8f3e-7765e8826b51",
+Cell[693, 25, 2453, 59, 209, "Usage",ExpressionUUID->"12a193bc-e708-41a8-8f3e-7765e8826b51",
  CellID->1018763738],
-Cell[1826, 54, 394, 8, 27, "Notes",ExpressionUUID->"eadb8e92-9089-4b33-9c2a-a0c9a80445ea",
+Cell[3149, 86, 394, 8, 27, "Notes",ExpressionUUID->"eadb8e92-9089-4b33-9c2a-a0c9a80445ea",
  CellID->475027035],
-Cell[2223, 64, 325, 8, 27, "Notes",ExpressionUUID->"e33195e4-4d8b-40ef-93b1-e79937c04027",
+Cell[3546, 96, 325, 8, 27, "Notes",ExpressionUUID->"e33195e4-4d8b-40ef-93b1-e79937c04027",
  CellID->2094681816],
-Cell[2551, 74, 862, 15, 61, "2ColumnTableMod",ExpressionUUID->"7e7358b2-f09f-4efd-9bfa-3f34f18cbf47",
+Cell[3874, 106, 862, 15, 61, "2ColumnTableMod",ExpressionUUID->"7e7358b2-f09f-4efd-9bfa-3f34f18cbf47",
  CellID->1447720471],
-Cell[3416, 91, 596, 15, 29, "Notes",ExpressionUUID->"7dec71f9-5f8b-4b1a-8d44-15a135effb64",
- CellID->1510575087]
+Cell[4739, 123, 596, 15, 29, "Notes",ExpressionUUID->"7dec71f9-5f8b-4b1a-8d44-15a135effb64",
+ CellID->1510575087],
+Cell[5338, 140, 996, 25, 47, "Notes",ExpressionUUID->"f70fe9e1-cf4f-4c5b-9f33-4d2078ae8597",
+ CellID->148526490],
+Cell[6337, 167, 586, 13, 45, "Notes",ExpressionUUID->"bdbab817-eefd-45c3-a8ca-9272349cc403",
+ CellID->504065141]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4049, 111, 459, 13, 34, "SeeAlsoSection",ExpressionUUID->"535e72e4-7dc0-4d07-9cae-c48b80739671",
+Cell[6960, 185, 459, 13, 40, "SeeAlsoSection",ExpressionUUID->"535e72e4-7dc0-4d07-9cae-c48b80739671",
  CellID->1582661346],
-Cell[4511, 126, 2132, 52, 23, "SeeAlso",ExpressionUUID->"e1c6eb6c-efbf-42b2-aa7d-953ad1cf4ac1",
+Cell[7422, 200, 2132, 52, 23, "SeeAlso",ExpressionUUID->"e1c6eb6c-efbf-42b2-aa7d-953ad1cf4ac1",
  CellID->1056790480]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6680, 183, 436, 12, 47, "TechNotesSection",ExpressionUUID->"3e2d0df8-1b35-4c2a-b838-31b662d28d4d",
+Cell[9591, 257, 436, 12, 41, "TechNotesSection",ExpressionUUID->"3e2d0df8-1b35-4c2a-b838-31b662d28d4d",
  CellID->1787836670],
-Cell[7119, 197, 100, 1, 19, "Tutorials",ExpressionUUID->"15b6049d-8312-4e31-bc0e-6ab1637f8913",
+Cell[10030, 271, 100, 1, 19, "Tutorials",ExpressionUUID->"15b6049d-8312-4e31-bc0e-6ab1637f8913",
  CellID->579723866]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7256, 203, 117, 1, 34, "MoreAboutSection",ExpressionUUID->"388e79f8-c671-411f-990a-3333bcc43f37",
+Cell[10167, 277, 117, 1, 40, "MoreAboutSection",ExpressionUUID->"388e79f8-c671-411f-990a-3333bcc43f37",
  CellID->285709423],
-Cell[7376, 206, 100, 1, 19, "MoreAbout",ExpressionUUID->"29fc81e0-f0e8-4ad8-aab9-4a7a4bbc3551",
+Cell[10287, 280, 100, 1, 19, "MoreAbout",ExpressionUUID->"29fc81e0-f0e8-4ad8-aab9-4a7a4bbc3551",
  CellID->144837669]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7513, 212, 473, 13, 34, "RelatedLinksSection",ExpressionUUID->"de188d9b-d6ff-4965-96f2-b7dce232597d",
+Cell[10424, 286, 473, 13, 40, "RelatedLinksSection",ExpressionUUID->"de188d9b-d6ff-4965-96f2-b7dce232597d",
  CellID->1187730832],
-Cell[7989, 227, 104, 1, 19, "RelatedLinks",ExpressionUUID->"f0a4aedc-1e86-474d-bef9-86cbdfb4dc03",
+Cell[10900, 301, 104, 1, 19, "RelatedLinks",ExpressionUUID->"f0a4aedc-1e86-474d-bef9-86cbdfb4dc03",
  CellID->1331594559]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8130, 233, 531, 14, 70, "ExamplesInitializationSection",ExpressionUUID->"092a9791-4f0a-47f1-bf05-c70b885f7fbd",
+Cell[11041, 307, 531, 14, 70, "ExamplesInitializationSection",ExpressionUUID->"092a9791-4f0a-47f1-bf05-c70b885f7fbd",
  CellID->1182667726],
-Cell[8664, 249, 251, 4, 47, "ExampleInitialization",ExpressionUUID->"e475ee33-baf0-4eb3-88ed-831eb8835b1c",
+Cell[11575, 323, 251, 4, 47, "ExampleInitialization",ExpressionUUID->"e475ee33-baf0-4eb3-88ed-831eb8835b1c",
  CellID->2135317897]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8952, 258, 443, 12, 73, "PrimaryExamplesSection",ExpressionUUID->"2c308301-29e3-465a-99a7-5df2a765a359",
+Cell[11863, 332, 443, 12, 73, "PrimaryExamplesSection",ExpressionUUID->"2c308301-29e3-465a-99a7-5df2a765a359",
  CellID->1688669862],
-Cell[9398, 272, 188, 2, 24, "ExampleText",ExpressionUUID->"82f36a2c-5794-41e3-8ac6-e35939435eaa",
+Cell[12309, 346, 189, 2, 24, "ExampleText",ExpressionUUID->"ab6e110b-af4a-44f4-98cb-d54fc1d6551d",
+ CellID->1353473655],
+Cell[CellGroupData[{
+Cell[12523, 352, 1025, 23, 142, "Input",ExpressionUUID->"09d200e4-3687-43d5-bbff-0c4e6b70706e",
+ CellID->1684930561],
+Cell[13551, 377, 10102, 200, 53, "Output",ExpressionUUID->"ac95fa3c-cc21-4abe-9673-cca76bb3860f",
+ CellID->479805445]
+}, Open  ]],
+Cell[23668, 580, 250, 3, 24, "ExampleText",ExpressionUUID->"166cffe6-403c-4bb4-a351-d559e8542a5d",
+ CellID->1908569385],
+Cell[CellGroupData[{
+Cell[23943, 587, 271, 5, 27, "Input",ExpressionUUID->"960f15e4-6980-4a54-9a91-01f080c7b3dd",
+ CellID->362418456],
+Cell[24217, 594, 38733, 749, 53, "Output",ExpressionUUID->"47f00ae4-c2cc-4eb7-bd3c-849763bc024d",
+ CellID->903367100]
+}, Open  ]],
+Cell[62965, 1346, 184, 2, 24, "ExampleText",ExpressionUUID->"85b2aa00-107d-4fbf-9506-009104b042ee",
+ CellID->181465410],
+Cell[63152, 1350, 234, 4, 27, "Input",ExpressionUUID->"e910d36e-d74a-4011-8f61-722c80f328b7",
+ CellID->462367130],
+Cell[CellGroupData[{
+Cell[63411, 1358, 242, 5, 20, "ExampleDelimiter",ExpressionUUID->"64d98765-f079-432f-ac6a-78f3fc37c3e9",
+ CellID->774247027],
+Cell[63656, 1365, 265, 3, 24, "ExampleText",ExpressionUUID->"82f36a2c-5794-41e3-8ac6-e35939435eaa",
  CellID->374440937],
 Cell[CellGroupData[{
-Cell[9611, 278, 869, 20, 142, "Input",ExpressionUUID->"d1ac4692-934e-4955-bdca-859df5fca75b",
+Cell[63946, 1372, 966, 21, 161, "Input",ExpressionUUID->"d1ac4692-934e-4955-bdca-859df5fca75b",
  CellID->428262334],
-Cell[10483, 300, 9791, 194, 53, "Output",ExpressionUUID->"58305a5c-df76-498b-a9df-85e8aad1f614",
+Cell[64915, 1395, 9791, 194, 53, "Output",ExpressionUUID->"58305a5c-df76-498b-a9df-85e8aad1f614",
  CellID->1213392519]
-}, Open  ]],
-Cell[20289, 497, 250, 3, 24, "ExampleText",ExpressionUUID->"c4ba3a55-3ba9-4677-abcc-4c30679d17c3",
- CellID->1506863819],
-Cell[CellGroupData[{
-Cell[20564, 504, 271, 5, 27, "Input",ExpressionUUID->"d9e08b35-e949-4eb3-905e-0e9de2380e53",
- CellID->288831357],
-Cell[20838, 511, 38734, 749, 53, "Output",ExpressionUUID->"32766a7e-4677-43ab-9bca-4ab41f85cf39",
- CellID->1650544262]
-}, Open  ]],
-Cell[59587, 1263, 185, 2, 24, "ExampleText",ExpressionUUID->"3f6e8677-f006-44eb-8d2d-45e9f048d044",
- CellID->1129729877],
-Cell[59775, 1267, 235, 4, 27, "Input",ExpressionUUID->"3ae9fa06-be04-4db8-8c28-00d0e72654f5",
- CellID->1952056595]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[60047, 1276, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"2b0a73e6-e7e1-4f1f-886a-7b783ec1c368",
+Cell[74767, 1596, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"2b0a73e6-e7e1-4f1f-886a-7b783ec1c368",
  CellTags->"ExtendedExamples",
  CellID->330491882],
-Cell[60537, 1291, 242, 5, 35, "ExampleSection",ExpressionUUID->"a6596816-4e65-49f9-a567-0f3bec281820",
+Cell[75257, 1611, 242, 5, 35, "ExampleSection",ExpressionUUID->"a6596816-4e65-49f9-a567-0f3bec281820",
  CellID->1184349632],
-Cell[60782, 1298, 264, 5, 23, "ExampleSection",ExpressionUUID->"6a1d3ae0-f9df-49c8-8eb5-8e63d93f8206",
+Cell[75502, 1618, 264, 5, 23, "ExampleSection",ExpressionUUID->"6a1d3ae0-f9df-49c8-8eb5-8e63d93f8206",
  CellID->338340981],
 Cell[CellGroupData[{
-Cell[61071, 1307, 244, 5, 23, "ExampleSection",ExpressionUUID->"57b2e7f2-0377-44f4-a107-c50d03d7aecb",
+Cell[75791, 1627, 244, 5, 23, "ExampleSection",ExpressionUUID->"57b2e7f2-0377-44f4-a107-c50d03d7aecb",
  CellID->2107654058],
-Cell[61318, 1314, 246, 5, 26, "ExampleSubsection",ExpressionUUID->"b21c48e0-861a-4a16-b48f-e83de99f2d3e",
+Cell[76038, 1634, 246, 5, 26, "ExampleSubsection",ExpressionUUID->"b21c48e0-861a-4a16-b48f-e83de99f2d3e",
  CellID->598995541],
-Cell[61567, 1321, 247, 5, 22, "ExampleSubsection",ExpressionUUID->"78365e5e-b142-42ac-8ab3-b7f9d317a088",
+Cell[76287, 1641, 247, 5, 22, "ExampleSubsection",ExpressionUUID->"78365e5e-b142-42ac-8ab3-b7f9d317a088",
  CellID->2062204098]
 }, Open  ]],
-Cell[61829, 1329, 249, 5, 35, "ExampleSection",ExpressionUUID->"e8cf9d28-000d-4fec-8c81-76985e860942",
+Cell[76549, 1649, 249, 5, 35, "ExampleSection",ExpressionUUID->"e8cf9d28-000d-4fec-8c81-76985e860942",
  CellID->1225696153],
-Cell[62081, 1336, 259, 5, 23, "ExampleSection",ExpressionUUID->"8583e43f-6be9-4ab0-8b9e-e959e9765539",
+Cell[76801, 1656, 259, 5, 23, "ExampleSection",ExpressionUUID->"8583e43f-6be9-4ab0-8b9e-e959e9765539",
  CellID->1612101447],
-Cell[62343, 1343, 252, 5, 23, "ExampleSection",ExpressionUUID->"311331d0-7c72-4605-8af1-d84b0606c320",
+Cell[77063, 1663, 252, 5, 23, "ExampleSection",ExpressionUUID->"311331d0-7c72-4605-8af1-d84b0606c320",
  CellID->1935329177],
-Cell[62598, 1350, 257, 5, 23, "ExampleSection",ExpressionUUID->"ab6ced70-f21c-47d7-aaea-83269102dfde",
+Cell[77318, 1670, 257, 5, 23, "ExampleSection",ExpressionUUID->"ab6ced70-f21c-47d7-aaea-83269102dfde",
  CellID->1290160377],
-Cell[62858, 1357, 249, 5, 23, "ExampleSection",ExpressionUUID->"d7223d91-1a90-48c3-8d29-1e1e76302730",
+Cell[77578, 1677, 249, 5, 23, "ExampleSection",ExpressionUUID->"d7223d91-1a90-48c3-8d29-1e1e76302730",
  CellID->583072480]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[63144, 1367, 110, 1, 72, "MetadataSection",ExpressionUUID->"1d61fc84-a785-4b81-878b-477625ae5c85",
+Cell[77864, 1687, 110, 1, 72, "MetadataSection",ExpressionUUID->"1d61fc84-a785-4b81-878b-477625ae5c85",
  CellID->731290099],
-Cell[63257, 1370, 476, 12, 26, "History",ExpressionUUID->"b8124440-ee48-4f64-9109-c91a31cc646c",
+Cell[77977, 1690, 476, 12, 26, "History",ExpressionUUID->"b8124440-ee48-4f64-9109-c91a31cc646c",
  CellID->743782112],
 Cell[CellGroupData[{
-Cell[63758, 1386, 484, 13, 21, "CategorizationSection",ExpressionUUID->"b3085543-b2b6-45a7-8f15-fc64b3661cd0",
+Cell[78478, 1706, 484, 13, 21, "CategorizationSection",ExpressionUUID->"b3085543-b2b6-45a7-8f15-fc64b3661cd0",
  CellID->243647197],
-Cell[64245, 1401, 135, 2, 35, "Categorization",ExpressionUUID->"836e6b75-500d-4f27-a909-19cf0843511b",
+Cell[78965, 1721, 135, 2, 35, "Categorization",ExpressionUUID->"836e6b75-500d-4f27-a909-19cf0843511b",
  CellID->1874608797],
-Cell[64383, 1405, 152, 2, 35, "Categorization",ExpressionUUID->"166977d3-b367-4972-963b-31c2d9ff8176",
+Cell[79103, 1725, 152, 2, 35, "Categorization",ExpressionUUID->"166977d3-b367-4972-963b-31c2d9ff8176",
  CellID->817466042],
-Cell[64538, 1409, 150, 2, 35, "Categorization",ExpressionUUID->"cb2d61e2-1b99-4e47-a812-1afb3dce8c9b",
+Cell[79258, 1729, 150, 2, 35, "Categorization",ExpressionUUID->"cb2d61e2-1b99-4e47-a812-1afb3dce8c9b",
  CellID->1698878035],
-Cell[64691, 1413, 162, 2, 35, "Categorization",ExpressionUUID->"259c8d8f-823e-4636-ae68-71fb318f43ca",
+Cell[79411, 1733, 162, 2, 35, "Categorization",ExpressionUUID->"259c8d8f-823e-4636-ae68-71fb318f43ca",
  CellID->100563733]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[64890, 1420, 110, 1, 31, "KeywordsSection",ExpressionUUID->"f74de9bc-1fed-4015-b4d5-bfa06e925d1c",
+Cell[79610, 1740, 110, 1, 31, "KeywordsSection",ExpressionUUID->"f74de9bc-1fed-4015-b4d5-bfa06e925d1c",
  CellID->105030342],
-Cell[65003, 1423, 98, 1, 70, "Keywords",ExpressionUUID->"7eb7329a-533e-4cc0-8f72-5a6250db14d5",
+Cell[79723, 1743, 98, 1, 70, "Keywords",ExpressionUUID->"7eb7329a-533e-4cc0-8f72-5a6250db14d5",
  CellID->13400160]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[65138, 1429, 120, 1, 21, "TemplatesSection",ExpressionUUID->"632e439c-d6ba-4c33-8c37-af5143b4c4b7",
+Cell[79858, 1749, 120, 1, 21, "TemplatesSection",ExpressionUUID->"632e439c-d6ba-4c33-8c37-af5143b4c4b7",
  CellID->1878189832],
-Cell[65261, 1432, 148, 2, 70, "Template",ExpressionUUID->"252f24a9-d441-40dd-b411-8ae4d3a18ed9",
+Cell[79981, 1752, 148, 2, 70, "Template",ExpressionUUID->"252f24a9-d441-40dd-b411-8ae4d3a18ed9",
  CellID->874379171],
-Cell[65412, 1436, 137, 2, 70, "Template",ExpressionUUID->"31ea399e-96ac-4d33-b265-bb6a97a51767",
+Cell[80132, 1756, 137, 2, 70, "Template",ExpressionUUID->"31ea399e-96ac-4d33-b265-bb6a97a51767",
  CellID->460130576],
-Cell[65552, 1440, 135, 2, 70, "Template",ExpressionUUID->"32e4ef4d-1512-4b74-8a53-caaa5eab4e31",
+Cell[80272, 1760, 135, 2, 70, "Template",ExpressionUUID->"32e4ef4d-1512-4b74-8a53-caaa5eab4e31",
  CellID->325977985],
-Cell[65690, 1444, 137, 2, 70, "Template",ExpressionUUID->"c7c44a29-819b-4dc6-aa94-3eaaf6abbc62",
+Cell[80410, 1764, 137, 2, 70, "Template",ExpressionUUID->"c7c44a29-819b-4dc6-aa94-3eaaf6abbc62",
  CellID->481210398]
 }, Closed]]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
