@@ -43,4 +43,4 @@ _Insert gif here_
 
 ### More examples
 
-See here for more examples.
+See [here](EXAMPLES.md) for more examples.
