@@ -51,7 +51,8 @@ icreateChatGPTPluginEndpoint[{opSpec_, params_, f_}, opts_] :=
 				Confirm@normalizeOpSpec[opSpec],
 				<|
 					"Parameters" -> Confirm@normalizeParamsList[params],
-					"Function" -> f
+					"Function" -> f,
+					"APIFunctionOptions" -> {}
 				|>
 			],
 			opts

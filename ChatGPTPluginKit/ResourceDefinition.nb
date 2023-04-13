@@ -909,20 +909,22 @@ can then request to call those APIs.\
  CellID->889292814,ExpressionUUID->"6a750b2f-a25f-42f9-9703-7203a5e5a2bf"],
 
 Cell["\<\
-ChatGPTPlugins works by deploying a web server to localhost providing all the \
-specified manifests and APIs.\
+ChatGPTPluginKit works by deploying a web server to localhost providing all \
+the specified manifests and APIs.\
 \>", "Notes",
  TaggingRules->{},
  CellChangeTimes->{{3.889455722260363*^9, 3.889455748215559*^9}, {
-  3.8894557953175097`*^9, 3.889455825601982*^9}},
+  3.8894557953175097`*^9, 3.889455825601982*^9}, {3.890400436809157*^9, 
+  3.890400437426311*^9}},
  CellID->1210821309,ExpressionUUID->"88a442cc-6f4f-40fb-b728-791078d45fd3"],
 
 Cell["\<\
-API calls to plugins deployed from ChatGPTPlugins run in the same kernel from \
-which the plugin was deployed.\
+API calls to plugins deployed from ChatGPTPluginKit run in the same kernel \
+from which the plugin was deployed.\
 \>", "Notes",
  TaggingRules->{},
- CellChangeTimes->{{3.889455829866983*^9, 3.889455852246958*^9}},
+ CellChangeTimes->{{3.889455829866983*^9, 3.889455852246958*^9}, 
+   3.8904004390971203`*^9},
  CellID->1259488127,ExpressionUUID->"f6a7fc50-5299-481b-b34e-9da0a0a28aac"]
 }, Open  ]],
 
@@ -1058,7 +1060,7 @@ Cell[BoxData[
    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}]], "Input", "Excluded",
  TaggingRules->{},
  InitializationCell->True,
- CellLabel->"In[3]:=",
+ CellLabel->"In[2]:=",
  CellID->996717066,ExpressionUUID->"0dfb8c8c-69d7-4458-b87f-0afef3448adb"],
 
 Cell[BoxData[
@@ -1068,7 +1070,7 @@ Cell[BoxData[
  TaggingRules->{},
  InitializationCell->True,
  CellChangeTimes->{{3.8903238546959047`*^9, 3.890323857442161*^9}},
- CellLabel->"In[2]:=",
+ CellLabel->"In[3]:=",
  CellID->172764492,ExpressionUUID->"c4d8711f-5458-4c3b-9b42-32202ad64646"]
 }, Open  ]],
 
@@ -1103,7 +1105,7 @@ Cell[BoxData[
          "]"}]}], "|>"}]}]}], "\[IndentingNewLine]", "|>"}], "]"}]}]], "Input",
  TaggingRules->{},
  CellChangeTimes->{{3.890398508332391*^9, 3.8903985957004223`*^9}},
- CellLabel->"In[6]:=",
+ CellLabel->"In[4]:=",
  CellID->344476325,ExpressionUUID->"55577ea9-6ad8-45db-9f8f-d72c064e1e5e"],
 
 Cell[BoxData[
@@ -1118,10 +1120,11 @@ Cell[BoxData[
             PaneBox[
              ButtonBox[
               DynamicBox[
-               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
-              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
-              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
-              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"], 
+               ImageSizeCache -> {11., {0., 11.}}], Appearance -> None, 
+              BaseStyle -> {}, ButtonFunction :> (Typeset`open$$ = True), 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
              Dynamic[{
                Automatic, 
                 3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
@@ -1251,7 +1254,6 @@ Cell[BoxData[
                     43.684000000000005`}, {36.558, 43.684000000000005`}, {
                     36.558, 8.569}}]}}], 
                   FilledCurveBox[{{
-                    
                     Line[{{59.053, 8.569}, {63.443, 8.569}, {63.443, 
                     43.684000000000005`}, {59.053, 43.684000000000005`}, {
                     59.053, 8.569}}]}}], {
@@ -1299,14 +1301,12 @@ Cell[BoxData[
                 PlotRange -> {{20, 80}, {0, 70}}], 
                Scaled[{0.4815646584533839, 0.480603401001521}], Center, {
                15.479525531281004`, 15.479525531281007`}, {{1., 0.}, {0., 
-               1.}}]}, {ImageSize -> {Automatic, 
-                Dynamic[
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                  Magnification])]}, AspectRatio -> Automatic, 
-              ImagePadding -> {{0., 0.}, {0., 0.}}, 
-              ImageSize -> {64.43359375, 68.}, 
-              PlotRange -> {{0., 24.}, {0., 24.}}, PlotRangePadding -> 
-              Automatic}], 
+               1.}}]}, AspectRatio -> Automatic, 
+             ImagePadding -> {{0., 0.}, {0., 0.}}, ImageSize -> {Automatic, 
+               Dynamic[
+               3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])]}, PlotRange -> {{0., 24.}, {0., 24.}}, 
+             PlotRangePadding -> Automatic], 
             GridBox[{{
                RowBox[{
                  TagBox["\"Endpoint: \"", "SummaryItemAnnotation"], 
@@ -1324,7 +1324,7 @@ Cell[BoxData[
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3610800062588910992], {
+                    3610804874293692250], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -1332,29 +1332,32 @@ Cell[BoxData[
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`a, 
                     Blank[]] :> Missing["NotAvailable"]}], 
                     Missing["NotAvailable"]], StandardForm], 
+                   ImageSizeCache -> {12., {0., 8.}}, 
                    TrackedSymbols :> {
                     ZeroMQLink`PackageScope`$SocketListeners}], 
-                  "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
+                  "SummaryItem"]}]}}, AutoDelete -> False, 
+             BaseStyle -> {
               ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
           GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
           GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}], True -> GridBox[{{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True -> 
+        GridBox[{{
             PaneBox[
              ButtonBox[
               DynamicBox[
                FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
-              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
-              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
-              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+              Appearance -> None, BaseStyle -> {}, 
+              ButtonFunction :> (Typeset`open$$ = False), Evaluator -> 
+              Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
              Dynamic[{
                Automatic, 
                 3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
@@ -1532,14 +1535,12 @@ Cell[BoxData[
                 PlotRange -> {{20, 80}, {0, 70}}], 
                Scaled[{0.4815646584533839, 0.480603401001521}], Center, {
                15.479525531281004`, 15.479525531281007`}, {{1., 0.}, {0., 
-               1.}}]}, {ImageSize -> {Automatic, 
-                Dynamic[
-                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-                  Magnification])]}, AspectRatio -> Automatic, 
-              ImagePadding -> {{0., 0.}, {0., 0.}}, 
-              ImageSize -> {64.43359375, 68.}, 
-              PlotRange -> {{0., 24.}, {0., 24.}}, PlotRangePadding -> 
-              Automatic}], 
+               1.}}]}, AspectRatio -> Automatic, 
+             ImagePadding -> {{0., 0.}, {0., 0.}}, ImageSize -> {Automatic, 
+               Dynamic[
+               3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])]}, PlotRange -> {{0., 24.}, {0., 24.}}, 
+             PlotRangePadding -> Automatic], 
             GridBox[{{
                RowBox[{
                  TagBox["\"Endpoint: \"", "SummaryItemAnnotation"], 
@@ -1557,7 +1558,7 @@ Cell[BoxData[
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3610800062588910992], {
+                    3610804874293692250], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -1708,7 +1709,7 @@ Cell[BoxData[
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-8d84ebac-4a0a-4063-aaec-cb705273edb7\"", 
+                    "\"TCPSERVER-90735fd0-7aa2-4d3c-9e96-f115e6fa9e43\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}}, 
                     GridBoxAlignment -> {
                     "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
@@ -1815,7 +1816,7 @@ Cell[BoxData[
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-8d84ebac-4a0a-4063-aaec-cb705273edb7\"", 
+                    "\"TCPSERVER-90735fd0-7aa2-4d3c-9e96-f115e6fa9e43\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}, {
                     
                     RowBox[{
@@ -1842,33 +1843,34 @@ Cell[BoxData[
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
                    SocketObject[
-                   "TCPSERVER-8d84ebac-4a0a-4063-aaec-cb705273edb7"], 
-                   Selectable -> False, Editable -> False, SelectWithContents -> 
-                   True], "SummaryItem"]}]}}, 
-             GridBoxAlignment -> {
-              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
-             False, GridBoxItemSize -> {
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
-              BaseStyle -> {
+                   "TCPSERVER-90735fd0-7aa2-4d3c-9e96-f115e6fa9e43"], 
+                   Editable -> False, SelectWithContents -> True, Selectable -> 
+                   False], "SummaryItem"]}]}}, AutoDelete -> False, 
+             BaseStyle -> {
               ShowStringCharacters -> False, NumberMarks -> False, 
-               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
           GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
-          AutoDelete -> False, 
           GridBoxItemSize -> {
-           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-          BaselinePosition -> {1, 1}]}, 
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
        Dynamic[Typeset`open$$], ImageSize -> Automatic]},
      "SummaryPanel"],
     DynamicModuleValues:>{}], "]"}],
-  SocketListener[3610800062588910992],
+  SocketListener[3610804874293692250],
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
  TaggingRules->{},
- CellChangeTimes->{{3.890398576842456*^9, 3.8903986058660088`*^9}},
- CellLabel->"Out[6]=",
- CellID->1982295402,ExpressionUUID->"8194fd3f-6ddd-4506-b21c-9cb87fe08e11"]
+ CellChangeTimes->{{3.890398576842456*^9, 3.8903986058660088`*^9}, 
+   3.89040084547318*^9},
+ CellLabel->"Out[4]=",
+ CellID->2136284968,ExpressionUUID->"9e9e87bd-a00f-474e-a442-334517b8a317"]
 }, Open  ]],
 
 Cell["Use in ChatGPT:", "Text",
@@ -4690,7 +4692,6 @@ Cell[BoxData[
                     RowBox[{"Module", "[", 
                     RowBox[{
                     RowBox[{"{", 
-                    
                     RowBox[{
                     "Wolfram`ChatGPTPluginKit`Deploy`Private`handlers$", ",", 
                     
@@ -4795,9 +4796,9 @@ Cell[BoxData[
                     56.678000000000004`, 65.089}, {44.057, 65.089}, {44.057, 
                     43.685}}]}}]}}}, {{{1, 0}, {0, -1}}, Center}], {
                     ImageSize -> {Automatic, 
-                    Dynamic[3.5 (CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification])]}, 
-                    PlotRange -> {{20, 80}, {0, 70}}, 
+                    Dynamic[
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])]}, PlotRange -> {{20, 80}, {0, 70}}, 
                     BaseStyle -> {CacheGraphics -> False}, ImageSize -> 30}], 
                     
                     GridBox[{{
