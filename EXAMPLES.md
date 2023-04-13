@@ -1,6 +1,6 @@
 # Examples
 
-## File System Access
+## 📁 File System Access
 Give ChatGPT access to your local file system:
 
 ```wl
@@ -32,7 +32,7 @@ ChatGPTPluginDeploy[<|
 
 </details>
 
-## Database access
+## 🗃️ Database access
 Give ChatGPT access to run queries on a database:
 
 ```wl
@@ -60,7 +60,7 @@ ChatGPTPluginDeploy[<|
 
 </details>
 
-## Full kernel access
+## 💻 Full kernel access
 
 Allow ChatGPT to run arbitrary Wolfram Language code in the local kernel session:
 
@@ -107,7 +107,7 @@ A better prompt could probably encourage it to be safe, and refuse requests to r
 
 </details>
 
-## Documentation search
+## 🔍 Documentation search
 
 Give ChatGPT access to Wolfram Language documentation. This uses a vector database and works the same way as OpenAI's [Retrieval plugin](https://github.com/openai/chatgpt-retrieval-plugin).
 
@@ -154,7 +154,7 @@ Also with the kernel access plugin enabled:
 
 </details>
 
-## Web browsing
+## 🌐 Web browsing
 
 Allow ChatGPT to use `Import` to get data form the web. It can extract data as plaintext, hyperlinks, or the full source. It also has access to a search endpoint:
 
@@ -179,7 +179,7 @@ ChatGPTPluginDeploy[<|
 
 </details>
 
-## SMS
+## 📱 SMS
 
 Give ChatGPT a simple SMS endpoint that can send messages to `$MobilePhone`:
 
@@ -199,7 +199,7 @@ ChatGPTPluginDeploy[<|
 
 </details>
 
-## Organizing a directory
+## 🗂️ Organizing a directory
 
 Let ChatGPT help you organize the files in a directory. This takes advantage of `Import` to allow ChatGPT to inspect hundreds of different file formats that can be reduced to plaintext:
 
@@ -235,7 +235,7 @@ ChatGPTPluginDeploy[<|
 
 </details>
 
-## Programming assistant
+## 💡 Programming assistant
 
 Combine several of the plugins above to give ChatGPT the ability to:
 
