@@ -73,7 +73,7 @@ normalizeMetadata[expr_] :=
 normalizeEndpoints[endpoint_ChatGPTPluginEndpoint] := {endpoint}
 normalizeEndpoints[endpoints: {__ChatGPTPluginEndpoint}] := endpoints
 normalizeEndpoints[name_ -> data_] := normalizeEndpoints[ChatGPTPluginEndpoint[name, data]]
-normalizeEndpoints[endpoints: KeyValuePattern[{}]] := normalizeEndpoints[KeyValueMap[ChatGPTPluginEndpoint, endpoints]]
+normalizeEndpoints[endpoints: KeyValuePattern[{}] /; Length[endpoints] > 0] := normalizeEndpoints[KeyValueMap[ChatGPTPluginEndpoint, Association@endpoints]]
 normalizeEndpoints[expr_] :=
 	Failure["InvalidEndpointsSpecification", <|
 		"MessageTemplate" -> "Expected a single ChatGPTPluginEndpoint, a list with at least one ChatGPTPluginEndpoint, or an association specifying ChatGPTEndpoints, but found `1` instead.",
