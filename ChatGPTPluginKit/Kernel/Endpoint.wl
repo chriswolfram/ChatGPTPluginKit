@@ -28,7 +28,8 @@ argumentsChatGPTPluginEndpointQ[
 					"Required" -> _
 				}])...
 		},
-		"Function" -> _
+		"Function" -> _,
+		"APIFunctionOptions" -> _
 	}]?AssociationQ,
 	{OptionsPattern[]}
 ] :=
@@ -51,8 +52,7 @@ icreateChatGPTPluginEndpoint[{opSpec_, params_, f_}, opts_] :=
 				<|
 					"Parameters" -> Confirm@normalizeParamsList[params],
 					"Function" -> f
-				|>,
-				f
+				|>
 			],
 			opts
 		],
@@ -95,18 +95,89 @@ normalizeParamProps[props_?AssociationQ] :=
 	}, Last]
 
 
-(* Association constructor *)
+(* Association constructors *)
 
-icreateChatGPTPluginEndpoint[{opName_, body_}, opts_] :=
+icreateChatGPTPluginEndpoint[{opName_, assoc_}, opts_] :=
 	Enclose[
-		ChatGPTPluginEndpoint[
-			{opName},
-			normalizeParamsList[params],
-			f,
-			opts
+		With[{
+				prompt = Lookup[assoc, "Prompt", Missing["NotSpecified"]],
+				apiFunc = Lookup[assoc, "APIFunction", ConfirmAssert[False, missingAPIFunctionFailure[assoc]]]
+			},
+			ChatGPTPluginEndpoint[
+				Join[
+					<|
+						"OperationID" -> ConfirmBy[opName, StringQ, invalidNameFailure[opName]],
+						"Prompt" -> ConfirmMatch[prompt, _?StringQ | _Missing, invalidPromptFailure[prompt]]
+					|>,
+					Confirm@normalizeAPIFunction[apiFunc]
+				],
+				opts
+			]
 		],
 		"InheritedFailure"
 	]
+
+icreateChatGPTPluginEndpoint[{opName_, apiFunc_APIFunction}, opts_] :=
+	icreateChatGPTPluginEndpoint[{opName, <|"APIFunction" -> apiFunc|>}, opts]
+
+
+normalizeAPIFunction[APIFunction[args___]] :=
+	With[{res = ArgumentsOptions[APIFunction[args], {1,3}]},
+		If[!FailureQ[res],
+			inormalizeAPIFunction@@res,
+			Failure["InvalidAPIFunction", <|
+				"MessageTemplate" -> "Expected a valid APIFunction but found `1` instead.",
+				"MessageParameters" -> {api},
+				"Name" -> api
+			|>]
+		]
+	]
+
+inormalizeAPIFunction[{params_, f_, fmt_}, opts_] :=
+	Enclose[
+		<|
+			"Parameters" -> Confirm@normalizeParamsList[params],
+			"Function" -> f,
+			"OutputFormat" -> fmt,
+			"APIFunctionOptions" -> opts
+		|>,
+		"InheritedFailure"
+	]
+
+inormalizeAPIFunction[{params_, f_}, opts_] :=
+	Enclose[
+		<|
+			"Parameters" -> Confirm@normalizeParamsList[params],
+			"Function" -> f,
+			"APIFunctionOptions" -> opts
+		|>,
+		"InheritedFailure"
+	]
+
+inormalizeAPIFunction[{params_}, opts_] :=
+	inormalizeAPIFunction[{params, Identity}, opts]
+
+
+invalidNameFailure[name_] :=
+	Failure["InvalidEndpointName", <|
+		"MessageTemplate" -> "Expected an endpoint name as a string but found `1` instead.",
+		"MessageParameters" -> {name},
+		"Name" -> name
+	|>]
+
+invalidPromptFailure[prompt_] :=
+	Failure["InvalidEndpointPrompt", <|
+		"MessageTemplate" -> "Expected an endpoint prompt as a string or Missing but found `1` instead.",
+		"MessageParameters" -> {prompt},
+		"Prompt" -> prompt
+	|>]
+
+missingAPIFunctionFailure[assoc_] :=
+	Failure["MissingAPIFunction", <|
+		"MessageTemplate" -> "Required an APIFunction in endpoint, but only found `1`.",
+		"MessageParameters" -> {assoc},
+		"Data" -> assoc
+	|>]
 
 
 
@@ -115,10 +186,11 @@ icreateChatGPTPluginEndpoint[{opName_, body_}, opts_] :=
 HoldPattern[ChatGPTPluginEndpoint][data_, opts_]["Data"] := data
 HoldPattern[ChatGPTPluginEndpoint][data_, opts_]["Options"] := opts
 
-endpoint_ChatGPTPluginEndpoint["OperationID"] := endpoint["data"]["OperationID"]
-endpoint_ChatGPTPluginEndpoint["Prompt"] := endpoint["data"]["Prompt"]
-endpoint_ChatGPTPluginEndpoint["Parameters"] := endpoint["data"]["Parameters"]
-endpoint_ChatGPTPluginEndpoint["Function"] := endpoint["data"]["Function"]
+endpoint_ChatGPTPluginEndpoint["OperationID"] := endpoint["Data"]["OperationID"]
+endpoint_ChatGPTPluginEndpoint["Prompt"] := endpoint["Data"]["Prompt"]
+endpoint_ChatGPTPluginEndpoint["Parameters"] := endpoint["Data"]["Parameters"]
+endpoint_ChatGPTPluginEndpoint["Function"] := endpoint["Data"]["Function"]
+endpoint_ChatGPTPluginEndpoint["APIFunctionOptions"] := endpoint["Data"]["APIFunctionOptions"]
 
 endpoint_ChatGPTPluginEndpoint["OpenAPIJSON"] := endpointAPIJSON[endpoint]
 endpoint_ChatGPTPluginEndpoint["APIFunction"] := endpointAPIFunction[endpoint]
@@ -153,7 +225,19 @@ endpointParamAPIJSON[name_ -> KeyValuePattern[{"Help" -> prompt_, "Required" -> 
 (* Because of CORS, ChatGPT makes an OPTIONS request before its POST request. This must return the right headers, but
 it shouldn't run the function body. *)
 endpointAPIFunction[endpoint_ChatGPTPluginEndpoint] :=
-	APIFunction[removeHelp@endpoint["Parameters"], If[HTTPRequestData["Method"] === "OPTIONS", "", endpoint["Function"][#]]&]
+	If[KeyExistsQ[endpoint["Data"], "OutputFormat"],
+		APIFunction[
+			removeHelp@endpoint["Parameters"],
+			With[{funcBody = endpoint["Function"]}, If[HTTPRequestData["Method"] === "OPTIONS", "", funcBody[#]]&],
+			endpoint["Data"]["OutputFormat"],
+			endpoint["APIFunctionOptions"]
+		],
+		APIFunction[
+			removeHelp@endpoint["Parameters"],
+			With[{funcBody = endpoint["Function"]}, If[HTTPRequestData["Method"] === "OPTIONS", "", funcBody[#]]&],
+			endpoint["APIFunctionOptions"]
+		]
+	]
 
 
 (* TODO: Temporary workaround for bug #434606 *)

@@ -21,7 +21,7 @@ argumentsChatGPTPluginQ[
 	KeyValuePattern[{
 		"Name" -> _,
 		"Description" -> _,
-		"Prompt" -> _ 
+		"Prompt" -> _
 	}],
 	{__ChatGPTPluginEndpoint},
 	{OptionsPattern[]}
@@ -32,7 +32,7 @@ argumentsChatGPTPluginQ[___] := False
 
 createChatGPTPlugin[args___] :=
 	Enclose[
-		icreateChatGPTPlugin@@Confirm[ArgumentsOptions[ChatGPTPlugin[args], 2]],
+		icreateChatGPTPlugin@@Confirm[ArgumentsOptions[ChatGPTPlugin[args], {1,2}]],
 		"InheritedFailure"
 	]
 
@@ -57,7 +57,7 @@ normalizeMetadata[metadata: KeyValuePattern[{}]] :=
 			"Description" -> "",
 			"Prompt" -> ""
 		|>,
-		metadata
+		KeyTake[metadata, {"Name", "Description", "Prompt"}]
 	}, Last]
 
 normalizeMetadata[expr_] :=
@@ -70,11 +70,34 @@ normalizeMetadata[expr_] :=
 
 normalizeEndpoints[endpoint_ChatGPTPluginEndpoint] := {endpoint}
 normalizeEndpoints[endpoints: {__ChatGPTPluginEndpoint}] := endpoints
+normalizeEndpoints[name_ -> data_] := normalizeEndpoints[ChatGPTPluginEndpoint[name, data]]
+normalizeEndpoints[endpoints: KeyValuePattern[{}]] := normalizeEndpoints[KeyValueMap[ChatGPTPluginEndpoint, endpoints]]
 normalizeEndpoints[expr_] :=
 	Failure["InvalidEndpointsSpecification", <|
-		"MessageTemplate" -> "Expected a single ChatGPTPluginEndpoint or a list with at least one ChatGPTPluginEndpoint, but found `1` instead.",
+		"MessageTemplate" -> "Expected a single ChatGPTPluginEndpoint, a list with at least one ChatGPTPluginEndpoint, or an association specifying ChatGPTEndpoints, but found `1` instead.",
 		"MessageParameters" -> {expr},
 		"Endpointspecification" -> expr
+	|>]
+
+
+(* Association constructors *)
+
+icreateChatGPTPlugin[{assoc:KeyValuePattern[{}]}, opts_] :=
+	Enclose[
+		ChatGPTPlugin[
+			Confirm@normalizeMetadata[assoc],
+			Confirm@normalizeEndpoints[Lookup[assoc, "Endpoints", {}]],
+			opts
+		],
+		"InheritedFailure"
+	]
+
+
+icreateChatGPTPlugin[{spec_}, opts_] :=
+	Failure["InvalidPluginSpecification", <|
+		"MessageTemplate" -> "Unexpected expression `1` encountered representing a ChatGPT plugin.",
+		"MessageParameters" -> {spec},
+		"Endpointspecification" -> spec
 	|>]
 
 
