@@ -21,9 +21,9 @@ argumentsChatGPTPluginQ[
 	KeyValuePattern[{
 		"Name" -> _,
 		"Description" -> _,
-		"Prompt" -> _
+		"Prompt" -> _,
+		"Endpoints" -> {__ChatGPTPluginEndpoint}
 	}],
-	{__ChatGPTPluginEndpoint},
 	{OptionsPattern[]}
 ] := True
 
@@ -39,8 +39,10 @@ createChatGPTPlugin[args___] :=
 icreateChatGPTPlugin[{metadata_, endpoints_}, opts_] :=
 	Enclose[
 		ChatGPTPlugin[
-			Confirm@normalizeMetadata[metadata],
-			Confirm@normalizeEndpoints[endpoints],
+			Join[
+				Confirm@normalizeMetadata[metadata],
+				<|"Endpoints" -> Confirm@normalizeEndpoints[endpoints]|>
+			],
 			opts
 		],
 		"InheritedFailure"
@@ -85,8 +87,10 @@ normalizeEndpoints[expr_] :=
 icreateChatGPTPlugin[{assoc:KeyValuePattern[{}]}, opts_] :=
 	Enclose[
 		ChatGPTPlugin[
-			Confirm@normalizeMetadata[assoc],
-			Confirm@normalizeEndpoints[Lookup[assoc, "Endpoints", {}]],
+			Join[
+				Confirm@normalizeMetadata[assoc],
+				<|"Endpoints" -> Confirm@normalizeEndpoints[Lookup[assoc, "Endpoints", {}]]|>
+			],
 			opts
 		],
 		"InheritedFailure"
@@ -104,13 +108,13 @@ icreateChatGPTPlugin[{spec_}, opts_] :=
 
 (* Accessors *)
 
-HoldPattern[ChatGPTPlugin][metadata_, endpoints_, opts_]["Metadata"] := metadata
-HoldPattern[ChatGPTPlugin][metadata_, endpoints_, opts_]["Endpoints"] := endpoints
-HoldPattern[ChatGPTPlugin][metadata_, endpoints_, opts_]["Options"] := opts
+HoldPattern[ChatGPTPlugin][data_, opts_]["Data"] := data
+HoldPattern[ChatGPTPlugin][data_, opts_]["Options"] := opts
 
-plugin_ChatGPTPlugin["Name"] := Lookup[plugin["Metadata"], "Name"]
-plugin_ChatGPTPlugin["Description"] := Lookup[plugin["Metadata"], "Description"]
-plugin_ChatGPTPlugin["Prompt"] := Lookup[plugin["Metadata"], "Prompt"]
+plugin_ChatGPTPlugin["Name"] := Lookup[plugin["Data"], "Name"]
+plugin_ChatGPTPlugin["Description"] := Lookup[plugin["Data"], "Description"]
+plugin_ChatGPTPlugin["Prompt"] := Lookup[plugin["Data"], "Prompt"]
+plugin_ChatGPTPlugin["Endpoints"] := Lookup[plugin["Data"], "Endpoints"]
 plugin_ChatGPTPlugin["OpenAPIJSON", port_] := pluginAPIJSON[plugin, port]
 plugin_ChatGPTPlugin["OpenAPIJSON"] := plugin["OpenAPIJSON", $ChatGPTPluginPort]
 plugin_ChatGPTPlugin["ManifestJSON", port_] := pluginManifestJSON[plugin, port]
