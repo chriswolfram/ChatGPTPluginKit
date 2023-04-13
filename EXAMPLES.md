@@ -234,3 +234,162 @@ ChatGPTPluginDeploy[<|
 ![FileOrganizer](https://user-images.githubusercontent.com/5055424/231879851-f0aec1ae-bf70-40ab-ae18-68a0a6cea6af.png)
 
 </details>
+
+## Programming assistant
+
+Combine several of the plugins above to give ChatGPT the ability to:
+
+* Run code
+* Reload a Wolfram Language kernel
+* Edit code in a paclet
+* Search for keywords in a paclet
+* Search documentation
+* Read documentation
+
+Note: this uses the vector database from the documentation plugin.
+
+<details>
+<summary>Full source</summary>
+  
+```wl
+formatResults[lines_, resLines_, radius_:2] :=
+	With[{returnedLines = Split[Union@@(Range@@Clip[{#-radius,#+radius},{1,Length[lines]}]&/@resLines), #2-#1<=1&]},
+		StringRiffle[#,"\n"]&/@Map[ToString[#] <> "\t" <> lines[[#]]&, returnedLines, {2}]
+	]
+
+basicSearch[dir_, query_] :=
+	StringRiffle[
+		Catenate@KeyValueMap[
+			{fileName, res}|->(fileName<>":\n"<>#&/@res),
+			FileSystemMap[
+				Module[{lines, ps},
+					lines = StringSplit[ReadString[#],"\n"];
+					ps = Position[StringContainsQ[lines, query, IgnoreCase->True], True, {1}][[All,1]];
+					formatResults[lines,ps]
+				]&,
+				dir,
+				Infinity,
+				1
+			]
+		],
+		"\n\n"
+	]
+	
+prompt = "Help the user program. All Wolfram Language code sent in the \"code\" parameter of runCode must be provided as a single-line string with NO comments (i.e. any text between `(*` and `*)`), extra line breaks, or formatting whitespace or tabs. If a line of code ends with a semicolon, its output will be suppressed. When editing a file, always read it before writing a change. When replacing an old or broken definition, always delete the old definition before inserting the replacement.";
+
+programmingAssistantPlugin[directory_, kernelInit_] :=
+	Module[{ker, plugin},
+		ker = First@LaunchKernels[1];
+		With[{init = kernelInit}, ParallelEvaluate[ReleaseHold[init],ker]];
+			plugin = ChatGPTPlugin[
+				<|
+					"Name" -> "ProgrammingAssistant",
+					"Description" -> "Assist in programming.",
+					"Prompt" -> prompt
+				|>,
+				{
+					ChatGPTPluginEndpoint[
+						{"searchFiles", "searches files for a keyword"},
+						"query" -> "String",
+						basicSearch[directory, #query]&
+					],
+					ChatGPTPluginEndpoint[
+						{"getFileLines", "gets the contents of a file near a line number."},
+						{
+							"fileName" -> <|"Help" -> "the name of the file"|>,
+							"line" -> <|"Interpreter" -> "Integer", "Help" -> "the line number in the file"|>
+						},
+						First@formatResults[StringSplit[ReadString[FileNameJoin[{directory,#fileName}]],"\n"], {#line}]&
+					],
+					ChatGPTPluginEndpoint[
+						{"insertFileLine", "inserts a line into a file. Always re-read a file before inserting lines."},
+						{
+							"fileName" -> <|"Help" -> "the name of the file"|>,
+							"line" -> <|"Interpreter" -> "Integer", "Help" -> "the line at which to insert"|>,
+							"contents" -> <|"Help" -> "the contents to insert at the line"|>
+						},
+						(
+							WriteString[FileNameJoin[{directory,#fileName}],
+								StringRiffle[
+									Insert[
+										StringSplit[ReadString[FileNameJoin[{directory,#fileName}]],"\n"],
+										#contents,
+										#line
+									],
+									"\n"
+								]
+							];
+							Close[FileNameJoin[{directory,#fileName}]]
+						)&
+					],
+					ChatGPTPluginEndpoint[
+						{"deleteFileLines", "deletes lines in a file from a range of line numbers"},
+						{
+							"fileName" -> <|"Help" -> "the name of the file"|>,
+							"startLine" -> <|"Interpreter" -> "Integer", "Help" -> "the first line to delete"|>,
+							"stopLine" -> <|"Interpreter" -> "Integer", "Help" -> "the last line to delete"|>
+						},
+						(
+							WriteString[FileNameJoin[{directory,#fileName}],
+								StringRiffle[
+									Delete[
+										StringSplit[ReadString[FileNameJoin[{directory,#fileName}]],"\n"],
+										Range[#startLine, #stopLine]
+									],
+									"\n"
+								]
+							];
+							Close[FileNameJoin[{directory,#fileName}]]
+						)&
+					],
+					ChatGPTPluginEndpoint[
+						{"restartKernel", "restarts the Wolfram Language kernel session and re-runs the initialization"},
+						{},
+						(
+							CloseKernels[ker];
+							{ker} = LaunchKernels[1];
+							With[{init = kernelInit}, ParallelEvaluate[ReleaseHold[init],ker]];
+						)&
+					],
+					ChatGPTPluginEndpoint[
+						{"runCode", "runs a Wolfram Language program in the kernel session."},
+						"code" -> <|"Help"->"the Wolfram Language program"|>,
+						ParallelEvaluate[ToExpression[#code],ker]&
+					],
+					ChatGPTPluginEndpoint[
+						"getSymbolDocs",
+						"symbol" -> "WolframLanguageSymbol",
+						StringRiffle[#symbol["TextStrings"],"\n"]&
+					],
+					ChatGPTPluginEndpoint[
+						{"searchSymbols", "finds symbols which might be relevant to a query. Some symbols returned might not be relevant."},
+						"query" -> "String",
+						CanonicalName@nf[OpenAIEmbedding[#query],25]&
+					]
+				}
+			];
+		{plugin, ker}
+	]
+```
+
+</details>
+	
+Deploy the plugin:
+	
+```wl
+{plugin,kernel} = programmingAssistantPlugin[
+		FileNameJoin[{NotebookDirectory[],"ChatGPTPluginsCopy","Kernel"}],
+		Hold[
+			PacletDirectoryLoad["~/git/ChatGPTPlugins/Notes/ChatGPTPluginsCopy"];
+			Needs["ChristopherWolfram`ChatGPTPlugins`"]
+		]
+	];
+ChatGPTPluginDeploy[server]
+```
+	
+<details>
+<summary>Example chat</summary>
+  
+![ProgrammingAssistant](https://user-images.githubusercontent.com/5055424/231881412-97f5c8cb-45c1-4250-bc1e-eb9c664c87de.png)
+
+</details>
