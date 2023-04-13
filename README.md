@@ -35,11 +35,11 @@ Use it inside ChatGPT:
 
 <img width="705" alt="cityPopulation" src="https://user-images.githubusercontent.com/5055424/231856851-9d7dfed4-9eda-440f-b08c-660ffb13f003.png">
 
-### 💬 Interactive environment
+<!--- ### 💬 Interactive environment
 
 Collaborate with ChatGPT in real time:
 
-_Insert gif here_
+_Insert gif here_ --->
 
 ### 🌟 Example showcase
 
