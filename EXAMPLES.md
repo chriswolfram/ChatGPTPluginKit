@@ -281,93 +281,92 @@ programmingAssistantPlugin[directory_, kernelInit_] :=
   Module[{ker, plugin},
     ker = First@LaunchKernels[1];
     With[{init = kernelInit}, ParallelEvaluate[ReleaseHold[init],ker]];
-      plugin = ChatGPTPlugin[
-        <|
-          "Name" -> "ProgrammingAssistant",
-          "Description" -> "Assist in programming.",
-          "Prompt" -> prompt
+    plugin = ChatGPTPlugin[<|
+      "Name" -> "ProgrammingAssistant",
+      "Description" -> "Assist in programming.",
+      "Prompt" -> prompt,
+      "Endpoints" -> <|
+      
+        "searchFiles" -> <|
+          "Prompt" -> "searches files for a keyword",
+          "APIFunction" -> APIFunction["query" -> "String", basicSearch[directory, #query]&]
         |>,
-        {
-          ChatGPTPluginEndpoint[
-            {"searchFiles", "searches files for a keyword"},
-            "query" -> "String",
-            basicSearch[directory, #query]&
-          ],
-          ChatGPTPluginEndpoint[
-            {"getFileLines", "gets the contents of a file near a line number."},
+        
+        "getFileLines" -> <|
+          "Prompt" -> "gets the contents of a file near a line number.",
+          "APIFunction" -> APIFunction[
             {
               "fileName" -> <|"Help" -> "the name of the file"|>,
               "line" -> <|"Interpreter" -> "Integer", "Help" -> "the line number in the file"|>
             },
             First@formatResults[StringSplit[ReadString[FileNameJoin[{directory,#fileName}]],"\n"], {#line}]&
-          ],
-          ChatGPTPluginEndpoint[
-            {"insertFileLine", "inserts a line into a file. Always re-read a file before inserting lines."},
+          ]
+        |>,
+        
+        "insertFileLine" -> <|
+          "Prompt" -> "inserts a line into a file. Always re-read a file before inserting lines.",
+          "APIFunction" -> APIFunction[
             {
               "fileName" -> <|"Help" -> "the name of the file"|>,
               "line" -> <|"Interpreter" -> "Integer", "Help" -> "the line at which to insert"|>,
               "contents" -> <|"Help" -> "the contents to insert at the line"|>
             },
-            (
-              WriteString[FileNameJoin[{directory,#fileName}],
-                StringRiffle[
-                  Insert[
-                    StringSplit[ReadString[FileNameJoin[{directory,#fileName}]],"\n"],
-                    #contents,
-                    #line
-                  ],
-                  "\n"
-                ]
-              ];
-              Close[FileNameJoin[{directory,#fileName}]]
-            )&
-          ],
-          ChatGPTPluginEndpoint[
-            {"deleteFileLines", "deletes lines in a file from a range of line numbers"},
+            Module[{path, lines, newStr},
+              path = FileNameJoin[{directory,#fileName}];
+              lines = StringSplit[ReadString[path],"\n"];
+              newStr = StringRiffle[Insert[lines, #contents, #line], "\n"];
+              WriteString[path, newStr];
+              Close[path]
+            ]&
+          ]
+        |>,
+        
+        "deleteFileLines" -> <|
+          "Prompt" -> "deletes lines in a file from a range of line numbers",
+          "APIFunction" -> APIFunction[
             {
               "fileName" -> <|"Help" -> "the name of the file"|>,
               "startLine" -> <|"Interpreter" -> "Integer", "Help" -> "the first line to delete"|>,
               "stopLine" -> <|"Interpreter" -> "Integer", "Help" -> "the last line to delete"|>
             },
-            (
-              WriteString[FileNameJoin[{directory,#fileName}],
-                StringRiffle[
-                  Delete[
-                    StringSplit[ReadString[FileNameJoin[{directory,#fileName}]],"\n"],
-                    Range[#startLine, #stopLine]
-                  ],
-                  "\n"
-                ]
-              ];
-              Close[FileNameJoin[{directory,#fileName}]]
-            )&
-          ],
-          ChatGPTPluginEndpoint[
-            {"restartKernel", "restarts the Wolfram Language kernel session and re-runs the initialization"},
-            {},
+            Module[{path, lines, newStr},
+              path = FileNameJoin[{directory,#fileName}];
+              lines = StringSplit[ReadString[path],"\n"];
+              newStr = StringRiffle[Delete[lines, Range[#startLine, #stopLine]], "\n"];
+              WriteString[path, newStr];
+              Close[path]
+            ]&
+          ]
+        |>,
+        
+        "restartKernel" -> <|
+          "Prompt" -> "restarts the Wolfram Language kernel session and re-runs the initialization",
+          "APIFunction" -> APIFunction[{},
             (
               CloseKernels[ker];
               {ker} = LaunchKernels[1];
               With[{init = kernelInit}, ParallelEvaluate[ReleaseHold[init],ker]];
             )&
-          ],
-          ChatGPTPluginEndpoint[
-            {"runCode", "runs a Wolfram Language program in the kernel session."},
+          ]
+        |>,
+        
+        "runCode" -> <|
+          "Prompt" -> "runs a Wolfram Language program in the kernel session.",
+          "APIFunction" -> APIFunction[
             "code" -> <|"Help"->"the Wolfram Language program"|>,
             ParallelEvaluate[ToExpression[#code],ker]&
-          ],
-          ChatGPTPluginEndpoint[
-            "getSymbolDocs",
-            "symbol" -> "WolframLanguageSymbol",
-            StringRiffle[#symbol["TextStrings"],"\n"]&
-          ],
-          ChatGPTPluginEndpoint[
-            {"searchSymbols", "finds symbols which might be relevant to a query. Some symbols returned might not be relevant."},
-            "query" -> "String",
-            CanonicalName@nf[OpenAIEmbedding[#query],25]&
           ]
-        }
-      ];
+        |>,
+        
+        "getSymbolDocs" ->
+          APIFunction["symbol" -> "WolframLanguageSymbol", StringRiffle[#symbol["TextStrings"],"\n"]&],
+          
+        "searchSymbols" -> <|
+          "Prompt" -> "finds symbols which might be relevant to a query. Some symbols returned might not be relevant.",
+          "APIFunction" -> APIFunction["query" -> "String", CanonicalName@nf[OpenAIEmbedding[#query],25]&]
+        |>
+      |>
+    |>];
     {plugin, ker}
   ]
 ```
@@ -378,10 +377,10 @@ Deploy the plugin:
 	
 ```wl
 {plugin,kernel} = programmingAssistantPlugin[
-    FileNameJoin[{NotebookDirectory[],"ChatGPTPluginsCopy","Kernel"}],
+    FileNameJoin[{NotebookDirectory[],"ChatGPTPluginKitCopy","Kernel"}],
     Hold[
-      PacletDirectoryLoad["~/git/ChatGPTPlugins/Notes/ChatGPTPluginsCopy"];
-      Needs["ChristopherWolfram`ChatGPTPlugins`"]
+      PacletInstall["Wolfram/ChatGPTPluginKit"];
+      Needs["Wolfram`ChatGPTPluginKit`"]
     ]
   ];
 ChatGPTPluginDeploy[server]
