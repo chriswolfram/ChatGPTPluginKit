@@ -26,8 +26,8 @@ Deploy a plugin that lets ChatGPT look up the populations of cities, using data 
 
 ```wl
 ChatGPTPluginDeploy[<|
-	"Name" -> "CityPopulationFinder",
-	"Endpoints" -> <|"getCityPopulation" -> APIFunction["city"->"City", #city["Population"]&]|>
+  "Name" -> "CityPopulationFinder",
+  "Endpoints" -> <|"getCityPopulation" -> APIFunction["city"->"City", #city["Population"]&]|>
 |>]
 ```
 
