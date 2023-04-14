@@ -5,23 +5,23 @@ Give ChatGPT access to your local file system:
 
 ```wl
 ChatGPTPluginDeploy[<|
-	"Name" -> "FileBrowser",
-	"Description" -> "Browse files on a computer",
-	"Prompt" -> "Browse files on a computer",
-	"Endpoints" -> <|
-		"getDirectoryFiles" -> <|
-			"Prompt" -> "lists the files in a directory",
-			"APIFunction" -> APIFunction[
-					"path" -> <|"Help"->"the path to the directory"|>,
-					StringRiffle[FileNameTake/@FileNames["*",#path],"\n"]&
-				]
-		|>,
-		"getFileContents" -> <|
-			"Prompt" -> "gets the contents of a file as text. Only request the contents of files that you are sure exist.",
-			"APIFunction" ->
-				APIFunction["path" -> <|"Help"->"the path to the file"|>, ReadString[#path]&]
-		|>
-	|>
+  "Name" -> "FileBrowser",
+  "Description" -> "Browse files on a computer",
+  "Prompt" -> "Browse files on a computer",
+  "Endpoints" -> <|
+    "getDirectoryFiles" -> <|
+      "Prompt" -> "lists the files in a directory",
+      "APIFunction" -> APIFunction[
+          "path" -> <|"Help"->"the path to the directory"|>,
+          StringRiffle[FileNameTake/@FileNames["*",#path],"\n"]&
+        ]
+    |>,
+    "getFileContents" -> <|
+      "Prompt" -> "gets the contents of a file as text. Only request the contents of files that you are sure exist.",
+      "APIFunction" ->
+        APIFunction["path" -> <|"Help"->"the path to the file"|>, ReadString[#path]&]
+    |>
+  |>
 |>]
 ```
 
@@ -38,18 +38,18 @@ Give ChatGPT access to run queries on a database:
 ```wl
 db = DatabaseReference[FindFile["ExampleData/ecommerce-database.sqlite"]];
 ChatGPTPluginDeploy[<|
-	"Name" -> "Database",
-	"Description" -> "Run queries on a database",
-	"Prompt" -> "Run queries on an SQLite database. Always get the schema for all the tables in the database before querying it.",
-	"Endpoints" -> <|
-		"runQuery" -> <|
-			"Prompt" -> "runs a query on an SQLite database",
-			"APIFunction" -> APIFunction[
-					"query" -> <|"Help"->"the SQLite query all on one line"|>,
-					ExportForm[ExternalEvaluate[db, #query]/._Missing->Null,"CSV"]&
-				]
-		|>
-	|>
+  "Name" -> "Database",
+  "Description" -> "Run queries on a database",
+  "Prompt" -> "Run queries on an SQLite database. Always get the schema for all the tables in the database before querying it.",
+  "Endpoints" -> <|
+    "runQuery" -> <|
+      "Prompt" -> "runs a query on an SQLite database",
+      "APIFunction" -> APIFunction[
+          "query" -> <|"Help"->"the SQLite query all on one line"|>,
+          ExportForm[ExternalEvaluate[db, #query]/._Missing->Null,"CSV"]&
+        ]
+    |>
+  |>
 |>]
 ```
 
@@ -66,16 +66,16 @@ Allow ChatGPT to run arbitrary Wolfram Language code in the local kernel session
 
 ```wl
 ChatGPTPluginDeploy@ChatGPTPlugin[
-	<|
-		"Name" -> "KernelAccess",
-		"Description" -> "Give ChatGPT access to your WL kernel",
-		"Prompt" -> "Evaluate Wolfram Language code in a kernel session."
-	|>,
-	ChatGPTPluginEndpoint[
-		{"runCode", "runs a Wolfram Language program in a kernel session"},
-		"code" -> <|"Help"->"the Wolfram Language program"|>,
-		ToExpression[#code]&
-	]
+  <|
+    "Name" -> "KernelAccess",
+    "Description" -> "Give ChatGPT access to your WL kernel",
+    "Prompt" -> "Evaluate Wolfram Language code in a kernel session."
+  |>,
+  ChatGPTPluginEndpoint[
+    {"runCode", "runs a Wolfram Language program in a kernel session"},
+    "code" -> <|"Help"->"the Wolfram Language program"|>,
+    ToExpression[#code]&
+  ]
 ]
 ```
 
@@ -120,10 +120,10 @@ PacletInstall["ChristopherWolfram/OpenAILink"];
 Needs["ChristopherWolfram`OpenAILink`"];
 
 symbolEmbeddings =
-	Map[
-		OpenAIEmbedding[StringRiffle[#, "\n"]]&,
-		DeleteMissing[EntityValue["WolframLanguageSymbol", "TextStrings", "EntityAssociation"]]
-	];
+  Map[
+    OpenAIEmbedding[StringRiffle[#, "\n"]]&,
+    DeleteMissing[EntityValue["WolframLanguageSymbol", "TextStrings", "EntityAssociation"]]
+  ];
 symbolEmbeddings //= Select[Not@*FailureQ];
 nf = Nearest[symbolEmbeddings, DistanceFunction -> CosineDistance]
 ```
@@ -132,17 +132,17 @@ nf = Nearest[symbolEmbeddings, DistanceFunction -> CosineDistance]
 
 ```wl
 ChatGPTPluginDeploy[<|
-	"Name" -> "WolframLanguageDocumentation",
-	"Description" -> "Get documentation on Wolfram Langauge symbols",
-	"Prompt" -> "Get documentation on Wolfram Langauge symbols. Use the documentation to look up any Wolfram Language symbols that you are unsure about",
-	"Endpoints" -> <|
-		"getSymbolDocs" ->
-			APIFunction["symbol" -> "WolframLanguageSymbol", StringRiffle[#symbol["TextStrings"],"\n"]&],
-		"searchSymbols" -> <|
-			"Prompt" -> "finds symbols which might be relevant to a query. Some symbols returned might not be relevant.",
-			"APIFunction" -> APIFunction["query" -> "String", CanonicalName@nf[OpenAIEmbedding[#query],25]&]
-		|>
-	|>
+  "Name" -> "WolframLanguageDocumentation",
+  "Description" -> "Get documentation on Wolfram Langauge symbols",
+  "Prompt" -> "Get documentation on Wolfram Langauge symbols. Use the documentation to look up any Wolfram Language symbols that you are unsure about",
+  "Endpoints" -> <|
+    "getSymbolDocs" ->
+      APIFunction["symbol" -> "WolframLanguageSymbol", StringRiffle[#symbol["TextStrings"],"\n"]&],
+    "searchSymbols" -> <|
+      "Prompt" -> "finds symbols which might be relevant to a query. Some symbols returned might not be relevant.",
+      "APIFunction" -> APIFunction["query" -> "String", CanonicalName@nf[OpenAIEmbedding[#query],25]&]
+    |>
+  |>
 |>]
 ```
 
@@ -160,15 +160,15 @@ Allow ChatGPT to use `Import` to get data form the web. It can extract data as p
 
 ```wl
 ChatGPTPluginDeploy[<|
-	"Name" -> "WebAccess",
-	"Description" -> "Give ChatGPT access to the internet",
-	"Prompt" -> "Get information from the internet",
-	"Endpoints" -> <|
-		"webSearch" -> APIFunction[ "query", Normal@WebSearch[#query][All,{"PageTitle","Hyperlink"/*First}]&],
-		"getPageHyperlinks" -> APIFunction[ "url", Import[#url,"Hyperlinks"]&],
-		"getPagePlaintext" -> APIFunction["url", Import[#url,"Plaintext"]&],
-		"getPageHTML" -> APIFunction["url", Import[#url,"Source"]&]
-	|>
+  "Name" -> "WebAccess",
+  "Description" -> "Give ChatGPT access to the internet",
+  "Prompt" -> "Get information from the internet",
+  "Endpoints" -> <|
+    "webSearch" -> APIFunction[ "query", Normal@WebSearch[#query][All,{"PageTitle","Hyperlink"/*First}]&],
+    "getPageHyperlinks" -> APIFunction[ "url", Import[#url,"Hyperlinks"]&],
+    "getPagePlaintext" -> APIFunction["url", Import[#url,"Plaintext"]&],
+    "getPageHTML" -> APIFunction["url", Import[#url,"Source"]&]
+  |>
 |>]
 ```
 
@@ -185,10 +185,10 @@ Give ChatGPT a simple SMS endpoint that can send messages to `$MobilePhone`:
 
 ```wl
 ChatGPTPluginDeploy[<|
-	"Name" -> "SMS",
-	"Description" -> "Send SMS messages",
-	"Prompt" -> "Send SMS messages",
-	"Endpoints" -> <|"sendMessage" -> APIFunction["message", SendMessage["SMS", #message]&]|>
+  "Name" -> "SMS",
+  "Description" -> "Send SMS messages",
+  "Prompt" -> "Send SMS messages",
+  "Endpoints" -> <|"sendMessage" -> APIFunction["message", SendMessage["SMS", #message]&]|>
 |>]
 ```
 
@@ -205,26 +205,26 @@ Let ChatGPT help you organize the files in a directory. This takes advantage of 
 
 ```wl
 ChatGPTPluginDeploy[<|
-	"Name" -> "FileOrganizer",
-	"Description" -> "View and organize files on a computer.",
-	"Prompt" -> "View and organize files on a computer.",
-	"Endpoints" -> <|
-		"getFileNames" -> <|
-			"Prompt" -> "lists the names of the files",
-			"APIFunction" -> APIFunction[{},StringRiffle[FileNameTake/@FileNames["*",exampleDirectory],"\n"]&]
-		|>,
-		"getFileContents" -> <|
-			"Prompt" -> "gets the contents of a file as text. Only request the contents of files that you are sure exist.",
-			"APIFunction" -> APIFunction[
-					"name" -> <|"Help"->"the name of the file"|>,
-					StringTake[Import[FileNameJoin[{exampleDirectory,#name}],"Plaintext"],UpTo[1000]]&
-				]
-		|>,
-		"renameFile" -> APIFunction[
-				{"oldName", "newName"},
-				RenameFile[FileNameJoin[{exampleDirectory,#oldName}], FileNameJoin[{exampleDirectory,#newName}]]&
-			]
-	|>
+  "Name" -> "FileOrganizer",
+  "Description" -> "View and organize files on a computer.",
+  "Prompt" -> "View and organize files on a computer.",
+  "Endpoints" -> <|
+    "getFileNames" -> <|
+      "Prompt" -> "lists the names of the files",
+      "APIFunction" -> APIFunction[{},StringRiffle[FileNameTake/@FileNames["*",exampleDirectory],"\n"]&]
+    |>,
+    "getFileContents" -> <|
+      "Prompt" -> "gets the contents of a file as text. Only request the contents of files that you are sure exist.",
+      "APIFunction" -> APIFunction[
+          "name" -> <|"Help"->"the name of the file"|>,
+          StringTake[Import[FileNameJoin[{exampleDirectory,#name}],"Plaintext"],UpTo[1000]]&
+        ]
+    |>,
+    "renameFile" -> APIFunction[
+        {"oldName", "newName"},
+        RenameFile[FileNameJoin[{exampleDirectory,#oldName}], FileNameJoin[{exampleDirectory,#newName}]]&
+      ]
+  |>
 |>]
 ```
 
@@ -253,123 +253,123 @@ Note: this uses the vector database from the documentation plugin.
   
 ```wl
 formatResults[lines_, resLines_, radius_:2] :=
-	With[{returnedLines = Split[Union@@(Range@@Clip[{#-radius,#+radius},{1,Length[lines]}]&/@resLines), #2-#1<=1&]},
-		StringRiffle[#,"\n"]&/@Map[ToString[#] <> "\t" <> lines[[#]]&, returnedLines, {2}]
-	]
+  With[{returnedLines = Split[Union@@(Range@@Clip[{#-radius,#+radius},{1,Length[lines]}]&/@resLines), #2-#1<=1&]},
+    StringRiffle[#,"\n"]&/@Map[ToString[#] <> "\t" <> lines[[#]]&, returnedLines, {2}]
+  ]
 
 basicSearch[dir_, query_] :=
-	StringRiffle[
-		Catenate@KeyValueMap[
-			{fileName, res}|->(fileName<>":\n"<>#&/@res),
-			FileSystemMap[
-				Module[{lines, ps},
-					lines = StringSplit[ReadString[#],"\n"];
-					ps = Position[StringContainsQ[lines, query, IgnoreCase->True], True, {1}][[All,1]];
-					formatResults[lines,ps]
-				]&,
-				dir,
-				Infinity,
-				1
-			]
-		],
-		"\n\n"
-	]
-	
+  StringRiffle[
+    Catenate@KeyValueMap[
+      {fileName, res}|->(fileName<>":\n"<>#&/@res),
+      FileSystemMap[
+        Module[{lines, ps},
+          lines = StringSplit[ReadString[#],"\n"];
+          ps = Position[StringContainsQ[lines, query, IgnoreCase->True], True, {1}][[All,1]];
+          formatResults[lines,ps]
+        ]&,
+        dir,
+        Infinity,
+        1
+      ]
+    ],
+    "\n\n"
+  ]
+  
 prompt = "Help the user program. All Wolfram Language code sent in the \"code\" parameter of runCode must be provided as a single-line string with NO comments (i.e. any text between `(*` and `*)`), extra line breaks, or formatting whitespace or tabs. If a line of code ends with a semicolon, its output will be suppressed. When editing a file, always read it before writing a change. When replacing an old or broken definition, always delete the old definition before inserting the replacement.";
 
 programmingAssistantPlugin[directory_, kernelInit_] :=
-	Module[{ker, plugin},
-		ker = First@LaunchKernels[1];
-		With[{init = kernelInit}, ParallelEvaluate[ReleaseHold[init],ker]];
-			plugin = ChatGPTPlugin[
-				<|
-					"Name" -> "ProgrammingAssistant",
-					"Description" -> "Assist in programming.",
-					"Prompt" -> prompt
-				|>,
-				{
-					ChatGPTPluginEndpoint[
-						{"searchFiles", "searches files for a keyword"},
-						"query" -> "String",
-						basicSearch[directory, #query]&
-					],
-					ChatGPTPluginEndpoint[
-						{"getFileLines", "gets the contents of a file near a line number."},
-						{
-							"fileName" -> <|"Help" -> "the name of the file"|>,
-							"line" -> <|"Interpreter" -> "Integer", "Help" -> "the line number in the file"|>
-						},
-						First@formatResults[StringSplit[ReadString[FileNameJoin[{directory,#fileName}]],"\n"], {#line}]&
-					],
-					ChatGPTPluginEndpoint[
-						{"insertFileLine", "inserts a line into a file. Always re-read a file before inserting lines."},
-						{
-							"fileName" -> <|"Help" -> "the name of the file"|>,
-							"line" -> <|"Interpreter" -> "Integer", "Help" -> "the line at which to insert"|>,
-							"contents" -> <|"Help" -> "the contents to insert at the line"|>
-						},
-						(
-							WriteString[FileNameJoin[{directory,#fileName}],
-								StringRiffle[
-									Insert[
-										StringSplit[ReadString[FileNameJoin[{directory,#fileName}]],"\n"],
-										#contents,
-										#line
-									],
-									"\n"
-								]
-							];
-							Close[FileNameJoin[{directory,#fileName}]]
-						)&
-					],
-					ChatGPTPluginEndpoint[
-						{"deleteFileLines", "deletes lines in a file from a range of line numbers"},
-						{
-							"fileName" -> <|"Help" -> "the name of the file"|>,
-							"startLine" -> <|"Interpreter" -> "Integer", "Help" -> "the first line to delete"|>,
-							"stopLine" -> <|"Interpreter" -> "Integer", "Help" -> "the last line to delete"|>
-						},
-						(
-							WriteString[FileNameJoin[{directory,#fileName}],
-								StringRiffle[
-									Delete[
-										StringSplit[ReadString[FileNameJoin[{directory,#fileName}]],"\n"],
-										Range[#startLine, #stopLine]
-									],
-									"\n"
-								]
-							];
-							Close[FileNameJoin[{directory,#fileName}]]
-						)&
-					],
-					ChatGPTPluginEndpoint[
-						{"restartKernel", "restarts the Wolfram Language kernel session and re-runs the initialization"},
-						{},
-						(
-							CloseKernels[ker];
-							{ker} = LaunchKernels[1];
-							With[{init = kernelInit}, ParallelEvaluate[ReleaseHold[init],ker]];
-						)&
-					],
-					ChatGPTPluginEndpoint[
-						{"runCode", "runs a Wolfram Language program in the kernel session."},
-						"code" -> <|"Help"->"the Wolfram Language program"|>,
-						ParallelEvaluate[ToExpression[#code],ker]&
-					],
-					ChatGPTPluginEndpoint[
-						"getSymbolDocs",
-						"symbol" -> "WolframLanguageSymbol",
-						StringRiffle[#symbol["TextStrings"],"\n"]&
-					],
-					ChatGPTPluginEndpoint[
-						{"searchSymbols", "finds symbols which might be relevant to a query. Some symbols returned might not be relevant."},
-						"query" -> "String",
-						CanonicalName@nf[OpenAIEmbedding[#query],25]&
-					]
-				}
-			];
-		{plugin, ker}
-	]
+  Module[{ker, plugin},
+    ker = First@LaunchKernels[1];
+    With[{init = kernelInit}, ParallelEvaluate[ReleaseHold[init],ker]];
+      plugin = ChatGPTPlugin[
+        <|
+          "Name" -> "ProgrammingAssistant",
+          "Description" -> "Assist in programming.",
+          "Prompt" -> prompt
+        |>,
+        {
+          ChatGPTPluginEndpoint[
+            {"searchFiles", "searches files for a keyword"},
+            "query" -> "String",
+            basicSearch[directory, #query]&
+          ],
+          ChatGPTPluginEndpoint[
+            {"getFileLines", "gets the contents of a file near a line number."},
+            {
+              "fileName" -> <|"Help" -> "the name of the file"|>,
+              "line" -> <|"Interpreter" -> "Integer", "Help" -> "the line number in the file"|>
+            },
+            First@formatResults[StringSplit[ReadString[FileNameJoin[{directory,#fileName}]],"\n"], {#line}]&
+          ],
+          ChatGPTPluginEndpoint[
+            {"insertFileLine", "inserts a line into a file. Always re-read a file before inserting lines."},
+            {
+              "fileName" -> <|"Help" -> "the name of the file"|>,
+              "line" -> <|"Interpreter" -> "Integer", "Help" -> "the line at which to insert"|>,
+              "contents" -> <|"Help" -> "the contents to insert at the line"|>
+            },
+            (
+              WriteString[FileNameJoin[{directory,#fileName}],
+                StringRiffle[
+                  Insert[
+                    StringSplit[ReadString[FileNameJoin[{directory,#fileName}]],"\n"],
+                    #contents,
+                    #line
+                  ],
+                  "\n"
+                ]
+              ];
+              Close[FileNameJoin[{directory,#fileName}]]
+            )&
+          ],
+          ChatGPTPluginEndpoint[
+            {"deleteFileLines", "deletes lines in a file from a range of line numbers"},
+            {
+              "fileName" -> <|"Help" -> "the name of the file"|>,
+              "startLine" -> <|"Interpreter" -> "Integer", "Help" -> "the first line to delete"|>,
+              "stopLine" -> <|"Interpreter" -> "Integer", "Help" -> "the last line to delete"|>
+            },
+            (
+              WriteString[FileNameJoin[{directory,#fileName}],
+                StringRiffle[
+                  Delete[
+                    StringSplit[ReadString[FileNameJoin[{directory,#fileName}]],"\n"],
+                    Range[#startLine, #stopLine]
+                  ],
+                  "\n"
+                ]
+              ];
+              Close[FileNameJoin[{directory,#fileName}]]
+            )&
+          ],
+          ChatGPTPluginEndpoint[
+            {"restartKernel", "restarts the Wolfram Language kernel session and re-runs the initialization"},
+            {},
+            (
+              CloseKernels[ker];
+              {ker} = LaunchKernels[1];
+              With[{init = kernelInit}, ParallelEvaluate[ReleaseHold[init],ker]];
+            )&
+          ],
+          ChatGPTPluginEndpoint[
+            {"runCode", "runs a Wolfram Language program in the kernel session."},
+            "code" -> <|"Help"->"the Wolfram Language program"|>,
+            ParallelEvaluate[ToExpression[#code],ker]&
+          ],
+          ChatGPTPluginEndpoint[
+            "getSymbolDocs",
+            "symbol" -> "WolframLanguageSymbol",
+            StringRiffle[#symbol["TextStrings"],"\n"]&
+          ],
+          ChatGPTPluginEndpoint[
+            {"searchSymbols", "finds symbols which might be relevant to a query. Some symbols returned might not be relevant."},
+            "query" -> "String",
+            CanonicalName@nf[OpenAIEmbedding[#query],25]&
+          ]
+        }
+      ];
+    {plugin, ker}
+  ]
 ```
 
 </details>
@@ -378,12 +378,12 @@ Deploy the plugin:
 	
 ```wl
 {plugin,kernel} = programmingAssistantPlugin[
-		FileNameJoin[{NotebookDirectory[],"ChatGPTPluginsCopy","Kernel"}],
-		Hold[
-			PacletDirectoryLoad["~/git/ChatGPTPlugins/Notes/ChatGPTPluginsCopy"];
-			Needs["ChristopherWolfram`ChatGPTPlugins`"]
-		]
-	];
+    FileNameJoin[{NotebookDirectory[],"ChatGPTPluginsCopy","Kernel"}],
+    Hold[
+      PacletDirectoryLoad["~/git/ChatGPTPlugins/Notes/ChatGPTPluginsCopy"];
+      Needs["ChristopherWolfram`ChatGPTPlugins`"]
+    ]
+  ];
 ChatGPTPluginDeploy[server]
 ```
 	
