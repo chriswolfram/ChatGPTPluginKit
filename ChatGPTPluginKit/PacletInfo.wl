@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Christopher Wolfram",
     "License" -> "MIT",
     "PublisherID" -> "Wolfram",
-    "Version" -> "1.1.1",
+    "Version" -> "1.2.0",
     "WolframVersion" -> "13.2+",
     "Extensions" -> {
       {
@@ -18,6 +18,9 @@ PacletObject[
           "Wolfram`ChatGPTPluginKit`$ChatGPTPluginPort",
           "Wolfram`ChatGPTPluginKit`ChatGPTPlugin",
           "Wolfram`ChatGPTPluginKit`ChatGPTPluginDeploy",
+          "Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment",
+          "Wolfram`ChatGPTPluginKit`ChatGPTPluginCloudDeploy",
+          "Wolfram`ChatGPTPluginKit`ChatGPTPluginCloudDeployment",
           "Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint"
         }
       },

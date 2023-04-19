@@ -1,0 +1,1278 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     57661,       1270]
+NotebookOptionsPosition[     50518,       1119]
+NotebookOutlinePosition[     51682,       1152]
+CellTagsIndexPosition[     51602,       1147]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["ChatGPTPluginCloudDeploy", "ObjectName",
+ CellID->1572053415,ExpressionUUID->"fbae3251-84e8-4e4a-bbfe-ee3760bee80b"],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo",ExpressionUUID->"aad96205-9feb-4c3b-b893-0c12cba5789e"],
+ Cell[BoxData[
+  RowBox[{"ChatGPTPluginCloudDeploy", "[", 
+   StyleBox["plugin", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
+  "2d83afd3-222e-488f-b254-b0a611533e65"],
+ " \[LineSeparator]deploys a ChatGPT plugin to the public Wolfram Cloud."
+}], "Usage",
+ CellChangeTimes->{{3.890925567613296*^9, 3.890925585496047*^9}},
+ CellID->1010436864,ExpressionUUID->"003034b2-4964-4808-9752-4959599a63d6"],
+
+Cell["\<\
+Currently, only one plugin can be deployed per Wolfram Cloud account.\
+\>", "Notes",
+ CellChangeTimes->{{3.890925587670133*^9, 3.8909255974566402`*^9}},
+ CellID->111692772,ExpressionUUID->"bf498240-4d17-4847-b09b-2f7967fb0e0a"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["ChatGPTPluginCloudDeploy",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPluginCloudDeploy"]], 
+  "InlineFormula",ExpressionUUID->"3fec34d5-7f57-4dac-b976-2b6f73e65d28"],
+ " returns a ",
+ Cell[BoxData[
+  ButtonBox["ChatGPTPluginCloudDeployment",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPluginCloudDeployment"]], 
+  "InlineFormula",ExpressionUUID->"492df785-bc5c-4880-8a2d-ca4ac95d8024"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.890925603066917*^9, 3.8909256297742987`*^9}},
+ CellID->1423540098,ExpressionUUID->"9fd6e944-fa56-42a0-8234-fdfbc122ba63"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["CloudObject",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "6b26c4f0-ce89-41c0-b059-55f0719a5810"],
+ " objects created by ",
+ Cell[BoxData[
+  ButtonBox["ChatGPTPluginCloudDeploy",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPluginCloudDeploy"]], 
+  "InlineFormula",ExpressionUUID->"1b9564fa-a1bd-4aab-ab64-34983d16358f"],
+ " can be viewed in the returned ",
+ Cell[BoxData[
+  ButtonBox["ChatGPTPluginCloudDeployment",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPluginCloudDeployment"]], 
+  "InlineFormula",ExpressionUUID->"7cccb75a-f6df-44bd-bad2-4a9f3ec8e966"],
+ ". ",
+ Cell[BoxData[
+  ButtonBox["DeleteObject",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "669bce21-c49a-47fd-bf4b-6482e408d94c"],
+ " can be used to delete them."
+}], "Notes",
+ CellChangeTimes->{{3.890925634317771*^9, 3.890925683247592*^9}},
+ CellID->1103581460,ExpressionUUID->"a4b09672-1847-4384-a5b3-772e6a66cfc3"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["plugin", "TI"]], "InlineFormula",ExpressionUUID->
+  "2c122edc-f740-4b3a-8b63-8022f72acd01"],
+ " must be a valid ",
+ Cell[BoxData[
+  ButtonBox["ChatGPTPlugin",
+   BaseStyle->"Link",
+   ButtonData->"paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPlugin"]], 
+  "InlineFormula",ExpressionUUID->"36e0629c-fdb4-4f9b-9afa-0c09cffbd908"],
+ " object, or an association that specifies a valid ",
+ Cell[BoxData[
+  ButtonBox["ChatGPTPlugin",
+   BaseStyle->"Link",
+   ButtonData->"paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPlugin"]], 
+  "InlineFormula",ExpressionUUID->"06aaae8d-080e-4df0-bd07-f955a92e3193"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.8894732911277847`*^9, 3.889473305332693*^9}, {
+  3.890398696616632*^9, 3.890398720878022*^9}},
+ CellID->1735908722,ExpressionUUID->"2571c1d5-00a0-4fda-8ae1-65e4da180a82"],
+
+Cell["Endpoints are evaluated in the Wolfram Cloud.", "Notes",
+ CellChangeTimes->{{3.889473789626955*^9, 3.8894738028991003`*^9}, {
+  3.8909257018137074`*^9, 3.8909257083560057`*^9}},
+ CellID->178889690,ExpressionUUID->"a1d1cae9-c28e-4232-88a0-2f1e9d8fcd11"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Tech Notes",
+ Cell[BoxData[
+  TemplateBox[{"TechNotes", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell["Insert links to related tech notes.", "MoreInfoText"], BaseStyle -> 
+       "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "74560ed1-d25b-44bf-a9f2-dbb885bed134"]
+}], "TechNotesSection",
+ CellID->319711526,ExpressionUUID->"f33e455b-c92a-4c61-b170-0f0effde0a9d"],
+
+Cell["XXXX", "Tutorials",
+ CellID->387532688,ExpressionUUID->"c46c99b3-56d9-4304-8602-ff28cb408a7a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Related Links",
+ Cell[BoxData[
+  TemplateBox[{"RelatedLinks", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Insert links to any related page, including web pages.", 
+        "MoreInfoText"], BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "d2a3c0c6-8bab-419a-b162-839408904c0c"]
+}], "RelatedLinksSection",
+ CellID->2091469512,ExpressionUUID->"97756ea9-a4c5-48c2-8084-4ec207b1e0f8"],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1315754088,ExpressionUUID->"71ba1039-ce73-4d29-80fb-8268d7a10c7e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "See Also",
+ Cell[BoxData[
+  TemplateBox[{"SeeAlso", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Insert links to any related reference (function) pages.", 
+        "MoreInfoText"], BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "a08be529-affd-47a4-99d5-88d9f181582f"]
+}], "SeeAlsoSection",
+ CellID->1239843857,ExpressionUUID->"6c3eb39c-83df-43c6-ad76-9ecd3c2619ae"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["ChatGPTPlugin",
+   BaseStyle->"Link",
+   ButtonData->"paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPlugin"]], 
+  "InlineSeeAlsoFunction",
+  TaggingRules->{"PageType" -> "Function"},ExpressionUUID->
+  "4ac1dc36-44a3-4b34-8a58-5b2da9e475a7"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["ChatGPTPluginDeploy",
+   BaseStyle->"Link",
+   ButtonData->"paclet:Wolfram/ChatGPTPluginKit/ref/ChatGPTPluginDeploy"]], 
+  "InlineSeeAlsoFunction",
+  TaggingRules->{"PageType" -> "Function"},ExpressionUUID->
+  "59941984-f6ff-4a29-ae15-1d6046a27114"],
+ Cell[BoxData[
+  RowBox[{
+  Cell[TextData[StyleBox[
+   " \[FilledVerySmallSquare] ", "InlineSeparator"]],ExpressionUUID->
+    "4152f6b1-75a1-43b6-ad03-75d0db55e118"], 
+   DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
+    "936c0d2f-7e9b-4e6d-831a-5968fa9576df", 
+     "89ecca1e-17a1-46de-8a0f-85b1294c33db"], $CellContext`cellobj$$ = 
+    CellObject[
+    "859a5fcf-a5bf-4281-89b8-5788d1044b18", 
+     "d2eb4f49-a513-453a-88fa-4ba713b871e3"]}, 
+    TemplateBox[{
+      GraphicsBox[{{
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         CircleBox[{0, 0}]}, {
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         LineBox[{{0, 0.62}, {0, -0.62}}]}, {
+         Thickness[0.06], 
+         StrokeForm[
+          Hue[0.4167, 0.406, 0.502]], 
+         LineBox[{{-0.62, 0}, {0.62, 0}}]}}, 
+       ImagePadding -> {{1., 1.}, {2.4, 1.}}, ImageSize -> 16, 
+       PlotRange -> {{-1.06, 1.06}, {-1.06, 1.06}}, 
+       BaselinePosition -> (Center -> 
+        Center)], $CellContext`nbobj$$, $CellContext`cellobj$$},
+     "InlineListingAddButton"],
+    Initialization:>($CellContext`nbobj$$ = 
+      EvaluationNotebook[]; $CellContext`cellobj$$ = EvaluationCell[])]}]], 
+  "InlineListingAddButton",ExpressionUUID->
+  "859a5fcf-a5bf-4281-89b8-5788d1044b18"]
+}], "SeeAlso",
+ CellChangeTimes->{{3.89092571507045*^9, 3.890925721953266*^9}},
+ CellID->1021877758,ExpressionUUID->"ecdd96be-5b06-4daa-9e62-fa76a16e039f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Guides", "MoreAboutSection",
+ CellChangeTimes->{{3.843042374232973*^9, 3.843042375545676*^9}},
+ CellID->1272753647,ExpressionUUID->"4fcbaa21-6d8d-4c21-b532-d5607504a54f"],
+
+Cell["XXXX", "MoreAbout",
+ CellID->85937362,ExpressionUUID->"5f85763b-aa4f-4e3a-a581-03b6d51fca82"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Examples Initialization",
+ Cell[BoxData[
+  TemplateBox[{"ExamplesInitialization", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Input that is to be evaluated before any examples are run, e.g. \
+Needs[\[Ellipsis]].", "MoreInfoText"], BaseStyle -> "IFrameBox"]], 
+     "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "a8d970fd-fce7-48ff-9020-c3c85940f035"]
+}], "ExamplesInitializationSection",
+ CellID->1240232350,ExpressionUUID->"cf609ad0-c1b4-4c77-930d-85dfe25d8065"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Wolfram`ChatGPTPluginKit`\>\"", 
+  "]"}]], "ExampleInitialization",
+ CellID->1108828668,ExpressionUUID->"028831b2-2759-4a8b-8672-34d02e191357"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox[
+      RowBox[{"Basic", " ", "Examples"}], "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->220334410,ExpressionUUID->"a9ca88cf-1e68-4d53-81af-78604043ec55"],
+
+Cell["Deploy a ChatGPT plugin to the Wolfram Cloud:", "ExampleText",
+ CellChangeTimes->{{3.889473009228105*^9, 3.889473020802627*^9}, {
+  3.890398799300242*^9, 3.8903988109837*^9}, {3.890925750153597*^9, 
+  3.890925751980392*^9}},
+ CellID->374440937,ExpressionUUID->"ebfb416f-9f4d-4da8-9add-39b97a97d1bd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"server", "=", 
+  RowBox[{"ChatGPTPluginCloudDeploy", "[", 
+   RowBox[{"<|", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"\"\<Name\>\"", "->", "\"\<CityPopulationFinder\>\""}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\"\<Endpoints\>\"", "->", 
+      RowBox[{"<|", 
+       RowBox[{"\"\<getCityPopulation\>\"", "->", 
+        RowBox[{"APIFunction", "[", 
+         RowBox[{
+          RowBox[{"\"\<city\>\"", "->", "\"\<City\>\""}], ",", 
+          RowBox[{
+           RowBox[{"#city", "[", "\"\<Population\>\"", "]"}], "&"}]}], 
+         "]"}]}], "|>"}]}]}], "\[IndentingNewLine]", "|>"}], "]"}]}]], "Input",\
+
+ CellChangeTimes->{{3.8894730240943127`*^9, 3.889473030319086*^9}, {
+  3.890398737336687*^9, 3.890398752365046*^9}, {3.890398801057192*^9, 
+  3.890398818379952*^9}, {3.89092539896572*^9, 3.890925399082377*^9}, {
+  3.890925755048667*^9, 3.8909257581878347`*^9}},
+ CellLabel->"In[4]:=",
+ CellID->428262334,ExpressionUUID->"50a9cc11-1a62-48b9-9996-d4e57d51eac2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["ChatGPTPluginCloudDeployment",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"], 
+               ImageSizeCache -> {10., {0., 10.}}], Appearance -> None, 
+              BaseStyle -> {}, ButtonFunction :> (Typeset`open$$ = True), 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GridBox[{{
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"url: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"https://chriswolfram-assets.wolframcloud.com\"", 
+                    "SummaryItem"]}], 
+                  ButtonBox[
+                   
+                   DynamicModuleBox[{
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseDown$$ = 
+                    False, Wolfram`ChatGPTPluginKit`CopyButton`Private`\
+mouseHover$$ = False}, 
+                    TagBox[
+                    PaneSelectorBox[{"Default" -> FrameBox[
+                    GraphicsBox[
+                    GeometricTransformationBox[{
+                    GrayLevel[0.65], 
+                    Thickness[0.05], 
+                    CapForm["Butt"], 
+                    JoinForm["Bevel"], 
+                    
+                    JoinedCurveBox[{{{0, 2, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}, {{0, 2, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 
+                    0}, {1, 3, 3}}}, {{{9., 15.}, {5., 15.}, {
+                    3.895430088043213, 15.}, {3., 14.104599952697754`}, {3., 
+                    13.}, {3., 5.}, {3., 3.895430088043213}, {
+                    3.895430088043213, 3.}, {5., 3.}, {13., 3.}, {
+                    14.104599952697754`, 3.}, {15., 3.895430088043213}, {15., 
+                    5.}, {15., 9.}}, {{11., 21.}, {19., 21.}, {
+                    20.10460090637207, 21.}, {21., 20.10460090637207}, {21., 
+                    19.}, {21., 11.}, {21., 9.895429611206055}, {
+                    20.10460090637207, 9.}, {19., 9.}, {11., 9.}, {
+                    9.895429611206055, 9.}, {9., 9.895429611206055}, {9., 
+                    11.}, {9., 19.}, {9., 20.10460090637207}, {
+                    9.895429611206055, 21.}, {11., 21.}}}, 
+                    CurveClosed -> {0, 1}]}, {{{1, 0}, {0, -1}}, {0, 0}}], 
+                    ImageSize -> 20], Background -> GrayLevel[0, 0], 
+                    FrameMargins -> 5, FrameStyle -> GrayLevel[0, 0], 
+                    RoundingRadius -> 5, StripOnInput -> False], "Hover" -> 
+                    FrameBox[
+                    GraphicsBox[
+                    GeometricTransformationBox[{
+                    GrayLevel[0.286], 
+                    Thickness[0.05], 
+                    CapForm["Butt"], 
+                    JoinForm["Bevel"], 
+                    
+                    JoinedCurveBox[{{{0, 2, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}, {{0, 2, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 
+                    0}, {1, 3, 3}}}, {{{9., 15.}, {5., 15.}, {
+                    3.895430088043213, 15.}, {3., 14.104599952697754`}, {3., 
+                    13.}, {3., 5.}, {3., 3.895430088043213}, {
+                    3.895430088043213, 3.}, {5., 3.}, {13., 3.}, {
+                    14.104599952697754`, 3.}, {15., 3.895430088043213}, {15., 
+                    5.}, {15., 9.}}, {{11., 21.}, {19., 21.}, {
+                    20.10460090637207, 21.}, {21., 20.10460090637207}, {21., 
+                    19.}, {21., 11.}, {21., 9.895429611206055}, {
+                    20.10460090637207, 9.}, {19., 9.}, {11., 9.}, {
+                    9.895429611206055, 9.}, {9., 9.895429611206055}, {9., 
+                    11.}, {9., 19.}, {9., 20.10460090637207}, {
+                    9.895429611206055, 21.}, {11., 21.}}}, 
+                    CurveClosed -> {0, 1}]}, {{{1, 0}, {0, -1}}, {0, 0}}], 
+                    ImageSize -> 20], Background -> GrayLevel[0, 0], 
+                    FrameMargins -> 5, FrameStyle -> GrayLevel[0, 0], 
+                    RoundingRadius -> 5, StripOnInput -> False], "Pressed" -> 
+                    FrameBox[
+                    GraphicsBox[
+                    GeometricTransformationBox[{
+                    GrayLevel[0.286], 
+                    Thickness[0.05], 
+                    CapForm["Butt"], 
+                    JoinForm["Bevel"], 
+                    
+                    JoinedCurveBox[{{{0, 2, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}, {{0, 2, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 
+                    0}, {1, 3, 3}}}, {{{9., 15.}, {5., 15.}, {
+                    3.895430088043213, 15.}, {3., 14.104599952697754`}, {3., 
+                    13.}, {3., 5.}, {3., 3.895430088043213}, {
+                    3.895430088043213, 3.}, {5., 3.}, {13., 3.}, {
+                    14.104599952697754`, 3.}, {15., 3.895430088043213}, {15., 
+                    5.}, {15., 9.}}, {{11., 21.}, {19., 21.}, {
+                    20.10460090637207, 21.}, {21., 20.10460090637207}, {21., 
+                    19.}, {21., 11.}, {21., 9.895429611206055}, {
+                    20.10460090637207, 9.}, {19., 9.}, {11., 9.}, {
+                    9.895429611206055, 9.}, {9., 9.895429611206055}, {9., 
+                    11.}, {9., 19.}, {9., 20.10460090637207}, {
+                    9.895429611206055, 21.}, {11., 21.}}}, 
+                    CurveClosed -> {0, 1}]}, {{{1, 0}, {0, -1}}, {0, 0}}], 
+                    ImageSize -> 20], Background -> GrayLevel[0., 0.05], 
+                    FrameMargins -> 5, FrameStyle -> GrayLevel[0, 0], 
+                    RoundingRadius -> 5, StripOnInput -> False]}, 
+                    Dynamic[
+                    FEPrivate`Which[
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseDown$$, 
+                    "Pressed", 
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseHover$$, 
+                    "Hover", True, "Default"]]], 
+                    
+                    EventHandlerTag[{
+                    "MouseDown" :> 
+                    FEPrivate`Set[
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseDown$$, 
+                    True], "MouseUp" :> 
+                    FEPrivate`Set[
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseDown$$, 
+                    False], "MouseEntered" :> 
+                    FEPrivate`Set[
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseHover$$, 
+                    True], "MouseExited" :> 
+                    FEPrivate`Set[
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseHover$$, 
+                    False], PassEventsDown -> True, Method -> "Preemptive", 
+                    PassEventsUp -> True}]], DynamicModuleValues :> {}], 
+                   Appearance -> {
+                    "Default" -> 
+                    FrontEnd`FileName[{"Misc"}, "TransparentBG.9.png"]}, 
+                   ButtonFunction :> CopyToClipboard[
+                    
+                    Wolfram`ChatGPTPluginKit`ChatGPTPluginCloudDeployment[<|
+                    "CloudObjects" -> {
+                    CloudObject[
+                    "https://www.wolframcloud.com/obj/chriswolfram/.well-\
+known/ai-plugin.json"], 
+                    CloudObject[
+                    "https://www.wolframcloud.com/obj/chriswolfram/.well-\
+known/openapi.json"], 
+                    CloudObject[
+                    "https://www.wolframcloud.com/obj/chriswolfram/\
+getCityPopulation"]}, "Plugin" -> 
+                    Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
+                    "Name" -> "CityPopulationFinder", "Description" -> "", 
+                    "Prompt" -> "", "Endpoints" -> {
+                    
+                    Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
+                    "OperationID" -> "getCityPopulation", "Prompt" -> 
+                    Missing["NotSpecified"], 
+                    "Parameters" -> {
+                    "city" -> <|"Interpreter" -> "City", "Help" -> 
+                    Missing["NotSpecified"], "Required" -> True|>}, 
+                    "Function" -> (Slot["city"]["Population"]& ), 
+                    "APIFunctionOptions" -> {}|>, {}]}|>, {}], "URL" -> 
+                    "https://chriswolfram-assets.wolframcloud.com"|>]["URL"]],
+                    Evaluator -> Automatic, Method -> "Preemptive"]}, 
+                 "RowDefault"], "SummaryItem"]}}, AutoDelete -> False, 
+             BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True -> 
+        GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
+              Appearance -> None, BaseStyle -> {}, 
+              ButtonFunction :> (Typeset`open$$ = False), Evaluator -> 
+              Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GridBox[{{
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"url: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    "\"https://chriswolfram-assets.wolframcloud.com\"", 
+                    "SummaryItem"]}], 
+                  ButtonBox[
+                   
+                   DynamicModuleBox[{
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseDown$$ = 
+                    False, Wolfram`ChatGPTPluginKit`CopyButton`Private`\
+mouseHover$$ = False}, 
+                    TagBox[
+                    PaneSelectorBox[{"Default" -> FrameBox[
+                    GraphicsBox[
+                    GeometricTransformationBox[{
+                    GrayLevel[0.65], 
+                    Thickness[0.05], 
+                    CapForm["Butt"], 
+                    JoinForm["Bevel"], 
+                    
+                    JoinedCurveBox[{{{0, 2, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}, {{0, 2, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 
+                    0}, {1, 3, 3}}}, {{{9., 15.}, {5., 15.}, {
+                    3.895430088043213, 15.}, {3., 14.104599952697754`}, {3., 
+                    13.}, {3., 5.}, {3., 3.895430088043213}, {
+                    3.895430088043213, 3.}, {5., 3.}, {13., 3.}, {
+                    14.104599952697754`, 3.}, {15., 3.895430088043213}, {15., 
+                    5.}, {15., 9.}}, {{11., 21.}, {19., 21.}, {
+                    20.10460090637207, 21.}, {21., 20.10460090637207}, {21., 
+                    19.}, {21., 11.}, {21., 9.895429611206055}, {
+                    20.10460090637207, 9.}, {19., 9.}, {11., 9.}, {
+                    9.895429611206055, 9.}, {9., 9.895429611206055}, {9., 
+                    11.}, {9., 19.}, {9., 20.10460090637207}, {
+                    9.895429611206055, 21.}, {11., 21.}}}, 
+                    CurveClosed -> {0, 1}]}, {{{1, 0}, {0, -1}}, {0, 0}}], 
+                    ImageSize -> 20], FrameStyle -> GrayLevel[0, 0], 
+                    RoundingRadius -> 5, FrameMargins -> 5, Background -> 
+                    GrayLevel[0, 0], StripOnInput -> False], "Hover" -> 
+                    FrameBox[
+                    GraphicsBox[
+                    GeometricTransformationBox[{
+                    GrayLevel[0.286], 
+                    Thickness[0.05], 
+                    CapForm["Butt"], 
+                    JoinForm["Bevel"], 
+                    
+                    JoinedCurveBox[{{{0, 2, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}, {{0, 2, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 
+                    0}, {1, 3, 3}}}, {{{9., 15.}, {5., 15.}, {
+                    3.895430088043213, 15.}, {3., 14.104599952697754`}, {3., 
+                    13.}, {3., 5.}, {3., 3.895430088043213}, {
+                    3.895430088043213, 3.}, {5., 3.}, {13., 3.}, {
+                    14.104599952697754`, 3.}, {15., 3.895430088043213}, {15., 
+                    5.}, {15., 9.}}, {{11., 21.}, {19., 21.}, {
+                    20.10460090637207, 21.}, {21., 20.10460090637207}, {21., 
+                    19.}, {21., 11.}, {21., 9.895429611206055}, {
+                    20.10460090637207, 9.}, {19., 9.}, {11., 9.}, {
+                    9.895429611206055, 9.}, {9., 9.895429611206055}, {9., 
+                    11.}, {9., 19.}, {9., 20.10460090637207}, {
+                    9.895429611206055, 21.}, {11., 21.}}}, 
+                    CurveClosed -> {0, 1}]}, {{{1, 0}, {0, -1}}, {0, 0}}], 
+                    ImageSize -> 20], FrameStyle -> GrayLevel[0, 0], 
+                    RoundingRadius -> 5, FrameMargins -> 5, Background -> 
+                    GrayLevel[0, 0], StripOnInput -> False], "Pressed" -> 
+                    FrameBox[
+                    GraphicsBox[
+                    GeometricTransformationBox[{
+                    GrayLevel[0.286], 
+                    Thickness[0.05], 
+                    CapForm["Butt"], 
+                    JoinForm["Bevel"], 
+                    
+                    JoinedCurveBox[{{{0, 2, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}, {{0, 2, 0}, {1, 3, 
+                    3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 
+                    0}, {1, 3, 3}}}, {{{9., 15.}, {5., 15.}, {
+                    3.895430088043213, 15.}, {3., 14.104599952697754`}, {3., 
+                    13.}, {3., 5.}, {3., 3.895430088043213}, {
+                    3.895430088043213, 3.}, {5., 3.}, {13., 3.}, {
+                    14.104599952697754`, 3.}, {15., 3.895430088043213}, {15., 
+                    5.}, {15., 9.}}, {{11., 21.}, {19., 21.}, {
+                    20.10460090637207, 21.}, {21., 20.10460090637207}, {21., 
+                    19.}, {21., 11.}, {21., 9.895429611206055}, {
+                    20.10460090637207, 9.}, {19., 9.}, {11., 9.}, {
+                    9.895429611206055, 9.}, {9., 9.895429611206055}, {9., 
+                    11.}, {9., 19.}, {9., 20.10460090637207}, {
+                    9.895429611206055, 21.}, {11., 21.}}}, 
+                    CurveClosed -> {0, 1}]}, {{{1, 0}, {0, -1}}, {0, 0}}], 
+                    ImageSize -> 20], FrameStyle -> GrayLevel[0, 0], 
+                    RoundingRadius -> 5, FrameMargins -> 5, Background -> 
+                    GrayLevel[0., 0.05], StripOnInput -> False]}, 
+                    Dynamic[
+                    FEPrivate`Which[
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseDown$$, 
+                    "Pressed", 
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseHover$$, 
+                    "Hover", True, "Default"]]], 
+                    
+                    EventHandlerTag[{
+                    "MouseDown" :> 
+                    FEPrivate`Set[
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseDown$$, 
+                    True], "MouseUp" :> 
+                    FEPrivate`Set[
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseDown$$, 
+                    False], "MouseEntered" :> 
+                    FEPrivate`Set[
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseHover$$, 
+                    True], "MouseExited" :> 
+                    FEPrivate`Set[
+                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseHover$$, 
+                    False], PassEventsDown -> True, Method -> "Preemptive", 
+                    PassEventsUp -> True}]], DynamicModuleValues :> {}], 
+                   ButtonFunction :> CopyToClipboard[
+                    
+                    Wolfram`ChatGPTPluginKit`ChatGPTPluginCloudDeployment[<|
+                    "CloudObjects" -> {
+                    CloudObject[
+                    "https://www.wolframcloud.com/obj/chriswolfram/.well-\
+known/ai-plugin.json"], 
+                    CloudObject[
+                    "https://www.wolframcloud.com/obj/chriswolfram/.well-\
+known/openapi.json"], 
+                    CloudObject[
+                    "https://www.wolframcloud.com/obj/chriswolfram/\
+getCityPopulation"]}, "Plugin" -> 
+                    Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
+                    "Name" -> "CityPopulationFinder", "Description" -> "", 
+                    "Prompt" -> "", "Endpoints" -> {
+                    
+                    Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
+                    "OperationID" -> "getCityPopulation", "Prompt" -> 
+                    Missing["NotSpecified"], 
+                    "Parameters" -> {
+                    "city" -> <|"Interpreter" -> "City", "Help" -> 
+                    Missing["NotSpecified"], "Required" -> True|>}, 
+                    "Function" -> (Slot["city"]["Population"]& ), 
+                    "APIFunctionOptions" -> {}|>, {}]}|>, {}], "URL" -> 
+                    "https://chriswolfram-assets.wolframcloud.com"|>]["URL"]],
+                    Appearance -> {
+                    "Default" -> 
+                    FrontEnd`FileName[{"Misc"}, "TransparentBG.9.png"]}, 
+                   Evaluator -> Automatic, Method -> "Preemptive"]}, 
+                 "RowDefault"], "SummaryItem"]}, {
+               RowBox[{
+                 TagBox["\"plugin: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  InterpretationBox[
+                   RowBox[{
+                    TagBox["ChatGPTPlugin", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{
+                    Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"]], 
+                    ButtonFunction :> (Typeset`open$$ = True), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"CityPopulationFinder\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"description: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"\"", "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {
+                    ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"]], 
+                    ButtonFunction :> (Typeset`open$$ = False), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"CityPopulationFinder\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"description: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"endpoints: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    TagBox[
+                    GridBox[{{
+                    InterpretationBox[
+                    RowBox[{
+                    TagBox["ChatGPTPluginEndpoint", "SummaryHead"], "[", 
+                    
+                    DynamicModuleBox[{Typeset`open$$ = False, 
+                    Typeset`embedState$$ = "Ready"}, 
+                    TemplateBox[{
+                    PaneSelectorBox[{False -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxOpener"]], 
+                    ButtonFunction :> (Typeset`open$$ = True), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 3.5 (CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"getCityPopulation\"", "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Automatic}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
+                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
+                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Top}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, BaselinePosition -> {1, 1}], 
+                    True -> GridBox[{{
+                    PaneBox[
+                    ButtonBox[
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "FEBitmaps", "SummaryBoxCloser"]], 
+                    ButtonFunction :> (Typeset`open$$ = False), Appearance -> 
+                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+                    Dynamic[{Automatic, 3.5 (CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification])}]], 
+                    GridBox[{{
+                    RowBox[{
+                    TagBox["\"name: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"getCityPopulation\"", "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"prompt: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox[
+                    RowBox[{"Missing", "[", "\"NotSpecified\"", "]"}], 
+                    "SummaryItem"]}]}}, GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{2}}, 
+                    "Rows" -> {{Automatic}}}, BaseStyle -> {
+                    ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Rows" -> {{Top}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}, BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    
+                    Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
+                    "OperationID" -> "getCityPopulation", "Prompt" -> 
+                    Missing["NotSpecified"], 
+                    "Parameters" -> {"city" -> <|
+                    "Interpreter" -> "City", "Help" -> 
+                    Missing["NotSpecified"], "Required" -> True|>}, 
+                    "Function" -> (Slot["city"]["Population"]& ), 
+                    "APIFunctionOptions" -> {}|>, {}], Selectable -> False, 
+                    Editable -> False, SelectWithContents -> True]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    DefaultBaseStyle -> "Column", 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                    "Column"], "SummaryItem"]}]}, {
+                    RowBox[{
+                    TagBox["\"prompt: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"\"", "SummaryItem"]}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+                    AutoDelete -> False, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
+                    BaseStyle -> {
+                    ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Top}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
+                    "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                   
+                   Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
+                    "Name" -> "CityPopulationFinder", "Description" -> "", 
+                    "Prompt" -> "", "Endpoints" -> {
+                    
+                    Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
+                    "OperationID" -> "getCityPopulation", "Prompt" -> 
+                    Missing["NotSpecified"], 
+                    "Parameters" -> {
+                    "city" -> <|
+                    "Interpreter" -> "City", "Help" -> 
+                    Missing["NotSpecified"], "Required" -> True|>}, 
+                    "Function" -> (Slot["city"]["Population"]& ), 
+                    "APIFunctionOptions" -> {}|>, {}]}|>, {}], Editable -> 
+                   False, SelectWithContents -> True, Selectable -> False], 
+                  "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"cloud objects: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                    RowBox[{
+                    InterpretationBox[
+                    RowBox[{"CloudObject", "[", 
+                    
+                    TemplateBox[{
+                    "\"https://www.wolframcloud.com/obj/chriswolfram/.well-\
+known/ai-plugin.json\"", 
+                    "https://www.wolframcloud.com/obj/chriswolfram/.well-\
+known/ai-plugin.json"}, "HyperlinkURL"], "]"}], 
+                    CloudObject[
+                    "https://www.wolframcloud.com/obj/chriswolfram/.well-\
+known/ai-plugin.json"], SelectWithContents -> True], ",", 
+                    InterpretationBox[
+                    RowBox[{"CloudObject", "[", 
+                    
+                    TemplateBox[{
+                    "\"https://www.wolframcloud.com/obj/chriswolfram/.well-\
+known/openapi.json\"", 
+                    "https://www.wolframcloud.com/obj/chriswolfram/.well-\
+known/openapi.json"}, "HyperlinkURL"], "]"}], 
+                    CloudObject[
+                    "https://www.wolframcloud.com/obj/chriswolfram/.well-\
+known/openapi.json"], SelectWithContents -> True], ",", 
+                    InterpretationBox[
+                    RowBox[{"CloudObject", "[", 
+                    TemplateBox[{
+                    "\"https://www.wolframcloud.com/obj/chriswolfram/\
+getCityPopulation\"", 
+                    "https://www.wolframcloud.com/obj/chriswolfram/\
+getCityPopulation"}, "HyperlinkURL"], "]"}], 
+                    CloudObject[
+                    "https://www.wolframcloud.com/obj/chriswolfram/\
+getCityPopulation"], SelectWithContents -> True]}], "}"}], "SummaryItem"]}]}},
+              AutoDelete -> False, 
+             BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  Wolfram`ChatGPTPluginKit`ChatGPTPluginCloudDeployment[<|"CloudObjects" -> {
+      CloudObject[
+      "https://www.wolframcloud.com/obj/chriswolfram/.well-known/ai-plugin.\
+json"], 
+      CloudObject[
+      "https://www.wolframcloud.com/obj/chriswolfram/.well-known/openapi.\
+json"], 
+      CloudObject[
+      "https://www.wolframcloud.com/obj/chriswolfram/getCityPopulation"]}, 
+    "Plugin" -> Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
+      "Name" -> "CityPopulationFinder", "Description" -> "", "Prompt" -> "", 
+       "Endpoints" -> {
+         Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
+          "OperationID" -> "getCityPopulation", "Prompt" -> 
+           Missing["NotSpecified"], 
+           "Parameters" -> {
+            "city" -> <|
+              "Interpreter" -> "City", "Help" -> Missing["NotSpecified"], 
+               "Required" -> True|>}, 
+           "Function" -> (Slot["city"]["Population"]& ), 
+           "APIFunctionOptions" -> {}|>, {}]}|>, {}], "URL" -> 
+    "https://chriswolfram-assets.wolframcloud.com"|>],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.889473027310793*^9, 3.8894730306369877`*^9}, 
+   3.8903243280603333`*^9, {3.890398778190605*^9, 3.890398818646522*^9}, 
+   3.890925190601407*^9, 3.890925234555771*^9, 3.8909253999360323`*^9, {
+   3.8909257584431334`*^9, 3.890925765005921*^9}},
+ CellLabel->"Out[4]=",
+ CellID->1503385882,ExpressionUUID->"901fed35-61d3-4429-a2f8-d906b358a6ce"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "More Examples",
+ Cell[BoxData[
+  TemplateBox[{"MoreExamples", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell["Extended examples in standardized sections.", "MoreInfoText"], 
+       BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "cade88e8-391c-42ff-8ff8-d65d4250b723"]
+}], "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->898621442,ExpressionUUID->"c8c94e85-9498-4c41-ac16-39e6dbaf79ff"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Scope", "ExampleSection",ExpressionUUID->
+   "eff9adde-dc4b-4c83-b66e-50b7c7eb7bd9"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2025569990,ExpressionUUID->"8af4922f-ee3a-4904-a715-14b33e4dbc28"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Generalizations & Extensions", "ExampleSection",ExpressionUUID->
+   "61806c53-0030-4000-8db5-bbc004a4a953"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1844049686,ExpressionUUID->"508ae225-d3e4-4c2c-95b6-e216333bb073"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Options", "ExampleSection",ExpressionUUID->
+   "2bac4e5e-4e7f-40c7-84d3-eb691863a89f"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->459079098,ExpressionUUID->"bf09cc48-0e52-4168-b167-dea0d4b8f010"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "XXXX", "ExampleSubsection",ExpressionUUID->
+   "253395e6-96d2-430b-abfc-620464ef5e4a"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1981140062,ExpressionUUID->"a06bcc4b-3764-4443-b9b4-ad38d24b2878"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "XXXX", "ExampleSubsection",ExpressionUUID->
+   "2bd3fcec-8c00-4361-bbd2-9c4ccd4364be"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->287075299,ExpressionUUID->"10f13369-c0a4-413c-84f5-544199bb33ab"]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Applications", "ExampleSection",ExpressionUUID->
+   "781fd8e1-2f48-48ce-995c-2c9355edf8c7"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1626279131,ExpressionUUID->"6f5c877a-79cd-4dbd-bbfd-d1e00588f9c6"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Properties & Relations", "ExampleSection",ExpressionUUID->
+   "d53b5c80-5ded-48b3-9460-7fd87d361121"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1848979348,ExpressionUUID->"18148ce1-f5a6-4ce2-be44-7cb4371d3115"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Possible Issues", "ExampleSection",ExpressionUUID->
+   "f27b7c13-b969-474d-af34-dca485ee49b2"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1707529746,ExpressionUUID->"fba90314-4493-49b5-bd6d-9277896d179d"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Interactive Examples", "ExampleSection",ExpressionUUID->
+   "b92da9c3-8859-4ec4-9688-807054820573"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1628466161,ExpressionUUID->"1fc1849a-cd0e-4c74-b824-77aacf779512"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Neat Examples", "ExampleSection",ExpressionUUID->
+   "1f64c429-bb34-451b-b07d-5d43297d4c60"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2099170559,ExpressionUUID->"93fca0f4-934d-48d9-a14c-211d513576ae"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Metadata", "MetadataSection",
+ CellID->1898232197,ExpressionUUID->"9d2e0d82-95d0-49b4-9526-ad37d5865437"],
+
+Cell[TextData[{
+ "New in: ",
+ Cell["XX", "HistoryData",
+  CellTags->"New",ExpressionUUID->"a8b56489-8d72-4646-b7d3-a58561c052f9"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified",ExpressionUUID->"1ef22906-538b-444e-a644-4050ca9069a0"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete",ExpressionUUID->
+  "d494b45f-97b4-43d4-84eb-57ed824801fe"]
+}], "History",
+ CellID->571475147,ExpressionUUID->"7f082a49-99ca-4dad-b59f-051a26533f27"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Categorization",
+ Cell[BoxData[
+  TemplateBox[{"Metadata", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Metadata such as page URI, context, and type of documentation page.", 
+        "MoreInfoText"], BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "ecc8b287-77a9-42b1-a881-19e4bd92c67a"]
+}], "CategorizationSection",
+ CellID->1235926245,ExpressionUUID->"7e763f2c-731c-408c-ac3a-b393c01566d9"],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->1750565931,ExpressionUUID->"f591e13f-6bc7-4055-b778-fe5454e7d4bc"],
+
+Cell["Wolfram/ChatGPTPluginKit", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->1235638417,ExpressionUUID->"8eadb8d8-643f-4739-a4c0-4c2bb73f054c"],
+
+Cell["Wolfram`ChatGPTPluginKit`", "Categorization",
+ CellLabel->"Context",
+ CellID->1208008029,ExpressionUUID->"8267840a-ce8a-4bca-b82b-f87458fcf01f"],
+
+Cell["Wolfram/ChatGPTPluginKit/ref/ChatGPTPluginCloudDeploy", "Categorization",
+ CellLabel->"URI",
+ CellID->680544665,ExpressionUUID->"7c89a560-2316-48ad-8231-7fb231f881ad"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->416280733,ExpressionUUID->"a1c84747-f43e-42b7-9781-ac784705f7ad"],
+
+Cell["XXXX", "Keywords",
+ CellID->2076041252,ExpressionUUID->"833929ce-6220-4890-9ee8-7711f3b053e0"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1858509555,ExpressionUUID->"5ae46f71-0fc8-4992-8450-3e84505773c7"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->820445270,ExpressionUUID->"b29766dd-403d-4120-9eb1-a1d84bbbf445"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->231155503,ExpressionUUID->"a2a4a171-506d-4491-b9c2-cb6cb5c5977e"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->232621498,ExpressionUUID->"80f333e1-c794-4224-9e44-8b55e521fd90"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->1249279346,ExpressionUUID->"b37b69d6-d875-4026-b161-df19eae441a6"]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{151, Automatic}, {Automatic, 9}},
+TaggingRules->{
+ "DocuToolsSettingsInternal" -> {
+   "$PacletVersion" -> "0.10.2323", "$ApplicationName" -> "Mathematica", 
+    "$LinkBase" -> "Mathematica", "$ApplicationDirectory" -> 
+    "/Users/christopher/cvs/Mathematica/", "$DocumentationDirectory" -> 
+    "/Users/christopher/cvs/Mathematica/Documentation/English/", 
+    "$UseNewPageDialog" -> ""}, 
+  "WelcomeScreenSettings" -> {"FEStarting" -> False}, "Paclet" -> 
+  "Wolfram/ChatGPTPluginKit"},
+FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (November 18, 2022)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"936c0d2f-7e9b-4e6d-831a-5968fa9576df"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[44692, 945, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"c8c94e85-9498-4c41-ac16-39e6dbaf79ff",
+   CellTags->"ExtendedExamples",
+   CellID->898621442]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 51408, 1140}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 122, 1, 74, "ObjectName",ExpressionUUID->"fbae3251-84e8-4e4a-bbfe-ee3760bee80b",
+ CellID->1572053415],
+Cell[705, 25, 496, 9, 79, "Usage",ExpressionUUID->"003034b2-4964-4808-9752-4959599a63d6",
+ CellID->1010436864],
+Cell[1204, 36, 237, 4, 27, "Notes",ExpressionUUID->"bf498240-4d17-4847-b09b-2f7967fb0e0a",
+ CellID->111692772],
+Cell[1444, 42, 679, 17, 28, "Notes",ExpressionUUID->"9fd6e944-fa56-42a0-8234-fdfbc122ba63",
+ CellID->1423540098],
+Cell[2126, 61, 1041, 27, 47, "Notes",ExpressionUUID->"a4b09672-1847-4384-a5b3-772e6a66cfc3",
+ CellID->1103581460],
+Cell[3170, 90, 847, 20, 28, "Notes",ExpressionUUID->"2571c1d5-00a0-4fda-8ae1-65e4da180a82",
+ CellID->1735908722],
+Cell[4020, 112, 258, 3, 27, "Notes",ExpressionUUID->"a1d1cae9-c28e-4232-88a0-2f1e9d8fcd11",
+ CellID->178889690]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4315, 120, 435, 12, 47, "TechNotesSection",ExpressionUUID->"f33e455b-c92a-4c61-b170-0f0effde0a9d",
+ CellID->319711526],
+Cell[4753, 134, 100, 1, 19, "Tutorials",ExpressionUUID->"c46c99b3-56d9-4304-8602-ff28cb408a7a",
+ CellID->387532688]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4890, 140, 473, 13, 34, "RelatedLinksSection",ExpressionUUID->"97756ea9-a4c5-48c2-8084-4ec207b1e0f8",
+ CellID->2091469512],
+Cell[5366, 155, 104, 1, 19, "RelatedLinks",ExpressionUUID->"71ba1039-ce73-4d29-80fb-8268d7a10c7e",
+ CellID->1315754088]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5507, 161, 459, 13, 34, "SeeAlsoSection",ExpressionUUID->"6c3eb39c-83df-43c6-ad76-9ecd3c2619ae",
+ CellID->1239843857],
+Cell[5969, 176, 2115, 52, 23, "SeeAlso",ExpressionUUID->"ecdd96be-5b06-4daa-9e62-fa76a16e039f",
+ CellID->1021877758]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8121, 233, 184, 2, 34, "MoreAboutSection",ExpressionUUID->"4fcbaa21-6d8d-4c21-b532-d5607504a54f",
+ CellID->1272753647],
+Cell[8308, 237, 99, 1, 19, "MoreAbout",ExpressionUUID->"5f85763b-aa4f-4e3a-a581-03b6d51fca82",
+ CellID->85937362]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8444, 243, 531, 14, 70, "ExamplesInitializationSection",ExpressionUUID->"cf609ad0-c1b4-4c77-930d-85dfe25d8065",
+ CellID->1240232350],
+Cell[8978, 259, 185, 3, 47, "ExampleInitialization",ExpressionUUID->"028831b2-2759-4a8b-8672-34d02e191357",
+ CellID->1108828668]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9200, 267, 442, 12, 73, "PrimaryExamplesSection",ExpressionUUID->"a9ca88cf-1e68-4d53-81af-78604043ec55",
+ CellID->220334410],
+Cell[9645, 281, 305, 4, 24, "ExampleText",ExpressionUUID->"ebfb416f-9f4d-4da8-9add-39b97a97d1bd",
+ CellID->374440937],
+Cell[CellGroupData[{
+Cell[9975, 289, 1005, 22, 104, "Input",ExpressionUUID->"50a9cc11-1a62-48b9-9996-d4e57d51eac2",
+ CellID->428262334],
+Cell[10983, 313, 33660, 626, 61, "Output",ExpressionUUID->"901fed35-61d3-4429-a2f8-d906b358a6ce",
+ CellID->1503385882]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44692, 945, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"c8c94e85-9498-4c41-ac16-39e6dbaf79ff",
+ CellTags->"ExtendedExamples",
+ CellID->898621442],
+Cell[45182, 960, 242, 5, 35, "ExampleSection",ExpressionUUID->"8af4922f-ee3a-4904-a715-14b33e4dbc28",
+ CellID->2025569990],
+Cell[45427, 967, 265, 5, 23, "ExampleSection",ExpressionUUID->"508ae225-d3e4-4c2c-95b6-e216333bb073",
+ CellID->1844049686],
+Cell[CellGroupData[{
+Cell[45717, 976, 243, 5, 23, "ExampleSection",ExpressionUUID->"bf09cc48-0e52-4168-b167-dea0d4b8f010",
+ CellID->459079098],
+Cell[45963, 983, 247, 5, 26, "ExampleSubsection",ExpressionUUID->"a06bcc4b-3764-4443-b9b4-ad38d24b2878",
+ CellID->1981140062],
+Cell[46213, 990, 246, 5, 22, "ExampleSubsection",ExpressionUUID->"10f13369-c0a4-413c-84f5-544199bb33ab",
+ CellID->287075299]
+}, Open  ]],
+Cell[46474, 998, 249, 5, 35, "ExampleSection",ExpressionUUID->"6f5c877a-79cd-4dbd-bbfd-d1e00588f9c6",
+ CellID->1626279131],
+Cell[46726, 1005, 259, 5, 23, "ExampleSection",ExpressionUUID->"18148ce1-f5a6-4ce2-be44-7cb4371d3115",
+ CellID->1848979348],
+Cell[46988, 1012, 252, 5, 23, "ExampleSection",ExpressionUUID->"fba90314-4493-49b5-bd6d-9277896d179d",
+ CellID->1707529746],
+Cell[47243, 1019, 257, 5, 23, "ExampleSection",ExpressionUUID->"1fc1849a-cd0e-4c74-b824-77aacf779512",
+ CellID->1628466161],
+Cell[47503, 1026, 250, 5, 23, "ExampleSection",ExpressionUUID->"93fca0f4-934d-48d9-a14c-211d513576ae",
+ CellID->2099170559]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47790, 1036, 111, 1, 72, "MetadataSection",ExpressionUUID->"9d2e0d82-95d0-49b4-9526-ad37d5865437",
+ CellID->1898232197],
+Cell[47904, 1039, 476, 12, 26, "History",ExpressionUUID->"7f082a49-99ca-4dad-b59f-051a26533f27",
+ CellID->571475147],
+Cell[CellGroupData[{
+Cell[48405, 1055, 485, 13, 21, "CategorizationSection",ExpressionUUID->"7e763f2c-731c-408c-ac3a-b393c01566d9",
+ CellID->1235926245],
+Cell[48893, 1070, 135, 2, 70, "Categorization",ExpressionUUID->"f591e13f-6bc7-4055-b778-fe5454e7d4bc",
+ CellID->1750565931],
+Cell[49031, 1074, 153, 2, 70, "Categorization",ExpressionUUID->"8eadb8d8-643f-4739-a4c0-4c2bb73f054c",
+ CellID->1235638417],
+Cell[49187, 1078, 150, 2, 70, "Categorization",ExpressionUUID->"8267840a-ce8a-4bca-b82b-f87458fcf01f",
+ CellID->1208008029],
+Cell[49340, 1082, 173, 2, 70, "Categorization",ExpressionUUID->"7c89a560-2316-48ad-8231-7fb231f881ad",
+ CellID->680544665]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[49550, 1089, 110, 1, 21, "KeywordsSection",ExpressionUUID->"a1c84747-f43e-42b7-9781-ac784705f7ad",
+ CellID->416280733],
+Cell[49663, 1092, 100, 1, 70, "Keywords",ExpressionUUID->"833929ce-6220-4890-9ee8-7711f3b053e0",
+ CellID->2076041252]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[49800, 1098, 120, 1, 21, "TemplatesSection",ExpressionUUID->"5ae46f71-0fc8-4992-8450-3e84505773c7",
+ CellID->1858509555],
+Cell[49923, 1101, 148, 2, 70, "Template",ExpressionUUID->"b29766dd-403d-4120-9eb1-a1d84bbbf445",
+ CellID->820445270],
+Cell[50074, 1105, 137, 2, 70, "Template",ExpressionUUID->"a2a4a171-506d-4491-b9c2-cb6cb5c5977e",
+ CellID->231155503],
+Cell[50214, 1109, 135, 2, 70, "Template",ExpressionUUID->"80f333e1-c794-4224-9e44-8b55e521fd90",
+ CellID->232621498],
+Cell[50352, 1113, 138, 2, 70, "Template",ExpressionUUID->"b37b69d6-d875-4026-b161-df19eae441a6",
+ CellID->1249279346]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+

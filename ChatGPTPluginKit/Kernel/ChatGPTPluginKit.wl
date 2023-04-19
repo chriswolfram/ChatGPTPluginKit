@@ -4,6 +4,11 @@ ChatGPTPlugin
 ChatGPTPluginEndpoint
 
 ChatGPTPluginDeploy
+ChatGPTPluginDeployment
+
+ChatGPTPluginCloudDeploy
+ChatGPTPluginCloudDeployment
+
 ChatGPTPluginExport
 
 $ChatGPTPluginPort = 18000;

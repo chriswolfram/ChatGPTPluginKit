@@ -115,17 +115,17 @@ plugin_ChatGPTPlugin["Name"] := Lookup[plugin["Data"], "Name"]
 plugin_ChatGPTPlugin["Description"] := Lookup[plugin["Data"], "Description"]
 plugin_ChatGPTPlugin["Prompt"] := Lookup[plugin["Data"], "Prompt"]
 plugin_ChatGPTPlugin["Endpoints"] := Lookup[plugin["Data"], "Endpoints"]
-plugin_ChatGPTPlugin["OpenAPIJSON", port_] := pluginAPIJSON[plugin, port]
+plugin_ChatGPTPlugin["OpenAPIJSON", baseURL_] := pluginAPIJSON[plugin, baseURL]
 plugin_ChatGPTPlugin["OpenAPIJSON"] := plugin["OpenAPIJSON", $ChatGPTPluginPort]
-plugin_ChatGPTPlugin["ManifestJSON", port_] := pluginManifestJSON[plugin, port]
+plugin_ChatGPTPlugin["ManifestJSON", baseURL_] := pluginManifestJSON[plugin, baseURL]
 plugin_ChatGPTPlugin["ManifestJSON"] := plugin["ManifestJSON", $ChatGPTPluginPort]
-plugin_ChatGPTPlugin["URLDispatcher", port_] := pluginURLDispatcher[plugin, port]
+plugin_ChatGPTPlugin["URLDispatcher", baseURL_] := pluginURLDispatcher[plugin, baseURL]
 plugin_ChatGPTPlugin["URLDispatcher"] := plugin["URLDispatcher", $ChatGPTPluginPort]
 
 
 (* OpenAPI *)
 
-pluginAPIJSON[plugin_ChatGPTPlugin, port_] :=
+pluginAPIJSON[plugin_ChatGPTPlugin, baseURL_] :=
 	<|
 		"openapi" -> "3.0.1",
 		"info" -> <|
@@ -133,14 +133,17 @@ pluginAPIJSON[plugin_ChatGPTPlugin, port_] :=
 			"description" -> plugin["Description"],
 			"version" -> "v1"
 		|>,
-		"servers" -> {<|"url" -> "http://localhost:"<>ToString[port]|>},
+		"servers" -> {<|"url" -> baseURL|>},
 		"paths" -> Join@@(#["OpenAPIJSON"]&)/@plugin["Endpoints"]
 	|>
+
+pluginAPIJSON[plugin_ChatGPTPlugin, port_Integer] :=
+	pluginAPIJSON[plugin, StringTemplate["http://localhost:``"][port]]
 
 
 (* Manifest *)
 
-pluginManifestJSON[plugin_ChatGPTPlugin, port_] :=
+pluginManifestJSON[plugin_ChatGPTPlugin, baseURL_] :=
 	<|
 		"schema_version" -> "v1",
 		"name_for_human" -> plugin["Name"],
@@ -150,7 +153,7 @@ pluginManifestJSON[plugin_ChatGPTPlugin, port_] :=
 		"auth" -> <|"type" -> "none"|>,
 		"api" -> <|
 			"type" -> "openapi",
-			"url" -> StringTemplate["http://localhost:``/.well-known/openapi.json"][port],
+			"url" -> URLBuild[{baseURL, ".well-known", "openapi.json"}],
 			"is_user_authenticated" -> False
 		|>,
 		"logo_url" -> "https://www.wolframcdn.com/images/icons/Wolfram.png",
@@ -158,13 +161,16 @@ pluginManifestJSON[plugin_ChatGPTPlugin, port_] :=
 		"legal_info_url" -> "http://www.example.com/legal"
 	|>
 
+pluginManifestJSON[plugin_ChatGPTPlugin, port_Integer] :=
+	pluginManifestJSON[plugin, StringTemplate["http://localhost:``"][port]]
+
 
 (* URLDispatcher *)
 
-pluginURLDispatcher[plugin_ChatGPTPlugin, port_] :=
+pluginURLDispatcher[plugin_ChatGPTPlugin, baseURLSpec_] :=
 	URLDispatcher[{
-		"/.well-known/ai-plugin.json" -> addCORS@ExportForm[plugin["ManifestJSON", port], "JSON"],
-		"/.well-known/openapi.json" -> addCORS@ExportForm[plugin["OpenAPIJSON", port], "JSON"],
+		"/.well-known/ai-plugin.json" -> addCORS@ExportForm[plugin["ManifestJSON", baseURLSpec], "JSON"],
+		"/.well-known/openapi.json" -> addCORS@ExportForm[plugin["OpenAPIJSON", baseURLSpec], "JSON"],
 		Splice["/"<>#["OperationID"] -> addCORS@#["APIFunction"]& /@ plugin["Endpoints"]]
 	}]
 
