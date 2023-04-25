@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    845263,      15156]
-NotebookOptionsPosition[    832388,      14895]
-NotebookOutlinePosition[    833556,      14928]
-CellTagsIndexPosition[    833474,      14923]
+NotebookDataLength[    846503,      15168]
+NotebookOptionsPosition[    833631,      14907]
+NotebookOutlinePosition[    834799,      14940]
+CellTagsIndexPosition[    834717,      14935]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -36,12 +36,13 @@ server.\n",
   RowBox[{"ChatGPTPluginDeploy", "[", 
    RowBox[{
     StyleBox["plugin", "TI"], ",", 
-    StyleBox["port", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+    StyleBox["loc", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
   "b1091627-ceca-470d-b382-8c70cd69442c"],
- "\[LineSeparator]sets up the web server to use the specified port number."
+ "\[LineSeparator]sets up the web server at the specified location."
 }], "Usage",
  CellChangeTimes->{{3.889473129939982*^9, 3.889473165913517*^9}, {
-  3.890398875679706*^9, 3.890398877501683*^9}},
+  3.890398875679706*^9, 3.890398877501683*^9}, {3.891440681666889*^9, 
+  3.891440689813336*^9}},
  CellID->2092392664,ExpressionUUID->"28e7573e-710b-4465-8242-4a06f5ae31e8"],
 
 Cell[TextData[{
@@ -103,20 +104,18 @@ Cell[TextData[{
  CellID->1735908722,ExpressionUUID->"7f69d1f7-9102-4e84-8a1f-07341c4c055e"],
 
 Cell[TextData[{
- "The default value of ",
  Cell[BoxData[
-  StyleBox["port", "TI"]], "InlineFormula",ExpressionUUID->
-  "9fcc7e11-a367-409d-9292-1403f0066641"],
- " is ",
+  StyleBox["loc", "TI"]], "InlineFormula",ExpressionUUID->
+  "f8931e86-e8af-4591-adfd-61b1cc041442"],
+ " follows the format of the address argument of ",
  Cell[BoxData[
-  ButtonBox["$ChatGPTPluginPort",
-   BaseStyle->"Link",
-   ButtonData->"paclet:Wolfram/ChatGPTPluginKit/ref/$ChatGPTPluginPort"]], 
-  "InlineFormula",ExpressionUUID->"f4e6d2f2-019e-4015-9268-adcb35f741cf"],
+  ButtonBox["SocketListen",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "da537250-8c20-44b8-9b77-5c3ba2231cb7"],
  "."
 }], "Notes",
- CellChangeTimes->{{3.889473249466125*^9, 3.889473281475637*^9}},
- CellID->1630866714,ExpressionUUID->"db4d2f57-a9e9-4797-93d7-9ceb51458254"],
+ CellChangeTimes->{{3.891440708327301*^9, 3.891440758027227*^9}},
+ CellID->1906723980,ExpressionUUID->"d9637b3d-e8d7-4880-9a57-20e4cb763344"],
 
 Cell["\<\
 Endpoints are evaluated in the kernel from which their plugin was deployed.\
@@ -238,10 +237,10 @@ Cell[TextData[{
     "27ea6254-d386-4cf0-b69e-e4da92d05efd"], 
    DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
     "02af9b38-5847-4462-9a83-6598f90ff537", 
-     "57139533-eef0-43d1-b5c1-ffe1137d9663"], $CellContext`cellobj$$ = 
+     "92598d0f-b1b0-4c20-ab35-05ac64da69fb"], $CellContext`cellobj$$ = 
     CellObject[
     "02a83ee2-9933-4be2-a5b0-3d334b7f8e60", 
-     "eabeed2c-e4ba-48db-82f7-3144ee5f0ef8"]}, 
+     "453ffd84-eb60-4ddd-b841-bfbc7af0ad25"]}, 
     TemplateBox[{
       GraphicsBox[{{
          Thickness[0.06], 
@@ -388,8 +387,9 @@ Cell[BoxData[
 
  CellChangeTimes->{{3.8894730240943127`*^9, 3.889473030319086*^9}, {
   3.890398737336687*^9, 3.890398752365046*^9}, {3.890398801057192*^9, 
-  3.890398818379952*^9}, {3.89092539896572*^9, 3.890925399082377*^9}},
- CellLabel->"In[3]:=",
+  3.890398818379952*^9}, {3.89092539896572*^9, 3.890925399082377*^9}, {
+  3.8914408360010777`*^9, 3.8914408360760612`*^9}},
+ CellLabel->"In[2]:=",
  CellID->428262334,ExpressionUUID->"4c0ee421-71dc-4cfe-989d-3f35108998f4"],
 
 Cell[BoxData[
@@ -418,7 +418,7 @@ Cell[BoxData[
                   RowBox[{
                     TagBox["\"url: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["\"localhost:18000\"", "SummaryItem"]}], 
+                    TagBox["\"localhost:60974\"", "SummaryItem"]}], 
                   ButtonBox[
                    
                    DynamicModuleBox[{
@@ -532,11 +532,12 @@ mouseHover$$ = False},
                    ButtonFunction :> CopyToClipboard[
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-                    "SocketListener" -> SocketListener[3611931343469484326], 
-                    "URL" -> "localhost:18000", "Plugin" -> 
+                    "SocketListener" -> SocketListener[3613038236650643489], 
+                    "URL" -> "localhost:60974", "Plugin" -> 
                     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "CityPopulationFinder", "Description" -> "", 
-                    "Prompt" -> "", "Endpoints" -> {
+                    "Prompt" -> "", "ContactEmail" -> "", 
+                    "LegalInformationURL" -> "", "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getCityPopulation", "Prompt" -> 
@@ -581,7 +582,7 @@ mouseHover$$ = False},
                   RowBox[{
                     TagBox["\"url: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["\"localhost:18000\"", "SummaryItem"]}], 
+                    TagBox["\"localhost:60974\"", "SummaryItem"]}], 
                   ButtonBox[
                    
                    DynamicModuleBox[{
@@ -695,11 +696,12 @@ mouseHover$$ = False},
                    ButtonFunction :> CopyToClipboard[
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-                    "SocketListener" -> SocketListener[3611931343469484326], 
-                    "URL" -> "localhost:18000", "Plugin" -> 
+                    "SocketListener" -> SocketListener[3613038236650643489], 
+                    "URL" -> "localhost:60974", "Plugin" -> 
                     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "CityPopulationFinder", "Description" -> "", 
-                    "Prompt" -> "", "Endpoints" -> {
+                    "Prompt" -> "", "ContactEmail" -> "", 
+                    "LegalInformationURL" -> "", "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getCityPopulation", "Prompt" -> 
@@ -856,6 +858,7 @@ mouseHover$$ = False},
                     "Rows" -> {{Automatic}}}, BaselinePosition -> {1, 1}]}, 
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getCityPopulation", "Prompt" -> 
                     Missing["NotSpecified"], 
@@ -894,7 +897,8 @@ mouseHover$$ = False},
                    
                    Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "CityPopulationFinder", "Description" -> "", 
-                    "Prompt" -> "", "Endpoints" -> {
+                    "Prompt" -> "", "ContactEmail" -> "", 
+                    "LegalInformationURL" -> "", "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getCityPopulation", "Prompt" -> 
@@ -1135,7 +1139,7 @@ mouseHover$$ = False},
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3611931343469484326], {
+                    3613038236650643489], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -1329,6 +1333,7 @@ mouseHover$$ = False},
                     48.172000000000004`, 21.188000000000002`}, {46.709, 
                     21.188000000000002`}, {46.709, 8.569}}]}}], 
                     FilledCurveBox[{{
+                    
                     Line[{{43.783, 8.569}, {45.246, 8.569}, {45.246, 
                     21.188000000000002`}, {43.783, 21.188000000000002`}, {
                     43.783, 8.569}}]}}]}, 
@@ -1376,7 +1381,7 @@ mouseHover$$ = False},
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3611931343469484326], {
+                    3613038236650643489], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -1420,7 +1425,6 @@ mouseHover$$ = False},
                     InterpretationBox[
                     RowBox[{
                     TagBox["SocketObject", "SummaryHead"], "[", 
-                    
                     DynamicModuleBox[{Typeset`open$$ = False, 
                     Typeset`embedState$$ = "Ready"}, 
                     TemplateBox[{
@@ -1501,7 +1505,7 @@ mouseHover$$ = False},
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["18000", "SummaryItem"]}], 
+                    TagBox["60974", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -1514,7 +1518,7 @@ mouseHover$$ = False},
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-58b208bd-4ea4-43a7-a40e-d9cfd370e7f6\"", 
+                    "\"TCPSERVER-9dd910a2-e807-4310-94ad-8be9fe00b92a\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}}, 
                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
                     "Rows" -> {{Automatic}}}, AutoDelete -> False, 
@@ -1604,7 +1608,7 @@ mouseHover$$ = False},
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["18000", "SummaryItem"]}], 
+                    TagBox["60974", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -1617,7 +1621,7 @@ mouseHover$$ = False},
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-58b208bd-4ea4-43a7-a40e-d9cfd370e7f6\"", 
+                    "\"TCPSERVER-9dd910a2-e807-4310-94ad-8be9fe00b92a\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}, {
                     
                     RowBox[{
@@ -1640,7 +1644,7 @@ mouseHover$$ = False},
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
                     SocketObject[
-                    "TCPSERVER-58b208bd-4ea4-43a7-a40e-d9cfd370e7f6"], 
+                    "TCPSERVER-9dd910a2-e807-4310-94ad-8be9fe00b92a"], 
                     Selectable -> False, Editable -> False, 
                     SelectWithContents -> True], "SummaryItem"]}]}}, 
                     GridBoxAlignment -> {
@@ -1660,7 +1664,7 @@ mouseHover$$ = False},
                     BaselinePosition -> {1, 1}]}, 
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
-                   SocketListener[3611931343469484326], Selectable -> False, 
+                   SocketListener[3613038236650643489], Selectable -> False, 
                    Editable -> False, SelectWithContents -> True], 
                   "SummaryItem"]}]}}, 
              GridBoxAlignment -> {
@@ -1680,11 +1684,11 @@ mouseHover$$ = False},
      "SummaryPanel"],
     DynamicModuleValues:>{}], "]"}],
   Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-   "SocketListener" -> SocketListener[3611931343469484326], "URL" -> 
-    "localhost:18000", "Plugin" -> 
+   "SocketListener" -> SocketListener[3613038236650643489], "URL" -> 
+    "localhost:60974", "Plugin" -> 
     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
       "Name" -> "CityPopulationFinder", "Description" -> "", "Prompt" -> "", 
-       "Endpoints" -> {
+       "ContactEmail" -> "", "LegalInformationURL" -> "", "Endpoints" -> {
          Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
           "OperationID" -> "getCityPopulation", "Prompt" -> 
            Missing["NotSpecified"], 
@@ -1699,9 +1703,10 @@ mouseHover$$ = False},
   Selectable->False]], "Output",
  CellChangeTimes->{{3.889473027310793*^9, 3.8894730306369877`*^9}, 
    3.8903243280603333`*^9, {3.890398778190605*^9, 3.890398818646522*^9}, 
-   3.890925190601407*^9, 3.890925234555771*^9, 3.8909253999360323`*^9},
- CellLabel->"Out[3]=",
- CellID->2010343509,ExpressionUUID->"756d76f7-d0c5-439c-8348-e0362144586e"]
+   3.890925190601407*^9, 3.890925234555771*^9, 3.8909253999360323`*^9, 
+   3.891440768455884*^9, 3.891440836950027*^9},
+ CellLabel->"Out[2]=",
+ CellID->583334009,ExpressionUUID->"dea3fbb7-e211-450e-b03a-20a6e35b4bdf"]
 }, Open  ]],
 
 Cell["Stop the web server:", "ExampleText",
@@ -1711,7 +1716,7 @@ Cell["Stop the web server:", "ExampleText",
 Cell[BoxData[
  RowBox[{"DeleteObject", "[", "server", "]"}]], "Input",
  CellChangeTimes->{{3.889473081013341*^9, 3.889473083050357*^9}},
- CellLabel->"In[4]:=",
+ CellLabel->"In[3]:=",
  CellID->1952056595,ExpressionUUID->"3634bc9f-131f-45a0-8ce1-05b383133cf9"]
 }, Open  ]],
 
@@ -1958,7 +1963,7 @@ Cell[BoxData[
     DynamicModuleValues:>{}], "]"}],
   Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
    "Name" -> "CityPopulationFinder", "Description" -> "", "Prompt" -> "", 
-    "Endpoints" -> {
+    "ContactEmail" -> "", "LegalInformationURL" -> "", "Endpoints" -> {
       Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
        "OperationID" -> "getCityPopulation", "Prompt" -> 
         Missing["NotSpecified"], 
@@ -1972,9 +1977,9 @@ Cell[BoxData[
   SelectWithContents->True,
   Selectable->False]], "Output",
  CellChangeTimes->{3.8894743100007887`*^9, 3.890324335190215*^9, 
-  3.890398910780046*^9, 3.8909254090841627`*^9},
+  3.890398910780046*^9, 3.8909254090841627`*^9, 3.891440844359737*^9},
  CellLabel->"Out[2]=",
- CellID->1015065423,ExpressionUUID->"7dd06605-3e68-4921-8a1b-02e9ab3b777c"]
+ CellID->36642990,ExpressionUUID->"e37e3e21-ef5d-467c-a15a-d39397cabd52"]
 }, Open  ]],
 
 Cell["Deploy the web server:", "ExampleText",
@@ -2029,7 +2034,7 @@ Cell[BoxData[
                   RowBox[{
                     TagBox["\"url: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["\"localhost:18000\"", "SummaryItem"]}], 
+                    TagBox["\"localhost:60976\"", "SummaryItem"]}], 
                   ButtonBox[
                    
                    DynamicModuleBox[{
@@ -2143,11 +2148,12 @@ mouseHover$$ = False},
                    ButtonFunction :> CopyToClipboard[
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-                    "SocketListener" -> SocketListener[3611931371018170892], 
-                    "URL" -> "localhost:18000", "Plugin" -> 
+                    "SocketListener" -> SocketListener[3613038267835628004], 
+                    "URL" -> "localhost:60976", "Plugin" -> 
                     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "CityPopulationFinder", "Description" -> "", 
-                    "Prompt" -> "", "Endpoints" -> {
+                    "Prompt" -> "", "ContactEmail" -> "", 
+                    "LegalInformationURL" -> "", "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getCityPopulation", "Prompt" -> 
@@ -2192,7 +2198,7 @@ mouseHover$$ = False},
                   RowBox[{
                     TagBox["\"url: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["\"localhost:18000\"", "SummaryItem"]}], 
+                    TagBox["\"localhost:60976\"", "SummaryItem"]}], 
                   ButtonBox[
                    
                    DynamicModuleBox[{
@@ -2306,11 +2312,12 @@ mouseHover$$ = False},
                    ButtonFunction :> CopyToClipboard[
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-                    "SocketListener" -> SocketListener[3611931371018170892], 
-                    "URL" -> "localhost:18000", "Plugin" -> 
+                    "SocketListener" -> SocketListener[3613038267835628004], 
+                    "URL" -> "localhost:60976", "Plugin" -> 
                     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "CityPopulationFinder", "Description" -> "", 
-                    "Prompt" -> "", "Endpoints" -> {
+                    "Prompt" -> "", "ContactEmail" -> "", 
+                    "LegalInformationURL" -> "", "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getCityPopulation", "Prompt" -> 
@@ -2467,6 +2474,7 @@ mouseHover$$ = False},
                     "Rows" -> {{Automatic}}}, BaselinePosition -> {1, 1}]}, 
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                    
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getCityPopulation", "Prompt" -> 
                     Missing["NotSpecified"], 
@@ -2505,7 +2513,8 @@ mouseHover$$ = False},
                    
                    Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "CityPopulationFinder", "Description" -> "", 
-                    "Prompt" -> "", "Endpoints" -> {
+                    "Prompt" -> "", "ContactEmail" -> "", 
+                    "LegalInformationURL" -> "", "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getCityPopulation", "Prompt" -> 
@@ -2746,7 +2755,7 @@ mouseHover$$ = False},
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3611931371018170892], {
+                    3613038267835628004], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -2940,6 +2949,7 @@ mouseHover$$ = False},
                     48.172000000000004`, 21.188000000000002`}, {46.709, 
                     21.188000000000002`}, {46.709, 8.569}}]}}], 
                     FilledCurveBox[{{
+                    
                     Line[{{43.783, 8.569}, {45.246, 8.569}, {45.246, 
                     21.188000000000002`}, {43.783, 21.188000000000002`}, {
                     43.783, 8.569}}]}}]}, 
@@ -2987,7 +2997,7 @@ mouseHover$$ = False},
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3611931371018170892], {
+                    3613038267835628004], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -3117,7 +3127,7 @@ mouseHover$$ = False},
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["18000", "SummaryItem"]}], 
+                    TagBox["60976", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -3130,7 +3140,7 @@ mouseHover$$ = False},
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-4caeb520-225f-4a8e-a3bf-3633f3382b4c\"", 
+                    "\"TCPSERVER-474e9e5a-e767-40d5-bc0d-5ae7e9c14dab\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}}, 
                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
                     "Rows" -> {{Automatic}}}, AutoDelete -> False, 
@@ -3220,7 +3230,7 @@ mouseHover$$ = False},
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["18000", "SummaryItem"]}], 
+                    TagBox["60976", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -3233,7 +3243,7 @@ mouseHover$$ = False},
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-4caeb520-225f-4a8e-a3bf-3633f3382b4c\"", 
+                    "\"TCPSERVER-474e9e5a-e767-40d5-bc0d-5ae7e9c14dab\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}, {
                     
                     RowBox[{
@@ -3256,7 +3266,7 @@ mouseHover$$ = False},
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
                     SocketObject[
-                    "TCPSERVER-4caeb520-225f-4a8e-a3bf-3633f3382b4c"], 
+                    "TCPSERVER-474e9e5a-e767-40d5-bc0d-5ae7e9c14dab"], 
                     Selectable -> False, Editable -> False, 
                     SelectWithContents -> True], "SummaryItem"]}]}}, 
                     GridBoxAlignment -> {
@@ -3276,7 +3286,7 @@ mouseHover$$ = False},
                     BaselinePosition -> {1, 1}]}, 
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
-                   SocketListener[3611931371018170892], Selectable -> False, 
+                   SocketListener[3613038267835628004], Selectable -> False, 
                    Editable -> False, SelectWithContents -> True], 
                   "SummaryItem"]}]}}, 
              GridBoxAlignment -> {
@@ -3296,11 +3306,11 @@ mouseHover$$ = False},
      "SummaryPanel"],
     DynamicModuleValues:>{}], "]"}],
   Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-   "SocketListener" -> SocketListener[3611931371018170892], "URL" -> 
-    "localhost:18000", "Plugin" -> 
+   "SocketListener" -> SocketListener[3613038267835628004], "URL" -> 
+    "localhost:60976", "Plugin" -> 
     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
       "Name" -> "CityPopulationFinder", "Description" -> "", "Prompt" -> "", 
-       "Endpoints" -> {
+       "ContactEmail" -> "", "LegalInformationURL" -> "", "Endpoints" -> {
          Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
           "OperationID" -> "getCityPopulation", "Prompt" -> 
            Missing["NotSpecified"], 
@@ -3314,9 +3324,9 @@ mouseHover$$ = False},
   SelectWithContents->True,
   Selectable->False]], "Output",
  CellChangeTimes->{3.889474361944867*^9, 3.890324337127048*^9, 
-  3.8909254119064837`*^9},
+  3.8909254119064837`*^9, 3.8914408500494127`*^9},
  CellLabel->"Out[4]=",
- CellID->1653139383,ExpressionUUID->"bef284d7-1325-4418-aa9c-2ec1f8776a1a"]
+ CellID->45695778,ExpressionUUID->"f9df9af0-dace-4563-be76-bc45e13edc08"]
 }, Open  ]],
 
 Cell["Install the plugin and ask ChatGPT to use it:", "ExampleText",
@@ -6716,7 +6726,7 @@ Cell[BoxData[
                   RowBox[{
                     TagBox["\"url: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["\"localhost:18000\"", "SummaryItem"]}], 
+                    TagBox["\"localhost:60977\"", "SummaryItem"]}], 
                   ButtonBox[
                    
                    DynamicModuleBox[{
@@ -6830,14 +6840,15 @@ mouseHover$$ = False},
                    ButtonFunction :> CopyToClipboard[
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-                    "SocketListener" -> SocketListener[3611931385254114781], 
-                    "URL" -> "localhost:18000", "Plugin" -> 
+                    "SocketListener" -> SocketListener[3613038285499527030], 
+                    "URL" -> "localhost:60977", "Plugin" -> 
                     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "TODOList", "Description" -> 
                     "Plugin for managing a TODO list, you can add, remove and \
 view your TODOs.", "Prompt" -> 
                     "Plugin for managing a TODO list, you can add, remove and \
-view your TODOs.", "Endpoints" -> {
+view your TODOs.", "ContactEmail" -> "", "LegalInformationURL" -> "", 
+                    "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getTodos", "Prompt" -> 
@@ -6915,7 +6926,7 @@ view your TODOs.", "Endpoints" -> {
                   RowBox[{
                     TagBox["\"url: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["\"localhost:18000\"", "SummaryItem"]}], 
+                    TagBox["\"localhost:60977\"", "SummaryItem"]}], 
                   ButtonBox[
                    
                    DynamicModuleBox[{
@@ -7029,14 +7040,15 @@ mouseHover$$ = False},
                    ButtonFunction :> CopyToClipboard[
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-                    "SocketListener" -> SocketListener[3611931385254114781], 
-                    "URL" -> "localhost:18000", "Plugin" -> 
+                    "SocketListener" -> SocketListener[3613038285499527030], 
+                    "URL" -> "localhost:60977", "Plugin" -> 
                     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "TODOList", "Description" -> 
                     "Plugin for managing a TODO list, you can add, remove and \
 view your TODOs.", "Prompt" -> 
                     "Plugin for managing a TODO list, you can add, remove and \
-view your TODOs.", "Endpoints" -> {
+view your TODOs.", "ContactEmail" -> "", "LegalInformationURL" -> "", 
+                    "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getTodos", "Prompt" -> 
@@ -7164,7 +7176,6 @@ and view your TODOs.\"", "SummaryItem"]}]}, {
                     InterpretationBox[
                     RowBox[{
                     TagBox["ChatGPTPluginEndpoint", "SummaryHead"], "[", 
-                    
                     DynamicModuleBox[{Typeset`open$$ = False, 
                     Typeset`embedState$$ = "Ready"}, 
                     TemplateBox[{
@@ -7253,9 +7264,9 @@ and view your TODOs.\"", "SummaryItem"]}]}, {
                     ButtonBox[
                     DynamicBox[
                     FEPrivate`FrontEndResource[
-                    "FEBitmaps", "SummaryBoxOpener"]], 
-                    ButtonFunction :> (Typeset`open$$ = True), Appearance -> 
-                    None, BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+                    "FEBitmaps", "SummaryBoxOpener"]], ButtonFunction :> (
+                    Typeset`open$$ = True), Appearance -> None, 
+                    BaseStyle -> {}, Evaluator -> Automatic, Method -> 
                     "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
                     Dynamic[{Automatic, 3.5 (CurrentValue["FontCapHeight"]/
                     AbsoluteCurrentValue[Magnification])}]], 
@@ -7444,7 +7455,8 @@ and view your TODOs.\"", "SummaryItem"]}]}},
                     "Plugin for managing a TODO list, you can add, remove and \
 view your TODOs.", "Prompt" -> 
                     "Plugin for managing a TODO list, you can add, remove and \
-view your TODOs.", "Endpoints" -> {
+view your TODOs.", "ContactEmail" -> "", "LegalInformationURL" -> "", 
+                    "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getTodos", "Prompt" -> 
@@ -7718,7 +7730,7 @@ view your TODOs.", "Endpoints" -> {
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3611931385254114781], {
+                    3613038285499527030], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -7807,7 +7819,6 @@ view your TODOs.", "Endpoints" -> {
                     0.7799999999999999, 0.7799999999999999, 
                     0.7799999999999999], 
                     Opacity[1.]}], 
-                    
                     FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 
                     0}}}, {{{16.783199999999997`, 4.2266}, {
                     15.231199999999998`, 3.0966000000000005`}, {
@@ -7960,7 +7971,7 @@ view your TODOs.", "Endpoints" -> {
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3611931385254114781], {
+                    3613038285499527030], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -8090,7 +8101,7 @@ view your TODOs.", "Endpoints" -> {
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["18000", "SummaryItem"]}], 
+                    TagBox["60977", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -8103,7 +8114,7 @@ view your TODOs.", "Endpoints" -> {
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-369769d2-0265-46c1-9d90-d63c913437fb\"", 
+                    "\"TCPSERVER-2f6738a4-e1d5-4507-8cdf-0b7e4d8d54cb\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}}, 
                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
                     "Rows" -> {{Automatic}}}, AutoDelete -> False, 
@@ -8193,7 +8204,7 @@ view your TODOs.", "Endpoints" -> {
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["18000", "SummaryItem"]}], 
+                    TagBox["60977", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -8206,7 +8217,7 @@ view your TODOs.", "Endpoints" -> {
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-369769d2-0265-46c1-9d90-d63c913437fb\"", 
+                    "\"TCPSERVER-2f6738a4-e1d5-4507-8cdf-0b7e4d8d54cb\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}, {
                     
                     RowBox[{
@@ -8229,7 +8240,7 @@ view your TODOs.", "Endpoints" -> {
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
                     SocketObject[
-                    "TCPSERVER-369769d2-0265-46c1-9d90-d63c913437fb"], 
+                    "TCPSERVER-2f6738a4-e1d5-4507-8cdf-0b7e4d8d54cb"], 
                     Selectable -> False, Editable -> False, 
                     SelectWithContents -> True], "SummaryItem"]}]}}, 
                     GridBoxAlignment -> {
@@ -8249,7 +8260,7 @@ view your TODOs.", "Endpoints" -> {
                     BaselinePosition -> {1, 1}]}, 
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
-                   SocketListener[3611931385254114781], Selectable -> False, 
+                   SocketListener[3613038285499527030], Selectable -> False, 
                    Editable -> False, SelectWithContents -> True], 
                   "SummaryItem"]}]}}, 
              GridBoxAlignment -> {
@@ -8269,14 +8280,14 @@ view your TODOs.", "Endpoints" -> {
      "SummaryPanel"],
     DynamicModuleValues:>{}], "]"}],
   Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-   "SocketListener" -> SocketListener[3611931385254114781], "URL" -> 
-    "localhost:18000", "Plugin" -> 
+   "SocketListener" -> SocketListener[3613038285499527030], "URL" -> 
+    "localhost:60977", "Plugin" -> 
     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
       "Name" -> "TODOList", "Description" -> 
        "Plugin for managing a TODO list, you can add, remove and view your \
 TODOs.", "Prompt" -> 
        "Plugin for managing a TODO list, you can add, remove and view your \
-TODOs.", "Endpoints" -> {
+TODOs.", "ContactEmail" -> "", "LegalInformationURL" -> "", "Endpoints" -> {
          Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
           "OperationID" -> "getTodos", "Prompt" -> Missing["NotSpecified"], 
            "Parameters" -> {
@@ -8315,9 +8326,9 @@ TODOs.", "Endpoints" -> {
   SelectWithContents->True,
   Selectable->False]], "Output",
  CellChangeTimes->{{3.8894744842485857`*^9, 3.889474500147913*^9}, 
-   3.890324342991529*^9, 3.890925418957933*^9},
+   3.890324342991529*^9, 3.890925418957933*^9, 3.891440859080682*^9},
  CellLabel->"Out[3]=",
- CellID->2066586559,ExpressionUUID->"3e51b7bc-14cd-4148-92c4-c09df08d0c43"]
+ CellID->1006918884,ExpressionUUID->"9bd387aa-afe0-40e7-87ef-06bdc8d4dd99"]
 }, Open  ]],
 
 Cell["Install and use the plugin:", "ExampleText",
@@ -11648,7 +11659,7 @@ Cell[BoxData[
                   RowBox[{
                     TagBox["\"url: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["\"localhost:18000\"", "SummaryItem"]}], 
+                    TagBox["\"localhost:60978\"", "SummaryItem"]}], 
                   ButtonBox[
                    
                    DynamicModuleBox[{
@@ -11762,11 +11773,12 @@ mouseHover$$ = False},
                    ButtonFunction :> CopyToClipboard[
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-                    "SocketListener" -> SocketListener[3611931424271472529], 
-                    "URL" -> "localhost:18000", "Plugin" -> 
+                    "SocketListener" -> SocketListener[3613038298874245101], 
+                    "URL" -> "localhost:60978", "Plugin" -> 
                     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "Counter", "Description" -> "Count things", 
-                    "Prompt" -> "", "Endpoints" -> {
+                    "Prompt" -> "", "ContactEmail" -> "", 
+                    "LegalInformationURL" -> "", "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "increment", "Prompt" -> 
@@ -11808,14 +11820,13 @@ mouseHover$$ = False},
                   RowBox[{
                     TagBox["\"url: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["\"localhost:18000\"", "SummaryItem"]}], 
+                    TagBox["\"localhost:60978\"", "SummaryItem"]}], 
                   ButtonBox[
                    
                    DynamicModuleBox[{
                     Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseDown$$ = 
-                    False, 
-                    Wolfram`ChatGPTPluginKit`CopyButton`Private`mouseHover$$ = 
-                    False}, 
+                    False, Wolfram`ChatGPTPluginKit`CopyButton`Private`\
+mouseHover$$ = False}, 
                     TagBox[
                     PaneSelectorBox[{"Default" -> FrameBox[
                     GraphicsBox[
@@ -11923,11 +11934,12 @@ mouseHover$$ = False},
                    ButtonFunction :> CopyToClipboard[
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-                    "SocketListener" -> SocketListener[3611931424271472529], 
-                    "URL" -> "localhost:18000", "Plugin" -> 
+                    "SocketListener" -> SocketListener[3613038298874245101], 
+                    "URL" -> "localhost:60978", "Plugin" -> 
                     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "Counter", "Description" -> "Count things", 
-                    "Prompt" -> "", "Endpoints" -> {
+                    "Prompt" -> "", "ContactEmail" -> "", 
+                    "LegalInformationURL" -> "", "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "increment", "Prompt" -> 
@@ -12117,7 +12129,8 @@ mouseHover$$ = False},
                    
                    Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "Counter", "Description" -> "Count things", 
-                    "Prompt" -> "", "Endpoints" -> {
+                    "Prompt" -> "", "ContactEmail" -> "", 
+                    "LegalInformationURL" -> "", "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "increment", "Prompt" -> 
@@ -12177,7 +12190,6 @@ mouseHover$$ = False},
                     FaceForm[{
                     RGBColor[0.929, 0.929, 0.929], 
                     Opacity[1.]}], 
-                    
                     FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {1, 3, 3}, {0, 1, 
                     0}, {1, 3, 3}}}, {{{17.9609, 20.3906}, {17.9609, 
                     20.3906}, {16.782899999999998`, 18.7736}, {
@@ -12354,7 +12366,7 @@ mouseHover$$ = False},
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3611931424271472529], {
+                    3613038298874245101], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -12596,7 +12608,7 @@ mouseHover$$ = False},
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3611931424271472529], {
+                    3613038298874245101], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -12726,7 +12738,7 @@ mouseHover$$ = False},
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["18000", "SummaryItem"]}], 
+                    TagBox["60978", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -12739,7 +12751,7 @@ mouseHover$$ = False},
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-f8990ee7-970d-4c34-bbe8-b97269d142d8\"", 
+                    "\"TCPSERVER-2f468089-c9b4-41d5-8f74-80b776f5b062\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}}, 
                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
                     "Rows" -> {{Automatic}}}, AutoDelete -> False, 
@@ -12829,7 +12841,7 @@ mouseHover$$ = False},
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["18000", "SummaryItem"]}], 
+                    TagBox["60978", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -12842,7 +12854,7 @@ mouseHover$$ = False},
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-f8990ee7-970d-4c34-bbe8-b97269d142d8\"", 
+                    "\"TCPSERVER-2f468089-c9b4-41d5-8f74-80b776f5b062\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}, {
                     
                     RowBox[{
@@ -12865,7 +12877,7 @@ mouseHover$$ = False},
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
                     SocketObject[
-                    "TCPSERVER-f8990ee7-970d-4c34-bbe8-b97269d142d8"], 
+                    "TCPSERVER-2f468089-c9b4-41d5-8f74-80b776f5b062"], 
                     Selectable -> False, Editable -> False, 
                     SelectWithContents -> True], "SummaryItem"]}]}}, 
                     GridBoxAlignment -> {
@@ -12885,7 +12897,7 @@ mouseHover$$ = False},
                     BaselinePosition -> {1, 1}]}, 
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
-                   SocketListener[3611931424271472529], Selectable -> False, 
+                   SocketListener[3613038298874245101], Selectable -> False, 
                    Editable -> False, SelectWithContents -> True], 
                   "SummaryItem"]}]}}, 
              GridBoxAlignment -> {
@@ -12905,11 +12917,11 @@ mouseHover$$ = False},
      "SummaryPanel"],
     DynamicModuleValues:>{}], "]"}],
   Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-   "SocketListener" -> SocketListener[3611931424271472529], "URL" -> 
-    "localhost:18000", "Plugin" -> 
+   "SocketListener" -> SocketListener[3613038298874245101], "URL" -> 
+    "localhost:60978", "Plugin" -> 
     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
       "Name" -> "Counter", "Description" -> "Count things", "Prompt" -> "", 
-       "Endpoints" -> {
+       "ContactEmail" -> "", "LegalInformationURL" -> "", "Endpoints" -> {
          Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
           "OperationID" -> "increment", "Prompt" -> Missing["NotSpecified"], 
            "Parameters" -> {}, 
@@ -12920,9 +12932,9 @@ mouseHover$$ = False},
   Selectable->False]], "Output",
  CellChangeTimes->{{3.889473877093595*^9, 3.889473889904319*^9}, 
    3.889473961324585*^9, 3.8903243470213823`*^9, 3.890398995845519*^9, 
-   3.890925436754198*^9},
+   3.890925436754198*^9, 3.891440865820709*^9},
  CellLabel->"Out[3]=",
- CellID->607525349,ExpressionUUID->"f46ee891-92cc-4e90-8aab-c8327b34d865"]
+ CellID->731164706,ExpressionUUID->"5e5cae8c-a5f4-48f7-b5ef-e0f68f910d3e"]
 }, Open  ]],
 
 Cell["View the initial value of the counter:", "ExampleText",
@@ -14904,7 +14916,7 @@ TaggingRules->{
     "$UseNewPageDialog" -> ""}, 
   "WelcomeScreenSettings" -> {"FEStarting" -> False}, "Paclet" -> 
   "Wolfram/ChatGPTPluginKit"},
-FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (November 18, 2022)",
+FrontEndVersion->"13.2 for Mac OS X ARM (64-bit) (November 18, 2022)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
   CharacterEncoding -> "UTF-8"],
 ExpressionUUID->"02af9b38-5847-4462-9a83-6598f90ff537"
@@ -14915,14 +14927,14 @@ ExpressionUUID->"02af9b38-5847-4462-9a83-6598f90ff537"
 (*CellTagsOutline
 CellTagsIndex->{
  "ExtendedExamples"->{
-  Cell[85839, 1719, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"e17586ef-c0f9-4026-b318-29459c49dc32",
+  Cell[86205, 1724, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"e17586ef-c0f9-4026-b318-29459c49dc32",
    CellTags->"ExtendedExamples",
    CellID->523415970]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 833279, 14916}
+ {"ExtendedExamples", 834522, 14928}
  }
 *)
 (*NotebookFileOutline
@@ -14930,231 +14942,231 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 117, 1, 74, "ObjectName",ExpressionUUID->"cf546770-fc27-4178-86b9-6c76b7743af6",
  CellID->2036062166],
-Cell[700, 25, 925, 19, 123, "Usage",ExpressionUUID->"28e7573e-710b-4465-8242-4a06f5ae31e8",
+Cell[700, 25, 966, 20, 123, "Usage",ExpressionUUID->"28e7573e-710b-4465-8242-4a06f5ae31e8",
  CellID->2092392664],
-Cell[1628, 46, 731, 17, 28, "Notes",ExpressionUUID->"4374a6a6-e1a0-4503-9992-d74d486ab093",
+Cell[1669, 47, 731, 17, 28, "Notes",ExpressionUUID->"4374a6a6-e1a0-4503-9992-d74d486ab093",
  CellID->1798784223],
-Cell[2362, 65, 599, 15, 28, "Notes",ExpressionUUID->"eb41cced-7422-463f-9147-04988e3f3795",
+Cell[2403, 66, 599, 15, 28, "Notes",ExpressionUUID->"eb41cced-7422-463f-9147-04988e3f3795",
  CellID->1024735286],
-Cell[2964, 82, 847, 20, 28, "Notes",ExpressionUUID->"7f69d1f7-9102-4e84-8a1f-07341c4c055e",
+Cell[3005, 83, 847, 20, 28, "Notes",ExpressionUUID->"7f69d1f7-9102-4e84-8a1f-07341c4c055e",
  CellID->1735908722],
-Cell[3814, 104, 550, 14, 28, "Notes",ExpressionUUID->"db4d2f57-a9e9-4797-93d7-9ceb51458254",
- CellID->1630866714],
-Cell[4367, 120, 243, 4, 27, "Notes",ExpressionUUID->"05d69e1e-e912-4deb-8d8b-181fb6f1c34e",
+Cell[3855, 105, 487, 12, 28, "Notes",ExpressionUUID->"d9637b3d-e8d7-4880-9a57-20e4cb763344",
+ CellID->1906723980],
+Cell[4345, 119, 243, 4, 27, "Notes",ExpressionUUID->"05d69e1e-e912-4deb-8d8b-181fb6f1c34e",
  CellID->178889690],
-Cell[4613, 126, 185, 2, 27, "Notes",ExpressionUUID->"fc3833f6-4b26-4871-82f3-c6d714ec31a8",
+Cell[4591, 125, 185, 2, 27, "Notes",ExpressionUUID->"fc3833f6-4b26-4871-82f3-c6d714ec31a8",
  CellID->1165676712],
-Cell[4801, 130, 755, 15, 45, "2ColumnTableMod",ExpressionUUID->"5d228e9b-6128-4256-a82d-0c1f022513e4",
+Cell[4779, 129, 755, 15, 45, "2ColumnTableMod",ExpressionUUID->"5d228e9b-6128-4256-a82d-0c1f022513e4",
  CellID->1738984238],
-Cell[5559, 147, 196, 2, 27, "Notes",ExpressionUUID->"72f88175-2618-4ef4-b49b-29f6c62bedfe",
+Cell[5537, 146, 196, 2, 27, "Notes",ExpressionUUID->"72f88175-2618-4ef4-b49b-29f6c62bedfe",
  CellID->1973568911],
-Cell[5758, 151, 641, 11, 43, "2ColumnTableMod",ExpressionUUID->"04f93e12-36b6-4951-9abf-00e3e0d2219c",
+Cell[5736, 150, 641, 11, 43, "2ColumnTableMod",ExpressionUUID->"04f93e12-36b6-4951-9abf-00e3e0d2219c",
  CellID->1484738809],
-Cell[6402, 164, 370, 9, 28, "Notes",ExpressionUUID->"fa6c7d7c-8976-451b-97bc-ad01c9835782",
+Cell[6380, 163, 370, 9, 28, "Notes",ExpressionUUID->"fa6c7d7c-8976-451b-97bc-ad01c9835782",
  CellID->1737601310],
-Cell[6775, 175, 961, 21, 49, "2ColumnTableMod",ExpressionUUID->"d7a6c1b4-c37e-40d9-acb6-37385a5b188b",
+Cell[6753, 174, 961, 21, 49, "2ColumnTableMod",ExpressionUUID->"d7a6c1b4-c37e-40d9-acb6-37385a5b188b",
  CellID->1289514234]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7773, 201, 459, 13, 34, "SeeAlsoSection",ExpressionUUID->"15f78e16-a1af-4409-9375-ccd55f541822",
+Cell[7751, 200, 459, 13, 34, "SeeAlsoSection",ExpressionUUID->"15f78e16-a1af-4409-9375-ccd55f541822",
  CellID->2039137142],
-Cell[8235, 216, 2180, 54, 23, "SeeAlso",ExpressionUUID->"edaa3921-2e40-49ab-9817-55f9ea164173",
+Cell[8213, 215, 2180, 54, 23, "SeeAlso",ExpressionUUID->"edaa3921-2e40-49ab-9817-55f9ea164173",
  CellID->86423121]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10452, 275, 435, 12, 47, "TechNotesSection",ExpressionUUID->"1b20e0a0-6471-40aa-a172-84a409563d0c",
+Cell[10430, 274, 435, 12, 47, "TechNotesSection",ExpressionUUID->"1b20e0a0-6471-40aa-a172-84a409563d0c",
  CellID->814449275],
-Cell[10890, 289, 100, 1, 19, "Tutorials",ExpressionUUID->"54fc0ae8-d630-4a4d-b8bb-b26f1dea589b",
+Cell[10868, 288, 100, 1, 19, "Tutorials",ExpressionUUID->"54fc0ae8-d630-4a4d-b8bb-b26f1dea589b",
  CellID->388198947]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11027, 295, 117, 1, 34, "MoreAboutSection",ExpressionUUID->"afdf4e86-e313-4fe8-bbf4-8d9a872db585",
+Cell[11005, 294, 117, 1, 34, "MoreAboutSection",ExpressionUUID->"afdf4e86-e313-4fe8-bbf4-8d9a872db585",
  CellID->404382643],
-Cell[11147, 298, 101, 1, 19, "MoreAbout",ExpressionUUID->"16cca966-37bb-478b-a0d5-64b5c6effcb0",
+Cell[11125, 297, 101, 1, 19, "MoreAbout",ExpressionUUID->"16cca966-37bb-478b-a0d5-64b5c6effcb0",
  CellID->1820821793]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11285, 304, 472, 13, 34, "RelatedLinksSection",ExpressionUUID->"2a3ff21e-fb6a-46e7-8d9e-536f39452e5e",
+Cell[11263, 303, 472, 13, 34, "RelatedLinksSection",ExpressionUUID->"2a3ff21e-fb6a-46e7-8d9e-536f39452e5e",
  CellID->909905201],
-Cell[11760, 319, 103, 1, 19, "RelatedLinks",ExpressionUUID->"60752c2a-8ef3-49a1-9bea-7cb156508a15",
+Cell[11738, 318, 103, 1, 19, "RelatedLinks",ExpressionUUID->"60752c2a-8ef3-49a1-9bea-7cb156508a15",
  CellID->545662920]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11900, 325, 531, 14, 70, "ExamplesInitializationSection",ExpressionUUID->"00766500-63d6-45c9-a957-a9bbc523089d",
+Cell[11878, 324, 531, 14, 70, "ExamplesInitializationSection",ExpressionUUID->"00766500-63d6-45c9-a957-a9bbc523089d",
  CellID->1201523750],
-Cell[12434, 341, 227, 4, 47, "ExampleInitialization",ExpressionUUID->"f1583514-0533-404e-bd26-af386bd5d22f",
+Cell[12412, 340, 227, 4, 47, "ExampleInitialization",ExpressionUUID->"f1583514-0533-404e-bd26-af386bd5d22f",
  CellID->1220933509]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12698, 350, 443, 12, 73, "PrimaryExamplesSection",ExpressionUUID->"b4b63811-622c-4c97-bb9f-fd0fcbfaacf8",
+Cell[12676, 349, 443, 12, 73, "PrimaryExamplesSection",ExpressionUUID->"b4b63811-622c-4c97-bb9f-fd0fcbfaacf8",
  CellID->1023238678],
-Cell[13144, 364, 257, 3, 24, "ExampleText",ExpressionUUID->"ddde5435-aacf-4099-b303-8660c4934633",
+Cell[13122, 363, 257, 3, 24, "ExampleText",ExpressionUUID->"ddde5435-aacf-4099-b303-8660c4934633",
  CellID->374440937],
 Cell[CellGroupData[{
-Cell[13426, 371, 949, 21, 104, "Input",ExpressionUUID->"4c0ee421-71dc-4cfe-989d-3f35108998f4",
+Cell[13404, 370, 1002, 22, 104, "Input",ExpressionUUID->"4c0ee421-71dc-4cfe-989d-3f35108998f4",
  CellID->428262334],
-Cell[14378, 394, 70986, 1309, 61, "Output",ExpressionUUID->"756d76f7-d0c5-439c-8348-e0362144586e",
- CellID->2010343509]
+Cell[14409, 394, 71321, 1314, 61, "Output",ExpressionUUID->"dea3fbb7-e211-450e-b03a-20a6e35b4bdf",
+ CellID->583334009]
 }, Open  ]],
-Cell[85379, 1706, 185, 2, 24, "ExampleText",ExpressionUUID->"2270c8fd-dbb6-4fd0-9577-43b2b832bc7a",
+Cell[85745, 1711, 185, 2, 24, "ExampleText",ExpressionUUID->"2270c8fd-dbb6-4fd0-9577-43b2b832bc7a",
  CellID->1129729877],
-Cell[85567, 1710, 235, 4, 27, "Input",ExpressionUUID->"3634bc9f-131f-45a0-8ce1-05b383133cf9",
+Cell[85933, 1715, 235, 4, 27, "Input",ExpressionUUID->"3634bc9f-131f-45a0-8ce1-05b383133cf9",
  CellID->1952056595]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[85839, 1719, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"e17586ef-c0f9-4026-b318-29459c49dc32",
+Cell[86205, 1724, 487, 13, 58, "ExtendedExamplesSection",ExpressionUUID->"e17586ef-c0f9-4026-b318-29459c49dc32",
  CellTags->"ExtendedExamples",
  CellID->523415970],
 Cell[CellGroupData[{
-Cell[86351, 1736, 241, 5, 35, "ExampleSection",ExpressionUUID->"3a39a644-2a76-40fa-9fce-98ef207fac0d",
+Cell[86717, 1741, 241, 5, 35, "ExampleSection",ExpressionUUID->"3a39a644-2a76-40fa-9fce-98ef207fac0d",
  CellID->959189678],
-Cell[86595, 1743, 411, 9, 26, "ExampleText",ExpressionUUID->"b3cbbf46-1e84-4dbc-a65d-04ec3e8af36b",
+Cell[86961, 1748, 411, 9, 26, "ExampleText",ExpressionUUID->"b3cbbf46-1e84-4dbc-a65d-04ec3e8af36b",
  CellID->726188294],
 Cell[CellGroupData[{
-Cell[87031, 1756, 877, 20, 123, "Input",ExpressionUUID->"88260ee7-e80c-42e4-82c3-bb133e611cc6",
+Cell[87397, 1761, 877, 20, 123, "Input",ExpressionUUID->"88260ee7-e80c-42e4-82c3-bb133e611cc6",
  CellID->1020351672],
-Cell[87911, 1778, 9976, 198, 53, "Output",ExpressionUUID->"7dd06605-3e68-4921-8a1b-02e9ab3b777c",
- CellID->1015065423]
+Cell[88277, 1783, 10047, 198, 53, "Output",ExpressionUUID->"e37e3e21-ef5d-467c-a15a-d39397cabd52",
+ CellID->36642990]
 }, Open  ]],
-Cell[97902, 1979, 188, 2, 24, "ExampleText",ExpressionUUID->"d455e7be-ec66-4f33-9bfe-1507a39230e8",
+Cell[98339, 1984, 188, 2, 24, "ExampleText",ExpressionUUID->"d455e7be-ec66-4f33-9bfe-1507a39230e8",
  CellID->325808286],
 Cell[CellGroupData[{
-Cell[98115, 1985, 682, 18, 66, "Input",ExpressionUUID->"c1e65441-e113-442b-8041-656903d1c0a7",
+Cell[98552, 1990, 682, 18, 66, "Input",ExpressionUUID->"c1e65441-e113-442b-8041-656903d1c0a7",
  CellID->1993786874],
-Cell[98800, 2005, 71087, 1313, 61, "Output",ExpressionUUID->"bef284d7-1325-4418-aa9c-2ec1f8776a1a",
- CellID->1653139383]
+Cell[99237, 2010, 71418, 1318, 61, "Output",ExpressionUUID->"f9df9af0-dace-4563-be76-bc45e13edc08",
+ CellID->45695778]
 }, Open  ]],
-Cell[169902, 3321, 312, 4, 24, "ExampleText",ExpressionUUID->"3b1b94af-3b8e-4679-b46d-6c3da7fdd2e7",
+Cell[170670, 3331, 312, 4, 24, "ExampleText",ExpressionUUID->"3b1b94af-3b8e-4679-b46d-6c3da7fdd2e7",
  CellID->1536036706],
-Cell[170217, 3327, 139212, 2287, 493, "Input",ExpressionUUID->"ba484bc5-c335-4eec-955c-0d91b77c8bb6",
+Cell[170985, 3337, 139212, 2287, 493, "Input",ExpressionUUID->"ba484bc5-c335-4eec-955c-0d91b77c8bb6",
  CellID->476559101],
-Cell[309432, 5616, 240, 4, 24, "ExampleText",ExpressionUUID->"a4df7a33-1800-4b31-ab52-f7b767e9cd8a",
+Cell[310200, 5626, 240, 4, 24, "ExampleText",ExpressionUUID->"a4df7a33-1800-4b31-ab52-f7b767e9cd8a",
  CellID->655976286],
 Cell[CellGroupData[{
-Cell[309697, 5624, 200, 3, 27, "Input",ExpressionUUID->"3285e59e-fd52-4594-a1ca-7aade8c1ea7c",
+Cell[310465, 5634, 200, 3, 27, "Input",ExpressionUUID->"3285e59e-fd52-4594-a1ca-7aade8c1ea7c",
  CellID->972899323],
-Cell[309900, 5629, 43891, 928, 453, "Output",ExpressionUUID->"1e98b6c3-ad49-4e4b-bfe3-b41da3de006d",
+Cell[310668, 5639, 43891, 928, 453, "Output",ExpressionUUID->"1e98b6c3-ad49-4e4b-bfe3-b41da3de006d",
  CellID->570947987]
 }, Open  ]],
-Cell[353806, 6560, 185, 2, 24, "ExampleText",ExpressionUUID->"ee35cb36-d580-4ea9-8e8c-3fecd6c5ade2",
+Cell[354574, 6570, 185, 2, 24, "ExampleText",ExpressionUUID->"ee35cb36-d580-4ea9-8e8c-3fecd6c5ade2",
  CellID->1820825470],
-Cell[353994, 6564, 234, 4, 27, "Input",ExpressionUUID->"a29047ac-c603-49ae-a6f7-a1de767a57f0",
+Cell[354762, 6574, 234, 4, 27, "Input",ExpressionUUID->"a29047ac-c603-49ae-a6f7-a1de767a57f0",
  CellID->971704540]
 }, Open  ]],
-Cell[354243, 6571, 265, 5, 35, "ExampleSection",ExpressionUUID->"97378e9e-619d-4649-8b5b-9910e6455c36",
+Cell[355011, 6581, 265, 5, 35, "ExampleSection",ExpressionUUID->"97378e9e-619d-4649-8b5b-9910e6455c36",
  CellID->2088663764],
 Cell[CellGroupData[{
-Cell[354533, 6580, 244, 5, 23, "ExampleSection",ExpressionUUID->"0a61a72c-dfe1-4a89-b435-d55a8accc5c0",
+Cell[355301, 6590, 244, 5, 23, "ExampleSection",ExpressionUUID->"0a61a72c-dfe1-4a89-b435-d55a8accc5c0",
  CellID->1404187686],
-Cell[354780, 6587, 247, 5, 26, "ExampleSubsection",ExpressionUUID->"406a0834-353c-454c-a6ff-4c60e9cecd26",
+Cell[355548, 6597, 247, 5, 26, "ExampleSubsection",ExpressionUUID->"406a0834-353c-454c-a6ff-4c60e9cecd26",
  CellID->1484641719],
-Cell[355030, 6594, 246, 5, 22, "ExampleSubsection",ExpressionUUID->"c6befcac-5957-4f91-8cf7-8393bab90f78",
+Cell[355798, 6604, 246, 5, 22, "ExampleSubsection",ExpressionUUID->"c6befcac-5957-4f91-8cf7-8393bab90f78",
  CellID->760876740]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[355313, 6604, 249, 5, 35, "ExampleSection",ExpressionUUID->"ad9b81e7-d822-4ad7-9437-bfb4bf8953f1",
+Cell[356081, 6614, 249, 5, 35, "ExampleSection",ExpressionUUID->"ad9b81e7-d822-4ad7-9437-bfb4bf8953f1",
  CellID->1937734942],
-Cell[355565, 6611, 196, 2, 24, "ExampleText",ExpressionUUID->"3bb7e803-af35-4b11-aa10-6c815b785c85",
+Cell[356333, 6621, 196, 2, 24, "ExampleText",ExpressionUUID->"3bb7e803-af35-4b11-aa10-6c815b785c85",
  CellID->1274307077],
 Cell[CellGroupData[{
-Cell[355786, 6617, 3302, 73, 389, "Input",ExpressionUUID->"4da1c156-9ede-43e7-825f-4a813266e782",
+Cell[356554, 6627, 3302, 73, 389, "Input",ExpressionUUID->"4da1c156-9ede-43e7-825f-4a813266e782",
  CellID->41348088],
-Cell[359091, 6692, 88296, 1627, 61, "Output",ExpressionUUID->"3e51b7bc-14cd-4148-92c4-c09df08d0c43",
- CellID->2066586559]
+Cell[359859, 6702, 88543, 1628, 61, "Output",ExpressionUUID->"9bd387aa-afe0-40e7-87ef-06bdc8d4dd99",
+ CellID->1006918884]
 }, Open  ]],
-Cell[447402, 8322, 194, 2, 24, "ExampleText",ExpressionUUID->"f5d36ea9-bfc7-4d39-82b9-b3597439e9dd",
+Cell[448417, 8333, 194, 2, 24, "ExampleText",ExpressionUUID->"f5d36ea9-bfc7-4d39-82b9-b3597439e9dd",
  CellID->1668834681],
-Cell[447599, 8326, 195945, 3217, 557, "Input",ExpressionUUID->"486aee5e-7ffe-4464-a34e-31914f5235bd",
+Cell[448614, 8337, 195945, 3217, 557, "Input",ExpressionUUID->"486aee5e-7ffe-4464-a34e-31914f5235bd",
  CellID->1491546085],
-Cell[643547, 11545, 204, 2, 24, "ExampleText",ExpressionUUID->"db75a92b-6a80-46b5-8bf7-3ef586ced074",
+Cell[644562, 11556, 204, 2, 24, "ExampleText",ExpressionUUID->"db75a92b-6a80-46b5-8bf7-3ef586ced074",
  CellID->187979416],
 Cell[CellGroupData[{
-Cell[643776, 11551, 198, 3, 27, "Input",ExpressionUUID->"93cbc79b-4c0c-4d58-820b-ade59f8cfa2d",
+Cell[644791, 11562, 198, 3, 27, "Input",ExpressionUUID->"93cbc79b-4c0c-4d58-820b-ade59f8cfa2d",
  CellID->1387489144],
-Cell[643977, 11556, 319, 7, 28, "Output",ExpressionUUID->"ba865546-63f7-4267-ac40-d8d9a065f9f7",
+Cell[644992, 11567, 319, 7, 28, "Output",ExpressionUUID->"ba865546-63f7-4267-ac40-d8d9a065f9f7",
  CellID->603970918]
 }, Open  ]],
-Cell[644311, 11566, 212, 3, 24, "ExampleText",ExpressionUUID->"9dee768c-7657-4089-9c00-43cd060dae03",
+Cell[645326, 11577, 212, 3, 24, "ExampleText",ExpressionUUID->"9dee768c-7657-4089-9c00-43cd060dae03",
  CellID->576310274],
-Cell[644526, 11571, 234, 4, 27, "Input",ExpressionUUID->"b0de1bd6-d21f-43cc-bc0b-d066899ae825",
+Cell[645541, 11582, 234, 4, 27, "Input",ExpressionUUID->"b0de1bd6-d21f-43cc-bc0b-d066899ae825",
  CellID->895527148]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[644797, 11580, 258, 5, 35, "ExampleSection",ExpressionUUID->"151e9e8c-26a4-4ddb-93b7-f395aa69d2f8",
+Cell[645812, 11591, 258, 5, 35, "ExampleSection",ExpressionUUID->"151e9e8c-26a4-4ddb-93b7-f395aa69d2f8",
  CellID->921663439],
-Cell[645058, 11587, 383, 7, 41, "ExampleText",ExpressionUUID->"1c0a2a09-3953-4129-8383-f50746993bd4",
+Cell[646073, 11598, 383, 7, 41, "ExampleText",ExpressionUUID->"1c0a2a09-3953-4129-8383-f50746993bd4",
  CellID->287202388],
 Cell[CellGroupData[{
-Cell[645466, 11598, 989, 24, 123, "Input",ExpressionUUID->"7c1a919f-3354-40a4-a9e2-5de703cc1774",
+Cell[646481, 11609, 989, 24, 123, "Input",ExpressionUUID->"7c1a919f-3354-40a4-a9e2-5de703cc1774",
  CellID->619953812],
-Cell[646458, 11624, 70430, 1300, 61, "Output",ExpressionUUID->"f46ee891-92cc-4e90-8aab-c8327b34d865",
- CellID->607525349]
+Cell[647473, 11635, 70658, 1301, 61, "Output",ExpressionUUID->"5e5cae8c-a5f4-48f7-b5ef-e0f68f910d3e",
+ CellID->731164706]
 }, Open  ]],
-Cell[716903, 12927, 202, 2, 24, "ExampleText",ExpressionUUID->"882f5b78-232e-46b5-a6fc-c822d5f4a53b",
+Cell[718146, 12939, 202, 2, 24, "ExampleText",ExpressionUUID->"882f5b78-232e-46b5-a6fc-c822d5f4a53b",
  CellID->1883651148],
 Cell[CellGroupData[{
-Cell[717130, 12933, 199, 3, 27, "Input",ExpressionUUID->"dc9655d4-5c55-4d35-aed6-25a14fc0db3b",
+Cell[718373, 12945, 199, 3, 27, "Input",ExpressionUUID->"dc9655d4-5c55-4d35-aed6-25a14fc0db3b",
  CellID->1826074982],
-Cell[717332, 12938, 192, 3, 26, "Output",ExpressionUUID->"21767453-6a4b-46d1-8db7-7bb38bd10616",
+Cell[718575, 12950, 192, 3, 26, "Output",ExpressionUUID->"21767453-6a4b-46d1-8db7-7bb38bd10616",
  CellID->1617131376]
 }, Open  ]],
-Cell[717539, 12944, 279, 4, 24, "ExampleText",ExpressionUUID->"583a1a4b-4c90-46b1-81d9-48f5cd1bdbc6",
+Cell[718782, 12956, 279, 4, 24, "ExampleText",ExpressionUUID->"583a1a4b-4c90-46b1-81d9-48f5cd1bdbc6",
  CellID->234368142],
-Cell[717821, 12950, 109989, 1808, 402, "Input",ExpressionUUID->"a6d84755-96a1-43cc-8672-8f56f169ad96",
+Cell[719064, 12962, 109989, 1808, 402, "Input",ExpressionUUID->"a6d84755-96a1-43cc-8672-8f56f169ad96",
  CellID->281002211],
-Cell[827813, 14760, 198, 2, 24, "ExampleText",ExpressionUUID->"54e3b863-bca2-451a-ba39-a1dfbddeeb61",
+Cell[829056, 14772, 198, 2, 24, "ExampleText",ExpressionUUID->"54e3b863-bca2-451a-ba39-a1dfbddeeb61",
  CellID->457176607],
 Cell[CellGroupData[{
-Cell[828036, 14766, 199, 3, 27, "Input",ExpressionUUID->"4b7236db-11b2-4c6f-a5d8-2fe6c68ca7ec",
+Cell[829279, 14778, 199, 3, 27, "Input",ExpressionUUID->"4b7236db-11b2-4c6f-a5d8-2fe6c68ca7ec",
  CellID->1907463776],
-Cell[828238, 14771, 169, 3, 26, "Output",ExpressionUUID->"772e94d3-df50-4985-a6dc-97268419837c",
+Cell[829481, 14783, 169, 3, 26, "Output",ExpressionUUID->"772e94d3-df50-4985-a6dc-97268419837c",
  CellID->1485341704]
 }, Open  ]],
-Cell[828422, 14777, 187, 2, 24, "ExampleText",ExpressionUUID->"1978b8ba-17d2-4b18-8383-736dff9972d1",
+Cell[829665, 14789, 187, 2, 24, "ExampleText",ExpressionUUID->"1978b8ba-17d2-4b18-8383-736dff9972d1",
  CellID->2023959105],
-Cell[828612, 14781, 236, 4, 27, "Input",ExpressionUUID->"3af5fe9c-a4dd-4518-9399-2d5d90dbde78",
+Cell[829855, 14793, 236, 4, 27, "Input",ExpressionUUID->"3af5fe9c-a4dd-4518-9399-2d5d90dbde78",
  CellID->1818981862]
 }, Open  ]],
-Cell[828863, 14788, 251, 5, 35, "ExampleSection",ExpressionUUID->"6907c361-efc4-446b-9590-445c655cc792",
+Cell[830106, 14800, 251, 5, 35, "ExampleSection",ExpressionUUID->"6907c361-efc4-446b-9590-445c655cc792",
  CellID->597873462],
-Cell[829117, 14795, 256, 5, 23, "ExampleSection",ExpressionUUID->"f57594bf-f01c-41cc-b979-e233d8650408",
+Cell[830360, 14807, 256, 5, 23, "ExampleSection",ExpressionUUID->"f57594bf-f01c-41cc-b979-e233d8650408",
  CellID->383291521],
-Cell[829376, 14802, 250, 5, 23, "ExampleSection",ExpressionUUID->"902c6450-a0d6-42e1-b56d-a6cfe1c7cf82",
+Cell[830619, 14814, 250, 5, 23, "ExampleSection",ExpressionUUID->"902c6450-a0d6-42e1-b56d-a6cfe1c7cf82",
  CellID->1677136094]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[829663, 14812, 111, 1, 72, "MetadataSection",ExpressionUUID->"7a126ea0-0c32-4faf-a197-641aa2b62352",
+Cell[830906, 14824, 111, 1, 72, "MetadataSection",ExpressionUUID->"7a126ea0-0c32-4faf-a197-641aa2b62352",
  CellID->1903464983],
-Cell[829777, 14815, 476, 12, 26, "History",ExpressionUUID->"be06909b-e576-4433-a281-1f1aeed1b5e2",
+Cell[831020, 14827, 476, 12, 26, "History",ExpressionUUID->"be06909b-e576-4433-a281-1f1aeed1b5e2",
  CellID->472079922],
 Cell[CellGroupData[{
-Cell[830278, 14831, 485, 13, 21, "CategorizationSection",ExpressionUUID->"b4cc9a10-b1f4-4a5b-a25b-3f4fdd26ab8e",
+Cell[831521, 14843, 485, 13, 21, "CategorizationSection",ExpressionUUID->"b4cc9a10-b1f4-4a5b-a25b-3f4fdd26ab8e",
  CellID->1442657036],
-Cell[830766, 14846, 135, 2, 35, "Categorization",ExpressionUUID->"993aca31-458d-4ba3-a4bf-1b5811269aca",
+Cell[832009, 14858, 135, 2, 35, "Categorization",ExpressionUUID->"993aca31-458d-4ba3-a4bf-1b5811269aca",
  CellID->1646429422],
-Cell[830904, 14850, 153, 2, 35, "Categorization",ExpressionUUID->"0d34c942-6e76-4412-a239-0a3e2aac94e7",
+Cell[832147, 14862, 153, 2, 35, "Categorization",ExpressionUUID->"0d34c942-6e76-4412-a239-0a3e2aac94e7",
  CellID->1212503959],
-Cell[831060, 14854, 150, 2, 35, "Categorization",ExpressionUUID->"bc6bab4d-9c68-43ec-b53f-8ff59b997d4b",
+Cell[832303, 14866, 150, 2, 35, "Categorization",ExpressionUUID->"bc6bab4d-9c68-43ec-b53f-8ff59b997d4b",
  CellID->1081712530],
-Cell[831213, 14858, 169, 2, 35, "Categorization",ExpressionUUID->"ffe93d74-5e77-423c-8a55-90fafcd2997f",
+Cell[832456, 14870, 169, 2, 35, "Categorization",ExpressionUUID->"ffe93d74-5e77-423c-8a55-90fafcd2997f",
  CellID->1893419855]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[831419, 14865, 111, 1, 31, "KeywordsSection",ExpressionUUID->"d7df0952-d28b-4671-8db6-41695258a343",
+Cell[832662, 14877, 111, 1, 31, "KeywordsSection",ExpressionUUID->"d7df0952-d28b-4671-8db6-41695258a343",
  CellID->1294821739],
-Cell[831533, 14868, 100, 1, 70, "Keywords",ExpressionUUID->"9dd93ff3-14a7-4952-868e-97cc815fd1da",
+Cell[832776, 14880, 100, 1, 70, "Keywords",ExpressionUUID->"9dd93ff3-14a7-4952-868e-97cc815fd1da",
  CellID->1617172322]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[831670, 14874, 120, 1, 21, "TemplatesSection",ExpressionUUID->"86de037b-21a3-4ecd-85f5-96f98dd05436",
+Cell[832913, 14886, 120, 1, 21, "TemplatesSection",ExpressionUUID->"86de037b-21a3-4ecd-85f5-96f98dd05436",
  CellID->1262179422],
-Cell[831793, 14877, 148, 2, 70, "Template",ExpressionUUID->"f3aebcc1-8c5c-4bd4-bfa9-b739c7209563",
+Cell[833036, 14889, 148, 2, 70, "Template",ExpressionUUID->"f3aebcc1-8c5c-4bd4-bfa9-b739c7209563",
  CellID->606080488],
-Cell[831944, 14881, 137, 2, 70, "Template",ExpressionUUID->"9d6a20bd-2eef-4716-b51b-c459b203a41a",
+Cell[833187, 14893, 137, 2, 70, "Template",ExpressionUUID->"9d6a20bd-2eef-4716-b51b-c459b203a41a",
  CellID->879824095],
-Cell[832084, 14885, 136, 2, 70, "Template",ExpressionUUID->"cce32400-3e47-47da-a779-c20a1d364cce",
+Cell[833327, 14897, 136, 2, 70, "Template",ExpressionUUID->"cce32400-3e47-47da-a779-c20a1d364cce",
  CellID->1778655070],
-Cell[832223, 14889, 137, 2, 70, "Template",ExpressionUUID->"8649aeb0-d743-421e-a624-574b167d4bfc",
+Cell[833466, 14901, 137, 2, 70, "Template",ExpressionUUID->"8649aeb0-d743-421e-a624-574b167d4bfc",
  CellID->883395250]
 }, Closed]]
 }, Open  ]]

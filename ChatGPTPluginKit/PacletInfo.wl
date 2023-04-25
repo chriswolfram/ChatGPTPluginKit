@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Christopher Wolfram",
     "License" -> "MIT",
     "PublisherID" -> "Wolfram",
-    "Version" -> "1.2.0",
+    "Version" -> "1.3.0",
     "WolframVersion" -> "13.2+",
     "Extensions" -> {
       {
@@ -15,7 +15,6 @@ PacletObject[
         "Root" -> "Kernel",
         "Context" -> {"Wolfram`ChatGPTPluginKit`"},
         "Symbols" -> {
-          "Wolfram`ChatGPTPluginKit`$ChatGPTPluginPort",
           "Wolfram`ChatGPTPluginKit`ChatGPTPlugin",
           "Wolfram`ChatGPTPluginKit`ChatGPTPluginDeploy",
           "Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment",

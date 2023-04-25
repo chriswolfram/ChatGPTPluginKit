@@ -11,8 +11,6 @@ ChatGPTPluginCloudDeployment
 
 ChatGPTPluginExport
 
-$ChatGPTPluginPort = 18000;
-
 Begin["`Private`"];
 
 Needs["Wolfram`ChatGPTPluginKit`Plugin`"]
