@@ -25,13 +25,13 @@ iChatGPTPluginExport[{plugin_}, opts_] :=
 
 
 pluginString[plugin_, True] :=
-	With[{dispatcher = plugin["URLDispatcher"]},
+	With[{dispatcher = plugin["URLDispatcherTemplate"][<|"BaseURL" -> "http://localhost:18000"|>]},
 	With[{defs = Language`ExtendedFullDefinition[dispatcher]},
 		ToString[Unevaluated[Language`ExtendedFullDefinition[] = defs; dispatcher], InputForm]
 	]]
 
 pluginString[plugin_, False] :=
-	With[{dispatcher = plugin["URLDispatcher"]},
+	With[{dispatcher = plugin["URLDispatcherTemplate"][<|"BaseURL" -> "http://localhost:18000"|>]},
 		ToString[Unevaluated[dispatcher], InputForm]
 	]
 

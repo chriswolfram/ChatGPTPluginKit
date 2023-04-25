@@ -42,7 +42,7 @@ Cell["", "FileManagerTopSpacer",
  CellGroupingRules->{"SectionGrouping", 99},
  TaggingRules->{},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->637527297,ExpressionUUID->"d4f6c5f8-8254-4cec-b339-6e9be35b7b15"],
+ CellID->637527297,ExpressionUUID->"ea4bfa64-b696-4561-a2b4-d7966254ca4c"],
 
 Cell[CellGroupData[{
 
@@ -71,7 +71,7 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Documentation"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"9acdfc74-a4be-4b73-8d5a-bfe59bda7cdc"]], \
+   "Text"}]],ExpressionUUID->"1f48dc39-cddc-4973-a151-a0dbd4125735"]], \
 "FileManagerDirectory",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
@@ -82,7 +82,7 @@ Cell[TextData[Cell[BoxData[
       TemplateBox[{}, "FileManagerDocumentationIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1125365796,ExpressionUUID->"2fd88f5c-f653-46b9-b8fc-0711907a078c"],
+ CellID->1125365796,ExpressionUUID->"aa223c2c-95c5-44d7-bf9f-3d05faac77c8"],
 
 Cell[CellGroupData[{
 
@@ -111,7 +111,7 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Documentation", "English"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"1272fe46-9f2e-402b-ae00-de331dc12aae"]], \
+   "Text"}]],ExpressionUUID->"e88b0f99-aa7b-4752-b181-f62b9efda1e3"]], \
 "FileManagerDirectory",
  CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 110},
@@ -122,7 +122,7 @@ Cell[TextData[Cell[BoxData[
       TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1134454243,ExpressionUUID->"9076ec18-da42-4de6-8873-2ef9f490dfae"],
+ CellID->1134454243,ExpressionUUID->"840493f2-096d-41f5-8f6f-9208837bc9ba"],
 
 Cell[CellGroupData[{
 
@@ -150,7 +150,7 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Documentation", "English", "Guides"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"192d13f1-6326-4b46-8679-f786fff3b6d6"]], \
+   "Text"}]],ExpressionUUID->"48efa6fd-da2f-4f77-8179-9c01379da2a1"]], \
 "FileManagerDirectory",
  CellMargins->{{46 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 120},
@@ -161,7 +161,7 @@ Cell[TextData[Cell[BoxData[
       TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1412644035,ExpressionUUID->"dd2b1bba-67e7-45d2-ab0a-2cd56284d498"],
+ CellID->1412644035,ExpressionUUID->"054b9fe3-3912-4b6a-b53b-cfca55da8ad8"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -187,7 +187,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->655010840,ExpressionUUID->"67aed110-a336-4197-9f94-89bb1bc14ed2"]
+ CellID->655010840,ExpressionUUID->"020496c4-ae4e-47e8-8194-13573e1b5a4c"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -217,7 +217,7 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Documentation", "English", "ReferencePages"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"27bc83ff-c29b-407f-911b-a84f5159760c"]], \
+   "Text"}]],ExpressionUUID->"42f1ea41-9e69-4f82-8dba-2fd8f2e124e0"]], \
 "FileManagerDirectory",
  CellMargins->{{46 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 120},
@@ -228,7 +228,7 @@ Cell[TextData[Cell[BoxData[
       TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1712698778,ExpressionUUID->"f04dd591-ac05-474f-85d5-c23c6bc3ab61"],
+ CellID->1712698778,ExpressionUUID->"d3a63934-19be-4635-9e7a-ceb4661af7d3"],
 
 Cell[CellGroupData[{
 
@@ -258,7 +258,7 @@ Cell[TextData[Cell[BoxData[
     "Symbols"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"0fc995c6-e501-4250-afa9-af58e576726d"]], \
+   "Text"}]],ExpressionUUID->"37d45786-2f17-421a-8dd9-9fed3d14ec87"]], \
 "FileManagerDirectory",
  CellMargins->{{69 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 130},
@@ -269,7 +269,7 @@ Cell[TextData[Cell[BoxData[
       TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->457557458,ExpressionUUID->"b03c61fa-5db3-4433-98bc-d583d453c3c3"],
+ CellID->457557458,ExpressionUUID->"50c51cce-e3fc-48ba-91ff-271823531deb"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -295,7 +295,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1368090892,ExpressionUUID->"b227addd-e41a-4f84-bc9a-d0b031f9e6ae"],
+ CellID->1368090892,ExpressionUUID->"a6e613dd-75c5-4b3c-a2d9-ee16a8d5cc32"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -321,7 +321,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->396213415,ExpressionUUID->"55f80772-963a-42e9-9d19-d30f9c36a0c6"],
+ CellID->396213415,ExpressionUUID->"c2d1101b-7f3f-4964-b993-4ef274ed861b"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -347,7 +347,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1959560205,ExpressionUUID->"bd205c3b-38e6-41e5-ba17-da93217df607"],
+ CellID->1959560205,ExpressionUUID->"a120dbb2-933e-4ff8-87c4-90423983a192"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -373,7 +373,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->29256699,ExpressionUUID->"5c4b19ff-de54-474b-9dec-b7032ec4f754"],
+ CellID->29256699,ExpressionUUID->"1809d653-bb9c-4ed2-aa22-0f408ad32002"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -399,7 +399,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->2091068577,ExpressionUUID->"5b8dc986-302d-411d-a1ab-cc36cd23cc90"],
+ CellID->2091068577,ExpressionUUID->"f4a9ac96-c92b-4476-9d47-6282e12e0c76"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -425,33 +425,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1019690484,ExpressionUUID->"616b187c-f954-45af-8f53-2756704e0604"],
-
-Cell[BoxData[
- InterpretationBox[
-  TagBox[
-   TemplateBox[{"\"$ChatGPTPluginPort.nb\"", 
-     FileNameJoin[{
-       NotebookDirectory[], "Documentation", "English", "ReferencePages", 
-       "Symbols", "$ChatGPTPluginPort.nb"}]},
-    "FileManagerFileOpenerTemplate"],
-   Annotation[#, 
-    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[4]]& ],
-  FileNameJoin[{
-    NotebookDirectory[], "Documentation", "English", "ReferencePages", 
-    "Symbols", "$ChatGPTPluginPort.nb"}],
-  BoxID -> "FileTreePath",
-  BaseStyle->{"Text"}]], "FileManagerFile",
- CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
- CellGroupingRules->{"SectionGrouping", 140},
- TaggingRules->{},
- CellFrameLabels->{{
-    Cell[
-     BoxData[
-      TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
-    Inherited}, {Inherited, Inherited}},
- CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1018461528,ExpressionUUID->"d573a2c3-73ae-4774-9252-470abf10baf3"]
+ CellID->1019690484,ExpressionUUID->"c49fe625-8e21-44ac-a78f-0210ade14237"]
 }, Open  ]]
 }, Open  ]],
 
@@ -482,7 +456,7 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Documentation", "English", "Tutorials"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"d1be7660-ecff-4555-a2b1-ce0dc45d9880"]], \
+   "Text"}]],ExpressionUUID->"e7febef1-ff87-4734-bfdf-4bb05d883a59"]], \
 "FileManagerDirectory",
  CellMargins->{{46 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 120},
@@ -493,7 +467,7 @@ Cell[TextData[Cell[BoxData[
       TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1838234506,ExpressionUUID->"a17f70b6-c00d-458e-9a2b-02d0b5870b2f"],
+ CellID->1838234506,ExpressionUUID->"ace13b02-cea3-4f93-a068-6ef8e8324983"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -519,8 +493,8 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1507596600,ExpressionUUID->"33389e84-854f-49e0-a0c9-2a8f721ddbe5"]
-}, Closed]]
+ CellID->1507596600,ExpressionUUID->"0d1ab446-be2a-4158-96fe-c57efa76f9e1"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 
@@ -550,7 +524,7 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Kernel"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"8271041b-a252-4939-8eb5-47c4ae34ac18"]], \
+   "Text"}]],ExpressionUUID->"19a9bed8-d44e-450a-807c-2124b03b5f9f"]], \
 "FileManagerDirectory",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
@@ -561,7 +535,7 @@ Cell[TextData[Cell[BoxData[
       TemplateBox[{}, "FileManagerKernelIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->16505247,ExpressionUUID->"4c651f8e-f7d9-47ac-98b2-f449b713cbfc"],
+ CellID->16505247,ExpressionUUID->"4a456eaa-71de-474e-9ddd-984467f38d95"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -585,7 +559,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerWLIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->378295866,ExpressionUUID->"9197f08c-b514-4271-8027-4a24c9010eac"],
+ CellID->378295866,ExpressionUUID->"3fa3a36d-05bf-4e1c-8b4b-755604d55513"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -609,7 +583,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerWLIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1161766448,ExpressionUUID->"e7b831c0-ef8e-4e4c-a990-82ea998ab74f"],
+ CellID->1161766448,ExpressionUUID->"411c03b6-50c0-4e08-b627-919cc85dbf61"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -633,7 +607,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerWLIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1467024742,ExpressionUUID->"e5f8edbf-405a-46b3-8d27-26e69a27dbf9"],
+ CellID->1467024742,ExpressionUUID->"042513a6-0e9e-4280-80d7-c403af6f686e"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -657,7 +631,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerWLIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1025087587,ExpressionUUID->"787f178d-32a3-4a03-aa80-ed6e1459d791"],
+ CellID->1025087587,ExpressionUUID->"dccd51e7-e2f8-4bad-a54d-d5e829ed5538"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -681,7 +655,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerWLIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1533258475,ExpressionUUID->"35e29880-862b-453b-8cb4-42a61bf3a919"],
+ CellID->1533258475,ExpressionUUID->"8612a07f-6b52-4e01-98b4-7a594dcd393a"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -705,7 +679,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerWLIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1818908972,ExpressionUUID->"d2709511-6383-4302-b79d-2e5f55500f69"]
+ CellID->1818908972,ExpressionUUID->"6aa409b9-330d-4887-bde9-5677fa781188"]
 }, Closed]],
 
 Cell[BoxData[
@@ -730,7 +704,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
      Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->973377359,ExpressionUUID->"33bf4fd5-6e44-4cde-979a-a05bc4d36f1d"],
+ CellID->973377359,ExpressionUUID->"ee27ca37-6f69-486a-850f-6c6f60811e75"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -754,7 +728,7 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerPacletInfoIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->22849867,ExpressionUUID->"6465980d-fa28-4f8c-bdb2-6aae4e92f9e6"],
+ CellID->22849867,ExpressionUUID->"8222b972-38a8-4c81-bcf8-1cfc462a0857"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -778,13 +752,13 @@ Cell[BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->1785625503,ExpressionUUID->"e71c813f-e69e-4120-800b-061676fd75dc"],
+ CellID->1785625503,ExpressionUUID->"8526f537-21ff-4fb1-9c67-668179df3a8f"],
 
 Cell["", "FileManagerBottomSpacer",
  CellGroupingRules->{"SectionGrouping", 100},
  TaggingRules->{},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->2071345743,ExpressionUUID->"3f09be65-131f-4fb8-9d6e-448819cabd69"]
+ CellID->2071345743,ExpressionUUID->"5468ebf6-bb6b-43ef-a2d8-3498877829f8"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1207,7 +1181,7 @@ Cell[BoxData[
          "]"}]}], "|>"}]}]}], "\[IndentingNewLine]", "|>"}], "]"}]}]], "Input",
  TaggingRules->{},
  CellChangeTimes->{{3.890398508332391*^9, 3.8903985957004223`*^9}},
- CellLabel->"In[6]:=",
+ CellLabel->"In[4]:=",
  CellID->344476325,ExpressionUUID->"55577ea9-6ad8-45db-9f8f-d72c064e1e5e"],
 
 Cell[BoxData[
@@ -1236,7 +1210,7 @@ Cell[BoxData[
                   RowBox[{
                     TagBox["\"url: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["\"localhost:18000\"", "SummaryItem"]}], 
+                    TagBox["\"localhost:60901\"", "SummaryItem"]}], 
                   ButtonBox[
                    
                    DynamicModuleBox[{
@@ -1350,11 +1324,12 @@ mouseHover$$ = False},
                    ButtonFunction :> CopyToClipboard[
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-                    "SocketListener" -> SocketListener[3611931208110192517], 
-                    "URL" -> "localhost:18000", "Plugin" -> 
+                    "SocketListener" -> SocketListener[3613036278789014679], 
+                    "URL" -> "localhost:60901", "Plugin" -> 
                     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "CityPopulationFinder", "Description" -> "", 
-                    "Prompt" -> "", "Endpoints" -> {
+                    "Prompt" -> "", "ContactEmail" -> "", 
+                    "LegalInformationURL" -> "", "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getCityPopulation", "Prompt" -> 
@@ -1399,7 +1374,7 @@ mouseHover$$ = False},
                   RowBox[{
                     TagBox["\"url: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["\"localhost:18000\"", "SummaryItem"]}], 
+                    TagBox["\"localhost:60901\"", "SummaryItem"]}], 
                   ButtonBox[
                    
                    DynamicModuleBox[{
@@ -1513,11 +1488,12 @@ mouseHover$$ = False},
                    ButtonFunction :> CopyToClipboard[
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-                    "SocketListener" -> SocketListener[3611931208110192517], 
-                    "URL" -> "localhost:18000", "Plugin" -> 
+                    "SocketListener" -> SocketListener[3613036278789014679], 
+                    "URL" -> "localhost:60901", "Plugin" -> 
                     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "CityPopulationFinder", "Description" -> "", 
-                    "Prompt" -> "", "Endpoints" -> {
+                    "Prompt" -> "", "ContactEmail" -> "", 
+                    "LegalInformationURL" -> "", "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getCityPopulation", "Prompt" -> 
@@ -1713,7 +1689,8 @@ mouseHover$$ = False},
                    
                    Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "CityPopulationFinder", "Description" -> "", 
-                    "Prompt" -> "", "Endpoints" -> {
+                    "Prompt" -> "", "ContactEmail" -> "", 
+                    "LegalInformationURL" -> "", "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getCityPopulation", "Prompt" -> 
@@ -1830,6 +1807,7 @@ mouseHover$$ = False},
                     0.6749999999999999, 0.6749999999999999, 
                     0.6749999999999999], 
                     Opacity[1.]}], 
+                    
                     FilledCurveBox[{{{0, 2, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
                     3}}}, {{{2.9434, 8.718699999999998}, {1.0414, 
                     8.101699999999997}, {1.7584, 5.890699999999999}, {3.1414, 
@@ -1953,7 +1931,7 @@ mouseHover$$ = False},
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3611931208110192517], {
+                    3613036278789014679], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -2195,7 +2173,7 @@ mouseHover$$ = False},
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3611931208110192517], {
+                    3613036278789014679], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -2219,17 +2197,14 @@ mouseHover$$ = False},
                     RowBox[{
                     "Wolfram`ChatGPTPluginKit`Deploy`Private`handlers$", ",", 
                     
-                    RowBox[{"\[LeftSkeleton]", "52", "\[RightSkeleton]"}], 
-                    ",", 
-                    RowBox[{"\[LeftSkeleton]", "44", "\[RightSkeleton]"}], 
-                    ",", "Wolfram`ChatGPTPluginKit`Deploy`Private`resp$"}], 
-                    "}"}], ",", 
+                    RowBox[{"\[LeftSkeleton]", "3", "\[RightSkeleton]"}], ",",
+                     "Wolfram`ChatGPTPluginKit`Deploy`Private`resp$"}], "}"}],
+                     ",", 
                     RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
                     "]"}], "&"}], Short], "SummaryItem"]}]}, {
                     RowBox[{
-                    TagBox[
-                    "\"HandlerFunctionsKeys: \"", "SummaryItemAnnotation"], 
-                    "\[InvisibleSpace]", 
+                    TagBox["\"HandlerFunctionsKeys: \"", 
+                    "SummaryItemAnnotation"], "\[InvisibleSpace]", 
                     TagBox[
                     
                     TemplateBox[{", ", "\", \"", "\"Timestamp\"", 
@@ -2332,7 +2307,7 @@ mouseHover$$ = False},
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["18000", "SummaryItem"]}], 
+                    TagBox["60901", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -2345,7 +2320,7 @@ mouseHover$$ = False},
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-f07b76a5-3013-4cdc-8622-4d4f27734147\"", 
+                    "\"TCPSERVER-eebf8c4d-6982-44f3-82cd-bf4ee0c38b55\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}}, 
                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
                     "Rows" -> {{Automatic}}}, AutoDelete -> False, 
@@ -2397,6 +2372,7 @@ mouseHover$$ = False},
                     51.099000000000004`, 21.188000000000002`}, {49.636, 
                     21.188000000000002`}, {49.636, 8.569}}]}}]}, {
                     FilledCurveBox[{{
+                    
                     Line[{{46.709, 8.569}, {48.172000000000004`, 8.569}, {
                     48.172000000000004`, 21.188000000000002`}, {46.709, 
                     21.188000000000002`}, {46.709, 8.569}}]}}]}, {
@@ -2434,7 +2410,7 @@ mouseHover$$ = False},
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["18000", "SummaryItem"]}], 
+                    TagBox["60901", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -2447,7 +2423,7 @@ mouseHover$$ = False},
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-f07b76a5-3013-4cdc-8622-4d4f27734147\"", 
+                    "\"TCPSERVER-eebf8c4d-6982-44f3-82cd-bf4ee0c38b55\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}, {
                     
                     RowBox[{
@@ -2470,7 +2446,7 @@ mouseHover$$ = False},
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
                     SocketObject[
-                    "TCPSERVER-f07b76a5-3013-4cdc-8622-4d4f27734147"], 
+                    "TCPSERVER-eebf8c4d-6982-44f3-82cd-bf4ee0c38b55"], 
                     Selectable -> False, Editable -> False, 
                     SelectWithContents -> True], "SummaryItem"]}]}}, 
                     GridBoxAlignment -> {
@@ -2490,7 +2466,7 @@ mouseHover$$ = False},
                     BaselinePosition -> {1, 1}]}, 
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
-                   SocketListener[3611931208110192517], Selectable -> False, 
+                   SocketListener[3613036278789014679], Selectable -> False, 
                    Editable -> False, SelectWithContents -> True], 
                   "SummaryItem"]}]}}, 
              GridBoxAlignment -> {
@@ -2510,11 +2486,11 @@ mouseHover$$ = False},
      "SummaryPanel"],
     DynamicModuleValues:>{}], "]"}],
   Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-   "SocketListener" -> SocketListener[3611931208110192517], "URL" -> 
-    "localhost:18000", "Plugin" -> 
+   "SocketListener" -> SocketListener[3613036278789014679], "URL" -> 
+    "localhost:60901", "Plugin" -> 
     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
       "Name" -> "CityPopulationFinder", "Description" -> "", "Prompt" -> "", 
-       "Endpoints" -> {
+       "ContactEmail" -> "", "LegalInformationURL" -> "", "Endpoints" -> {
          Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
           "OperationID" -> "getCityPopulation", "Prompt" -> 
            Missing["NotSpecified"], 
@@ -2530,9 +2506,10 @@ mouseHover$$ = False},
  TaggingRules->{},
  CellChangeTimes->{{3.890398576842456*^9, 3.8903986058660088`*^9}, 
    3.89040084547318*^9, 3.8909249434260406`*^9, {3.8909252447436523`*^9, 
-   3.8909252528763113`*^9}, {3.8909253243233557`*^9, 3.890925336389998*^9}},
- CellLabel->"Out[6]=",
- CellID->1478030738,ExpressionUUID->"f6e48a46-126f-4645-973d-1970b4492fbf"]
+   3.8909252528763113`*^9}, {3.8909253243233557`*^9, 3.890925336389998*^9}, 
+   3.8914399249245462`*^9},
+ CellLabel->"Out[4]=",
+ CellID->542370463,ExpressionUUID->"0138ed30-44d5-4406-bd40-74216677ce15"]
 }, Open  ]],
 
 Cell["Use in ChatGPT:", "Text",
@@ -4790,7 +4767,7 @@ Cell[BoxData[
  RowBox[{"DeleteObject", "[", "server", "]"}]], "Input",
  TaggingRules->{},
  CellChangeTimes->{{3.8894570680026712`*^9, 3.889457070158811*^9}},
- CellLabel->"In[7]:=",
+ CellLabel->"In[5]:=",
  CellID->882448711,ExpressionUUID->"1e762b25-7ca3-47b9-9a5a-6a234cef6926"],
 
 Cell[CellGroupData[{
@@ -5357,6 +5334,7 @@ getCityPopulation"]}, "Plugin" ->
                     BaselinePosition -> {1, 1}]}, 
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
+                   
                    Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "CityPopulationFinder", "Description" -> "", 
                     "Prompt" -> "", "Endpoints" -> {
@@ -5547,7 +5525,7 @@ your TODOs.\>\""}], ",", "\[IndentingNewLine]",
    3.8894503830116034`*^9, {3.889450484885947*^9, 3.889450491289304*^9}, {
    3.889454945124021*^9, 3.8894549453458643`*^9}, {3.889474478392243*^9, 
    3.889474499492263*^9}, {3.890398613335616*^9, 3.8903986529149714`*^9}},
- CellLabel->"In[10]:=",
+ CellLabel->"In[7]:=",
  CellID->41348088,ExpressionUUID->"99f47b18-e7b1-41a3-b190-01ab95057e4f"],
 
 Cell[BoxData[
@@ -5576,7 +5554,7 @@ Cell[BoxData[
                   RowBox[{
                     TagBox["\"url: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["\"localhost:18000\"", "SummaryItem"]}], 
+                    TagBox["\"localhost:60916\"", "SummaryItem"]}], 
                   ButtonBox[
                    
                    DynamicModuleBox[{
@@ -5690,14 +5668,15 @@ mouseHover$$ = False},
                    ButtonFunction :> CopyToClipboard[
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-                    "SocketListener" -> SocketListener[3611930513282689593], 
-                    "URL" -> "localhost:18000", "Plugin" -> 
+                    "SocketListener" -> SocketListener[3613037394814852128], 
+                    "URL" -> "localhost:60916", "Plugin" -> 
                     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "TODOList", "Description" -> 
                     "Plugin for managing a TODO list, you can add, remove and \
 view your TODOs.", "Prompt" -> 
                     "Plugin for managing a TODO list, you can add, remove and \
-view your TODOs.", "Endpoints" -> {
+view your TODOs.", "ContactEmail" -> "", "LegalInformationURL" -> "", 
+                    "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getTodos", "Prompt" -> 
@@ -5775,7 +5754,7 @@ view your TODOs.", "Endpoints" -> {
                   RowBox[{
                     TagBox["\"url: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["\"localhost:18000\"", "SummaryItem"]}], 
+                    TagBox["\"localhost:60916\"", "SummaryItem"]}], 
                   ButtonBox[
                    
                    DynamicModuleBox[{
@@ -5889,14 +5868,15 @@ mouseHover$$ = False},
                    ButtonFunction :> CopyToClipboard[
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-                    "SocketListener" -> SocketListener[3611930513282689593], 
-                    "URL" -> "localhost:18000", "Plugin" -> 
+                    "SocketListener" -> SocketListener[3613037394814852128], 
+                    "URL" -> "localhost:60916", "Plugin" -> 
                     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
                     "Name" -> "TODOList", "Description" -> 
                     "Plugin for managing a TODO list, you can add, remove and \
 view your TODOs.", "Prompt" -> 
                     "Plugin for managing a TODO list, you can add, remove and \
-view your TODOs.", "Endpoints" -> {
+view your TODOs.", "ContactEmail" -> "", "LegalInformationURL" -> "", 
+                    "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getTodos", "Prompt" -> 
@@ -6048,10 +6028,10 @@ and view your TODOs.\"", "SummaryItem"]}]}, {
                     "Rows" -> {{Automatic}}}, AutoDelete -> False, 
                     GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
                     "Rows" -> {{Automatic}}}, GridBoxSpacings -> {
-                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, 
-                    BaseStyle -> {ShowStringCharacters -> False, NumberMarks -> 
-                    False, PrintPrecision -> 3, ShowSyntaxStyles -> False}]}},
-                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
+                    "Columns" -> {{2}}, "Rows" -> {{Automatic}}}, BaseStyle -> 
+                    {ShowStringCharacters -> False, NumberMarks -> False, 
+                    PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}, 
                     "Rows" -> {{Top}}}, AutoDelete -> False, 
                     GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
                     "Rows" -> {{Automatic}}}, BaselinePosition -> {1, 1}], 
@@ -6304,7 +6284,8 @@ and view your TODOs.\"", "SummaryItem"]}]}},
                     "Plugin for managing a TODO list, you can add, remove and \
 view your TODOs.", "Prompt" -> 
                     "Plugin for managing a TODO list, you can add, remove and \
-view your TODOs.", "Endpoints" -> {
+view your TODOs.", "ContactEmail" -> "", "LegalInformationURL" -> "", 
+                    "Endpoints" -> {
                     
                     Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
                     "OperationID" -> "getTodos", "Prompt" -> 
@@ -6578,7 +6559,7 @@ view your TODOs.", "Endpoints" -> {
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3611930513282689593], {
+                    3613037394814852128], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -6772,6 +6753,7 @@ view your TODOs.", "Endpoints" -> {
                     48.172000000000004`, 21.188000000000002`}, {46.709, 
                     21.188000000000002`}, {46.709, 8.569}}]}}], 
                     FilledCurveBox[{{
+                    
                     Line[{{43.783, 8.569}, {45.246, 8.569}, {45.246, 
                     21.188000000000002`}, {43.783, 21.188000000000002`}, {
                     43.783, 8.569}}]}}]}, 
@@ -6819,7 +6801,7 @@ view your TODOs.", "Endpoints" -> {
                     Replace[
                     ZeroMQLink`PackageScope`safeSocketProperty[
                     ZeroMQLink`PackageScope`$SocketListeners, 
-                    3611930513282689593], {
+                    3613037394814852128], {
                     Pattern[ZeroMQLink`Graphic`PackagePrivate`listener, 
                     Blank[Association]] :> 
                     ZeroMQLink`PackageScope`listenerMessageCount[
@@ -6843,11 +6825,9 @@ view your TODOs.", "Endpoints" -> {
                     RowBox[{
                     "Wolfram`ChatGPTPluginKit`Deploy`Private`handlers$", ",", 
                     
-                    RowBox[{"\[LeftSkeleton]", "52", "\[RightSkeleton]"}], 
-                    ",", 
-                    RowBox[{"\[LeftSkeleton]", "44", "\[RightSkeleton]"}], 
-                    ",", "Wolfram`ChatGPTPluginKit`Deploy`Private`resp$"}], 
-                    "}"}], ",", 
+                    RowBox[{"\[LeftSkeleton]", "3", "\[RightSkeleton]"}], ",",
+                     "Wolfram`ChatGPTPluginKit`Deploy`Private`resp$"}], "}"}],
+                     ",", 
                     RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
                     "]"}], "&"}], Short], "SummaryItem"]}]}, {
                     RowBox[{
@@ -6956,7 +6936,7 @@ view your TODOs.", "Endpoints" -> {
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["18000", "SummaryItem"]}], 
+                    TagBox["60916", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -6969,7 +6949,7 @@ view your TODOs.", "Endpoints" -> {
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-6445ef74-a8a8-43fd-97f9-345ea4ded1b2\"", 
+                    "\"TCPSERVER-dc9a52e3-a007-40b9-a0fc-780d8cf994df\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}}, 
                     GridBoxAlignment -> {"Columns" -> {{Left}}, 
                     "Rows" -> {{Automatic}}}, AutoDelete -> False, 
@@ -7059,7 +7039,7 @@ view your TODOs.", "Endpoints" -> {
                     RowBox[{
                     TagBox["\"Local Port: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
-                    TagBox["18000", "SummaryItem"]}], 
+                    TagBox["60916", "SummaryItem"]}], 
                     RowBox[{
                     TagBox["\"Protocol: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
@@ -7072,7 +7052,7 @@ view your TODOs.", "Endpoints" -> {
                     TagBox["\"UUID: \"", "SummaryItemAnnotation"], 
                     "\[InvisibleSpace]", 
                     TagBox[
-                    "\"TCPSERVER-6445ef74-a8a8-43fd-97f9-345ea4ded1b2\"", 
+                    "\"TCPSERVER-dc9a52e3-a007-40b9-a0fc-780d8cf994df\"", 
                     "SummaryItem"]}], "\[SpanFromLeft]", "\[SpanFromLeft]"}, {
                     
                     RowBox[{
@@ -7095,7 +7075,7 @@ view your TODOs.", "Endpoints" -> {
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
                     SocketObject[
-                    "TCPSERVER-6445ef74-a8a8-43fd-97f9-345ea4ded1b2"], 
+                    "TCPSERVER-dc9a52e3-a007-40b9-a0fc-780d8cf994df"], 
                     Selectable -> False, Editable -> False, 
                     SelectWithContents -> True], "SummaryItem"]}]}}, 
                     GridBoxAlignment -> {
@@ -7115,7 +7095,7 @@ view your TODOs.", "Endpoints" -> {
                     BaselinePosition -> {1, 1}]}, 
                     Dynamic[Typeset`open$$], ImageSize -> Automatic]}, 
                     "SummaryPanel"], DynamicModuleValues :> {}], "]"}], 
-                   SocketListener[3611930513282689593], Selectable -> False, 
+                   SocketListener[3613037394814852128], Selectable -> False, 
                    Editable -> False, SelectWithContents -> True], 
                   "SummaryItem"]}]}}, 
              GridBoxAlignment -> {
@@ -7135,14 +7115,14 @@ view your TODOs.", "Endpoints" -> {
      "SummaryPanel"],
     DynamicModuleValues:>{}], "]"}],
   Wolfram`ChatGPTPluginKit`ChatGPTPluginDeployment[<|
-   "SocketListener" -> SocketListener[3611930513282689593], "URL" -> 
-    "localhost:18000", "Plugin" -> 
+   "SocketListener" -> SocketListener[3613037394814852128], "URL" -> 
+    "localhost:60916", "Plugin" -> 
     Wolfram`ChatGPTPluginKit`ChatGPTPlugin[<|
       "Name" -> "TODOList", "Description" -> 
        "Plugin for managing a TODO list, you can add, remove and view your \
 TODOs.", "Prompt" -> 
        "Plugin for managing a TODO list, you can add, remove and view your \
-TODOs.", "Endpoints" -> {
+TODOs.", "ContactEmail" -> "", "LegalInformationURL" -> "", "Endpoints" -> {
          Wolfram`ChatGPTPluginKit`ChatGPTPluginEndpoint[<|
           "OperationID" -> "getTodos", "Prompt" -> Missing["NotSpecified"], 
            "Parameters" -> {
@@ -7182,9 +7162,10 @@ TODOs.", "Endpoints" -> {
   Selectable->False]], "Output",
  TaggingRules->{},
  CellChangeTimes->{{3.8894744842485857`*^9, 3.889474500147913*^9}, 
-   3.8903242766498423`*^9, 3.890398654285071*^9, 3.890925012655299*^9},
- CellLabel->"Out[11]=",
- CellID->140639744,ExpressionUUID->"2926117d-d593-4568-aed8-4d8c81a75937"]
+   3.8903242766498423`*^9, 3.890398654285071*^9, 3.890925012655299*^9, 
+   3.8914404445596447`*^9},
+ CellLabel->"Out[8]=",
+ CellID->818252307,ExpressionUUID->"610d4a45-6f71-446a-a3bc-8fef8b192090"]
 }, Open  ]],
 
 Cell["Install and use the plugin:", "Text",
@@ -9850,7 +9831,7 @@ Cell[BoxData[
  RowBox[{"DeleteObject", "[", "server", "]"}]], "Input",
  TaggingRules->{},
  CellChangeTimes->{{3.889473081013341*^9, 3.889473083050357*^9}},
- CellLabel->"In[12]:=",
+ CellLabel->"In[9]:=",
  CellID->895527148,ExpressionUUID->"a109f436-67c4-487c-8df7-3f4cfabc751d"]
 }, Open  ]]
 }, Open  ]],
@@ -10036,6 +10017,7 @@ MIT"}, "HyperlinkURL"]}, "RowDefault"]},
                EvaluationCell[], {TaggingRules, "RadioButtonValue"}]], {
              "Apache-2.0"}], "\" \"", 
             TemplateBox[{"\"Apache License 2.0\"", "\"\[ThinSpace]\"", 
+              
               TemplateBox[{
                "\"\[RightGuillemet]\"", 
                 "https://resources.wolframcloud.com/PacletRepository/licenses/\
@@ -10057,6 +10039,7 @@ Apache-2.0"}, "HyperlinkURL"]}, "RowDefault"]},
               
               TemplateBox[{
                "\"\[RightGuillemet]\"", 
+                
                 "https://resources.wolframcloud.com/PacletRepository/licenses/\
 CC0-1.0"}, "HyperlinkURL"]}, "RowDefault"]},
            "RowDefault"],
@@ -11951,7 +11934,7 @@ Cell["There are known issues with with Safari.", "Text",
 }, Open  ]]
 },
 WindowSize->{1091, Automatic},
-WindowMargins->{{280, Automatic}, {Automatic, 39}},
+WindowMargins->{{260, Automatic}, {Automatic, 39}},
 DockedCells->{
   Cell[
    BoxData[
@@ -11966,7 +11949,278 @@ DockedCells->{
    CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}}, 
    CacheGraphics -> False, CellOpen -> Dynamic[
      CurrentValue[
-      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]]},
+      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]], 
+  Cell[
+   BoxData[
+    StyleBox[
+     TagBox[
+      GridBox[{{
+         OverlayBox[{
+           StyleBox[
+            TagBox[
+             DynamicModuleBox[{Typeset`var$$ = False}, 
+              InterpretationBox[
+               StyleBox[
+                PaneSelectorBox[{False -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.891441500649341`16.342685495321813*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    AutoDelete -> False, 
+                    GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.891441500649341`16.342685495321813*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}, {"", 
+                    PaneBox["\"\"", ImageMargins -> 0]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
+                    False, GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                 Dynamic[Typeset`var$$], Alignment -> Automatic, ImageSize -> 
+                 Automatic, ImageMargins -> 0, BaseStyle -> {}, 
+                 DefaultBaseStyle -> "OpenerView", BaselinePosition -> 
+                 Baseline], Deployed -> False, StripOnInput -> False], 
+               OpenerView[{
+                 Style[
+                  Dynamic[
+                   DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.891441500649341`16.342685495321813*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                   SingleEvaluation -> True, Evaluator -> "System"], 
+                  FontSlant -> Italic, FontColor -> GrayLevel[0.5], FontSize -> 
+                  0.9 Inherited], ""}, False]], DynamicModuleValues -> 
+              Automatic], Setting[#, {0}]& ], ShowContents -> False, 
+            StripOnInput -> False], 
+           StyleBox[
+            DynamicBox[
+             ToBoxes[
+              DateString[
+               TimeZoneConvert[
+                DateObject[
+                3.891441500649341`16.342685495321813*^9, TimeZone -> 0]], {
+               "MonthName", " ", "DayShort", ", ", "Year", " ", "Hour12Short",
+                 ":", "Minute", " ", "AMPMLowerCase"}], StandardForm], 
+             SingleEvaluation -> True, Evaluator -> "System"], FontSlant -> 
+            Italic, FontColor -> GrayLevel[0.5], FontSize -> 0.9 Inherited, 
+            StripOnInput -> False]}, Alignment -> {Right, Baseline}], 
+         "\"   \"", 
+         ItemBox[
+          StyleBox[
+          "\"Found 2 potential issues\"", LineBreakWithin -> Automatic, 
+           LineIndent -> 0, StripOnInput -> False], ItemSize -> Fit, 
+          StripOnInput -> False], 
+         StyleBox[
+          ActionMenuBox[
+           TemplateBox[{
+             TemplateBox[{
+               TagBox[
+                GridBox[{{
+                   TemplateBox[{
+                    TemplateBox[{
+                    PaneBox[
+                    TemplateBox[{
+                    RGBColor[1., 0.4627450980392157, 0.]}, "HintPodIconHint"],
+                     ImageSize -> {12, 12}, ImageSizeAction -> "ShrinkToFit", 
+                    BaselinePosition -> Scaled[0.1]], 
+                    TemplateBox[{1}, "Spacer1"], 
+                    StyleBox[
+                    "2", FontSize -> 14, FontWeight -> Plain, FontColor -> 
+                    GrayLevel[0.25], FontFamily -> "Source Sans Pro", 
+                    StripOnInput -> False]}, "RowDefault"], 
+                    "\"Potential issues found\""}, "PrettyTooltipTemplate"]}},
+                  AutoDelete -> False, 
+                 GridBoxItemSize -> {
+                  "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                "Grid"], 
+               GraphicsBox[{
+                 GrayLevel[0.4], 
+                 AbsoluteThickness[2], 
+                 CapForm["Round"], 
+                 LineBox[{{-1, 0}, {0, -1}, {1, 0}}]}, {
+                ImageSize -> {13, 9}, BaselinePosition -> Scaled[0.2], 
+                 ImagePadding -> {{3, 3}, {3, 3}}, AspectRatio -> Full}]}, 
+              "RowDefault"], ImageSize -> {Automatic, 19}, BaselinePosition -> 
+             Baseline, Background -> GrayLevel[1], FrameStyle -> Dynamic[
+               If[
+                CurrentValue["MouseOver"], 
+                Hue[0.55, 0.82, 0.87], 
+                GrayLevel[0.8]]], FrameMargins -> {{4, 4}, {1, 1}}, 
+             Alignment -> {Center, Baseline}}, "Highlighted"], {TemplateBox[{
+               PaneBox[
+                TemplateBox[{
+                  RGBColor[1., 0.4627450980392157, 0.]}, "HintPodIconHint"], 
+                ImageSize -> {10, 10}, ImageSizeAction -> "ShrinkToFit", 
+                BaselinePosition -> Scaled[0.1]], "\" \"", 
+               "\"This cell has excessive height. Consider reducing the size \
+to avoid potential issues.\""}, "RowDefault"] :> 
+            DefinitionNotebookClient`WithCurrentNotebook[
+              EvaluationNotebook[], 
+              DefinitionNotebookClient`LoadDefinitionNotebook[
+               "Paclet", DefinitionNotebookClient`$CurrentNotebook]; 
+              DefinitionNotebookClient`PackageScope`setHint[
+               "Warning", "Paclet", DefinitionNotebookClient`$CurrentNotebook,
+                 "08f78818-738a-46dc-9785-b7751b74b978", 1822574373, 
+                "LargeCellBounds/CellHeight", <|
+                "Type" -> "height", "CellID" -> 1822574373, "CellObject" -> 
+                 CellObject[
+                  "9632ecf7-afa9-422e-926c-8cb13c53fac8", 
+                   "6e0b9f41-490d-439a-bce4-b047417b7709"], 
+                 "CellSerialNumber" -> 1987, "CellSize" -> {298, 531}, 
+                 "CellTags" -> {}, "ContentData" -> BoxData, 
+                 "ContentDataForm" -> StandardForm, "CursorPosition" -> None, 
+                 "Evaluatable" -> False, "Evaluating" -> False, 
+                 "ExpressionUUID" -> "9632ecf7-afa9-422e-926c-8cb13c53fac8", 
+                 "FirstCellInGroup" -> False, "Formatted" -> True, 
+                 "NeedsRendering" -> False, "Position" -> 51, "Rendering" -> 
+                 False, "Style" -> "ExampleImage", "TemplateGroup" -> False, 
+                 "TemplateGroupName" -> None, "Area" -> 500000., "Height" -> 
+                 500., "Width" -> 2000|>]; 
+              DefinitionNotebookClient`PackageScope`seekAfter[1822574373]; 
+              Null], TemplateBox[{
+               PaneBox[
+                TemplateBox[{
+                  RGBColor[1., 0.4627450980392157, 0.]}, "HintPodIconHint"], 
+                ImageSize -> {10, 10}, ImageSizeAction -> "ShrinkToFit", 
+                BaselinePosition -> Scaled[0.1]], "\" \"", 
+               "\"This cell has excessive height. Consider reducing the size \
+to avoid potential issues.\""}, "RowDefault"] :> 
+            DefinitionNotebookClient`WithCurrentNotebook[
+              EvaluationNotebook[], 
+              DefinitionNotebookClient`LoadDefinitionNotebook[
+               "Paclet", DefinitionNotebookClient`$CurrentNotebook]; 
+              DefinitionNotebookClient`PackageScope`setHint[
+               "Warning", "Paclet", DefinitionNotebookClient`$CurrentNotebook,
+                 "928483e0-4f09-41c6-b39a-fec62e4448f6", 1491546085, 
+                "LargeCellBounds/CellHeight", <|
+                "Type" -> "height", "CellID" -> 1491546085, "CellObject" -> 
+                 CellObject[
+                  "a066330f-e087-46ff-95e8-20a72804c260", 
+                   "268839f9-7640-49cb-b3db-e1133695a342"], 
+                 "CellSerialNumber" -> 2000, "CellSize" -> {316, 546}, 
+                 "CellTags" -> {}, "ContentData" -> BoxData, 
+                 "ContentDataForm" -> StandardForm, "CursorPosition" -> None, 
+                 "Evaluatable" -> False, "Evaluating" -> False, 
+                 "ExpressionUUID" -> "a066330f-e087-46ff-95e8-20a72804c260", 
+                 "FirstCellInGroup" -> False, "Formatted" -> True, 
+                 "NeedsRendering" -> False, "Position" -> 63, "Rendering" -> 
+                 False, "Style" -> "ExampleImage", "TemplateGroup" -> False, 
+                 "TemplateGroupName" -> None, "Area" -> 500000., "Height" -> 
+                 500., "Width" -> 2000|>]; 
+              DefinitionNotebookClient`PackageScope`seekAfter[1491546085]; 
+              Null]}, Appearance -> None], "BoxID" -> "WarningCountButton", 
+          StripOnInput -> False], 
+         TagBox[
+          ButtonBox[
+           TagBox[
+            PaneSelectorBox[{False -> GraphicsBox[{
+                 GrayLevel[
+                  NCache[
+                   Rational[64, 85], 0.7529411764705882]], 
+                 
+                 PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                  0.42426406871192845`}, {0.42426406871192845`, 
+                  0.282842712474619}}], 
+                 
+                 PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                  0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                  0.42426406871192845`}}]}, ImageSize -> 18, PlotRangePadding -> 
+                0, PlotRange -> 0.7, Background -> None], True -> GraphicsBox[{
+                 GrayLevel[
+                  NCache[
+                   Rational[128, 255], 0.5019607843137255]], 
+                 
+                 PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                  0.42426406871192845`}, {0.42426406871192845`, 
+                  0.282842712474619}}], 
+                 
+                 PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                  0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                  0.42426406871192845`}}]}, ImageSize -> 18, PlotRangePadding -> 
+                0, PlotRange -> 0.7, Background -> None]}, 
+             Dynamic[
+              CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+             FrameMargins -> 0], 
+            MouseAppearanceTag["LinkHand"]], ButtonFunction :> 
+           With[{DefinitionNotebookClient`Stripes`PackagePrivate`nbo$ = 
+              EvaluationNotebook[]}, 
+             CurrentValue[
+              DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+               DockedCells] = If[
+               TrueQ[
+                MemberQ[
+                 CurrentValue["ModifierKeys"], "Control"]], 
+               DeleteCases[
+                Flatten[{
+                  CurrentValue[
+                  DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                   DockedCells]}], 
+                Cell[
+                 Blank[], "StripeCell", 
+                 BlankNullSequence[]]], 
+               DeleteCases[
+                Flatten[{
+                  CurrentValue[
+                  DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                   DockedCells]}], 
+                Condition[
+                 Pattern[DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                  Blank[Cell]], 
+                 Not[
+                  FreeQ[
+                  DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                   "294121bc-0a55-4d01-ba6f-61105c271fbb"]]]]]], Appearance -> 
+           None, BoxID -> "294121bc-0a55-4d01-ba6f-61105c271fbb", Evaluator -> 
+           Automatic, Method -> "Preemptive"], 
+          MouseAppearanceTag["LinkHand"]]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
+       AutoDelete -> False, 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+     "Text", FontSize -> 12, FontColor -> GrayLevel[0.25], StripOnInput -> 
+     False]], "StripeCell", CellFrameMargins -> {{20, 5}, {2, 2}}, 
+   CellFrame -> {{0, 0}, {1, 0}}, CellFrameColor -> GrayLevel[0.75]]},
 TaggingRules->{"CompatibilityTest" -> HoldComplete[
     BinaryDeserialize[
      BaseDecode[
@@ -12009,35 +12263,10 @@ Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
   "TemplateVersion" -> "2022.09.16", "StatusMessage" -> "", "AutoUpdate" -> 
   True, "Openers" -> {
    "ExampleSection" -> {"1" -> Closed, "3" -> Closed, "4" -> Closed}}, 
-  "PacletBuildData" -> {
-   "LastBuiltArchive" -> 
-    "/Users/christopher/git/ChatGPTPluginKit/ChatGPTPluginKit/build/Wolfram__\
-ChatGPTPluginKit-1.2.0.paclet", "FileHashes" -> ByteArray[CompressedData["
-1:eJwBlgNp/CFib1JiAQAAAIkDAAA4Qzp4nK2WfUgTYRzHqcwo0JzZuxFqaZnP
-XDOzQZI5TWXTDh8jQ7TO27N57Xxu3d1QUQoLSlKMwoxgZOZLReQqAu29UOhF
-8R+TkKL3CIqCIIigog2nzzb1PK2/Br/x/Xx47nfP73dbIwHUpPGMvRRhiZZY
-HsenYwvHiiXxGXbWhMR4fQktZVB5FGe3sNjASmpcvHUmgIGQtwsMMt4p1sSd
-VfW6K3m0YEGSsbla35rmDFgCYOT44CxsQuXxuzVqxix6ocSAHB4jwtFXadHR
-+3EQwGg5jogs7r/E3etlWDdWVFctmM9plLISZFjPn32rH7hWOB/ANUpYagvC
-MjRV9uvq1vKPOgCN49NykRkJCDOIoi2udsCK0mKe82uLnuPtpjRk4/gKN8Cv
-RbeoHs2F9/Ve0v09vX1p2z+7Hm3mf5H6CQdrYI2DWVJAhEvnIpzSQvEAZkxf
-OOEB8yOerLlWPrCT+F4dUmWCWpsWQP2/+vxc2ou95mj9wzLiyl/+y7j61KVo
-ANOn70rHJhvPjjnZyiOzVb8zInOIbfPVd/2/Ti8PAzB5+jY/y+pjnW83tXdZ
-iWV2f2VTeE2wCcDUKVlW+WgoXvA/UO2fMDSjLm4WUb0o5uzU8Z8CgLHjqyCi
-BaZk+FIlDo8NJHOhxKgVl9+0dRdMhSc3hpr2qkIbqhKCAVyrkCeyMjikTjwZ
-1byFBhAowZlZxJlEdRkng5wj5lPnwgvDAdygBMm6f7ORRJtoiZYnh1SGd7Ra
-o/YAqFZCHh2fWhnm0PON9w4xLUkKmWUCKyE1xzNWGSa7Y3tk/tsdBgBjJmDa
-EMd59o52koY3pjb+6EneH6wIljAJTCh4Wtd3s8jVm3WTwhRtMt2uL/tyB7vw
-lIBJMkDnos7A3oCUmCkBdTLAuy/PpGwL0s2c+A0fC5xkSd5IXvTnxPc3RgCT
-xkfm2SVeYGnXBMrCokRznNy4qzvc1NfxqMPgNe7y+h6vetEmArjMgASMuLFf
-PT73xLjQmfjpgfP3YoIglbARBG+rSLVLEo/9wo6vAz+qu7NYEiaVEE/Ys3t8
-g7evfMCbu/pzSZBUQj3B0UXiG21yDr00sAd4r7k2Whlxppfb3APbNyidrmx/
-f+mgVzNIZSToecq+wQYpTucYtJaSIKkEUTTDISkLm3m/VFGNo6LyejRNUqSi
-Gk5l05g1I1GSH13nv1w1xM4rjPgLPyf+yisDxBw=
-      "]]}, "TryRealOnly" -> False},
+  "TryRealOnly" -> False},
 CreateCellID->True,
 DynamicEvaluationTimeout->60,
-FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (November 18, 2022)",
+FrontEndVersion->"13.2 for Mac OS X ARM (64-bit) (November 18, 2022)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[StyleDefinitions -> "Default.nb"]], 
@@ -12136,7 +12365,6 @@ MPfD+DD/wfgw/8P0w8IHZj4s/GD2w8IX5j708AcA2Xetpg==
               Thickness[0.045818], 
               RGBColor[0.5, 0.5, 0.5, 1.]}, StripOnInput -> False], 
             StyleBox[{
-              
               FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1,
                 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}}, CompressedData["
 1:eJxTTMoPSmVmYGBgBGJJIGYC4oSnF5RuVyo58OlumvteXcIBxj//Pfjx0tky
@@ -12303,7 +12531,6 @@ VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                  GrayLevel[0.85], 
                  Thickness[
                   NCache[2/45, 0.044444]], 
-                 
                  FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 
                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
@@ -12477,6 +12704,7 @@ VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                 StyleBox[
                 "\"Template Input\"", "Text", FontFamily -> "Source Sans Pro",
                   FontSize -> 11, StripOnInput -> False], 
+                
                 "\"Format selection automatically using appropriate \
 documentation styles\""}, "PrettyTooltipTemplate"], ButtonFunction :> 
               With[{RSNB`nb$ = ButtonNotebook[], RSNB`$cp$ = $ContextPath}, 
@@ -13465,7 +13693,6 @@ h/Fh4QMzDxZ+6PEFAOibv7E=
             "\[SpanFromLeft]", 
             TemplateBox[{
               StyleBox[
-               
                TemplateBox[{
                 "\"Paclet Repository\"", "\" \[RightGuillemet]  \""}, 
                 "RowDefault"], "Text", FontColor -> 
@@ -13840,7 +14067,6 @@ AsyncronousResourceInformationUpdates = False,
              "\"Locally on this computer\"" :> 
               With[{RSNB`nb$ = InputNotebook[], RSNB`$cp$ = $ContextPath}, 
                 Quiet[
-                 
                  Block[{$ContextPath = RSNB`$cp$, 
                    ResourceSystemClient`$\
 AsyncronousResourceInformationUpdates = False, 
@@ -13991,6 +14217,7 @@ p2HmwdTp4FCHTvOhqYfZrw2lhdDk0fno6tHcD1PPwOSAnY+uns8BAE8cGz4=
 Hw4apk4Uap8aDr4QDhqqDu4uVRx8URw0TJ001D5lHHwJHDRUHYMclFbCwZfG
 QUPVNSjgp+HmIWgAG/wcEg==
                     "]], 
+                    
                     FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2,
                      0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 
                     0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1,
@@ -15745,6 +15972,7 @@ Mn8D1T+bLHr4qqKuQ8bv8LBZfwwdhGSmFwY76zqghzcABAZ3MA==
           FaceForm[
            GrayLevel[1.]]], 
          StyleBox[{
+           
            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3,
               3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 
              3, 3}}, {{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {
@@ -18453,6 +18681,7 @@ directory.\""}, "PacletDirectoryChooserErrorTemplate"]], "AttachedMessage"],
                     If[
                     And[RSNB`nbDir =!= RSNB`oldDir, 
                     MemberQ[$Packages, "PacletResource`DefinitionNotebook`"]], 
+                    
                     With[{RSNB`nb$ = EvaluationNotebook[], 
                     RSNB`$cp$ = $ContextPath}, 
                     Quiet[
@@ -19714,7 +19943,6 @@ GRPf1sw3cDj8VSOm/5G9w5vAHXKt3IZQ/0HDoQHBFwFFwBcEHxR9zQlGcP3o
               9.8616}, {7.5, 10.194}, {7.5, 10.614}, {7., 10.404}, {2.5, 
               12.291}, {2.5, 12.711}, {1.5, 12.292}, {1.5, 5.8226}, {7., 
               3.5146}, {8.293, 4.0576}, {7.5, 4.3906}}}], 
-            
             FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0,
                1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
               0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 
@@ -19926,7 +20154,7 @@ GRPf1sw3cDj8VSOm/5G9w5vAHXKt3IZQ/0HDoQHBFwFFwBcEHxR9zQlGcP3o
    Cell[
     StyleData["AttachedMessage"], Deletable -> True, 
     CellMargins -> {{60, 40}, {15, 5}}]}, Visible -> False, FrontEndVersion -> 
-  "13.2 for Mac OS X x86 (64-bit) (November 18, 2022)", StyleDefinitions -> 
+  "13.2 for Mac OS X ARM (64-bit) (November 18, 2022)", StyleDefinitions -> 
   "PrivateStylesheetFormatting.nb"],
 ExpressionUUID->"bdef939f-76dc-4492-bbd0-ea7fd693ef13"
 ]

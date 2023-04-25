@@ -20,11 +20,12 @@ ChatGPTPluginDeploy[args___] :=
 	]
 
 
-iChatGPTPluginDeploy[{plugin_ChatGPTPlugin, port_}, opts_] :=
-	Enclose[ChatGPTPluginDeployment[<|
-		"SocketListener" ->
-			Confirm@SocketListen[port,
-				Module[{handlers, handlerKeys, req, resp},
+iChatGPTPluginDeploy[{plugin_ChatGPTPlugin, loc_}, opts_] :=
+	Enclose[Module[{listener},
+
+		listener =
+			Confirm@SocketListen[loc,
+				Module[{handlers, handlerKeys, req, baseURL, resp},
 
 					handlers = OptionValue[ChatGPTPluginDeploy, opts, HandlerFunctions];
 					handlerKeys = Replace[OptionValue[ChatGPTPluginDeploy, opts, HandlerFunctionsKeys], Automatic -> {"HTTPRequest", "HTTPResponse"}];
@@ -33,7 +34,8 @@ iChatGPTPluginDeploy[{plugin_ChatGPTPlugin, port_}, opts_] :=
 
 					Lookup[handlers, "HTTPRequestReceived", Identity][KeyTake[<|"HTTPRequest" -> req, "HTTPResponse" -> Missing["NotAvailable"]|>, handlerKeys]];
 
-					resp = GenerateHTTPResponse[plugin["URLDispatcher", port], req];
+					baseURL = StringTemplate["http://localhost:``"][#Socket["DestinationPort"]];
+					resp = GenerateHTTPResponse[plugin["URLDispatcherTemplate"][<|"BaseURL" -> baseURL|>], req];
 
 					BinaryWrite[#SourceSocket, ExportByteArray[resp, "HTTPResponse"]];
 
@@ -41,10 +43,16 @@ iChatGPTPluginDeploy[{plugin_ChatGPTPlugin, port_}, opts_] :=
 
 					Close[#SourceSocket]
 				]&
-			],
-		"URL" -> "localhost:"<>ToString[port],
-		"Plugin" -> plugin
-	|>], "InheritedFailure"]
+			];
+
+		ChatGPTPluginDeployment[<|
+			"SocketListener" -> listener,
+			"URL" -> "localhost:"<>ToString[listener["DestinationPort"]],
+			"Plugin" -> plugin
+		|>]
+
+	], "InheritedFailure"]
+
 
 iChatGPTPluginDeploy[{spec_, port_}, opts_] :=
 	Enclose[
@@ -53,7 +61,7 @@ iChatGPTPluginDeploy[{spec_, port_}, opts_] :=
 	]
 
 iChatGPTPluginDeploy[{plugin_}, opts_] :=
-	iChatGPTPluginDeploy[{plugin, $ChatGPTPluginPort}, opts]
+	iChatGPTPluginDeploy[{plugin, Automatic}, opts]
 
 
 
@@ -74,8 +82,8 @@ iChatGPTPluginCloudDeploy[{plugin_ChatGPTPlugin}, opts_] :=
 			baseURL,
 			ChatGPTPluginCloudDeployment[<|
 				"CloudObjects" -> {
-						CloudDeploy[ExportForm[plugin["ManifestJSON", baseURL], "JSON"], ".well-known/ai-plugin.json", Permissions -> "Public"],
-						CloudDeploy[ExportForm[plugin["OpenAPIJSON", baseURL], "JSON"], ".well-known/openapi.json", Permissions -> "Public"],
+						CloudDeploy[ExportForm[plugin["ManifestJSONTemplate"][<|"BaseURL" -> baseURL|>], "JSON"], ".well-known/ai-plugin.json", Permissions -> "Public"],
+						CloudDeploy[ExportForm[plugin["OpenAPIJSONTemplate"][<|"BaseURL" -> baseURL|>], "JSON"], ".well-known/openapi.json", Permissions -> "Public"],
 						Splice[CloudDeploy[#["APIFunction"], #["OperationID"], Permissions -> "Public"] &/@ plugin["Endpoints"]]
 					},
 					"Plugin" -> plugin,

@@ -22,7 +22,9 @@ argumentsChatGPTPluginQ[
 		"Name" -> _,
 		"Description" -> _,
 		"Prompt" -> _,
-		"Endpoints" -> {__ChatGPTPluginEndpoint}
+		"Endpoints" -> {__ChatGPTPluginEndpoint},
+		"ContactEmail" -> _,
+		"LegalInformationURL" -> _
 	}],
 	{OptionsPattern[]}
 ] := True
@@ -57,9 +59,11 @@ normalizeMetadata[metadata: KeyValuePattern[{}]] :=
 		<|
 			"Name" -> "ExperimentalPlugin",
 			"Description" -> "",
-			"Prompt" -> ""
+			"Prompt" -> "",
+			"ContactEmail" -> "",
+			"LegalInformationURL" -> ""
 		|>,
-		KeyTake[metadata, {"Name", "Description", "Prompt"}]
+		KeyTake[metadata, {"Name", "Description", "Prompt", "ContactEmail", "LegalInformationURL"}]
 	}, Last]
 
 normalizeMetadata[expr_] :=
@@ -115,36 +119,32 @@ plugin_ChatGPTPlugin["Name"] := Lookup[plugin["Data"], "Name"]
 plugin_ChatGPTPlugin["Description"] := Lookup[plugin["Data"], "Description"]
 plugin_ChatGPTPlugin["Prompt"] := Lookup[plugin["Data"], "Prompt"]
 plugin_ChatGPTPlugin["Endpoints"] := Lookup[plugin["Data"], "Endpoints"]
-plugin_ChatGPTPlugin["OpenAPIJSON", baseURL_] := pluginAPIJSON[plugin, baseURL]
-plugin_ChatGPTPlugin["OpenAPIJSON"] := plugin["OpenAPIJSON", $ChatGPTPluginPort]
-plugin_ChatGPTPlugin["ManifestJSON", baseURL_] := pluginManifestJSON[plugin, baseURL]
-plugin_ChatGPTPlugin["ManifestJSON"] := plugin["ManifestJSON", $ChatGPTPluginPort]
-plugin_ChatGPTPlugin["URLDispatcher", baseURL_] := pluginURLDispatcher[plugin, baseURL]
-plugin_ChatGPTPlugin["URLDispatcher"] := plugin["URLDispatcher", $ChatGPTPluginPort]
+plugin_ChatGPTPlugin["ContactEmail"] := Lookup[plugin["Data"], "ContactEmail"]
+plugin_ChatGPTPlugin["LegalInformationURL"] := Lookup[plugin["Data"], "LegalInformationURL"]
+plugin_ChatGPTPlugin["OpenAPIJSONTemplate"] := pluginAPIJSON[plugin]
+plugin_ChatGPTPlugin["ManifestJSONTemplate"] := pluginManifestJSON[plugin]
+plugin_ChatGPTPlugin["URLDispatcherTemplate"] := pluginURLDispatcher[plugin]
 
 
 (* OpenAPI *)
 
-pluginAPIJSON[plugin_ChatGPTPlugin, baseURL_] :=
-	<|
+pluginAPIJSON[plugin_ChatGPTPlugin] :=
+	TemplateObject[<|
 		"openapi" -> "3.0.1",
 		"info" -> <|
 			"title" -> plugin["Name"],
 			"description" -> plugin["Description"],
 			"version" -> "v1"
 		|>,
-		"servers" -> {<|"url" -> baseURL|>},
+		"servers" -> {<|"url" -> TemplateSlot["BaseURL"]|>},
 		"paths" -> Join@@(#["OpenAPIJSON"]&)/@plugin["Endpoints"]
-	|>
-
-pluginAPIJSON[plugin_ChatGPTPlugin, port_Integer] :=
-	pluginAPIJSON[plugin, StringTemplate["http://localhost:``"][port]]
+	|>]
 
 
 (* Manifest *)
 
-pluginManifestJSON[plugin_ChatGPTPlugin, baseURL_] :=
-	<|
+pluginManifestJSON[plugin_ChatGPTPlugin] :=
+	TemplateObject[<|
 		"schema_version" -> "v1",
 		"name_for_human" -> plugin["Name"],
 		"name_for_model" -> plugin["Name"],
@@ -153,26 +153,23 @@ pluginManifestJSON[plugin_ChatGPTPlugin, baseURL_] :=
 		"auth" -> <|"type" -> "none"|>,
 		"api" -> <|
 			"type" -> "openapi",
-			"url" -> URLBuild[{baseURL, ".well-known", "openapi.json"}],
+			"url" -> URLBuild[{TemplateSlot["BaseURL"], ".well-known", "openapi.json"}],
 			"is_user_authenticated" -> False
 		|>,
 		"logo_url" -> "https://www.wolframcdn.com/images/icons/Wolfram.png",
-		"contact_email" -> "support@example.com",
-		"legal_info_url" -> "http://www.example.com/legal"
-	|>
-
-pluginManifestJSON[plugin_ChatGPTPlugin, port_Integer] :=
-	pluginManifestJSON[plugin, StringTemplate["http://localhost:``"][port]]
+		"contact_email" -> plugin["ContactEmail"],
+		"legal_info_url" -> plugin["LegalInformationURL"]
+	|>]
 
 
 (* URLDispatcher *)
 
-pluginURLDispatcher[plugin_ChatGPTPlugin, baseURLSpec_] :=
-	URLDispatcher[{
-		"/.well-known/ai-plugin.json" -> addCORS@ExportForm[plugin["ManifestJSON", baseURLSpec], "JSON"],
-		"/.well-known/openapi.json" -> addCORS@ExportForm[plugin["OpenAPIJSON", baseURLSpec], "JSON"],
+pluginURLDispatcher[plugin_ChatGPTPlugin] :=
+	TemplateObject[URLDispatcher[{
+		"/.well-known/ai-plugin.json" -> addCORS@ExportForm[plugin["ManifestJSONTemplate"], "JSON"],
+		"/.well-known/openapi.json" -> addCORS@ExportForm[plugin["OpenAPIJSONTemplate"], "JSON"],
 		Splice["/"<>#["OperationID"] -> addCORS@#["APIFunction"]& /@ plugin["Endpoints"]]
-	}]
+	}]]
 
 addCORS[expr_] :=
 	HTTPResponse[expr,

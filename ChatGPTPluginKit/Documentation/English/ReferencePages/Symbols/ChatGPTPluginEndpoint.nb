@@ -205,10 +205,10 @@ Cell[TextData[{
     "4a86444d-d946-4671-9a36-742f60be024f"], 
    DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
     "b3d8cb14-ff9e-4c37-8fdd-2935b39e9382", 
-     "6b3f9eeb-6c74-497b-af11-79a601f15f60"], $CellContext`cellobj$$ = 
+     "5d4c58ca-c39e-4884-9829-17fa9bcfdf73"], $CellContext`cellobj$$ = 
     CellObject[
     "0634900f-d47d-4657-9f2f-d617682323a2", 
-     "04fa2b3d-5073-41f8-94cd-758fd8c15233"]}, 
+     "44f0ba73-ddf7-4816-b778-0a86f37523c6"]}, 
     TemplateBox[{
       GraphicsBox[{{
          Thickness[0.06], 
@@ -624,7 +624,7 @@ TaggingRules->{
     "$UseNewPageDialog" -> ""}, 
   "WelcomeScreenSettings" -> {"FEStarting" -> False}, "Paclet" -> 
   "Wolfram/ChatGPTPluginKit"},
-FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (November 18, 2022)",
+FrontEndVersion->"13.2 for Mac OS X ARM (64-bit) (November 18, 2022)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
   CharacterEncoding -> "UTF-8"],
 ExpressionUUID->"b3d8cb14-ff9e-4c37-8fdd-2935b39e9382"

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     19477,        534]
+NotebookDataLength[     19474,        534]
 NotebookOptionsPosition[     13255,        401]
-NotebookOutlinePosition[     14419,        434]
-CellTagsIndexPosition[     14340,        429]
+NotebookOutlinePosition[     14416,        434]
+CellTagsIndexPosition[     14337,        429]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -142,10 +142,10 @@ Cell[TextData[{
     "a87b9630-385b-4962-8bb4-a36c8514a5a1"], 
    DynamicModuleBox[{$CellContext`nbobj$$ = NotebookObject[
     "a4e12d4e-0047-4fbe-9ef5-a8a7bd667b43", 
-     "bdfb1ea7-23e0-4e0c-aad0-a7668ae45f03"], $CellContext`cellobj$$ = 
+     "8351f38f-7bf1-4b94-954a-3f43f45b9ba5"], $CellContext`cellobj$$ = 
     CellObject[
     "a047d56b-93fe-4d3e-83b9-526633d19ffc", 
-     "6e97a0ee-6d20-4093-9ac1-727b1b854f9d"]}, 
+     "e34bcb68-adf5-4045-8e7a-4d3dae1560d4"]}, 
     TemplateBox[{
       GraphicsBox[{{
          Thickness[0.06], 
@@ -410,7 +410,7 @@ TaggingRules->{
     "$UseNewPageDialog" -> ""}, 
   "WelcomeScreenSettings" -> {"FEStarting" -> False}, "Paclet" -> 
   "Wolfram/ChatGPTPluginKit"},
-FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (November 18, 2022)",
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (April 20, 2023)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
   CharacterEncoding -> "UTF-8"],
 ExpressionUUID->"a4e12d4e-0047-4fbe-9ef5-a8a7bd667b43"
@@ -428,7 +428,7 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"ExtendedExamples", 14146, 422}
+ {"ExtendedExamples", 14143, 422}
  }
 *)
 (*NotebookFileOutline
@@ -442,25 +442,25 @@ Cell[1205, 36, 822, 22, 47, "Notes",ExpressionUUID->"c8857a42-22c3-4e78-b073-40f
  CellID->328616136]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2064, 63, 435, 12, 47, "TechNotesSection",ExpressionUUID->"7c9716dd-d075-462d-b87a-cd9a3c267074",
+Cell[2064, 63, 435, 12, 41, "TechNotesSection",ExpressionUUID->"7c9716dd-d075-462d-b87a-cd9a3c267074",
  CellID->118135349],
 Cell[2502, 77, 101, 1, 19, "Tutorials",ExpressionUUID->"203f05bd-2be6-4327-9320-5f7f184c07ff",
  CellID->1225920815]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2640, 83, 473, 13, 34, "RelatedLinksSection",ExpressionUUID->"e6e3d0f0-b420-4a55-8766-63ea8dabbd27",
+Cell[2640, 83, 473, 13, 40, "RelatedLinksSection",ExpressionUUID->"e6e3d0f0-b420-4a55-8766-63ea8dabbd27",
  CellID->1093028387],
 Cell[3116, 98, 103, 1, 19, "RelatedLinks",ExpressionUUID->"c791e3d2-3c43-4691-b82f-43419f0b18c9",
  CellID->952983871]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3256, 104, 458, 13, 34, "SeeAlsoSection",ExpressionUUID->"d78cf2d9-78dc-45ec-bb59-19cf645f5aad",
+Cell[3256, 104, 458, 13, 40, "SeeAlsoSection",ExpressionUUID->"d78cf2d9-78dc-45ec-bb59-19cf645f5aad",
  CellID->866880571],
 Cell[3717, 119, 2156, 54, 23, "SeeAlso",ExpressionUUID->"9117d650-044e-427f-b792-5f58bf8903d0",
  CellID->1132695549]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5910, 178, 184, 2, 34, "MoreAboutSection",ExpressionUUID->"c2e0f328-4189-426e-bcd5-c07e091343f4",
+Cell[5910, 178, 184, 2, 40, "MoreAboutSection",ExpressionUUID->"c2e0f328-4189-426e-bcd5-c07e091343f4",
  CellID->1919045035],
 Cell[6097, 182, 100, 1, 19, "MoreAbout",ExpressionUUID->"a2707521-cf17-4ebc-951d-06bccaca953b",
  CellID->333008952]
