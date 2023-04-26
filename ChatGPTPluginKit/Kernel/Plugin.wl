@@ -57,7 +57,7 @@ normalizeMetadata[prompt_?StringQ] :=
 normalizeMetadata[metadata: KeyValuePattern[{}]] :=
 	Merge[{
 		<|
-			"Name" -> "ExperimentalPlugin",
+			"Name" -> "WolframCustom",
 			"Description" -> "",
 			"Prompt" -> "",
 			"ContactEmail" -> "",
