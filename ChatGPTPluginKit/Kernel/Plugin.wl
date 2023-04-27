@@ -24,7 +24,8 @@ argumentsChatGPTPluginQ[
 		"Prompt" -> _,
 		"Endpoints" -> {__ChatGPTPluginEndpoint},
 		"ContactEmail" -> _,
-		"LegalInformationURL" -> _
+		"LegalInformationURL" -> _,
+		"Image" -> _?ImageQ
 	}],
 	{OptionsPattern[]}
 ] := True
@@ -51,6 +52,9 @@ icreateChatGPTPlugin[{metadata_, endpoints_}, opts_] :=
 	]
 
 
+defaultIcon := defaultIcon = Import[PacletObject["Wolfram/ChatGPTPluginKit"]["AssetLocation", "DefaultIcon"]];
+
+
 normalizeMetadata[prompt_?StringQ] :=
 	normalizeMetadata[<|"Prompt" -> prompt|>]
 
@@ -61,9 +65,10 @@ normalizeMetadata[metadata: KeyValuePattern[{}]] :=
 			"Description" -> "",
 			"Prompt" -> "",
 			"ContactEmail" -> "",
-			"LegalInformationURL" -> ""
+			"LegalInformationURL" -> "",
+			"Image" -> defaultIcon
 		|>,
-		KeyTake[metadata, {"Name", "Description", "Prompt", "ContactEmail", "LegalInformationURL"}]
+		KeyTake[metadata, {"Name", "Description", "Prompt", "ContactEmail", "LegalInformationURL", "Image"}]
 	}, Last]
 
 normalizeMetadata[expr_] :=
@@ -121,6 +126,7 @@ plugin_ChatGPTPlugin["Prompt"] := Lookup[plugin["Data"], "Prompt"]
 plugin_ChatGPTPlugin["Endpoints"] := Lookup[plugin["Data"], "Endpoints"]
 plugin_ChatGPTPlugin["ContactEmail"] := Lookup[plugin["Data"], "ContactEmail"]
 plugin_ChatGPTPlugin["LegalInformationURL"] := Lookup[plugin["Data"], "LegalInformationURL"]
+plugin_ChatGPTPlugin["Image"] := Lookup[plugin["Data"], "Image"]
 plugin_ChatGPTPlugin["OpenAPIJSONTemplate"] := pluginAPIJSON[plugin]
 plugin_ChatGPTPlugin["ManifestJSONTemplate"] := pluginManifestJSON[plugin]
 plugin_ChatGPTPlugin["URLDispatcherTemplate"] := pluginURLDispatcher[plugin]
@@ -156,7 +162,7 @@ pluginManifestJSON[plugin_ChatGPTPlugin] :=
 			"url" -> URLBuild[{TemplateSlot["BaseURL"], ".well-known", "openapi.json"}],
 			"is_user_authenticated" -> False
 		|>,
-		"logo_url" -> "https://www.wolframcdn.com/images/icons/Wolfram.png",
+		"logo_url" -> URLBuild[{TemplateSlot["BaseURL"], ".well-known", "plugin_icon.png"}],
 		"contact_email" -> plugin["ContactEmail"],
 		"legal_info_url" -> plugin["LegalInformationURL"]
 	|>]
@@ -168,6 +174,7 @@ pluginURLDispatcher[plugin_ChatGPTPlugin] :=
 	TemplateObject[URLDispatcher[{
 		"/.well-known/ai-plugin.json" -> addCORS@ExportForm[plugin["ManifestJSONTemplate"], "JSON"],
 		"/.well-known/openapi.json" -> addCORS@ExportForm[plugin["OpenAPIJSONTemplate"], "JSON"],
+		"/.well-known/plugin_icon.png" -> addCORS@ExportForm[plugin["Image"], "PNG"],
 		Splice["/"<>#["OperationID"] -> addCORS@#["APIFunction"]& /@ plugin["Endpoints"]]
 	}]]
 

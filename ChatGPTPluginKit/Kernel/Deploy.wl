@@ -41,6 +41,8 @@ iChatGPTPluginDeploy[{plugin_ChatGPTPlugin, loc_}, opts_] :=
 
 					Lookup[handlers, "HTTPResponseSent", Identity][KeyTake[<|"HTTPRequest" -> req, "HTTPResponse" -> resp|>, handlerKeys]];
 
+					(* TODO: This is a hack because the shutdown procedure in HTTP is more complicated than this *)
+					Pause[0.2];
 					Close[#SourceSocket]
 				]&
 			];
@@ -84,6 +86,7 @@ iChatGPTPluginCloudDeploy[{plugin_ChatGPTPlugin}, opts_] :=
 				"CloudObjects" -> {
 						CloudDeploy[ExportForm[plugin["ManifestJSONTemplate"][<|"BaseURL" -> baseURL|>], "JSON"], ".well-known/ai-plugin.json", Permissions -> "Public"],
 						CloudDeploy[ExportForm[plugin["OpenAPIJSONTemplate"][<|"BaseURL" -> baseURL|>], "JSON"], ".well-known/openapi.json", Permissions -> "Public"],
+						CloudDeploy[ExportForm[plugin["Image"], "PNG"], ".well-known/plugin_icon.png", Permissions -> "Public"],
 						Splice[CloudDeploy[#["APIFunction"], #["OperationID"], Permissions -> "Public"] &/@ plugin["Endpoints"]]
 					},
 					"Plugin" -> plugin,

@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Christopher Wolfram",
     "License" -> "MIT",
     "PublisherID" -> "Wolfram",
-    "Version" -> "1.3.1",
+    "Version" -> "1.3.2",
     "WolframVersion" -> "13.2+",
     "Extensions" -> {
       {
@@ -27,6 +27,13 @@ PacletObject[
         "Documentation",
         "Root" -> "Documentation",
         "Language" -> "English"
+      },
+      {
+        "Asset",
+        "Root" -> "Assets",
+        "Assets" -> {
+          {"DefaultIcon", "default_icon.png"}
+        }
       }
     }
   |>
